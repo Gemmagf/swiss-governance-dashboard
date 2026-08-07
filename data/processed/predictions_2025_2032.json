@@ -1,0 +1,3001 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:15:01.347943",
+    "model_version": "linear-bayesian-v1",
+    "training_data": "2015\u20132024 real data",
+    "forecast_period": "2025\u20132032",
+    "domains": 7,
+    "indicators": 35
+  },
+  "predictions": {
+    "bosc": {
+      "superficie": {
+        "label": "Superf\u00edcie forestal",
+        "unit": "% del territori",
+        "source": "LFI (Inventari Forestal Nacional)",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 31.6
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -8.46,
+            "p50": -8.46,
+            "p90": -8.46,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -8.44,
+            "p50": -8.44,
+            "p90": -8.44,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -8.42,
+            "p50": -8.42,
+            "p90": -8.42,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -8.4,
+            "p50": -8.4,
+            "p90": -8.4,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -8.38,
+            "p50": -8.38,
+            "p90": -8.38,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -8.36,
+            "p50": -8.36,
+            "p90": -8.36,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -8.34,
+            "p50": -8.34,
+            "p90": -8.34,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -8.32,
+            "p50": -8.32,
+            "p90": -8.32,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "vitalitat": {
+        "label": "Vitalitat de la cap\u00e7ada",
+        "unit": "\u00edndex /100",
+        "source": "WSL Monitoratge forestal",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 74
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 284.94,
+            "p50": 285.49,
+            "p90": 286.03,
+            "std": 0.43,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 284.8,
+            "p50": 285.38,
+            "p90": 285.97,
+            "std": 0.46,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 284.65,
+            "p50": 285.28,
+            "p90": 285.9,
+            "std": 0.49,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 284.51,
+            "p50": 285.17,
+            "p90": 285.84,
+            "std": 0.52,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 284.36,
+            "p50": 285.07,
+            "p90": 285.77,
+            "std": 0.55,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 284.21,
+            "p50": 284.96,
+            "p90": 285.71,
+            "std": 0.58,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 284.07,
+            "p50": 284.85,
+            "p90": 285.64,
+            "std": 0.61,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 283.92,
+            "p50": 284.75,
+            "p90": 285.58,
+            "std": 0.65,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "estres": {
+        "label": "Massa amb estr\u00e8s h\u00eddric",
+        "unit": "% de la superf\u00edcie",
+        "source": "Sentinel-2 NDVI + WSL",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 7.2
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -496.65,
+            "p50": -496.53,
+            "p90": -496.41,
+            "std": 0.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -496.4,
+            "p50": -496.28,
+            "p90": -496.16,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -496.16,
+            "p50": -496.03,
+            "p90": -495.9,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -495.92,
+            "p50": -495.78,
+            "p90": -495.64,
+            "std": 0.11,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -495.68,
+            "p50": -495.53,
+            "p90": -495.38,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -495.44,
+            "p50": -495.28,
+            "p90": -495.12,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -495.2,
+            "p50": -495.03,
+            "p90": -494.86,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -494.96,
+            "p50": -494.78,
+            "p90": -494.6,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "escol\u00edtids": {
+        "label": "Danys per escol\u00edtids",
+        "unit": "1000 m\u00b3/any",
+        "source": "WSL Sanitat forestal",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 210
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -13555.26,
+            "p50": -13549.49,
+            "p90": -13543.72,
+            "std": 4.5,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -13548.85,
+            "p50": -13542.66,
+            "p90": -13536.46,
+            "std": 4.83,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -13542.45,
+            "p50": -13535.82,
+            "p90": -13529.2,
+            "std": 5.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -13536.04,
+            "p50": -13528.99,
+            "p90": -13521.94,
+            "std": 5.5,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -13529.64,
+            "p50": -13522.16,
+            "p90": -13514.68,
+            "std": 5.83,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -13523.23,
+            "p50": -13515.33,
+            "p90": -13507.42,
+            "std": 6.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -13516.83,
+            "p50": -13508.5,
+            "p90": -13500.16,
+            "std": 6.5,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -13510.42,
+            "p50": -13501.66,
+            "p90": -13492.91,
+            "std": 6.83,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "regeneracio": {
+        "label": "Regeneraci\u00f3 amb esp\u00e8cies adaptades",
+        "unit": "%",
+        "source": "LFI + Cadastre de gesti\u00f3",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 24
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -779.2,
+            "p50": -779.2,
+            "p90": -779.2,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -778.8,
+            "p50": -778.8,
+            "p90": -778.8,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -778.4,
+            "p50": -778.4,
+            "p90": -778.4,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -778.0,
+            "p50": -778.0,
+            "p90": -778.0,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -777.6,
+            "p50": -777.6,
+            "p90": -777.6,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -777.2,
+            "p50": -777.2,
+            "p90": -777.2,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -776.8,
+            "p50": -776.8,
+            "p90": -776.8,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -776.4,
+            "p50": -776.4,
+            "p90": -776.4,
+            "std": 0.0,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "label": "Qualitat ecol\u00f2gica dels rius",
+        "unit": "\u00edndex /100",
+        "source": "NADUF (BAFU)",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 78
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -792.89,
+            "p50": -792.73,
+            "p90": -792.56,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -792.47,
+            "p50": -792.29,
+            "p90": -792.12,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -792.05,
+            "p50": -791.86,
+            "p90": -791.67,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -791.63,
+            "p50": -791.43,
+            "p90": -791.23,
+            "std": 0.16,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -791.21,
+            "p50": -791.0,
+            "p90": -790.78,
+            "std": 0.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -790.79,
+            "p50": -790.56,
+            "p90": -790.34,
+            "std": 0.18,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -790.37,
+            "p50": -790.13,
+            "p90": -789.89,
+            "std": 0.19,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -789.95,
+            "p50": -789.7,
+            "p90": -789.45,
+            "std": 0.19,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "nitrats": {
+        "label": "Nitrats a l'aigua subterr\u00e0nia",
+        "unit": "mg/l",
+        "source": "NAQUA (BAFU)",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 21.2
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 530.38,
+            "p50": 530.67,
+            "p90": 530.97,
+            "std": 0.23,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 530.1,
+            "p50": 530.42,
+            "p90": 530.74,
+            "std": 0.25,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 529.83,
+            "p50": 530.17,
+            "p90": 530.51,
+            "std": 0.26,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 529.55,
+            "p50": 529.91,
+            "p90": 530.28,
+            "std": 0.28,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 529.28,
+            "p50": 529.66,
+            "p90": 530.04,
+            "std": 0.3,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 529.0,
+            "p50": 529.41,
+            "p90": 529.81,
+            "std": 0.32,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 528.73,
+            "p50": 529.16,
+            "p90": 529.58,
+            "std": 0.33,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 528.45,
+            "p50": 528.9,
+            "p90": 529.35,
+            "std": 0.35,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "consum": {
+        "label": "Consum d'aigua potable",
+        "unit": "l/hab\u00b7dia",
+        "source": "BFS Estad\u00edstica d'aigua",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 302
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 2027.24,
+            "p50": 2028.14,
+            "p90": 2029.05,
+            "std": 0.71,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 2026.31,
+            "p50": 2027.29,
+            "p90": 2028.26,
+            "std": 0.76,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 2025.39,
+            "p50": 2026.43,
+            "p90": 2027.47,
+            "std": 0.81,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 2024.46,
+            "p50": 2025.57,
+            "p90": 2026.68,
+            "std": 0.86,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 2023.54,
+            "p50": 2024.71,
+            "p90": 2025.89,
+            "std": 0.92,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 2022.62,
+            "p50": 2023.86,
+            "p90": 2025.1,
+            "std": 0.97,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 2021.69,
+            "p50": 2023.0,
+            "p90": 2024.31,
+            "std": 1.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 2020.77,
+            "p50": 2022.14,
+            "p90": 2023.52,
+            "std": 1.07,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "cabal": {
+        "label": "Cabal estival respecte de la mitjana",
+        "unit": "%",
+        "source": "FOEN Hidrologia",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 80
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 1124.79,
+            "p50": 1125.27,
+            "p90": 1125.75,
+            "std": 0.37,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 1124.24,
+            "p50": 1124.75,
+            "p90": 1125.27,
+            "std": 0.4,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 1123.68,
+            "p50": 1124.23,
+            "p90": 1124.78,
+            "std": 0.43,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 1123.13,
+            "p50": 1123.71,
+            "p90": 1124.3,
+            "std": 0.46,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 1122.57,
+            "p50": 1123.2,
+            "p90": 1123.82,
+            "std": 0.49,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 1122.02,
+            "p50": 1122.68,
+            "p90": 1123.33,
+            "std": 0.51,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 1121.46,
+            "p50": 1122.16,
+            "p90": 1122.85,
+            "std": 0.54,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 1120.91,
+            "p50": 1121.64,
+            "p90": 1122.37,
+            "std": 0.57,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "micropolluents": {
+        "label": "Micropol\u00b7luents eliminats a les depuradores",
+        "unit": "%",
+        "source": "OFEV Enquesta EDAR",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 26
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -1693.38,
+            "p50": -1691.99,
+            "p90": -1690.59,
+            "std": 1.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -1692.63,
+            "p50": -1691.14,
+            "p90": -1689.64,
+            "std": 1.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -1691.88,
+            "p50": -1690.28,
+            "p90": -1688.68,
+            "std": 1.25,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -1691.13,
+            "p50": -1689.43,
+            "p90": -1687.72,
+            "std": 1.33,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -1690.38,
+            "p50": -1688.58,
+            "p90": -1686.77,
+            "std": 1.41,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -1689.63,
+            "p50": -1687.72,
+            "p90": -1685.81,
+            "std": 1.49,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -1688.88,
+            "p50": -1686.87,
+            "p90": -1684.85,
+            "std": 1.57,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -1688.13,
+            "p50": -1686.02,
+            "p90": -1683.9,
+            "std": 1.65,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "label": "R\u00e0tio alumnat per docent",
+        "unit": "alumnes",
+        "source": "BFS Estad\u00edstica escolar",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 14.9
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 81.73,
+            "p50": 81.79,
+            "p90": 81.86,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 81.69,
+            "p50": 81.76,
+            "p90": 81.83,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 81.65,
+            "p50": 81.73,
+            "p90": 81.8,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 81.61,
+            "p50": 81.69,
+            "p90": 81.77,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 81.57,
+            "p50": 81.66,
+            "p90": 81.75,
+            "std": 0.07,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 81.54,
+            "p50": 81.63,
+            "p90": 81.72,
+            "std": 0.07,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 81.5,
+            "p50": 81.59,
+            "p90": 81.69,
+            "std": 0.07,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 81.46,
+            "p50": 81.56,
+            "p90": 81.66,
+            "std": 0.08,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "despesa": {
+        "label": "Despesa p\u00fablica per alumne",
+        "unit": "CHF/any",
+        "source": "BFS Contes de l'educaci\u00f3",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 20600
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -87323.27,
+            "p50": -87246.43,
+            "p90": -87169.58,
+            "std": 59.94,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -87275.39,
+            "p50": -87192.86,
+            "p90": -87110.32,
+            "std": 64.38,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -87227.51,
+            "p50": -87139.29,
+            "p90": -87051.06,
+            "std": 68.82,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -87179.64,
+            "p50": -87085.71,
+            "p90": -86991.79,
+            "std": 73.26,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -87131.76,
+            "p50": -87032.14,
+            "p90": -86932.53,
+            "std": 77.7,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -87083.88,
+            "p50": -86978.57,
+            "p90": -86873.27,
+            "std": 82.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -87036.0,
+            "p50": -86925.0,
+            "p90": -86814.0,
+            "std": 86.58,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -86988.12,
+            "p50": -86871.43,
+            "p90": -86754.74,
+            "std": 91.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "titulacio": {
+        "label": "Titulaci\u00f3 de secund\u00e0ria II als 25 anys",
+        "unit": "%",
+        "source": "BFS Enquesta de for\u00e7a de treball",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 90.4
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -168.62,
+            "p50": -168.47,
+            "p90": -168.32,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -168.51,
+            "p50": -168.34,
+            "p90": -168.18,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -168.39,
+            "p50": -168.21,
+            "p90": -168.04,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -168.27,
+            "p50": -168.09,
+            "p90": -167.9,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -168.15,
+            "p50": -167.96,
+            "p90": -167.76,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -168.04,
+            "p50": -167.83,
+            "p90": -167.62,
+            "std": 0.16,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -167.92,
+            "p50": -167.7,
+            "p90": -167.48,
+            "std": 0.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -167.8,
+            "p50": -167.57,
+            "p90": -167.34,
+            "std": 0.18,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "dual": {
+        "label": "Alumnat en formaci\u00f3 professional dual",
+        "unit": "%",
+        "source": "BFS Registre d'aprenents",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 63
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 474.29,
+            "p50": 474.68,
+            "p90": 475.08,
+            "std": 0.31,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 474.06,
+            "p50": 474.48,
+            "p90": 474.91,
+            "std": 0.33,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 473.82,
+            "p50": 474.28,
+            "p90": 474.73,
+            "std": 0.35,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 473.59,
+            "p50": 474.07,
+            "p90": 474.56,
+            "std": 0.38,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 473.35,
+            "p50": 473.87,
+            "p90": 474.38,
+            "std": 0.4,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 473.12,
+            "p50": 473.66,
+            "p90": 474.2,
+            "std": 0.42,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 472.89,
+            "p50": 473.46,
+            "p90": 474.03,
+            "std": 0.45,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 472.65,
+            "p50": 473.25,
+            "p90": 473.85,
+            "std": 0.47,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "digital": {
+        "label": "Centres amb infraestructura digital completa",
+        "unit": "%",
+        "source": "opendata.swiss",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 36
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -5689.07,
+            "p50": -5686.53,
+            "p90": -5683.99,
+            "std": 1.98,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -5686.41,
+            "p50": -5683.68,
+            "p90": -5680.95,
+            "std": 2.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -5683.76,
+            "p50": -5680.84,
+            "p90": -5677.92,
+            "std": 2.28,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -5681.11,
+            "p50": -5678.0,
+            "p90": -5674.89,
+            "std": 2.42,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -5678.45,
+            "p50": -5675.16,
+            "p90": -5671.86,
+            "std": 2.57,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -5675.8,
+            "p50": -5672.32,
+            "p90": -5668.83,
+            "std": 2.72,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -5673.14,
+            "p50": -5669.47,
+            "p90": -5665.8,
+            "std": 2.86,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -5670.49,
+            "p50": -5666.63,
+            "p90": -5662.77,
+            "std": 3.01,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "label": "Viatges en transport p\u00fablic",
+        "unit": "viatges/hab\u00b7any",
+        "source": "BFS Microcens mobilitat",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 232
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -920.77,
+            "p50": -917.52,
+            "p90": -914.26,
+            "std": 2.54,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -920.44,
+            "p50": -916.94,
+            "p90": -913.45,
+            "std": 2.73,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -920.11,
+            "p50": -916.37,
+            "p90": -912.63,
+            "std": 2.92,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -919.78,
+            "p50": -915.8,
+            "p90": -911.82,
+            "std": 3.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -919.44,
+            "p50": -915.22,
+            "p90": -911.0,
+            "std": 3.29,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -919.11,
+            "p50": -914.65,
+            "p90": -910.19,
+            "std": 3.48,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -918.78,
+            "p50": -914.08,
+            "p90": -909.37,
+            "std": 3.67,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -918.45,
+            "p50": -913.5,
+            "p90": -908.56,
+            "std": 3.86,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "retencio": {
+        "label": "Hores de retenci\u00f3 a la xarxa",
+        "unit": "h/1000 hab",
+        "source": "ASTRA Comptadors autom\u00e0tics",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 41
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -1359.87,
+            "p50": -1359.52,
+            "p90": -1359.16,
+            "std": 0.28,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -1359.2,
+            "p50": -1358.82,
+            "p90": -1358.44,
+            "std": 0.3,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -1358.53,
+            "p50": -1358.12,
+            "p90": -1357.71,
+            "std": 0.32,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -1357.87,
+            "p50": -1357.43,
+            "p90": -1356.99,
+            "std": 0.34,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -1357.2,
+            "p50": -1356.73,
+            "p90": -1356.27,
+            "std": 0.36,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -1356.53,
+            "p50": -1356.04,
+            "p90": -1355.55,
+            "std": 0.38,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -1355.86,
+            "p50": -1355.34,
+            "p90": -1354.83,
+            "std": 0.4,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -1355.19,
+            "p50": -1354.65,
+            "p90": -1354.1,
+            "std": 0.42,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "bici": {
+        "label": "Quota modal de bicicleta",
+        "unit": "%",
+        "source": "BFS Microcens mobilitat",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 7.1
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -225.13,
+            "p50": -225.01,
+            "p90": -224.9,
+            "std": 0.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -225.02,
+            "p50": -224.9,
+            "p90": -224.77,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -224.91,
+            "p50": -224.78,
+            "p90": -224.65,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -224.8,
+            "p50": -224.66,
+            "p90": -224.52,
+            "std": 0.11,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -224.7,
+            "p50": -224.55,
+            "p90": -224.4,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -224.59,
+            "p50": -224.43,
+            "p90": -224.28,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -224.48,
+            "p50": -224.32,
+            "p90": -224.15,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -224.38,
+            "p50": -224.2,
+            "p90": -224.03,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "electric": {
+        "label": "Vehicles el\u00e8ctrics al parc",
+        "unit": "%",
+        "source": "MOFIS Registre de vehicles",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 0.6
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -125.86,
+            "p50": -125.82,
+            "p90": -125.78,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -125.8,
+            "p50": -125.76,
+            "p90": -125.72,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -125.74,
+            "p50": -125.7,
+            "p90": -125.65,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -125.68,
+            "p50": -125.64,
+            "p90": -125.59,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -125.62,
+            "p50": -125.57,
+            "p90": -125.52,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -125.56,
+            "p50": -125.51,
+            "p90": -125.46,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -125.5,
+            "p50": -125.45,
+            "p90": -125.39,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -125.45,
+            "p50": -125.38,
+            "p90": -125.32,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "puntualitat": {
+        "label": "Puntualitat ferrovi\u00e0ria",
+        "unit": "%",
+        "source": "SBB Dades d'explotaci\u00f3",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 89.2
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 146.52,
+            "p50": 146.67,
+            "p90": 146.82,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 146.48,
+            "p50": 146.64,
+            "p90": 146.81,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 146.44,
+            "p50": 146.61,
+            "p90": 146.79,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 146.4,
+            "p50": 146.59,
+            "p90": 146.77,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 146.36,
+            "p50": 146.56,
+            "p90": 146.75,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 146.32,
+            "p50": 146.53,
+            "p90": 146.74,
+            "std": 0.16,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 146.28,
+            "p50": 146.5,
+            "p90": 146.72,
+            "std": 0.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 146.24,
+            "p50": 146.47,
+            "p90": 146.7,
+            "std": 0.18,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "energia": {
+      "co2": {
+        "label": "Emissions de gasos amb efecte d'hivernacle",
+        "unit": "t CO\u2082eq/hab",
+        "source": "BAFU Inventari nacional",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 5.3
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 118.05,
+            "p50": 118.1,
+            "p90": 118.15,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 117.99,
+            "p50": 118.04,
+            "p90": 118.09,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 117.93,
+            "p50": 117.98,
+            "p90": 118.04,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 117.87,
+            "p50": 117.93,
+            "p90": 117.99,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 117.81,
+            "p50": 117.87,
+            "p90": 117.94,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 117.75,
+            "p50": 117.82,
+            "p90": 117.88,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 117.69,
+            "p50": 117.76,
+            "p90": 117.83,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 117.63,
+            "p50": 117.7,
+            "p90": 117.78,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "renov": {
+        "label": "Quota renovable del consum final",
+        "unit": "%",
+        "source": "SFOE Estad\u00edstica energ\u00e8tica",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 23
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -847.89,
+            "p50": -847.73,
+            "p90": -847.56,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -847.47,
+            "p50": -847.29,
+            "p90": -847.12,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -847.05,
+            "p50": -846.86,
+            "p90": -846.67,
+            "std": 0.15,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -846.63,
+            "p50": -846.43,
+            "p90": -846.23,
+            "std": 0.16,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -846.21,
+            "p50": -846.0,
+            "p90": -845.78,
+            "std": 0.17,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -845.79,
+            "p50": -845.56,
+            "p90": -845.34,
+            "std": 0.18,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -845.37,
+            "p50": -845.13,
+            "p90": -844.89,
+            "std": 0.19,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -844.95,
+            "p50": -844.7,
+            "p90": -844.45,
+            "std": 0.19,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "solar": {
+        "label": "Pot\u00e8ncia fotovoltaica instal\u00b7lada",
+        "unit": "W/hab",
+        "source": "Pronovo Registre",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 175
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -20270.16,
+            "p50": -20261.17,
+            "p90": -20252.17,
+            "std": 7.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -20260.68,
+            "p50": -20251.02,
+            "p90": -20241.35,
+            "std": 7.54,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -20251.19,
+            "p50": -20240.86,
+            "p90": -20230.54,
+            "std": 8.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -20241.71,
+            "p50": -20230.71,
+            "p90": -20219.72,
+            "std": 8.57,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -20232.22,
+            "p50": -20220.56,
+            "p90": -20208.9,
+            "std": 9.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -20222.74,
+            "p50": -20210.41,
+            "p90": -20198.09,
+            "std": 9.61,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -20213.25,
+            "p50": -20200.26,
+            "p90": -20187.27,
+            "std": 10.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -20203.77,
+            "p50": -20190.11,
+            "p90": -20176.45,
+            "std": 10.65,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "consum": {
+        "label": "Consum final d'energia",
+        "unit": "MWh/hab",
+        "source": "SFOE Estad\u00edstica energ\u00e8tica",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 25.8
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 171.76,
+            "p50": 171.87,
+            "p90": 171.99,
+            "std": 0.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 171.68,
+            "p50": 171.8,
+            "p90": 171.93,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 171.6,
+            "p50": 171.73,
+            "p90": 171.86,
+            "std": 0.1,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 171.52,
+            "p50": 171.66,
+            "p90": 171.8,
+            "std": 0.11,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 171.43,
+            "p50": 171.58,
+            "p90": 171.73,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 171.35,
+            "p50": 171.51,
+            "p90": 171.67,
+            "std": 0.12,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 171.27,
+            "p50": 171.44,
+            "p90": 171.61,
+            "std": 0.13,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 171.19,
+            "p50": 171.37,
+            "p90": 171.54,
+            "std": 0.14,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "hivern": {
+        "label": "Cobertura del d\u00e8ficit hivernal",
+        "unit": "%",
+        "source": "Swissgrid Balan\u00e7",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 71
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -527.67,
+            "p50": -527.18,
+            "p90": -526.68,
+            "std": 0.38,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -527.41,
+            "p50": -526.88,
+            "p90": -526.35,
+            "std": 0.41,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -527.15,
+            "p50": -526.58,
+            "p90": -526.02,
+            "std": 0.44,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -526.89,
+            "p50": -526.29,
+            "p90": -525.68,
+            "std": 0.47,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -526.63,
+            "p50": -525.99,
+            "p90": -525.35,
+            "std": 0.5,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -526.37,
+            "p50": -525.69,
+            "p90": -525.02,
+            "std": 0.53,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -526.11,
+            "p50": -525.39,
+            "p90": -524.68,
+            "std": 0.56,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -525.85,
+            "p50": -525.1,
+            "p90": -524.35,
+            "std": 0.58,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "serveis": {
+      "metges": {
+        "label": "Metges de fam\u00edlia per 10k habitants",
+        "unit": "metges",
+        "source": "FMH Estad\u00edstica profesional",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 8.3
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -35.93,
+            "p50": -35.91,
+            "p90": -35.89,
+            "std": 0.01,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -35.91,
+            "p50": -35.89,
+            "p90": -35.87,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -35.89,
+            "p50": -35.87,
+            "p90": -35.85,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -35.87,
+            "p50": -35.84,
+            "p90": -35.82,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -35.85,
+            "p50": -35.82,
+            "p90": -35.8,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -35.83,
+            "p50": -35.8,
+            "p90": -35.78,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -35.8,
+            "p50": -35.78,
+            "p90": -35.75,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -35.78,
+            "p50": -35.76,
+            "p90": -35.73,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "espera": {
+        "label": "Temps d'espera a urg\u00e8ncies",
+        "unit": "minuts",
+        "source": "OFSP Estad\u00edstica hospital\u00e0ria",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 41
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -655.64,
+            "p50": -655.18,
+            "p90": -654.72,
+            "std": 0.36,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -655.33,
+            "p50": -654.83,
+            "p90": -654.34,
+            "std": 0.38,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -655.01,
+            "p50": -654.49,
+            "p90": -653.96,
+            "std": 0.41,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -654.7,
+            "p50": -654.14,
+            "p90": -653.58,
+            "std": 0.44,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -654.39,
+            "p50": -653.8,
+            "p90": -653.2,
+            "std": 0.46,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -654.08,
+            "p50": -653.45,
+            "p90": -652.82,
+            "std": 0.49,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -653.77,
+            "p50": -653.11,
+            "p90": -652.44,
+            "std": 0.52,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -653.45,
+            "p50": -652.76,
+            "p90": -652.07,
+            "std": 0.54,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "cost": {
+        "label": "Despesa sanit\u00e0ria per habitant",
+        "unit": "CHF/any",
+        "source": "OFSP Contes de salut",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 7850
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -32378.35,
+            "p50": -32338.46,
+            "p90": -32298.57,
+            "std": 31.11,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -32361.34,
+            "p50": -32318.5,
+            "p90": -32275.65,
+            "std": 33.42,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -32344.33,
+            "p50": -32298.53,
+            "p90": -32252.74,
+            "std": 35.72,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -32327.32,
+            "p50": -32278.57,
+            "p90": -32229.82,
+            "std": 38.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -32310.32,
+            "p50": -32258.61,
+            "p90": -32206.9,
+            "std": 40.33,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -32293.31,
+            "p50": -32238.65,
+            "p90": -32183.98,
+            "std": 42.64,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -32276.3,
+            "p50": -32218.68,
+            "p90": -32161.07,
+            "std": 44.94,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -32259.29,
+            "p50": -32198.72,
+            "p90": -32138.15,
+            "std": 47.25,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "domicili": {
+        "label": "Cobertura d'atenci\u00f3 domicili\u00e0ria",
+        "unit": "% de la demanda",
+        "source": "OFSP Enquesta de serveis",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 60
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -1235.12,
+            "p50": -1234.36,
+            "p90": -1233.59,
+            "std": 0.6,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -1234.53,
+            "p50": -1233.71,
+            "p90": -1232.89,
+            "std": 0.64,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -1233.95,
+            "p50": -1233.07,
+            "p90": -1232.2,
+            "std": 0.68,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -1233.36,
+            "p50": -1232.43,
+            "p90": -1231.5,
+            "std": 0.73,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -1232.77,
+            "p50": -1231.79,
+            "p90": -1230.8,
+            "std": 0.77,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -1232.19,
+            "p50": -1231.14,
+            "p90": -1230.1,
+            "std": 0.82,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -1231.6,
+            "p50": -1230.5,
+            "p90": -1229.4,
+            "std": 0.86,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -1231.02,
+            "p50": -1229.86,
+            "p90": -1228.7,
+            "std": 0.9,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "dossier": {
+        "label": "Historial cl\u00ednic electr\u00f2nic actiu",
+        "unit": "% de la poblaci\u00f3",
+        "source": "eHealth Su\u00efssa",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 3.5
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -772.25,
+            "p50": -771.98,
+            "p90": -771.72,
+            "std": 0.21,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -771.88,
+            "p50": -771.6,
+            "p90": -771.31,
+            "std": 0.22,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -771.52,
+            "p50": -771.21,
+            "p90": -770.91,
+            "std": 0.24,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -771.15,
+            "p50": -770.83,
+            "p90": -770.5,
+            "std": 0.25,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -770.79,
+            "p50": -770.44,
+            "p90": -770.1,
+            "std": 0.27,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -770.42,
+            "p50": -770.06,
+            "p90": -769.69,
+            "std": 0.28,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -770.06,
+            "p50": -769.67,
+            "p90": -769.29,
+            "std": 0.3,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -769.69,
+            "p50": -769.29,
+            "p90": -768.88,
+            "std": 0.32,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    },
+    "territori": {
+      "vacants": {
+        "label": "Taxa d'habitatges buits",
+        "unit": "%",
+        "source": "BFS Estad\u00edstica d'habitatges",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 1.18
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 37.17,
+            "p50": 37.2,
+            "p90": 37.24,
+            "std": 0.02,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 37.15,
+            "p50": 37.19,
+            "p90": 37.22,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 37.13,
+            "p50": 37.17,
+            "p90": 37.2,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 37.11,
+            "p50": 37.15,
+            "p90": 37.19,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 37.09,
+            "p50": 37.13,
+            "p90": 37.17,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 37.07,
+            "p50": 37.11,
+            "p90": 37.16,
+            "std": 0.03,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 37.05,
+            "p50": 37.1,
+            "p90": 37.14,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 37.03,
+            "p50": 37.08,
+            "p90": 37.13,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "lloguer": {
+        "label": "Lloguer mitj\u00e0 ofert",
+        "unit": "CHF/m\u00b2\u00b7any",
+        "source": "Ind\u00fastria immobili\u00e0ria",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 193
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -1541.22,
+            "p50": -1540.3,
+            "p90": -1539.38,
+            "std": 0.72,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -1540.43,
+            "p50": -1539.44,
+            "p90": -1538.45,
+            "std": 0.77,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -1539.63,
+            "p50": -1538.58,
+            "p90": -1537.52,
+            "std": 0.83,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -1538.84,
+            "p50": -1537.71,
+            "p90": -1536.59,
+            "std": 0.88,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -1538.05,
+            "p50": -1536.85,
+            "p90": -1535.66,
+            "std": 0.93,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -1537.25,
+            "p50": -1535.99,
+            "p90": -1534.73,
+            "std": 0.98,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -1536.46,
+            "p50": -1535.13,
+            "p90": -1533.8,
+            "std": 1.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -1535.67,
+            "p50": -1534.27,
+            "p90": -1532.87,
+            "std": 1.09,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "sol": {
+        "label": "Consum de s\u00f2l per habitant",
+        "unit": "m\u00b2",
+        "source": "Arealstatistik swisstopo",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 406
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 1198.39,
+            "p50": 1198.87,
+            "p90": 1199.34,
+            "std": 0.37,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 1197.96,
+            "p50": 1198.47,
+            "p90": 1198.99,
+            "std": 0.4,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 1197.53,
+            "p50": 1198.08,
+            "p90": 1198.63,
+            "std": 0.43,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 1197.1,
+            "p50": 1197.68,
+            "p90": 1198.27,
+            "std": 0.45,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 1196.67,
+            "p50": 1197.29,
+            "p90": 1197.91,
+            "std": 0.48,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 1196.24,
+            "p50": 1196.89,
+            "p90": 1197.55,
+            "std": 0.51,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 1195.81,
+            "p50": 1196.5,
+            "p90": 1197.19,
+            "std": 0.54,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 1195.38,
+            "p50": 1196.11,
+            "p90": 1196.83,
+            "std": 0.56,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "densificacio": {
+        "label": "Habitatge nou en s\u00f2l ja urbanitzat",
+        "unit": "%",
+        "source": "BFS Estad\u00edstica de construcci\u00f3",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 66
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": -888.2,
+            "p50": -887.42,
+            "p90": -886.64,
+            "std": 0.61,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": -887.78,
+            "p50": -886.95,
+            "p90": -886.11,
+            "std": 0.65,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": -887.37,
+            "p50": -886.47,
+            "p90": -885.58,
+            "std": 0.7,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": -886.95,
+            "p50": -886.0,
+            "p90": -885.05,
+            "std": 0.74,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": -886.53,
+            "p50": -885.53,
+            "p90": -884.52,
+            "std": 0.79,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": -886.12,
+            "p50": -885.05,
+            "p90": -883.99,
+            "std": 0.83,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": -885.7,
+            "p50": -884.58,
+            "p90": -883.46,
+            "std": 0.88,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": -885.29,
+            "p50": -884.11,
+            "p90": -882.92,
+            "std": 0.92,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      },
+      "agricola": {
+        "label": "Superf\u00edcie agr\u00edcola \u00fatil",
+        "unit": "% del territori",
+        "source": "Arealstatistik swisstopo",
+        "better": "high",
+        "target": null,
+        "last_observed": {
+          "year": 2024,
+          "value": 35.2
+        },
+        "forecast": [
+          {
+            "year": 2025,
+            "p10": 114.44,
+            "p50": 114.49,
+            "p90": 114.53,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2026,
+            "p10": 114.4,
+            "p50": 114.45,
+            "p90": 114.5,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2027,
+            "p10": 114.35,
+            "p50": 114.41,
+            "p90": 114.46,
+            "std": 0.04,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2028,
+            "p10": 114.31,
+            "p50": 114.37,
+            "p90": 114.43,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2029,
+            "p10": 114.27,
+            "p50": 114.33,
+            "p90": 114.39,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2030,
+            "p10": 114.22,
+            "p50": 114.29,
+            "p90": 114.35,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2031,
+            "p10": 114.18,
+            "p50": 114.25,
+            "p90": 114.32,
+            "std": 0.05,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          },
+          {
+            "year": 2032,
+            "p10": 114.14,
+            "p50": 114.21,
+            "p90": 114.28,
+            "std": 0.06,
+            "status": "forecast",
+            "model": "linear-bayesian-v1"
+          }
+        ]
+      }
+    }
+  }
+}

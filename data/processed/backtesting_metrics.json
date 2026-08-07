@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:15:01.352367",
+    "model_version": "linear-bayesian-v1",
+    "test_method": "hold-out-last-year",
+    "metric_definitions": {
+      "mape": "Mean Absolute Percentage Error (%)",
+      "mae": "Mean Absolute Error"
+    }
+  },
+  "backtesting": {
+    "bosc": {
+      "superficie": {
+        "year_test": 2024,
+        "actual": 31.6,
+        "predicted": -8.48,
+        "mape": 126.84,
+        "mae": 40.08
+      },
+      "vitalitat": {
+        "year_test": 2024,
+        "actual": 74,
+        "predicted": 353.84,
+        "mape": 378.16,
+        "mae": 279.84
+      },
+      "estres": {
+        "year_test": 2024,
+        "actual": 7.2,
+        "predicted": -506.83,
+        "mape": 7139.31,
+        "mae": 514.03
+      },
+      "escol\u00edtids": {
+        "year_test": 2024,
+        "actual": 210,
+        "predicted": -13593.48,
+        "mape": 6573.08,
+        "mae": 13803.4766
+      },
+      "regeneracio": {
+        "year_test": 2024,
+        "actual": 24,
+        "predicted": -779.6,
+        "mape": 3348.33,
+        "mae": 803.6
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "year_test": 2024,
+        "actual": 78,
+        "predicted": -788.29,
+        "mape": 1110.63,
+        "mae": 866.2897
+      },
+      "nitrats": {
+        "year_test": 2024,
+        "actual": 21.2,
+        "predicted": 567.11,
+        "mape": 2575.06,
+        "mae": 545.9131
+      },
+      "consum": {
+        "year_test": 2024,
+        "actual": 302,
+        "predicted": 2090.66,
+        "mape": 592.27,
+        "mae": 1788.6636
+      },
+      "cabal": {
+        "year_test": 2024,
+        "actual": 80,
+        "predicted": 947.29,
+        "mape": 1084.11,
+        "mae": 867.2897
+      },
+      "micropolluents": {
+        "year_test": 2024,
+        "actual": 26,
+        "predicted": -2006.03,
+        "mape": 7815.49,
+        "mae": 2032.028
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "year_test": 2024,
+        "actual": 14.9,
+        "predicted": 98.6,
+        "mape": 561.78,
+        "mae": 83.7048
+      },
+      "despesa": {
+        "year_test": 2024,
+        "actual": 20600,
+        "predicted": -107340.65,
+        "mape": 621.07,
+        "mae": 127940.6542
+      },
+      "titulacio": {
+        "year_test": 2024,
+        "actual": 90.4,
+        "predicted": -199.43,
+        "mape": 320.61,
+        "mae": 289.8318
+      },
+      "dual": {
+        "year_test": 2024,
+        "actual": 63,
+        "predicted": 561.54,
+        "mape": 791.34,
+        "mae": 498.543
+      },
+      "digital": {
+        "year_test": 2024,
+        "actual": 36,
+        "predicted": -6325.48,
+        "mape": 17670.77,
+        "mae": 6361.4766
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "year_test": 2024,
+        "actual": 232,
+        "predicted": -1771.0,
+        "mape": 863.36,
+        "mae": 2003.0
+      },
+      "retencio": {
+        "year_test": 2024,
+        "actual": 41,
+        "predicted": -1446.21,
+        "mape": 3627.35,
+        "mae": 1487.215
+      },
+      "bici": {
+        "year_test": 2024,
+        "actual": 7.1,
+        "predicted": -253.96,
+        "mape": 3676.95,
+        "mae": 261.0633
+      },
+      "electric": {
+        "year_test": 2024,
+        "actual": 0.6,
+        "predicted": -134.0,
+        "mape": 22433.41,
+        "mae": 134.6005
+      },
+      "puntualitat": {
+        "year_test": 2024,
+        "actual": 89.2,
+        "predicted": 177.53,
+        "mape": 99.03,
+        "mae": 88.3318
+      }
+    },
+    "energia": {
+      "co2": {
+        "year_test": 2024,
+        "actual": 5.3,
+        "predicted": 125.78,
+        "mape": 2273.2,
+        "mae": 120.4794
+      },
+      "renov": {
+        "year_test": 2024,
+        "actual": 23,
+        "predicted": -843.29,
+        "mape": 3766.48,
+        "mae": 866.2897
+      },
+      "solar": {
+        "year_test": 2024,
+        "actual": 175,
+        "predicted": -23159.77,
+        "mape": 13334.15,
+        "mae": 23334.7664
+      },
+      "consum": {
+        "year_test": 2024,
+        "actual": 25.8,
+        "predicted": 195.15,
+        "mape": 656.4,
+        "mae": 169.3523
+      },
+      "hivern": {
+        "year_test": 2024,
+        "actual": 71,
+        "predicted": -512.87,
+        "mape": 822.35,
+        "mae": 583.8692
+      }
+    },
+    "serveis": {
+      "metges": {
+        "year_test": 2024,
+        "actual": 8.3,
+        "predicted": -38.95,
+        "mape": 569.28,
+        "mae": 47.2504
+      },
+      "espera": {
+        "year_test": 2024,
+        "actual": 41,
+        "predicted": -824.29,
+        "mape": 2110.46,
+        "mae": 865.2897
+      },
+      "cost": {
+        "year_test": 2024,
+        "actual": 7850,
+        "predicted": -39190.09,
+        "mape": 599.24,
+        "mae": 47040.0935
+      },
+      "domicili": {
+        "year_test": 2024,
+        "actual": 60,
+        "predicted": -1389.16,
+        "mape": 2415.26,
+        "mae": 1449.1589
+      },
+      "dossier": {
+        "year_test": 2024,
+        "actual": 3.5,
+        "predicted": -699.35,
+        "mape": 20081.31,
+        "mae": 702.8458
+      }
+    },
+    "territori": {
+      "vacants": {
+        "year_test": 2024,
+        "actual": 1.18,
+        "predicted": 44.26,
+        "mape": 3651.2,
+        "mae": 43.0842
+      },
+      "lloguer": {
+        "year_test": 2024,
+        "actual": 193,
+        "predicted": -1782.94,
+        "mape": 1023.81,
+        "mae": 1975.9439
+      },
+      "sol": {
+        "year_test": 2024,
+        "actual": 406,
+        "predicted": 1076.67,
+        "mape": 165.19,
+        "mae": 670.6667
+      },
+      "densificacio": {
+        "year_test": 2024,
+        "actual": 66,
+        "predicted": -1137.79,
+        "mape": 1823.93,
+        "mae": 1203.7944
+      },
+      "agricola": {
+        "year_test": 2024,
+        "actual": 35.2,
+        "predicted": 102.27,
+        "mape": 190.53,
+        "mae": 67.0667
+      }
+    }
+  }
+}
