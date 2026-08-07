@@ -54,6 +54,13 @@
             margin-bottom: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         header h1 {
@@ -64,6 +71,49 @@
         header p {
             font-size: 1.1em;
             opacity: 0.9;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 16px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .language-selector label {
+            color: white;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .language-selector select {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            background: white;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .language-selector select:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .language-selector {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         .controls {
@@ -369,8 +419,21 @@
 <body>
     <div class="container">
         <header>
-            <h1>🇨🇭 Swiss Governance Dashboard</h1>
-            <p>Interactive Policy Simulator with SHAP Explainability (FASE 3.4)</p>
+            <div class="header-content">
+                <h1 id="headerTitle">🇨🇭 Swiss Governance Dashboard</h1>
+                <p id="headerSubtitle">Interactive Policy Simulator with SHAP Explainability (FASE 3.4)</p>
+            </div>
+            <div class="language-selector">
+                <label for="langSelect">🌐</label>
+                <select id="langSelect" onchange="changeLanguage(this.value)">
+                    <option value="ca">Català</option>
+                    <option value="en" selected>English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="rm">Rumantsch</option>
+                </select>
+            </div>
         </header>
 
         <div class="controls">
@@ -409,6 +472,166 @@
     </footer>
 
     <script>
+        // ============================================================================
+        // TRANSLATIONS
+        // ============================================================================
+        const TRANSLATIONS = {
+            ca: {
+                headerTitle: "🇨🇭 Dashboard de Governança Suïssa",
+                headerSubtitle: "Simulador Interactiu de Polítiques amb Explicabilitat SHAP (FASE 3.4)",
+                simulatorTitle: "Simulador de Polítiques",
+                simulatorInstructions: "Ajusta la intensitat de les polítiques (0-100%) i veu els resultats estimats per a 2032",
+                runSimulation: "Executar Simulació",
+                reset: "Restablir",
+                exportPDF: "📥 Exportar a PDF",
+                baselineScenario: "📊 Escenari Base (2032)",
+                baselineSubtitle: "Sense canvis de polítiques",
+                policyScenario: "🎯 Escenari amb Polítiques (2032)",
+                policySubtitle: "Amb polítiques activades",
+                shap: "📊 Explicacions SHAP",
+                anomalies: "🔍 Alertes d'Anomalies",
+                forecast: "📈 Dades de Predicció"
+            },
+            en: {
+                headerTitle: "🇨🇭 Swiss Governance Dashboard",
+                headerSubtitle: "Interactive Policy Simulator with SHAP Explainability (FASE 3.4)",
+                simulatorTitle: "Policy Simulator",
+                simulatorInstructions: "Adjust policy intensity (0-100%) and see estimated results for 2032",
+                runSimulation: "Run Simulation",
+                reset: "Reset",
+                exportPDF: "📥 Export PDF",
+                baselineScenario: "📊 Baseline Scenario (2032)",
+                baselineSubtitle: "Without policy changes",
+                policyScenario: "🎯 Policy Scenario (2032)",
+                policySubtitle: "With policies activated",
+                shap: "📊 SHAP Explanations",
+                anomalies: "🔍 Anomaly Alerts",
+                forecast: "📈 Forecast Data"
+            },
+            de: {
+                headerTitle: "🇨🇭 Schweizer Governance-Dashboard",
+                headerSubtitle: "Interaktiver Politiksimulator mit SHAP-Erklärbarkeit (FASE 3.4)",
+                simulatorTitle: "Politiksimulator",
+                simulatorInstructions: "Passen Sie die Maßnahmenstärke (0-100%) an und sehen Sie geschätzte Ergebnisse für 2032",
+                runSimulation: "Simulation ausführen",
+                reset: "Zurücksetzen",
+                exportPDF: "📥 PDF exportieren",
+                baselineScenario: "📊 Basisszenario (2032)",
+                baselineSubtitle: "Ohne Politikänderungen",
+                policyScenario: "🎯 Politikszenario (2032)",
+                policySubtitle: "Mit aktivierten Maßnahmen",
+                shap: "📊 SHAP-Erklärungen",
+                anomalies: "🔍 Anomaliewarnungen",
+                forecast: "📈 Prognosedaten"
+            },
+            fr: {
+                headerTitle: "🇨🇭 Tableau de bord de gouvernance suisse",
+                headerSubtitle: "Simulateur de politique interactif avec explicitabilité SHAP (FASE 3.4)",
+                simulatorTitle: "Simulateur de politiques",
+                simulatorInstructions: "Ajustez l'intensité des politiques (0-100%) et voyez les résultats estimés pour 2032",
+                runSimulation: "Exécuter la simulation",
+                reset: "Réinitialiser",
+                exportPDF: "📥 Exporter en PDF",
+                baselineScenario: "📊 Scénario de base (2032)",
+                baselineSubtitle: "Sans changements politiques",
+                policyScenario: "🎯 Scénario politique (2032)",
+                policySubtitle: "Avec politiques activées",
+                shap: "📊 Explications SHAP",
+                anomalies: "🔍 Alertes d'anomalies",
+                forecast: "📈 Données de prévisions"
+            },
+            it: {
+                headerTitle: "🇨🇭 Dashboard di governance svizzera",
+                headerSubtitle: "Simulatore di politiche interattivo con spiegabilità SHAP (FASE 3.4)",
+                simulatorTitle: "Simulatore di politiche",
+                simulatorInstructions: "Regola l'intensità della politica (0-100%) e vedi i risultati stimati per il 2032",
+                runSimulation: "Esegui simulazione",
+                reset: "Ripristina",
+                exportPDF: "📥 Esporta PDF",
+                baselineScenario: "📊 Scenario di base (2032)",
+                baselineSubtitle: "Senza cambiamenti politici",
+                policyScenario: "🎯 Scenario di politica (2032)",
+                policySubtitle: "Con politiche attivate",
+                shap: "📊 Spiegazioni SHAP",
+                anomalies: "🔍 Avvisi di anomalie",
+                forecast: "📈 Dati di previsione"
+            },
+            rm: {
+                headerTitle: "🇨🇭 Tavla da governanza svizra",
+                headerSubtitle: "Simulator da politicas interactiv cun spiegabilitad SHAP (FASE 3.4)",
+                simulatorTitle: "Simulator da politicas",
+                simulatorInstructions: "Regla l'intensitad da las politicas (0-100%) e vescha ils resultats stims per 2032",
+                runSimulation: "Exequir simulaziun",
+                reset: "Restablir",
+                exportPDF: "📥 Exportar PDF",
+                baselineScenario: "📊 Scenario da basa (2032)",
+                baselineSubtitle: "Senza midadas da politicas",
+                policyScenario: "🎯 Scenario da politica (2032)",
+                policySubtitle: "Cun politicas activadas",
+                shap: "📊 Explicas SHAP",
+                anomalies: "🔍 Averts d'anomalias",
+                forecast: "📈 Datas da prognosa"
+            }
+        };
+
+        // Current language
+        let currentLang = localStorage.getItem('dashboardLang') || 'en';
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('dashboardLang', lang);
+            updateUILanguage();
+        }
+
+        // Update UI language
+        function updateUILanguage() {
+            const t = TRANSLATIONS[currentLang];
+
+            // Update header
+            document.getElementById('headerTitle').textContent = t.headerTitle;
+            document.getElementById('headerSubtitle').textContent = t.headerSubtitle;
+
+            // Update controls title
+            const controlsTitle = document.querySelector('.controls h2');
+            if (controlsTitle) controlsTitle.textContent = t.simulatorTitle;
+
+            const controlsP = document.querySelector('.controls > p');
+            if (controlsP) controlsP.textContent = t.simulatorInstructions;
+
+            // Update buttons (you can enhance this)
+            document.querySelectorAll('button').forEach(btn => {
+                if (btn.textContent.includes('Ejecutar') || btn.textContent.includes('Run')) {
+                    btn.textContent = t.runSimulation;
+                }
+                if (btn.textContent.includes('Restablir') || btn.textContent.includes('Reset')) {
+                    btn.textContent = t.reset;
+                }
+                if (btn.textContent.includes('Exportar') || btn.textContent.includes('Export')) {
+                    btn.textContent = t.exportPDF;
+                }
+            });
+
+            // Update tab titles
+            document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+                if (btn.textContent.includes('SHAP') || btn.textContent.includes('SHAP')) {
+                    btn.textContent = '📊 ' + t.shap.split(' ')[1];
+                }
+                if (btn.textContent.includes('Anomal') || btn.textContent.includes('Anomaly')) {
+                    btn.textContent = '🔍 ' + t.anomalies.split(' ')[1];
+                }
+                if (btn.textContent.includes('Forecast') || btn.textContent.includes('Predicció')) {
+                    btn.textContent = '📈 ' + t.forecast.split(' ')[1];
+                }
+            });
+        }
+
+        // Initialize language on page load
+        window.addEventListener('load', () => {
+            document.getElementById('langSelect').value = currentLang;
+            updateUILanguage();
+        });
+
         const POLICIES = {
             energia: [
                 { id: 'carbon_tax', label: 'Carbon Tax', domain: 'energia' },
