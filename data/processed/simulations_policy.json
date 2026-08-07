@@ -1,0 +1,780 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:19:55.656839",
+    "model": "counterfactual-simulator-v1",
+    "method": "causal-elasticity-based"
+  },
+  "simulations": {
+    "co2_reduction": {
+      "metric": "co2",
+      "baseline_2024": 5.3,
+      "scenarios": {
+        "baseline": [
+          {
+            "year": 2025,
+            "value": 5.41,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2026,
+            "value": 5.51,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2027,
+            "value": 5.62,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2028,
+            "value": 5.74,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2029,
+            "value": 5.85,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2030,
+            "value": 5.97,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2031,
+            "value": 6.09,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2032,
+            "value": 6.21,
+            "scenario": "baseline"
+          }
+        ],
+        "carbon_tax": [
+          {
+            "year": 2025,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 4.37,
+            "policy_impact": -0.175,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 4.42,
+            "policy_impact": -0.166,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 4.46,
+            "policy_impact": -0.158,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 4.5,
+            "policy_impact": -0.15,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 4.54,
+            "policy_impact": -0.143,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 4.58,
+            "policy_impact": -0.135,
+            "lag_status": "active"
+          }
+        ],
+        "pv_subsidy": [
+          {
+            "year": 2025,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 4.35,
+            "policy_impact": -0.18,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 4.39,
+            "policy_impact": -0.171,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 4.44,
+            "policy_impact": -0.162,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 4.48,
+            "policy_impact": -0.154,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 4.52,
+            "policy_impact": -0.147,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 4.56,
+            "policy_impact": -0.139,
+            "lag_status": "active"
+          }
+        ],
+        "heat_pump_retrofit": [
+          {
+            "year": 2025,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 5.3,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2028,
+            "value": 3.9,
+            "policy_impact": -0.264,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 3.97,
+            "policy_impact": -0.251,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 4.04,
+            "policy_impact": -0.238,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 4.1,
+            "policy_impact": -0.226,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 4.16,
+            "policy_impact": -0.215,
+            "lag_status": "active"
+          }
+        ],
+        "combined": [
+          {
+            "year": 2025,
+            "value": 5.3,
+            "combined_effect": 0
+          },
+          {
+            "year": 2026,
+            "value": 5.3,
+            "combined_effect": 0
+          },
+          {
+            "year": 2027,
+            "value": 3.42,
+            "combined_effect": -0.355
+          },
+          {
+            "year": 2028,
+            "value": 2.11,
+            "combined_effect": -0.601
+          },
+          {
+            "year": 2029,
+            "value": 2.27,
+            "combined_effect": -0.571
+          },
+          {
+            "year": 2030,
+            "value": 2.42,
+            "combined_effect": -0.543
+          },
+          {
+            "year": 2031,
+            "value": 2.57,
+            "combined_effect": -0.515
+          },
+          {
+            "year": 2032,
+            "value": 2.7,
+            "combined_effect": -0.49
+          }
+        ]
+      },
+      "interactions": {
+        "carbon_tax \u00d7 pv_subsidy": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "carbon_tax and pv_subsidy may have synergistic effects"
+        },
+        "carbon_tax \u00d7 heat_pump_retrofit": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "carbon_tax and heat_pump_retrofit may have synergistic effects"
+        },
+        "pv_subsidy \u00d7 heat_pump_retrofit": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "pv_subsidy and heat_pump_retrofit may have synergistic effects"
+        }
+      }
+    },
+    "nitrate_reduction": {
+      "metric": "nitrats",
+      "baseline_2024": 21.2,
+      "scenarios": {
+        "baseline": [
+          {
+            "year": 2025,
+            "value": 21.62,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2026,
+            "value": 22.06,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2027,
+            "value": 22.5,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2028,
+            "value": 22.95,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2029,
+            "value": 23.41,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2030,
+            "value": 23.87,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2031,
+            "value": 24.35,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2032,
+            "value": 24.84,
+            "scenario": "baseline"
+          }
+        ],
+        "fertilizer_tax": [
+          {
+            "year": 2025,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 18.4,
+            "policy_impact": -0.132,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 18.54,
+            "policy_impact": -0.125,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 18.67,
+            "policy_impact": -0.119,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 18.8,
+            "policy_impact": -0.113,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 18.92,
+            "policy_impact": -0.108,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 19.03,
+            "policy_impact": -0.102,
+            "lag_status": "active"
+          }
+        ],
+        "riparian_buffer_zones": [
+          {
+            "year": 2025,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2028,
+            "value": 17.38,
+            "policy_impact": -0.18,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 17.57,
+            "policy_impact": -0.171,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 17.76,
+            "policy_impact": -0.162,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 17.93,
+            "policy_impact": -0.154,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 18.09,
+            "policy_impact": -0.147,
+            "lag_status": "active"
+          }
+        ],
+        "organic_farming_subsidy": [
+          {
+            "year": 2025,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2028,
+            "value": 21.2,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2029,
+            "value": 19.93,
+            "policy_impact": -0.06,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 19.99,
+            "policy_impact": -0.057,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 20.05,
+            "policy_impact": -0.054,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 20.11,
+            "policy_impact": -0.051,
+            "lag_status": "active"
+          }
+        ],
+        "combined": [
+          {
+            "year": 2025,
+            "value": 21.2,
+            "combined_effect": 0
+          },
+          {
+            "year": 2026,
+            "value": 21.2,
+            "combined_effect": 0
+          },
+          {
+            "year": 2027,
+            "value": 18.4,
+            "combined_effect": -0.132
+          },
+          {
+            "year": 2028,
+            "value": 14.73,
+            "combined_effect": -0.305
+          },
+          {
+            "year": 2029,
+            "value": 13.78,
+            "combined_effect": -0.35
+          },
+          {
+            "year": 2030,
+            "value": 14.15,
+            "combined_effect": -0.333
+          },
+          {
+            "year": 2031,
+            "value": 14.5,
+            "combined_effect": -0.316
+          },
+          {
+            "year": 2032,
+            "value": 14.84,
+            "combined_effect": -0.3
+          }
+        ]
+      },
+      "interactions": {
+        "fertilizer_tax \u00d7 riparian_buffer_zones": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "fertilizer_tax and riparian_buffer_zones may have synergistic effects"
+        },
+        "fertilizer_tax \u00d7 organic_farming_subsidy": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "fertilizer_tax and organic_farming_subsidy may have synergistic effects"
+        },
+        "riparian_buffer_zones \u00d7 organic_farming_subsidy": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "riparian_buffer_zones and organic_farming_subsidy may have synergistic effects"
+        }
+      }
+    },
+    "mobility_increase": {
+      "metric": "tp",
+      "baseline_2024": 232,
+      "scenarios": {
+        "baseline": [
+          {
+            "year": 2025,
+            "value": 236.64,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2026,
+            "value": 241.37,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2027,
+            "value": 246.2,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2028,
+            "value": 251.12,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2029,
+            "value": 256.15,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2030,
+            "value": 261.27,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2031,
+            "value": 266.5,
+            "scenario": "baseline"
+          },
+          {
+            "year": 2032,
+            "value": 271.82,
+            "scenario": "baseline"
+          }
+        ],
+        "frequency_increase": [
+          {
+            "year": 2025,
+            "value": 232,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 283.97,
+            "policy_impact": 0.224,
+            "lag_status": "active"
+          },
+          {
+            "year": 2027,
+            "value": 281.37,
+            "policy_impact": 0.213,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 278.9,
+            "policy_impact": 0.202,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 276.56,
+            "policy_impact": 0.192,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 274.33,
+            "policy_impact": 0.182,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 272.21,
+            "policy_impact": 0.173,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 270.2,
+            "policy_impact": 0.165,
+            "lag_status": "active"
+          }
+        ],
+        "fare_reduction": [
+          {
+            "year": 2025,
+            "value": 232,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 257.98,
+            "policy_impact": 0.112,
+            "lag_status": "active"
+          },
+          {
+            "year": 2027,
+            "value": 256.68,
+            "policy_impact": 0.106,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 255.45,
+            "policy_impact": 0.101,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 254.28,
+            "policy_impact": 0.096,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 253.16,
+            "policy_impact": 0.091,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 252.11,
+            "policy_impact": 0.087,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 251.1,
+            "policy_impact": 0.082,
+            "lag_status": "active"
+          }
+        ],
+        "network_expansion": [
+          {
+            "year": 2025,
+            "value": 232,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2026,
+            "value": 232,
+            "policy_impact": 0,
+            "lag_status": "lagging"
+          },
+          {
+            "year": 2027,
+            "value": 278.4,
+            "policy_impact": 0.2,
+            "lag_status": "active"
+          },
+          {
+            "year": 2028,
+            "value": 276.08,
+            "policy_impact": 0.19,
+            "lag_status": "active"
+          },
+          {
+            "year": 2029,
+            "value": 273.88,
+            "policy_impact": 0.18,
+            "lag_status": "active"
+          },
+          {
+            "year": 2030,
+            "value": 271.78,
+            "policy_impact": 0.171,
+            "lag_status": "active"
+          },
+          {
+            "year": 2031,
+            "value": 269.79,
+            "policy_impact": 0.163,
+            "lag_status": "active"
+          },
+          {
+            "year": 2032,
+            "value": 267.9,
+            "policy_impact": 0.155,
+            "lag_status": "active"
+          }
+        ],
+        "combined": [
+          {
+            "year": 2025,
+            "value": 232,
+            "combined_effect": 0
+          },
+          {
+            "year": 2026,
+            "value": 309.95,
+            "combined_effect": 0.336
+          },
+          {
+            "year": 2027,
+            "value": 349.34,
+            "combined_effect": 0.506
+          },
+          {
+            "year": 2028,
+            "value": 346.43,
+            "combined_effect": 0.493
+          },
+          {
+            "year": 2029,
+            "value": 340.71,
+            "combined_effect": 0.469
+          },
+          {
+            "year": 2030,
+            "value": 335.27,
+            "combined_effect": 0.445
+          },
+          {
+            "year": 2031,
+            "value": 330.11,
+            "combined_effect": 0.423
+          },
+          {
+            "year": 2032,
+            "value": 325.21,
+            "combined_effect": 0.402
+          }
+        ]
+      },
+      "interactions": {
+        "frequency_increase \u00d7 fare_reduction": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "frequency_increase and fare_reduction may have synergistic effects"
+        },
+        "frequency_increase \u00d7 network_expansion": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "frequency_increase and network_expansion may have synergistic effects"
+        },
+        "fare_reduction \u00d7 network_expansion": {
+          "type": "synergistic",
+          "strength": 0.1,
+          "note": "fare_reduction and network_expansion may have synergistic effects"
+        }
+      }
+    }
+  }
+}
