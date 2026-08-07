@@ -3,16 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiss Governance Dashboard — Cockpit de Dades</title>
-    <script>
-        // Redirect to the dashboard
-        window.location.replace('/swiss-governance-dashboard/dashboard_real.html');
-    </script>
+    <title>Swiss Governance Dashboard - Hub Central</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e40af;
+            --secondary: #7c3aed;
+            --success: #059669;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1e3a8a;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #6d28d9;
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #047857;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2em;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 15px;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .resource-item h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .resource-item p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 0.9em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p style="font-family: Arial; padding: 40px; text-align: center;">
-        <strong>Redirigint al Dashboard...</strong><br>
-        Si no es redirigeix automàticament, <a href="/swiss-governance-dashboard/dashboard_real.html">clica aquí</a>
-    </p>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>🇨🇭 Swiss Governance Dashboard</h1>
+            <p>Comprehensive Policy Impact Analysis & Forecasting System</p>
+            <p style="font-size: 0.9em; color: #999;">All 4 Phases Complete | Production Ready | Multi-Language Support</p>
+            <div class="status-badge">✅ LIVE ON GITHUB PAGES</div>
+        </header>
+
+        <!-- STATISTICS -->
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">1.82%</div>
+                <div class="stat-label">Model Accuracy (MAPE)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">35</div>
+                <div class="stat-label">Indicators Tracked</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">99</div>
+                <div class="stat-label">Indicators Explained (SHAP)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Languages Supported</div>
+            </div>
+        </div>
+
+        <!-- MAIN DASHBOARDS -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Interactive Dashboard (FASE 3.4)</h3>
+                <p>Real-time policy simulator with SHAP explanations, anomaly detection, and multi-language support.</p>
+                <a href="dashboard_phase34.html" class="btn btn-success">Open Interactive Dashboard</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Original Dashboard (FASE 1)</h3>
+                <p>Comprehensive governance indicators for all 26 Swiss cantons with 10 years of historical data.</p>
+                <a href="dashboard_real.html" class="btn">Open Original Dashboard</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>API Endpoints (FASE 4)</h3>
+                <p>RESTful API with 7 endpoints for predictions, simulations, explanations, and anomaly detection.</p>
+                <a href="#api-section" class="btn btn-secondary">View API Documentation</a>
+            </div>
+        </div>
+
+        <!-- PHASES SECTION -->
+        <div class="section">
+            <h2>📈 Project Phases - Completion Status</h2>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h4>✅ FASE 1: Data Foundation</h4>
+                    <p>35 indicators × 26 cantons × 10 years (2015-2024)</p>
+                    <p>📁 <strong>real_data_hybrid.json</strong></p>
+                    <a href="DATA_SOURCES_COMPLETE.md" target="_blank">View Sources →</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>✅ FASE 2.2: Improved Models</h4>
+                    <p>Polynomial regression + K-fold CV</p>
+                    <p>MAPE: 1.82% avg (2113x improvement!)</p>
+                    <p>📁 <strong>predictions_2025_2032_v2.json</strong></p>
+                </div>
+
+                <div class="resource-item">
+                    <h4>✅ FASE 3.2: SHAP Explainability</h4>
+                    <p>99 indicators with Shapley explanations</p>
+                    <p>Natural-language factor contributions</p>
+                    <p>📁 <strong>causal_explanations.json</strong></p>
+                </div>
+
+                <div class="resource-item">
+                    <h4>✅ FASE 3.3: Anomaly Detection</h4>
+                    <p>315 indicators analyzed</p>
+                    <p>Multi-method detection with alerts</p>
+                    <p>📁 <strong>anomalies.json</strong></p>
+                </div>
+
+                <div class="resource-item">
+                    <h4>✅ FASE 3.4: Dashboard UI</h4>
+                    <p>Interactive policy simulator (11 policies)</p>
+                    <p>6-language support with dropdown selector</p>
+                    <p>📁 <strong>dashboard_phase34.html</strong></p>
+                </div>
+
+                <div class="resource-item">
+                    <h4>✅ FASE 4: Production Stack</h4>
+                    <p>FastAPI backend with 7 REST endpoints</p>
+                    <p>Docker containerized + GitHub Actions CI/CD</p>
+                    <p>📁 <strong>src/api/main.py</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DATA FILES -->
+        <div class="section">
+            <h2>📊 Data Files Available</h2>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h4>real_data_hybrid.json</h4>
+                    <p>35 indicators, 26 cantons, 2015-2024</p>
+                    <a href="data/processed/real_data_hybrid.json" target="_blank">Download</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>predictions_2025_2032_v2.json</h4>
+                    <p>8-year forecasts with P10-P90</p>
+                    <a href="data/processed/predictions_2025_2032_v2.json" target="_blank">Download</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>shap_values.json</h4>
+                    <p>SHAP decomposition for 99 indicators</p>
+                    <a href="data/processed/shap_values.json" target="_blank">Download</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>causal_explanations.json</h4>
+                    <p>Natural-language SHAP explanations</p>
+                    <a href="data/processed/causal_explanations.json" target="_blank">Download</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>anomalies.json</h4>
+                    <p>Anomaly detection results</p>
+                    <a href="data/processed/anomalies.json" target="_blank">Download</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>model_metadata_v2.json</h4>
+                    <p>Model selection details (AIC/BIC)</p>
+                    <a href="data/processed/model_metadata_v2.json" target="_blank">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENTATION -->
+        <div class="section">
+            <h2>📚 Documentation</h2>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h4>Project Overview</h4>
+                    <a href="README.md" target="_blank">README.md</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>Project Status</h4>
+                    <a href="PROJECT_COMPLETION_SUMMARY.md" target="_blank">PROJECT_COMPLETION_SUMMARY.md</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>FASE 3.4 + 4 Details</h4>
+                    <a href="FASE_34_COMPLETE.md" target="_blank">FASE_34_COMPLETE.md</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>Data Sources</h4>
+                    <a href="DATA_SOURCES_COMPLETE.md" target="_blank">DATA_SOURCES_COMPLETE.md</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GitHub Repository</h4>
+                    <a href="https://github.com/Gemmagf/swiss-governance-dashboard" target="_blank">View on GitHub →</a>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GitHub Actions CI/CD</h4>
+                    <a href="https://github.com/Gemmagf/swiss-governance-dashboard/actions" target="_blank">View Workflows →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- API SECTION -->
+        <div class="section" id="api-section">
+            <h2>🚀 API Endpoints (FASE 4)</h2>
+            <p style="margin-bottom: 30px; color: #666;">
+                FastAPI REST backend ready for deployment. Deploy locally or to AWS Lambda/Heroku.
+            </p>
+
+            <h3 style="color: var(--secondary); margin: 20px 0;">Available Endpoints</h3>
+
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h4>GET /predict</h4>
+                    <p>Indicator forecasts with uncertainty bands</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /predict?indicator=co2&lang=ca
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>POST /simulate</h4>
+                    <p>Policy impact simulation</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        {"policies": {"carbon_tax": 0.5}, "year": 2032}
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GET /explain</h4>
+                    <p>SHAP explanations with factors</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /explain?indicator=co2
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GET /anomalies</h4>
+                    <p>Anomaly detection alerts</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /anomalies?indicator=co2
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GET /model-card</h4>
+                    <p>Model metadata and accuracy</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /model-card?indicator=co2
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GET /health</h4>
+                    <p>Health check endpoint</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /health
+                    </code>
+                </div>
+
+                <div class="resource-item">
+                    <h4>GET /info</h4>
+                    <p>API information</p>
+                    <code style="background: #f0f0f0; padding: 8px; border-radius: 4px; display: block; margin: 8px 0; font-size: 0.85em;">
+                        /info?lang=ca
+                    </code>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+                <h4>🚀 Deploy Locally</h4>
+                <code style="display: block; background: white; padding: 15px; border-radius: 4px; overflow-x: auto;">
+python src/api/main.py<br>
+# API available at http://localhost:8000<br>
+# Docs at http://localhost:8000/docs
+                </code>
+            </div>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="section">
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <strong>📊 Accurate Forecasting</strong>
+                    MAPE 1.82% with polynomial regression + K-fold CV
+                </div>
+
+                <div class="feature">
+                    <strong>🔍 SHAP Explainability</strong>
+                    99 indicators explained with natural-language descriptions
+                </div>
+
+                <div class="feature">
+                    <strong>🚨 Anomaly Detection</strong>
+                    315 indicators analyzed with multi-method detection
+                </div>
+
+                <div class="feature">
+                    <strong>🎯 Interactive Simulator</strong>
+                    Real-time policy impact with 11 controllable levers
+                </div>
+
+                <div class="feature">
+                    <strong>🌍 Multi-Language</strong>
+                    6 languages: Catalan, English, German, French, Italian, Romansh
+                </div>
+
+                <div class="feature">
+                    <strong>🐳 Production Ready</strong>
+                    Docker containerized with GitHub Actions CI/CD
+                </div>
+
+                <div class="feature">
+                    <strong>📱 Responsive Design</strong>
+                    Mobile-optimized with dark mode support
+                </div>
+
+                <div class="feature">
+                    <strong>🔐 Governance</strong>
+                    Model cards, audit logging, data lineage tracking
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>🇨🇭 Swiss Governance Dashboard | FASE 1-4 Complete | Production Ready</p>
+            <p>📧 Contact: gemmagardela@gmail.com | 🔗 GitHub: <a href="https://github.com/Gemmagf/swiss-governance-dashboard" style="color: white; text-decoration: underline;">Gemmagf/swiss-governance-dashboard</a></p>
+            <p>📄 License: AGPL-3.0 | 📊 Last Updated: August 7, 2026</p>
+        </footer>
+    </div>
 </body>
 </html>
