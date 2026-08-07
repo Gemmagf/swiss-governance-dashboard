@@ -1,367 +1,285 @@
-# Translations for Swiss Governance Dashboard
-# Languages: German (de), French (fr), Italian (it), English (en)
-
-languages:
-  - code: "de"
-    name: "Deutsch"
-    flag: "🇨🇭"
-  - code: "fr"
-    name: "Français"
-    flag: "🇨🇭"
-  - code: "it"
-    name: "Italiano"
-    flag: "🇨🇭"
-  - code: "rm"
-    name: "Rumantsch"
-    flag: "🇨🇭"
-  - code: "en"
-    name: "English"
-    flag: "🇬🇧"
+# FASE 4: Multi-language Translations
+# Supported languages: Catalan (ca), English (en), German (de), French (fr), Italian (it), Romansh (rm)
 
 translations:
-  app_title:
-    de: "Schweizer Governance-Dashboard"
-    fr: "Tableau de bord de gouvernance suisse"
-    it: "Dashboard di governance svizzera"
-    rm: "Dashbord da governance svizzer"
-    en: "Swiss Governance Dashboard"
+  ca:
+    dashboard:
+      title: "Dashboard de Governança Suïssa"
+      subtitle: "Anàlisi d'impacte de polítiques i predicció"
 
-  app_subtitle:
-    de: "Echtzeit-Intelligenz für Schweizer Kantone"
-    fr: "Intelligence en temps réel pour les cantons suisses"
-    it: "Intelligence in tempo reale per i cantoni svizzeri"
-    rm: "Inteligenza en temps real per ils chantuns svizzers"
-    en: "Real-time intelligence for Swiss cantons"
+    navigation:
+      predictions: "Prediccions"
+      simulations: "Simulacions"
+      explanations: "Explicacions"
+      anomalies: "Anomalies"
+      modelcards: "Fitxes Tècniques"
 
-  select_language:
-    de: "Sprache"
-    fr: "Langue"
-    it: "Lingua"
-    en: "Language"
+    predictions:
+      title: "Prediccions 2025-2032"
+      baseline: "Escenari base"
+      with_policies: "Amb polítiques"
+      confidence: "Confiança"
+      unit: "Unitat"
 
-  select_canton:
-    de: "Kanton wählen"
-    fr: "Choisir un canton"
-    it: "Selezionare un cantone"
-    en: "Select canton"
+    simulations:
+      title: "Simulador de Polítiques"
+      instructions: "Ajusta la intensitat de les polítiques (0-100%) i veu els resultats estimats"
+      run: "Executar simulació"
+      reset: "Restablir"
+      export_pdf: "Exportar a PDF"
+      impact: "Impacte estimat"
 
-  all_switzerland:
-    de: "Alle Schweiz"
-    fr: "Toute la Suisse"
-    it: "Tutta la Svizzera"
-    en: "All Switzerland"
+    explanations:
+      title: "Explicacions SHAP"
+      factors: "Factors principals"
+      contribution: "Contribució"
 
-  timeline:
-    de: "Referenzjahr"
-    fr: "Année de référence"
-    it: "Anno di riferimento"
-    en: "Reference year"
+    anomalies:
+      title: "Detecció d'Anomalies"
+      high_alert: "Alerta alta"
+      medium_alert: "Alerta mitjana"
+      low_alert: "Alerta baixa"
+      no_anomalies: "No hi ha anomalies detectades"
 
-  scenario:
-    de: "Szenario"
-    fr: "Scénario"
-    it: "Scenario"
-    en: "Scenario"
+    indicators:
+      co2: "Emissions de CO₂"
+      renov: "Energia renovable"
+      nitrats: "Nitrats en aigua"
+      consum_aigua: "Consum d'aigua"
+      qualitat_aire: "Qualitat de l'aire"
+      mobilitat_tp: "Mobilitat transport públic"
 
-  optimistic:
-    de: "Optimistisch"
-    fr: "Optimiste"
-    it: "Ottimista"
-    en: "Optimistic"
+  en:
+    dashboard:
+      title: "Swiss Governance Dashboard"
+      subtitle: "Policy impact analysis and forecasting"
 
-  baseline:
-    de: "Basislinie"
-    fr: "Tendanciel"
-    it: "Tendenziale"
-    en: "Baseline"
+    navigation:
+      predictions: "Predictions"
+      simulations: "Simulations"
+      explanations: "Explanations"
+      anomalies: "Anomalies"
+      modelcards: "Model Cards"
 
-  stress:
-    de: "Stress"
-    fr: "Stress"
-    it: "Stress"
-    en: "Stress"
+    predictions:
+      title: "Forecasts 2025-2032"
+      baseline: "Baseline scenario"
+      with_policies: "With policies"
+      confidence: "Confidence"
+      unit: "Unit"
 
-  observed:
-    de: "Beobachtet 2015–2025"
-    fr: "Observé 2015–2025"
-    it: "Osservato 2015–2025"
-    en: "Observed 2015–2025"
+    simulations:
+      title: "Policy Simulator"
+      instructions: "Adjust policy intensity (0-100%) and see estimated results"
+      run: "Run simulation"
+      reset: "Reset"
+      export_pdf: "Export PDF"
+      impact: "Estimated impact"
 
-  forecast:
-    de: "Prognose 2026–2032"
-    fr: "Prévision 2026–2032"
-    it: "Previsione 2026–2032"
-    en: "Forecast 2026–2032"
+    explanations:
+      title: "SHAP Explanations"
+      factors: "Main factors"
+      contribution: "Contribution"
 
-  # Domains
-  forest_biodiversity:
-    de: "Wald & Biodiversität"
-    fr: "Forêt & Biodiversité"
-    it: "Foresta & Biodiversità"
-    en: "Forest & Biodiversity"
+    anomalies:
+      title: "Anomaly Detection"
+      high_alert: "High alert"
+      medium_alert: "Medium alert"
+      low_alert: "Low alert"
+      no_anomalies: "No anomalies detected"
 
-  water:
-    de: "Wasser"
-    fr: "Eau"
-    it: "Acqua"
-    en: "Water"
+    indicators:
+      co2: "CO₂ Emissions"
+      renov: "Renewable Energy"
+      nitrats: "Water Nitrates"
+      consum_aigua: "Water Consumption"
+      qualitat_aire: "Air Quality"
+      mobilitat_tp: "Public Transport Mobility"
 
-  education:
-    de: "Bildung"
-    fr: "Éducation"
-    it: "Istruzione"
-    en: "Education"
+  de:
+    dashboard:
+      title: "Schweizer Governance-Dashboard"
+      subtitle: "Politische Auswirkungsanalyse und Prognose"
 
-  mobility:
-    de: "Mobilität"
-    fr: "Mobilité"
-    it: "Mobilità"
-    en: "Mobility"
+    navigation:
+      predictions: "Vorhersagen"
+      simulations: "Simulationen"
+      explanations: "Erklärungen"
+      anomalies: "Anomalien"
+      modelcards: "Modellkarten"
 
-  energy_climate:
-    de: "Energie & Klima"
-    fr: "Énergie & Climat"
-    it: "Energia & Clima"
-    en: "Energy & Climate"
+    predictions:
+      title: "Prognosen 2025-2032"
+      baseline: "Basisszenario"
+      with_policies: "Mit Maßnahmen"
+      confidence: "Vertrauen"
+      unit: "Einheit"
 
-  housing:
-    de: "Wohnen"
-    fr: "Logement"
-    it: "Alloggi"
-    en: "Housing"
+    simulations:
+      title: "Politiksimulator"
+      instructions: "Passen Sie die Maßnahmenstärke (0-100%) an und sehen Sie geschätzte Ergebnisse"
+      run: "Simulation ausführen"
+      reset: "Zurücksetzen"
+      export_pdf: "PDF exportieren"
+      impact: "Geschätzte Auswirkung"
 
-  waste:
-    de: "Abfall"
-    fr: "Déchets"
-    it: "Rifiuti"
-    en: "Waste"
+    explanations:
+      title: "SHAP-Erklärungen"
+      factors: "Hauptfaktoren"
+      contribution: "Beitrag"
 
-  air_environment:
-    de: "Luft & Umwelt"
-    fr: "Air & Environnement"
-    it: "Aria & Ambiente"
-    en: "Air & Environment"
+    anomalies:
+      title: "Anomalieerkennung"
+      high_alert: "Hohe Warnung"
+      medium_alert: "Mittlere Warnung"
+      low_alert: "Niedrige Warnung"
+      no_anomalies: "Keine Anomalien erkannt"
 
-  # Indicators — Water
-  water_consumption:
-    de: "Trinkwasserverbrauch"
-    fr: "Consommation d'eau potable"
-    it: "Consumo di acqua potabile"
-    en: "Drinking water consumption"
+    indicators:
+      co2: "CO₂-Emissionen"
+      renov: "Erneuerbare Energien"
+      nitrats: "Nitrate im Wasser"
+      consum_aigua: "Wasserverbrauch"
+      qualitat_aire: "Luftqualität"
+      mobilitat_tp: "Mobilität öffentliche Verkehrsmittel"
 
-  water_network_loss:
-    de: "Netzverluste"
-    fr: "Pertes réseau"
-    it: "Perdite di rete"
-    en: "Network water loss"
+  fr:
+    dashboard:
+      title: "Tableau de bord de gouvernance suisse"
+      subtitle: "Analyse des impacts des politiques et prévisions"
 
-  water_quality:
-    de: "Qualitätsindex"
-    fr: "Indice de qualité"
-    it: "Indice di qualità"
-    en: "Water quality index"
+    navigation:
+      predictions: "Prévisions"
+      simulations: "Simulations"
+      explanations: "Explications"
+      anomalies: "Anomalies"
+      modelcards: "Fiches techniques"
 
-  annual_precipitation:
-    de: "Jahrniederschlag"
-    fr: "Précipitations annuelles"
-    it: "Precipitazioni annuali"
-    en: "Annual precipitation"
+    predictions:
+      title: "Prévisions 2025-2032"
+      baseline: "Scénario de base"
+      with_policies: "Avec politiques"
+      confidence: "Confiance"
+      unit: "Unité"
 
-  # Indicators — Mobility
-  public_transit_trips:
-    de: "Öffentliche Verkehrsmittel"
-    fr: "Voyages en transports publics"
-    it: "Viaggi in trasporto pubblico"
-    en: "Public transit trips"
+    simulations:
+      title: "Simulateur de politiques"
+      instructions: "Ajustez l'intensité des politiques (0-100%) et voyez les résultats estimés"
+      run: "Exécuter la simulation"
+      reset: "Réinitialiser"
+      export_pdf: "Exporter en PDF"
+      impact: "Impact estimé"
 
-  bike_modal_share:
-    de: "Fahrradanteil"
-    fr: "Part modale du vélo"
-    it: "Quota modale bici"
-    en: "Bike modal share"
+    explanations:
+      title: "Explications SHAP"
+      factors: "Facteurs principaux"
+      contribution: "Contribution"
 
-  motorized_traffic:
-    de: "Motorisierter Verkehr"
-    fr: "Trafic motorisé"
-    it: "Traffico motorizzato"
-    en: "Motorized traffic volume"
+    anomalies:
+      title: "Détection d'anomalies"
+      high_alert: "Alerte haute"
+      medium_alert: "Alerte moyenne"
+      low_alert: "Alerte basse"
+      no_anomalies: "Aucune anomalie détectée"
 
-  network_punctuality:
-    de: "Netzpünktlichkeit"
-    fr: "Ponctualité du réseau"
-    it: "Puntualità della rete"
-    en: "Network punctuality"
+    indicators:
+      co2: "Émissions de CO₂"
+      renov: "Énergies renouvelables"
+      nitrats: "Nitrates dans l'eau"
+      consum_aigua: "Consommation d'eau"
+      qualitat_aire: "Qualité de l'air"
+      mobilitat_tp: "Mobilité transports publics"
 
-  # Indicators — Education
-  school_enrollment:
-    de: "Schulanmeldungen"
-    fr: "Inscriptions scolaires"
-    it: "Iscrizioni scolastiche"
-    en: "School enrollment"
+  it:
+    dashboard:
+      title: "Dashboard di governance svizzera"
+      subtitle: "Analisi dell'impatto delle politiche e previsioni"
 
-  student_teacher_ratio:
-    de: "Schüler-Lehrer-Verhältnis"
-    fr: "Ratio élèves-enseignants"
-    it: "Rapporto studenti-docenti"
-    en: "Student-teacher ratio"
+    navigation:
+      predictions: "Previsioni"
+      simulations: "Simulazioni"
+      explanations: "Spiegazioni"
+      anomalies: "Anomalie"
+      modelcards: "Schede modello"
 
-  childcare_places:
-    de: "Kinderbetreuungsplätze"
-    fr: "Places en garde d'enfants"
-    it: "Posti in asili nido"
-    en: "Childcare places"
+    predictions:
+      title: "Previsioni 2025-2032"
+      baseline: "Scenario di base"
+      with_policies: "Con politiche"
+      confidence: "Fiducia"
+      unit: "Unità"
 
-  spending_per_student:
-    de: "Ausgaben pro Schüler"
-    fr: "Dépenses par élève"
-    it: "Spese per studente"
-    en: "Spending per student"
+    simulations:
+      title: "Simulatore di politiche"
+      instructions: "Regola l'intensità della politica (0-100%) e vedi i risultati stimati"
+      run: "Esegui simulazione"
+      reset: "Ripristina"
+      export_pdf: "Esporta PDF"
+      impact: "Impatto stimato"
 
-  # Indicators — Energy & Climate
-  co2_emissions:
-    de: "CO₂-Emissionen"
-    fr: "Émissions de CO₂"
-    it: "Emissioni di CO₂"
-    en: "CO₂ emissions"
+    explanations:
+      title: "Spiegazioni SHAP"
+      factors: "Fattori principali"
+      contribution: "Contributo"
 
-  renewable_energy_share:
-    de: "Anteil erneuerbare Energie"
-    fr: "Part de l'énergie renouvelable"
-    it: "Quota di energia rinnovabile"
-    en: "Renewable energy share"
+    anomalies:
+      title: "Rilevamento anomalie"
+      high_alert: "Avviso alto"
+      medium_alert: "Avviso medio"
+      low_alert: "Avviso basso"
+      no_anomalies: "Nessuna anomalia rilevata"
 
-  final_energy_consumption:
-    de: "Endenergieverbrauch"
-    fr: "Consommation énergétique finale"
-    it: "Consumo energetico finale"
-    en: "Final energy consumption"
+    indicators:
+      co2: "Emissioni di CO₂"
+      renov: "Energie rinnovabili"
+      nitrats: "Nitrati nell'acqua"
+      consum_aigua: "Consumo di acqua"
+      qualitat_aire: "Qualità dell'aria"
+      mobilitat_tp: "Mobilità trasporto pubblico"
 
-  solar_capacity:
-    de: "Solarkapazität"
-    fr: "Capacité solaire"
-    it: "Capacità solare"
-    en: "Solar capacity installed"
+  rm:
+    dashboard:
+      title: "Tavla da governanza svizra"
+      subtitle: "Analisa d'impactas da politicas e prognosas"
 
-  # Indicators — Housing
-  median_rent:
-    de: "Durchschnittliche Miete"
-    fr: "Loyer médian"
-    it: "Affitto mediano"
-    en: "Median rent offered"
+    navigation:
+      predictions: "Prognosas"
+      simulations: "Simulaziuns"
+      explanations: "Explicas"
+      anomalies: "Anomalias"
+      modelcards: "Flaivlas da model"
 
-  vacancy_rate:
-    de: "Leerstandsquote"
-    fr: "Taux de vacance"
-    it: "Tasso di sfitto"
-    en: "Housing vacancy rate"
+    predictions:
+      title: "Prognosas 2025-2032"
+      baseline: "Scenario da basa"
+      with_policies: "Cun politicas"
+      confidence: "Confidenza"
+      unit: "Unitad"
 
-  housing_completions:
-    de: "Wohnungsfertigstellungen"
-    fr: "Achèvements de logements"
-    it: "Completamento abitazioni"
-    en: "Housing completions"
+    simulations:
+      title: "Simulator da politicas"
+      instructions: "Regla l'intensitad da las politicas (0-100%) e vescha ils resultats stims"
+      run: "Exequir simulaziun"
+      reset: "Restablir"
+      export_pdf: "Exportar PDF"
+      impact: "Impacta stim"
 
-  cooperative_housing:
-    de: "Genossenschafts- & Gemeinderaum"
-    fr: "Logement coopératif & public"
-    it: "Alloggi cooperativi e pubblici"
-    en: "Cooperative & public housing"
+    explanations:
+      title: "Explicas SHAP"
+      factors: "Facturs principals"
+      contribution: "Contribuziun"
 
-  # Indicators — Waste
-  urban_waste_generated:
-    de: "Erzeugter Siedlungsabfall"
-    fr: "Déchets urbains générés"
-    it: "Rifiuti urbani generati"
-    en: "Urban waste generated"
+    anomalies:
+      title: "Detectiun d'anomalias"
+      high_alert: "Averta autas"
+      medium_alert: "Averta mez"
+      low_alert: "Averta bassa"
+      no_anomalies: "Naginas anomalias detectadas"
 
-  separate_collection_rate:
-    de: "Separatsammlungsquote"
-    fr: "Taux de collecte séparative"
-    it: "Tasso di raccolta differenziata"
-    en: "Separate collection rate"
-
-  organic_waste_collection:
-    de: "Organische Abfallsammlung"
-    fr: "Collecte de déchets organiques"
-    it: "Raccolta rifiuti organici"
-    en: "Organic waste collection"
-
-  waste_management_cost:
-    de: "Servicekosten"
-    fr: "Coût du service"
-    it: "Costo del servizio"
-    en: "Waste service cost"
-
-  # Indicators — Air & Environment
-  no2_concentration:
-    de: "NO₂-Konzentration"
-    fr: "Concentration NO₂"
-    it: "Concentrazione NO₂"
-    en: "NO₂ annual average"
-
-  pm10_concentration:
-    de: "PM10-Konzentration"
-    fr: "Concentration PM10"
-    it: "Concentrazione PM10"
-    en: "PM10 annual average"
-
-  green_space_per_capita:
-    de: "Grünfläche pro Kopf"
-    fr: "Espace vert par habitant"
-    it: "Spazio verde pro capite"
-    en: "Green space per capita"
-
-  heat_days:
-    de: "Hitzetage"
-    fr: "Jours de chaleur"
-    it: "Giorni di caldo"
-    en: "Heat days (>30°C)"
-
-  # UI
-  data_source:
-    de: "Quelle"
-    fr: "Source"
-    it: "Fonte"
-    en: "Source"
-
-  last_updated:
-    de: "Zuletzt aktualisiert"
-    fr: "Dernière mise à jour"
-    it: "Ultimo aggiornamento"
-    en: "Last updated"
-
-  population:
-    de: "Bevölkerung"
-    fr: "Population"
-    it: "Popolazione"
-    en: "Population"
-
-  district_detail:
-    de: "Kantondetails"
-    fr: "Détails du canton"
-    it: "Dettagli del cantone"
-    en: "District detail"
-
-  ranking:
-    de: "Kantonrankings"
-    fr: "Classement par canton"
-    it: "Ranking per cantone"
-    en: "Ranking by canton"
-
-  composition:
-    de: "Zusammensetzung"
-    fr: "Composition"
-    it: "Composizione"
-    en: "Composition"
-
-  evolution_forecast:
-    de: "Entwicklung & Prognose"
-    fr: "Évolution et prévision"
-    it: "Evoluzione e previsione"
-    en: "Evolution & forecast"
-
-  canton_map:
-    de: "Kantonkarte"
-    fr: "Carte des cantons"
-    it: "Mappa dei cantoni"
-    en: "Canton map"
+    indicators:
+      co2: "Emissijas da CO₂"
+      renov: "Energia renovabla"
+      nitrats: "Nitrads en l'aua"
+      consum_aigua: "Consum d'aua"
+      qualitat_aire: "Qualitad da l'aria"
+      mobilitat_tp: "Mobilitad transports publics"
