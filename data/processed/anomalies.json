@@ -1,0 +1,553 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:47:55.976793",
+    "method": "multi-method-anomaly-detection",
+    "methods": [
+      "z-score outlier detection (threshold=2.5)",
+      "trend break detection (slope change > 0.5)",
+      "volatility spike detection (volatility zscore > 2.0)"
+    ],
+    "data_period": "2015-2024"
+  },
+  "anomalies": {
+    "bosc": {
+      "superficie": {
+        "label": "Superf\u00edcie forestal",
+        "last_value": 31.6,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "vitalitat": {
+        "label": "Vitalitat de la cap\u00e7ada",
+        "last_value": 74,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "estres": {
+        "label": "Massa amb estr\u00e8s h\u00eddric",
+        "last_value": 7.2,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "escol\u00edtids": {
+        "label": "Danys per escol\u00edtids",
+        "last_value": 210,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "regeneracio": {
+        "label": "Regeneraci\u00f3 amb esp\u00e8cies adaptades",
+        "last_value": 24,
+        "last_year": 2024,
+        "n_data_points": 4,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "label": "Qualitat ecol\u00f2gica dels rius",
+        "last_value": 78,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "nitrats": {
+        "label": "Nitrats a l'aigua subterr\u00e0nia",
+        "last_value": 21.2,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "consum": {
+        "label": "Consum d'aigua potable",
+        "last_value": 302,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "cabal": {
+        "label": "Cabal estival respecte de la mitjana",
+        "last_value": 80,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "micropolluents": {
+        "label": "Micropol\u00b7luents eliminats a les depuradores",
+        "last_value": 26,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "label": "R\u00e0tio alumnat per docent",
+        "last_value": 14.9,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "despesa": {
+        "label": "Despesa p\u00fablica per alumne",
+        "last_value": 20600,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "titulacio": {
+        "label": "Titulaci\u00f3 de secund\u00e0ria II als 25 anys",
+        "last_value": 90.4,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "dual": {
+        "label": "Alumnat en formaci\u00f3 professional dual",
+        "last_value": 63,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "digital": {
+        "label": "Centres amb infraestructura digital completa",
+        "last_value": 36,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "label": "Viatges en transport p\u00fablic",
+        "last_value": 232,
+        "last_year": 2024,
+        "n_data_points": 4,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "retencio": {
+        "label": "Hores de retenci\u00f3 a la xarxa",
+        "last_value": 41,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "bici": {
+        "label": "Quota modal de bicicleta",
+        "last_value": 7.1,
+        "last_year": 2024,
+        "n_data_points": 4,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "electric": {
+        "label": "Vehicles el\u00e8ctrics al parc",
+        "last_value": 0.6,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "puntualitat": {
+        "label": "Puntualitat ferrovi\u00e0ria",
+        "last_value": 89.2,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "energia": {
+      "co2": {
+        "label": "Emissions de gasos amb efecte d'hivernacle",
+        "last_value": 5.3,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "renov": {
+        "label": "Quota renovable del consum final",
+        "last_value": 23,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "solar": {
+        "label": "Pot\u00e8ncia fotovoltaica instal\u00b7lada",
+        "last_value": 175,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "consum": {
+        "label": "Consum final d'energia",
+        "last_value": 25.8,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "hivern": {
+        "label": "Cobertura del d\u00e8ficit hivernal",
+        "last_value": 71,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "serveis": {
+      "metges": {
+        "label": "Metges de fam\u00edlia per 10k habitants",
+        "last_value": 8.3,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "espera": {
+        "label": "Temps d'espera a urg\u00e8ncies",
+        "last_value": 41,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "cost": {
+        "label": "Despesa sanit\u00e0ria per habitant",
+        "last_value": 7850,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "domicili": {
+        "label": "Cobertura d'atenci\u00f3 domicili\u00e0ria",
+        "last_value": 60,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "dossier": {
+        "label": "Historial cl\u00ednic electr\u00f2nic actiu",
+        "last_value": 3.5,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    },
+    "territori": {
+      "vacants": {
+        "label": "Taxa d'habitatges buits",
+        "last_value": 1.18,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "lloguer": {
+        "label": "Lloguer mitj\u00e0 ofert",
+        "last_value": 193,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "sol": {
+        "label": "Consum de s\u00f2l per habitant",
+        "last_value": 406,
+        "last_year": 2024,
+        "n_data_points": 3,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "densificacio": {
+        "label": "Habitatge nou en s\u00f2l ja urbanitzat",
+        "last_value": 66,
+        "last_year": 2024,
+        "n_data_points": 5,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      },
+      "agricola": {
+        "label": "Superf\u00edcie agr\u00edcola \u00fatil",
+        "last_value": 35.2,
+        "last_year": 2024,
+        "n_data_points": 3,
+        "anomalies": {
+          "zscore_outliers": [],
+          "trend_breaks": [],
+          "volatility_spikes": []
+        },
+        "anomaly_score": 0.0,
+        "anomaly_type": "normal",
+        "alert": "None",
+        "recommendation": "No anomalies detected. Data appears normal."
+      }
+    }
+  }
+}

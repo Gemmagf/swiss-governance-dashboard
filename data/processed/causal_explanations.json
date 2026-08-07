@@ -1,0 +1,354 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:45:41.801019",
+    "method": "nlg-explanation-generation",
+    "baseline_year": 2024,
+    "forecast_year": 2032
+  },
+  "explanations": {
+    "bosc": {
+      "superficie": {
+        "explanation": "Superf\u00edcie forestal increased from 31.6% del territori to 31.8% del territori (+0.5%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.16
+          }
+        ],
+        "confidence": "medium"
+      },
+      "vitalitat": {
+        "explanation": "Vitalitat de la cap\u00e7ada increased from 74.0\u00edndex /100 to 75.1\u00edndex /100 (+1.5%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 1.13
+          }
+        ],
+        "confidence": "medium"
+      },
+      "estres": {
+        "explanation": "Massa amb estr\u00e8s h\u00eddric increased from 7.2% de la superf\u00edcie to 9.2% de la superf\u00edcie (+28.1%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.02
+          }
+        ],
+        "confidence": "medium"
+      },
+      "escol\u00edtids": {
+        "explanation": "Danys per escol\u00edtids increased from 210.01000 m\u00b3/any to 264.81000 m\u00b3/any (+26.1%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 54.75
+          }
+        ],
+        "confidence": "medium"
+      },
+      "regeneracio": {
+        "explanation": "Regeneraci\u00f3 amb esp\u00e8cies adaptades increased from 24.0% to 27.2% (+13.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.2
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "explanation": "Qualitat ecol\u00f2gica dels rius increased from 78.0\u00edndex /100 to 81.5\u00edndex /100 (+4.4%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.45
+          }
+        ],
+        "confidence": "medium"
+      },
+      "nitrats": {
+        "explanation": "Nitrats a l'aigua subterr\u00e0nia decreased from 21.2mg/l to 19.1mg/l (-10.0%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.11
+          }
+        ],
+        "confidence": "medium"
+      },
+      "consum": {
+        "explanation": "Consum d'aigua potable decreased from 302.0l/hab\u00b7dia to 295.0l/hab\u00b7dia (-2.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 7.0
+          }
+        ],
+        "confidence": "medium"
+      },
+      "cabal": {
+        "explanation": "Cabal estival respecte de la mitjana decreased from 80.0% to 76.3% (-4.7%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.74
+          }
+        ],
+        "confidence": "medium"
+      },
+      "micropolluents": {
+        "explanation": "Micropol\u00b7luents eliminats a les depuradores decreased from 26.0% to 18.7% (-28.1%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 7.31
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "explanation": "R\u00e0tio alumnat per docent increased from 14.9alumnes to 15.3alumnes (+2.6%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.38
+          }
+        ],
+        "confidence": "medium"
+      },
+      "despesa": {
+        "explanation": "Despesa p\u00fablica per alumne decreased from 20600.0CHF/any to 20211.2CHF/any (-1.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 388.77
+          }
+        ],
+        "confidence": "medium"
+      },
+      "titulacio": {
+        "explanation": "Titulaci\u00f3 de secund\u00e0ria II als 25 anys decreased from 90.4% to 89.9% (-0.5%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.48
+          }
+        ],
+        "confidence": "medium"
+      },
+      "dual": {
+        "explanation": "Alumnat en formaci\u00f3 professional dual increased from 63.0% to 65.4% (+3.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.43
+          }
+        ],
+        "confidence": "medium"
+      },
+      "digital": {
+        "explanation": "Centres amb infraestructura digital completa decreased from 36.0% to 32.5% (-9.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.55
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "explanation": "Viatges en transport p\u00fablic decreased from 232.0viatges/hab\u00b7any to 222.3viatges/hab\u00b7any (-4.2%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 9.68
+          }
+        ],
+        "confidence": "medium"
+      },
+      "retencio": {
+        "explanation": "Hores de retenci\u00f3 a la xarxa increased from 41.0h/1000 hab to 46.8h/1000 hab (+14.0%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 5.76
+          }
+        ],
+        "confidence": "medium"
+      },
+      "bici": {
+        "explanation": "Quota modal de bicicleta increased from 7.1% to 7.5% (+4.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.35
+          }
+        ],
+        "confidence": "medium"
+      },
+      "electric": {
+        "explanation": "Vehicles el\u00e8ctrics al parc increased from 0.6% to 1.1% (+86.7%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.52
+          }
+        ],
+        "confidence": "medium"
+      },
+      "puntualitat": {
+        "explanation": "Puntualitat ferrovi\u00e0ria increased from 89.2% to 90.5% (+1.4%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 1.28
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "energia": {
+      "co2": {
+        "explanation": "Emissions de gasos amb efecte d'hivernacle decreased from 5.3t CO\u2082eq/hab to 4.8t CO\u2082eq/hab (-8.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.47
+          }
+        ],
+        "confidence": "medium"
+      },
+      "renov": {
+        "explanation": "Quota renovable del consum final increased from 23.0% to 26.4% (+15.0%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.45
+          }
+        ],
+        "confidence": "medium"
+      },
+      "solar": {
+        "explanation": "Pot\u00e8ncia fotovoltaica instal\u00b7lada decreased from 175.0W/hab to 165.6W/hab (-5.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 9.36
+          }
+        ],
+        "confidence": "medium"
+      },
+      "consum": {
+        "explanation": "Consum final d'energia increased from 25.8MWh/hab to 26.4MWh/hab (+2.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.6
+          }
+        ],
+        "confidence": "medium"
+      },
+      "hivern": {
+        "explanation": "Cobertura del d\u00e8ficit hivernal increased from 71.0% to 73.3% (+3.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.34
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "serveis": {
+      "metges": {
+        "explanation": "Metges de fam\u00edlia per 10k habitants increased from 8.3metges to 8.5metges (+2.2%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.18
+          }
+        ],
+        "confidence": "medium"
+      },
+      "espera": {
+        "explanation": "Temps d'espera a urg\u00e8ncies decreased from 41.0minuts to 39.2minuts (-4.4%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 1.82
+          }
+        ],
+        "confidence": "medium"
+      },
+      "cost": {
+        "explanation": "Despesa sanit\u00e0ria per habitant decreased from 7850.0CHF/any to 7618.7CHF/any (-2.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 231.27
+          }
+        ],
+        "confidence": "medium"
+      },
+      "domicili": {
+        "explanation": "Cobertura d'atenci\u00f3 domicili\u00e0ria decreased from 60.0% de la demanda to 57.6% de la demanda (-4.0%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.42
+          }
+        ],
+        "confidence": "medium"
+      },
+      "dossier": {
+        "explanation": "Historial cl\u00ednic electr\u00f2nic actiu increased from 3.5% de la poblaci\u00f3 to 9.4% de la poblaci\u00f3 (+168.9%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 5.91
+          }
+        ],
+        "confidence": "medium"
+      }
+    },
+    "territori": {
+      "vacants": {
+        "explanation": "Taxa d'habitatges buits increased from 1.2% to 1.4% (+15.3%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 0.18
+          }
+        ],
+        "confidence": "medium"
+      },
+      "lloguer": {
+        "explanation": "Lloguer mitj\u00e0 ofert decreased from 193.0CHF/m\u00b2\u00b7any to 190.1CHF/m\u00b2\u00b7any (-1.5%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 2.89
+          }
+        ],
+        "confidence": "medium"
+      },
+      "densificacio": {
+        "explanation": "Habitatge nou en s\u00f2l ja urbanitzat decreased from 66.0% to 62.8% (-4.8%). Main drivers:   1. trend: 100.0%",
+        "top_factors": [
+          {
+            "factor": "trend",
+            "shap_value": 3.17
+          }
+        ],
+        "confidence": "medium"
+      }
+    }
+  }
+}

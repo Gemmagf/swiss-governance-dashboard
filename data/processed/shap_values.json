@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:45:41.800424",
+    "method": "approximate-shapley-values",
+    "baseline_year": 2024,
+    "forecast_year": 2032,
+    "causal_model": "causal-dags-v1"
+  },
+  "shap_values": {
+    "bosc": {
+      "superficie": {
+        "baseline_2024": 31.6,
+        "forecast_2032": 31.76,
+        "shap_values": {
+          "trend": 0.16
+        }
+      },
+      "vitalitat": {
+        "baseline_2024": 74,
+        "forecast_2032": 75.13,
+        "shap_values": {
+          "trend": 1.13
+        }
+      },
+      "estres": {
+        "baseline_2024": 7.2,
+        "forecast_2032": 9.22,
+        "shap_values": {
+          "trend": 2.02
+        }
+      },
+      "escol\u00edtids": {
+        "baseline_2024": 210,
+        "forecast_2032": 264.75,
+        "shap_values": {
+          "trend": 54.75
+        }
+      },
+      "regeneracio": {
+        "baseline_2024": 24,
+        "forecast_2032": 27.2,
+        "shap_values": {
+          "trend": 3.2
+        }
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "baseline_2024": 78,
+        "forecast_2032": 81.45,
+        "shap_values": {
+          "trend": 3.45
+        }
+      },
+      "nitrats": {
+        "baseline_2024": 21.2,
+        "forecast_2032": 19.09,
+        "shap_values": {
+          "trend": 2.11
+        }
+      },
+      "consum": {
+        "baseline_2024": 302,
+        "forecast_2032": 295.0,
+        "shap_values": {
+          "trend": 7.0
+        }
+      },
+      "cabal": {
+        "baseline_2024": 80,
+        "forecast_2032": 76.26,
+        "shap_values": {
+          "trend": 3.74
+        }
+      },
+      "micropolluents": {
+        "baseline_2024": 26,
+        "forecast_2032": 18.69,
+        "shap_values": {
+          "trend": 7.31
+        }
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "baseline_2024": 14.9,
+        "forecast_2032": 15.28,
+        "shap_values": {
+          "trend": 0.38
+        }
+      },
+      "despesa": {
+        "baseline_2024": 20600,
+        "forecast_2032": 20211.23,
+        "shap_values": {
+          "trend": 388.77
+        }
+      },
+      "titulacio": {
+        "baseline_2024": 90.4,
+        "forecast_2032": 89.92,
+        "shap_values": {
+          "trend": 0.48
+        }
+      },
+      "dual": {
+        "baseline_2024": 63,
+        "forecast_2032": 65.43,
+        "shap_values": {
+          "trend": 2.43
+        }
+      },
+      "digital": {
+        "baseline_2024": 36,
+        "forecast_2032": 32.45,
+        "shap_values": {
+          "trend": 3.55
+        }
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "baseline_2024": 232,
+        "forecast_2032": 222.32,
+        "shap_values": {
+          "trend": 9.68
+        }
+      },
+      "retencio": {
+        "baseline_2024": 41,
+        "forecast_2032": 46.76,
+        "shap_values": {
+          "trend": 5.76
+        }
+      },
+      "bici": {
+        "baseline_2024": 7.1,
+        "forecast_2032": 7.45,
+        "shap_values": {
+          "trend": 0.35
+        }
+      },
+      "electric": {
+        "baseline_2024": 0.6,
+        "forecast_2032": 1.12,
+        "shap_values": {
+          "trend": 0.52
+        }
+      },
+      "puntualitat": {
+        "baseline_2024": 89.2,
+        "forecast_2032": 90.48,
+        "shap_values": {
+          "trend": 1.28
+        }
+      }
+    },
+    "energia": {
+      "co2": {
+        "baseline_2024": 5.3,
+        "forecast_2032": 4.83,
+        "shap_values": {
+          "trend": 0.47
+        }
+      },
+      "renov": {
+        "baseline_2024": 23,
+        "forecast_2032": 26.45,
+        "shap_values": {
+          "trend": 3.45
+        }
+      },
+      "solar": {
+        "baseline_2024": 175,
+        "forecast_2032": 165.64,
+        "shap_values": {
+          "trend": 9.36
+        }
+      },
+      "consum": {
+        "baseline_2024": 25.8,
+        "forecast_2032": 26.4,
+        "shap_values": {
+          "trend": 0.6
+        }
+      },
+      "hivern": {
+        "baseline_2024": 71,
+        "forecast_2032": 73.34,
+        "shap_values": {
+          "trend": 2.34
+        }
+      }
+    },
+    "serveis": {
+      "metges": {
+        "baseline_2024": 8.3,
+        "forecast_2032": 8.48,
+        "shap_values": {
+          "trend": 0.18
+        }
+      },
+      "espera": {
+        "baseline_2024": 41,
+        "forecast_2032": 39.18,
+        "shap_values": {
+          "trend": 1.82
+        }
+      },
+      "cost": {
+        "baseline_2024": 7850,
+        "forecast_2032": 7618.73,
+        "shap_values": {
+          "trend": 231.27
+        }
+      },
+      "domicili": {
+        "baseline_2024": 60,
+        "forecast_2032": 57.58,
+        "shap_values": {
+          "trend": 2.42
+        }
+      },
+      "dossier": {
+        "baseline_2024": 3.5,
+        "forecast_2032": 9.41,
+        "shap_values": {
+          "trend": 5.91
+        }
+      }
+    },
+    "territori": {
+      "vacants": {
+        "baseline_2024": 1.18,
+        "forecast_2032": 1.36,
+        "shap_values": {
+          "trend": 0.18
+        }
+      },
+      "lloguer": {
+        "baseline_2024": 193,
+        "forecast_2032": 190.11,
+        "shap_values": {
+          "trend": 2.89
+        }
+      },
+      "densificacio": {
+        "baseline_2024": 66,
+        "forecast_2032": 62.83,
+        "shap_values": {
+          "trend": 3.17
+        }
+      }
+    }
+  }
+}
