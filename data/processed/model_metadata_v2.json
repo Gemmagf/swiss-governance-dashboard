@@ -1,0 +1,385 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:43:28.089174",
+    "model_version": "polynomial-bayesian-v2"
+  },
+  "models": {
+    "bosc": {
+      "superficie": {
+        "degree": 1,
+        "aic": -111.13,
+        "bic": -111.91,
+        "r2": 1.0,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "vitalitat": {
+        "degree": 2,
+        "aic": -8.64,
+        "bic": -9.81,
+        "r2": 0.9833,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "estres": {
+        "degree": 1,
+        "aic": -17.34,
+        "bic": -18.12,
+        "r2": 0.9889,
+        "mape": 0.01,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "escol\u00edtids": {
+        "degree": 1,
+        "aic": 21.74,
+        "bic": 20.95,
+        "r2": 0.9704,
+        "mape": 0.02,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "regeneracio": {
+        "degree": 1,
+        "aic": -88.1,
+        "bic": -89.33,
+        "r2": 1.0,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 4,
+        "n_splits": 3
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "degree": 1,
+        "aic": -13.84,
+        "bic": -14.62,
+        "r2": 0.9944,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "nitrats": {
+        "degree": 1,
+        "aic": -7.97,
+        "bic": -8.75,
+        "r2": 0.9491,
+        "mape": 0.01,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "consum": {
+        "degree": 1,
+        "aic": 3.23,
+        "bic": 2.45,
+        "r2": 0.958,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "cabal": {
+        "degree": 1,
+        "aic": -3.12,
+        "bic": -3.9,
+        "r2": 0.9675,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "micropolluents": {
+        "degree": 2,
+        "aic": 3.04,
+        "bic": 1.87,
+        "r2": 0.9871,
+        "mape": 0.01,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "degree": 2,
+        "aic": -25.71,
+        "bic": -26.89,
+        "r2": 0.9741,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "despesa": {
+        "degree": 2,
+        "aic": 36.9,
+        "bic": 35.73,
+        "r2": 0.9971,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "titulacio": {
+        "degree": 2,
+        "aic": -17.69,
+        "bic": -18.86,
+        "r2": 0.9906,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "dual": {
+        "degree": 2,
+        "aic": -10.42,
+        "bic": -11.59,
+        "r2": 0.9853,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "digital": {
+        "degree": 2,
+        "aic": 7.12,
+        "bic": 5.94,
+        "r2": 0.9972,
+        "mape": 0.02,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    },
+    "mobilitat": {
+      "tp": {
+        "degree": 2,
+        "aic": 11.34,
+        "bic": 9.5,
+        "r2": 0.9283,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 4,
+        "n_splits": 3
+      },
+      "retencio": {
+        "degree": 1,
+        "aic": -6.07,
+        "bic": -6.85,
+        "r2": 0.9897,
+        "mape": 0.01,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "bici": {
+        "degree": 2,
+        "aic": -22.03,
+        "bic": -23.87,
+        "r2": 0.9994,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 4,
+        "n_splits": 3
+      },
+      "electric": {
+        "degree": 1,
+        "aic": -28.02,
+        "bic": -28.8,
+        "r2": 0.9845,
+        "mape": 0.09,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "puntualitat": {
+        "degree": 2,
+        "aic": -17.69,
+        "bic": -18.86,
+        "r2": 0.9048,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    },
+    "energia": {
+      "co2": {
+        "degree": 1,
+        "aic": -25.88,
+        "bic": -26.66,
+        "r2": 0.9705,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "renov": {
+        "degree": 1,
+        "aic": -13.84,
+        "bic": -14.62,
+        "r2": 0.9944,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "solar": {
+        "degree": 2,
+        "aic": 20.65,
+        "bic": 19.47,
+        "r2": 0.9967,
+        "mape": 0.01,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "consum": {
+        "degree": 2,
+        "aic": -21.69,
+        "bic": -22.87,
+        "r2": 0.9872,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "hivern": {
+        "degree": 1,
+        "aic": -2.86,
+        "bic": -3.64,
+        "r2": 0.9024,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    },
+    "serveis": {
+      "metges": {
+        "degree": 1,
+        "aic": -35.96,
+        "bic": -36.74,
+        "r2": 0.9743,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "espera": {
+        "degree": 2,
+        "aic": -9.71,
+        "bic": -10.88,
+        "r2": 0.9936,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "cost": {
+        "degree": 2,
+        "aic": 38.71,
+        "bic": 37.54,
+        "r2": 0.9717,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "domicili": {
+        "degree": 2,
+        "aic": -1.6,
+        "bic": -2.77,
+        "r2": 0.9906,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "dossier": {
+        "degree": 2,
+        "aic": -20.58,
+        "bic": -21.76,
+        "r2": 0.9994,
+        "mape": 0.08,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    },
+    "territori": {
+      "vacants": {
+        "degree": 2,
+        "aic": -35.69,
+        "bic": -36.86,
+        "r2": 0.9875,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "lloguer": {
+        "degree": 2,
+        "aic": -6.92,
+        "bic": -8.09,
+        "r2": 0.9982,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      },
+      "densificacio": {
+        "degree": 2,
+        "aic": 0.92,
+        "bic": -0.25,
+        "r2": 0.9726,
+        "mape": 0.0,
+        "cv_mean": NaN,
+        "cv_std": NaN,
+        "n_training_points": 5,
+        "n_splits": 4
+      }
+    }
+  }
+}

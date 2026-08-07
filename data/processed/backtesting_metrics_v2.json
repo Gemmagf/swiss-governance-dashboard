@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "generated": "2026-08-07T13:43:28.087854",
+    "model_version": "polynomial-bayesian-v2",
+    "test_method": "hold-out-last-year",
+    "metric_definitions": {
+      "mape": "Mean Absolute Percentage Error (%)",
+      "mae": "Mean Absolute Error",
+      "model_degree": "Selected polynomial degree",
+      "n_training_points": "Number of historical data points"
+    }
+  },
+  "backtesting": {
+    "bosc": {
+      "superficie": {
+        "year_test": 2024,
+        "actual": 31.6,
+        "predicted": 31.6,
+        "mape": 0.0,
+        "mae": 0.0,
+        "model_degree": 1,
+        "n_training_points": 4
+      },
+      "vitalitat": {
+        "year_test": 2024,
+        "actual": 74,
+        "predicted": 74.15,
+        "mape": 0.2,
+        "mae": 0.15,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "estres": {
+        "year_test": 2024,
+        "actual": 7.2,
+        "predicted": 7.25,
+        "mape": 0.69,
+        "mae": 0.05,
+        "model_degree": 1,
+        "n_training_points": 4
+      },
+      "escol\u00edtids": {
+        "year_test": 2024,
+        "actual": 210,
+        "predicted": 222.74,
+        "mape": 6.07,
+        "mae": 12.7437,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "aigua": {
+      "qualitat": {
+        "year_test": 2024,
+        "actual": 78,
+        "predicted": 77.51,
+        "mape": 0.63,
+        "mae": 0.493,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "nitrats": {
+        "year_test": 2024,
+        "actual": 21.2,
+        "predicted": 21.56,
+        "mape": 1.69,
+        "mae": 0.3575,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "consum": {
+        "year_test": 2024,
+        "actual": 302,
+        "predicted": 303.8,
+        "mape": 0.6,
+        "mae": 1.7996,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "cabal": {
+        "year_test": 2024,
+        "actual": 80,
+        "predicted": 81.49,
+        "mape": 1.87,
+        "mae": 1.493,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "micropolluents": {
+        "year_test": 2024,
+        "actual": 26,
+        "predicted": 24.55,
+        "mape": 5.58,
+        "mae": 1.4509,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "educacio": {
+      "ratio": {
+        "year_test": 2024,
+        "actual": 14.9,
+        "predicted": 14.93,
+        "mape": 0.2,
+        "mae": 0.0297,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "despesa": {
+        "year_test": 2024,
+        "actual": 20600,
+        "predicted": 20544.19,
+        "mape": 0.27,
+        "mae": 55.8115,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "titulacio": {
+        "year_test": 2024,
+        "actual": 90.4,
+        "predicted": 90.21,
+        "mape": 0.22,
+        "mae": 0.1944,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "dual": {
+        "year_test": 2024,
+        "actual": 63.0,
+        "predicted": 63.47,
+        "mape": 0.74,
+        "mae": 0.4693,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "digital": {
+        "year_test": 2024,
+        "actual": 36,
+        "predicted": 34.08,
+        "mape": 5.32,
+        "mae": 1.9158,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "mobilitat": {
+      "retencio": {
+        "year_test": 2024,
+        "actual": 41,
+        "predicted": 41.5,
+        "mape": 1.21,
+        "mae": 0.4953,
+        "model_degree": 1,
+        "n_training_points": 4
+      },
+      "electric": {
+        "year_test": 2024,
+        "actual": 0.6,
+        "predicted": 0.65,
+        "mape": 7.79,
+        "mae": 0.0467,
+        "model_degree": 1,
+        "n_training_points": 4
+      },
+      "puntualitat": {
+        "year_test": 2024,
+        "actual": 89.2,
+        "predicted": 89.39,
+        "mape": 0.22,
+        "mae": 0.1944,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "energia": {
+      "co2": {
+        "year_test": 2024,
+        "actual": 5.3,
+        "predicted": 5.26,
+        "mape": 0.83,
+        "mae": 0.0439,
+        "model_degree": 1,
+        "n_training_points": 4
+      },
+      "renov": {
+        "year_test": 2024,
+        "actual": 23,
+        "predicted": 22.51,
+        "mape": 2.14,
+        "mae": 0.493,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "solar": {
+        "year_test": 2024,
+        "actual": 175,
+        "predicted": 178.54,
+        "mape": 2.02,
+        "mae": 3.5372,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "consum": {
+        "year_test": 2024,
+        "actual": 25.8,
+        "predicted": 25.96,
+        "mape": 0.63,
+        "mae": 0.1623,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "hivern": {
+        "year_test": 2024,
+        "actual": 71,
+        "predicted": 69.52,
+        "mape": 2.08,
+        "mae": 1.479,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "serveis": {
+      "metges": {
+        "year_test": 2024,
+        "actual": 8.3,
+        "predicted": 8.28,
+        "mape": 0.25,
+        "mae": 0.0211,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "espera": {
+        "year_test": 2024,
+        "actual": 41,
+        "predicted": 41.51,
+        "mape": 1.24,
+        "mae": 0.507,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "cost": {
+        "year_test": 2024,
+        "actual": 7850,
+        "predicted": 7783.21,
+        "mape": 0.85,
+        "mae": 66.7938,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "domicili": {
+        "year_test": 2024,
+        "actual": 60,
+        "predicted": 59.03,
+        "mape": 1.62,
+        "mae": 0.9719,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "dossier": {
+        "year_test": 2024,
+        "actual": 3.5,
+        "predicted": 3.64,
+        "mape": 4.05,
+        "mae": 0.1419,
+        "model_degree": 2,
+        "n_training_points": 4
+      }
+    },
+    "territori": {
+      "vacants": {
+        "year_test": 2024,
+        "actual": 1.18,
+        "predicted": 1.22,
+        "mape": 3.01,
+        "mae": 0.0355,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "lloguer": {
+        "year_test": 2024,
+        "actual": 193,
+        "predicted": 192.36,
+        "mape": 0.33,
+        "mae": 0.6373,
+        "model_degree": 2,
+        "n_training_points": 4
+      },
+      "densificacio": {
+        "year_test": 2024,
+        "actual": 66,
+        "predicted": 67.44,
+        "mape": 2.18,
+        "mae": 1.4393,
+        "model_degree": 1,
+        "n_training_points": 4
+      }
+    }
+  }
+}
