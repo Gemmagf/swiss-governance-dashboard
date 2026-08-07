@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type": "Feature", "properties": {"canton": "ZH", "name": "Zurich", "population": 1565000}, "geometry": {"type": "Point", "coordinates": [8.6277, 47.3915]}},
+    {"type": "Feature", "properties": {"canton": "BE", "name": "Bern", "population": 1054600}, "geometry": {"type": "Point", "coordinates": [7.4474, 46.9479]}},
+    {"type": "Feature", "properties": {"canton": "LU", "name": "Lucerne", "population": 429000}, "geometry": {"type": "Point", "coordinates": [8.3093, 47.0506]}},
+    {"type": "Feature", "properties": {"canton": "UR", "name": "Uri", "population": 36500}, "geometry": {"type": "Point", "coordinates": [8.6275, 46.5603]}},
+    {"type": "Feature", "properties": {"canton": "SZ", "name": "Schwyz", "population": 165000}, "geometry": {"type": "Point", "coordinates": [8.6865, 47.0431]}},
+    {"type": "Feature", "properties": {"canton": "OW", "name": "Obwalden", "population": 37500}, "geometry": {"type": "Point", "coordinates": [8.2676, 46.8181]}},
+    {"type": "Feature", "properties": {"canton": "NW", "name": "Nidwalden", "population": 43000}, "geometry": {"type": "Point", "coordinates": [8.3636, 46.9306]}},
+    {"type": "Feature", "properties": {"canton": "GL", "name": "Glarus", "population": 40500}, "geometry": {"type": "Point", "coordinates": [9.0681, 46.9979]}},
+    {"type": "Feature", "properties": {"canton": "ZG", "name": "Zug", "population": 135000}, "geometry": {"type": "Point", "coordinates": [8.5162, 47.1645]}},
+    {"type": "Feature", "properties": {"canton": "FR", "name": "Fribourg", "population": 330000}, "geometry": {"type": "Point", "coordinates": [7.1608, 46.8182]}},
+    {"type": "Feature", "properties": {"canton": "SO", "name": "Solothurn", "population": 280000}, "geometry": {"type": "Point", "coordinates": [7.5356, 47.2081]}},
+    {"type": "Feature", "properties": {"canton": "BS", "name": "Basel-Stadt", "population": 196000}, "geometry": {"type": "Point", "coordinates": [7.5881, 47.5596]}},
+    {"type": "Feature", "properties": {"canton": "BL", "name": "Basel-Landschaft", "population": 200000}, "geometry": {"type": "Point", "coordinates": [7.6904, 47.4864]}},
+    {"type": "Feature", "properties": {"canton": "SH", "name": "Schaffhausen", "population": 82000}, "geometry": {"type": "Point", "coordinates": [8.6361, 47.6965]}},
+    {"type": "Feature", "properties": {"canton": "AR", "name": "Appenzell Ausserrhoden", "population": 80500}, "geometry": {"type": "Point", "coordinates": [9.4074, 47.3826]}},
+    {"type": "Feature", "properties": {"canton": "AI", "name": "Appenzell Innerrhoden", "population": 16800}, "geometry": {"type": "Point", "coordinates": [9.3185, 47.3204]}},
+    {"type": "Feature", "properties": {"canton": "SG", "name": "St. Gallen", "population": 535000}, "geometry": {"type": "Point", "coordinates": [9.2576, 47.4235]}},
+    {"type": "Feature", "properties": {"canton": "GR", "name": "Grisons", "population": 200000}, "geometry": {"type": "Point", "coordinates": [9.7753, 46.6569]}},
+    {"type": "Feature", "properties": {"canton": "AG", "name": "Aargau", "population": 710000}, "geometry": {"type": "Point", "coordinates": [8.0159, 47.4057]}},
+    {"type": "Feature", "properties": {"canton": "TG", "name": "Thurgau", "population": 280000}, "geometry": {"type": "Point", "coordinates": [9.0469, 47.5651]}},
+    {"type": "Feature", "properties": {"canton": "TI", "name": "Ticino", "population": 355000}, "geometry": {"type": "Point", "coordinates": [8.9281, 46.0091]}},
+    {"type": "Feature", "properties": {"canton": "VD", "name": "Vaud", "population": 870000}, "geometry": {"type": "Point", "coordinates": [6.6323, 46.5197]}},
+    {"type": "Feature", "properties": {"canton": "VS", "name": "Valais", "population": 344000}, "geometry": {"type": "Point", "coordinates": [7.7407, 46.4612]}},
+    {"type": "Feature", "properties": {"canton": "NE", "name": "Neuchâtel", "population": 178000}, "geometry": {"type": "Point", "coordinates": [6.9902, 46.9956]}},
+    {"type": "Feature", "properties": {"canton": "JU", "name": "Jura", "population": 73700}, "geometry": {"type": "Point", "coordinates": [6.7349, 47.2507]}},
+    {"type": "Feature", "properties": {"canton": "GE", "name": "Geneva", "population": 520000}, "geometry": {"type": "Point", "coordinates": [6.1432, 46.2044]}}
+  ]
+}

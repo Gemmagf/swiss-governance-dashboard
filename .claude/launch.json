@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Swiss Governance Dashboard",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/gemmagardela/swiss-governance-dashboard && source .venv/bin/activate && streamlit run src/frontend/app.py --server.headless true"],
+      "port": 8502
+    }
+  ]
+}

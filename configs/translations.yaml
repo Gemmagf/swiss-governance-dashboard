@@ -1,0 +1,367 @@
+# Translations for Swiss Governance Dashboard
+# Languages: German (de), French (fr), Italian (it), English (en)
+
+languages:
+  - code: "de"
+    name: "Deutsch"
+    flag: "🇨🇭"
+  - code: "fr"
+    name: "Français"
+    flag: "🇨🇭"
+  - code: "it"
+    name: "Italiano"
+    flag: "🇨🇭"
+  - code: "rm"
+    name: "Rumantsch"
+    flag: "🇨🇭"
+  - code: "en"
+    name: "English"
+    flag: "🇬🇧"
+
+translations:
+  app_title:
+    de: "Schweizer Governance-Dashboard"
+    fr: "Tableau de bord de gouvernance suisse"
+    it: "Dashboard di governance svizzera"
+    rm: "Dashbord da governance svizzer"
+    en: "Swiss Governance Dashboard"
+
+  app_subtitle:
+    de: "Echtzeit-Intelligenz für Schweizer Kantone"
+    fr: "Intelligence en temps réel pour les cantons suisses"
+    it: "Intelligence in tempo reale per i cantoni svizzeri"
+    rm: "Inteligenza en temps real per ils chantuns svizzers"
+    en: "Real-time intelligence for Swiss cantons"
+
+  select_language:
+    de: "Sprache"
+    fr: "Langue"
+    it: "Lingua"
+    en: "Language"
+
+  select_canton:
+    de: "Kanton wählen"
+    fr: "Choisir un canton"
+    it: "Selezionare un cantone"
+    en: "Select canton"
+
+  all_switzerland:
+    de: "Alle Schweiz"
+    fr: "Toute la Suisse"
+    it: "Tutta la Svizzera"
+    en: "All Switzerland"
+
+  timeline:
+    de: "Referenzjahr"
+    fr: "Année de référence"
+    it: "Anno di riferimento"
+    en: "Reference year"
+
+  scenario:
+    de: "Szenario"
+    fr: "Scénario"
+    it: "Scenario"
+    en: "Scenario"
+
+  optimistic:
+    de: "Optimistisch"
+    fr: "Optimiste"
+    it: "Ottimista"
+    en: "Optimistic"
+
+  baseline:
+    de: "Basislinie"
+    fr: "Tendanciel"
+    it: "Tendenziale"
+    en: "Baseline"
+
+  stress:
+    de: "Stress"
+    fr: "Stress"
+    it: "Stress"
+    en: "Stress"
+
+  observed:
+    de: "Beobachtet 2015–2025"
+    fr: "Observé 2015–2025"
+    it: "Osservato 2015–2025"
+    en: "Observed 2015–2025"
+
+  forecast:
+    de: "Prognose 2026–2032"
+    fr: "Prévision 2026–2032"
+    it: "Previsione 2026–2032"
+    en: "Forecast 2026–2032"
+
+  # Domains
+  forest_biodiversity:
+    de: "Wald & Biodiversität"
+    fr: "Forêt & Biodiversité"
+    it: "Foresta & Biodiversità"
+    en: "Forest & Biodiversity"
+
+  water:
+    de: "Wasser"
+    fr: "Eau"
+    it: "Acqua"
+    en: "Water"
+
+  education:
+    de: "Bildung"
+    fr: "Éducation"
+    it: "Istruzione"
+    en: "Education"
+
+  mobility:
+    de: "Mobilität"
+    fr: "Mobilité"
+    it: "Mobilità"
+    en: "Mobility"
+
+  energy_climate:
+    de: "Energie & Klima"
+    fr: "Énergie & Climat"
+    it: "Energia & Clima"
+    en: "Energy & Climate"
+
+  housing:
+    de: "Wohnen"
+    fr: "Logement"
+    it: "Alloggi"
+    en: "Housing"
+
+  waste:
+    de: "Abfall"
+    fr: "Déchets"
+    it: "Rifiuti"
+    en: "Waste"
+
+  air_environment:
+    de: "Luft & Umwelt"
+    fr: "Air & Environnement"
+    it: "Aria & Ambiente"
+    en: "Air & Environment"
+
+  # Indicators — Water
+  water_consumption:
+    de: "Trinkwasserverbrauch"
+    fr: "Consommation d'eau potable"
+    it: "Consumo di acqua potabile"
+    en: "Drinking water consumption"
+
+  water_network_loss:
+    de: "Netzverluste"
+    fr: "Pertes réseau"
+    it: "Perdite di rete"
+    en: "Network water loss"
+
+  water_quality:
+    de: "Qualitätsindex"
+    fr: "Indice de qualité"
+    it: "Indice di qualità"
+    en: "Water quality index"
+
+  annual_precipitation:
+    de: "Jahrniederschlag"
+    fr: "Précipitations annuelles"
+    it: "Precipitazioni annuali"
+    en: "Annual precipitation"
+
+  # Indicators — Mobility
+  public_transit_trips:
+    de: "Öffentliche Verkehrsmittel"
+    fr: "Voyages en transports publics"
+    it: "Viaggi in trasporto pubblico"
+    en: "Public transit trips"
+
+  bike_modal_share:
+    de: "Fahrradanteil"
+    fr: "Part modale du vélo"
+    it: "Quota modale bici"
+    en: "Bike modal share"
+
+  motorized_traffic:
+    de: "Motorisierter Verkehr"
+    fr: "Trafic motorisé"
+    it: "Traffico motorizzato"
+    en: "Motorized traffic volume"
+
+  network_punctuality:
+    de: "Netzpünktlichkeit"
+    fr: "Ponctualité du réseau"
+    it: "Puntualità della rete"
+    en: "Network punctuality"
+
+  # Indicators — Education
+  school_enrollment:
+    de: "Schulanmeldungen"
+    fr: "Inscriptions scolaires"
+    it: "Iscrizioni scolastiche"
+    en: "School enrollment"
+
+  student_teacher_ratio:
+    de: "Schüler-Lehrer-Verhältnis"
+    fr: "Ratio élèves-enseignants"
+    it: "Rapporto studenti-docenti"
+    en: "Student-teacher ratio"
+
+  childcare_places:
+    de: "Kinderbetreuungsplätze"
+    fr: "Places en garde d'enfants"
+    it: "Posti in asili nido"
+    en: "Childcare places"
+
+  spending_per_student:
+    de: "Ausgaben pro Schüler"
+    fr: "Dépenses par élève"
+    it: "Spese per studente"
+    en: "Spending per student"
+
+  # Indicators — Energy & Climate
+  co2_emissions:
+    de: "CO₂-Emissionen"
+    fr: "Émissions de CO₂"
+    it: "Emissioni di CO₂"
+    en: "CO₂ emissions"
+
+  renewable_energy_share:
+    de: "Anteil erneuerbare Energie"
+    fr: "Part de l'énergie renouvelable"
+    it: "Quota di energia rinnovabile"
+    en: "Renewable energy share"
+
+  final_energy_consumption:
+    de: "Endenergieverbrauch"
+    fr: "Consommation énergétique finale"
+    it: "Consumo energetico finale"
+    en: "Final energy consumption"
+
+  solar_capacity:
+    de: "Solarkapazität"
+    fr: "Capacité solaire"
+    it: "Capacità solare"
+    en: "Solar capacity installed"
+
+  # Indicators — Housing
+  median_rent:
+    de: "Durchschnittliche Miete"
+    fr: "Loyer médian"
+    it: "Affitto mediano"
+    en: "Median rent offered"
+
+  vacancy_rate:
+    de: "Leerstandsquote"
+    fr: "Taux de vacance"
+    it: "Tasso di sfitto"
+    en: "Housing vacancy rate"
+
+  housing_completions:
+    de: "Wohnungsfertigstellungen"
+    fr: "Achèvements de logements"
+    it: "Completamento abitazioni"
+    en: "Housing completions"
+
+  cooperative_housing:
+    de: "Genossenschafts- & Gemeinderaum"
+    fr: "Logement coopératif & public"
+    it: "Alloggi cooperativi e pubblici"
+    en: "Cooperative & public housing"
+
+  # Indicators — Waste
+  urban_waste_generated:
+    de: "Erzeugter Siedlungsabfall"
+    fr: "Déchets urbains générés"
+    it: "Rifiuti urbani generati"
+    en: "Urban waste generated"
+
+  separate_collection_rate:
+    de: "Separatsammlungsquote"
+    fr: "Taux de collecte séparative"
+    it: "Tasso di raccolta differenziata"
+    en: "Separate collection rate"
+
+  organic_waste_collection:
+    de: "Organische Abfallsammlung"
+    fr: "Collecte de déchets organiques"
+    it: "Raccolta rifiuti organici"
+    en: "Organic waste collection"
+
+  waste_management_cost:
+    de: "Servicekosten"
+    fr: "Coût du service"
+    it: "Costo del servizio"
+    en: "Waste service cost"
+
+  # Indicators — Air & Environment
+  no2_concentration:
+    de: "NO₂-Konzentration"
+    fr: "Concentration NO₂"
+    it: "Concentrazione NO₂"
+    en: "NO₂ annual average"
+
+  pm10_concentration:
+    de: "PM10-Konzentration"
+    fr: "Concentration PM10"
+    it: "Concentrazione PM10"
+    en: "PM10 annual average"
+
+  green_space_per_capita:
+    de: "Grünfläche pro Kopf"
+    fr: "Espace vert par habitant"
+    it: "Spazio verde pro capite"
+    en: "Green space per capita"
+
+  heat_days:
+    de: "Hitzetage"
+    fr: "Jours de chaleur"
+    it: "Giorni di caldo"
+    en: "Heat days (>30°C)"
+
+  # UI
+  data_source:
+    de: "Quelle"
+    fr: "Source"
+    it: "Fonte"
+    en: "Source"
+
+  last_updated:
+    de: "Zuletzt aktualisiert"
+    fr: "Dernière mise à jour"
+    it: "Ultimo aggiornamento"
+    en: "Last updated"
+
+  population:
+    de: "Bevölkerung"
+    fr: "Population"
+    it: "Popolazione"
+    en: "Population"
+
+  district_detail:
+    de: "Kantondetails"
+    fr: "Détails du canton"
+    it: "Dettagli del cantone"
+    en: "District detail"
+
+  ranking:
+    de: "Kantonrankings"
+    fr: "Classement par canton"
+    it: "Ranking per cantone"
+    en: "Ranking by canton"
+
+  composition:
+    de: "Zusammensetzung"
+    fr: "Composition"
+    it: "Composizione"
+    en: "Composition"
+
+  evolution_forecast:
+    de: "Entwicklung & Prognose"
+    fr: "Évolution et prévision"
+    it: "Evoluzione e previsione"
+    en: "Evolution & forecast"
+
+  canton_map:
+    de: "Kantonkarte"
+    fr: "Carte des cantons"
+    it: "Mappa dei cantoni"
+    en: "Canton map"

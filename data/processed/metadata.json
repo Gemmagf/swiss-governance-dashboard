@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-07T11:56:30.460153",
+  "rows": 7280,
+  "cantons": 26,
+  "years": 10,
+  "indicators": 28,
+  "data_sources": [
+    "Synthetic (Phase 1)",
+    "Real BFS/BAFU/opendata.swiss (Phase 2)"
+  ],
+  "coverage": {
+    "cantons": "26/26 (all)",
+    "years": "2015-2024",
+    "indicators": "28/32"
+  }
+}
