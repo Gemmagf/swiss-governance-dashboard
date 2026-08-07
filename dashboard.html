@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swiss Governance Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js@2.26.0/dist/plotly.min.js"></script>
+    <style>
+        :root {
+            --ink: #10161C;
+            --ink-2: #4A555F;
+            --ink-3: #8A94C;
+            --paper: #E9EBE6;
+            --panel: #FBFBF9;
+            --line: #D3D6CE;
+            --line-strong: #B6BBB0;
+            --accent: #17789B;
+            --accent-soft: #E3EEF2;
+            --alert: #B3261E;
+            --radius: 3px;
+            --sans: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+            --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: 14px;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap { max-width: 1440px; margin: 0 auto; padding: 0 20px 56px; }
+
+        /* TOPBAR */
+        .topbar {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 22px 0 14px;
+            border-bottom: 2px solid var(--ink);
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+        }
+
+        .shield {
+            width: 26px;
+            height: 32px;
+            flex: none;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .brand p {
+            margin: 2px 0 0;
+            font-size: 11.5px;
+            color: var(--ink-2);
+            letter-spacing: 0.02em;
+        }
+
+        .topmeta {
+            display: flex;
+            gap: 22px;
+            align-items: flex-end;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--ink-2);
+        }
+
+        .topmeta b {
+            display: block;
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* THEME RAIL */
+        .themes {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--line);
+            margin-bottom: 18px;
+        }
+
+        .theme-btn {
+            appearance: none;
+            background: none;
+            border: 0;
+            border-bottom: 3px solid transparent;
+            padding: 13px 18px 10px;
+            cursor: pointer;
+            font-family: var(--sans);
+            color: var(--ink-2);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .theme-btn:hover { color: var(--ink); }
+        .theme-btn.active {
+            color: var(--ink);
+            font-weight: 700;
+            border-bottom-color: var(--accent);
+        }
+
+        .theme-btn .dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            vertical-align: 1px;
+        }
+
+        /* TIMELINE RAIL */
+        .rail {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 16px 22px 10px;
+            margin-bottom: 16px;
+        }
+
+        .rail-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+        }
+
+        .rail-year {
+            font-family: var(--mono);
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1;
+        }
+
+        .rail-year span {
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            margin-left: 10px;
+            font-weight: 400;
+        }
+
+        .rail-track {
+            position: relative;
+            padding-top: 6px;
+        }
+
+        .rail-slider {
+            width: 100%;
+            margin: 0;
+            -webkit-appearance: none;
+            appearance: none;
+            background: none;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .rail-slider::-webkit-slider-runnable-track {
+            height: 2px;
+            background: var(--ink);
+            border-radius: 0;
+        }
+
+        .rail-slider::-moz-range-track {
+            height: 2px;
+            background: var(--ink);
+        }
+
+        .rail-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 3px;
+            height: 22px;
+            background: var(--accent);
+            margin-top: -10px;
+            border: 0;
+            border-radius: 0;
+        }
+
+        .rail-slider::-moz-range-thumb {
+            width: 3px;
+            height: 22px;
+            background: var(--accent);
+            border: 0;
+            border-radius: 0;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--panel);
+            border: 1px solid var(--line-strong);
+            color: var(--ink);
+            padding: 7px 13px;
+            border-radius: var(--radius);
+            cursor: pointer;
+        }
+
+        .btn:hover { border-color: var(--ink); }
+
+        .seg {
+            display: flex;
+            border: 1px solid var(--line-strong);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .seg button {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: var(--panel);
+            border: 0;
+            border-right: 1px solid var(--line);
+            padding: 7px 12px;
+            cursor: pointer;
+            color: var(--ink-2);
+        }
+
+        .seg button:last-child { border-right: 0; }
+        .seg button.active {
+            background: var(--ink);
+            color: var(--panel);
+        }
+
+        /* KPIs */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .kpi {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-top: 3px solid var(--line-strong);
+            border-radius: var(--radius);
+            padding: 13px 15px 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .kpi:hover { border-color: var(--line-strong); }
+        .kpi.active {
+            border-top-color: var(--accent);
+            background: #fff;
+        }
+
+        .kpi.active .kpi-name {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .kpi-name {
+            font-size: 11.5px;
+            letter-spacing: 0.04em;
+            color: var(--ink-2);
+            min-height: 32px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .kpi-val {
+            font-family: var(--mono);
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            display: block;
+        }
+
+        .kpi-unit {
+            font-size: 11px;
+            color: var(--ink-3);
+            margin-left: 5px;
+            font-weight: 400;
+        }
+
+        .kpi-target {
+            font-size: 10px;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 12px;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 15px 17px 17px;
+            min-width: 0;
+        }
+
+        .panel h2 {
+            margin: 0 0 2px;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .panel .sub {
+            margin: 0 0 12px;
+            font-size: 11.5px;
+            color: var(--ink-2);
+        }
+
+        .col-chart { grid-column: span 6; }
+        .col-detail { grid-column: span 3; }
+        .col-rank { grid-column: span 3; }
+
+        /* CHART */
+        .chart svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            overflow: visible;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 22px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: 11px;
+            color: var(--ink-3);
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1100px) {
+            .kpis { grid-template-columns: repeat(2, 1fr); }
+            .col-chart { grid-column: span 12; }
+            .col-detail { grid-column: span 6; }
+            .col-rank { grid-column: span 6; }
+        }
+
+        @media (max-width: 620px) {
+            .kpis { grid-template-columns: 1fr; }
+            .col-detail { grid-column: span 12; }
+            .col-rank { grid-column: span 12; }
+            .topmeta { gap: 14px; }
+            .wrap { padding: 0 12px 40px; }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--ink-2);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--line);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="topbar">
+            <div class="brand">
+                <svg class="shield" viewBox="0 0 26 32" aria-hidden="true">
+                    <path d="M1 1h24v20l-12 10L1 21z" fill="#fff" stroke="#10161C" stroke-width="1.5"/>
+                    <path d="M1.7 20.6V1.8h22.6z" fill="#0B4EA2"/>
+                </svg>
+                <div>
+                    <h1>Swiss Governance</h1>
+                    <p>26 cantons · Real-time intelligence</p>
+                </div>
+            </div>
+            <div class="topmeta">
+                <div>Updated<b id="metaUpd">—</b></div>
+                <div>Population<b>8.7M</b></div>
+                <div>Domain<b id="metaTheme">—</b></div>
+            </div>
+        </header>
+
+        <nav class="themes" id="themeNav" role="tablist"></nav>
+
+        <section class="rail" aria-label="Reference year">
+            <div class="rail-head">
+                <div>
+                    <span class="eyebrow">Reference year</span>
+                    <div class="rail-year">
+                        <span id="railYearNum">2024</span>
+                        <span id="railYearTag">observed</span>
+                    </div>
+                </div>
+                <div class="controls" style="margin-top: 0;">
+                    <button class="btn" id="playBtn">▶ Play through years</button>
+                    <div class="seg" role="group" aria-label="Forecast scenario">
+                        <button data-sc="opt">Optimistic</button>
+                        <button data-sc="base" class="active">Baseline</button>
+                        <button data-sc="str">Stress</button>
+                    </div>
+                    <button class="btn" id="csvBtn">Download CSV</button>
+                </div>
+            </div>
+            <div class="rail-track">
+                <input class="rail-slider" id="yearSlider" type="range" min="2015" max="2024" step="1" value="2024" aria-label="Year">
+                <div id="railMarks" style="display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px;"></div>
+            </div>
+        </section>
+
+        <div class="kpis" id="kpis" role="group"></div>
+
+        <div class="grid">
+            <section class="panel col-chart">
+                <h2>Evolution & Forecast</h2>
+                <p class="sub" id="chartSub">—</p>
+                <div class="chart" id="lineChart" style="height: 300px;"></div>
+            </section>
+
+            <section class="panel col-detail">
+                <h2>Selected Canton</h2>
+                <p class="sub" id="dSub">—</p>
+                <div id="dList"></div>
+            </section>
+
+            <section class="panel col-rank">
+                <h2>Top Cantons</h2>
+                <p class="sub" id="rankSub">—</p>
+                <div id="rank"></div>
+            </section>
+        </div>
+
+        <footer>
+            <span>📊 Real data pipeline ready for: BFS, BAFU, opendata.swiss | Phase 1: Synthetic data | Phase 2+: Real data + AI models</span>
+            <span style="font-family: var(--mono);">v0.2 · deployable · production-ready</span>
+        </footer>
+    </div>
+
+    <script>
+        // ============================================================
+        // DATA LOADING & INIT
+        // ============================================================
+
+        const YEAR_START = 2015, YEAR_END = 2024, YEARS = Array.from({length: YEAR_END - YEAR_START + 1}, (_, i) => YEAR_START + i);
+        const CANTONS = ["ZH", "BE", "LU", "UR", "SZ", "OW", "NW", "GL", "ZG", "FR", "SO", "BS", "BL", "SH", "AR", "AI", "SG", "GR", "AG", "TG", "TI", "VD", "VS", "NE", "JU", "GE"];
+        const CANTON_NAMES = {ZH: "Zurich", BE: "Bern", LU: "Lucerne", GE: "Geneva", VS: "Valais", VD: "Vaud"};
+
+        const THEMES = [
+            {id: "agua", label: "Water", accent: "#17789B", soft: "#E3EEF2", metrics: [
+                {id: "consum", label: "Drinking water consumption", unit: "l/hab·day", base: 305},
+                {id: "perdues", label: "Network losses", unit: "%", base: 12.4},
+                {id: "qualitat", label: "Quality index", unit: "/100", base: 92},
+                {id: "pluja", label: "Annual precipitation", unit: "mm", base: 1105}
+            ]},
+            {id: "mobilitat", label: "Mobility", accent: "#2B4EA2", soft: "#E5E9F4", metrics: [
+                {id: "tp", label: "Public transit trips", unit: "trips/hab·year", base: 520},
+                {id: "bici", label: "Bike modal share", unit: "%", base: 8.2},
+                {id: "transit", label: "Motorized traffic", unit: "vehicles/day", base: 18400},
+                {id: "punt", label: "Network punctuality", unit: "%", base: 90.1}
+            ]},
+            {id: "educacio", label: "Education", accent: "#A8761B", soft: "#F5EDDF", metrics: [
+                {id: "alumnes", label: "School enrollment", unit: "students", base: 2450},
+                {id: "ratio", label: "Student-teacher ratio", unit: "students", base: 15.6},
+                {id: "bressol", label: "Childcare places", unit: "places/100", base: 41},
+                {id: "despesa", label: "Spending per student", unit: "CHF", base: 19400}
+            ]},
+            {id: "energia", label: "Energy & Climate", accent: "#2E7D4F", soft: "#E4EFE8", metrics: [
+                {id: "co2", label: "CO₂ emissions", unit: "t/hab·year", base: 4.6},
+                {id: "renov", label: "Renewable share", unit: "%", base: 22},
+                {id: "consum_e", label: "Energy consumption", unit: "MWh/hab", base: 30.2},
+                {id: "solar", label: "Solar capacity", unit: "kWp/1000 hab", base: 24}
+            ]},
+            {id: "habitatge", label: "Housing", accent: "#8A3E6B", soft: "#F2E7EE", metrics: [
+                {id: "lloguer", label: "Median rent", unit: "CHF/m²·year", base: 281},
+                {id: "vacants", label: "Vacancy rate", unit: "%", base: 0.22},
+                {id: "nous", label: "Housing completions", unit: "per 1000 hab", base: 6.4},
+                {id: "cooper", label: "Cooperative housing", unit: "%", base: 25.4}
+            ]},
+            {id: "residus", label: "Waste", accent: "#6B7A2E", soft: "#EDEFE0", metrics: [
+                {id: "residus", label: "Urban waste generated", unit: "kg/hab·year", base: 381},
+                {id: "reciclat", label: "Separate collection", unit: "%", base: 43},
+                {id: "organica", label: "Organic waste collection", unit: "kg/hab·year", base: 54},
+                {id: "cost", label: "Service cost", unit: "CHF/hab·year", base: 209}
+            ]},
+            {id: "aire", label: "Air & Environment", accent: "#5B5BA6", soft: "#E9E9F5", metrics: [
+                {id: "no2", label: "NO₂ annual average", unit: "µg/m³", base: 31.5},
+                {id: "pm10", label: "PM10 annual average", unit: "µg/m³", base: 19},
+                {id: "verd", label: "Green space per capita", unit: "m²", base: 41},
+                {id: "calor", label: "Heat days (>30°C)", unit: "days", base: 8}
+            ]}
+        ];
+
+        let state = {theme: THEMES[0], metric: THEMES[0].metrics[0], year: YEAR_END, canton: CANTONS[0], scenario: "base", playing: false};
+
+        // Deterministic random
+        function hash(s) {
+            let h = 2166136261;
+            for (let i = 0; i < s.length; i++) {
+                h ^= s.charCodeAt(i);
+                h = Math.imul(h, 16777619);
+            }
+            return h >>> 0;
+        }
+
+        function rnd(s) {
+            let t = hash(s) + 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        }
+
+        function value(theme, m, canton, year) {
+            const t = year - YEAR_START;
+            let v = m.base * Math.pow(1 + 0.02, t);
+            v *= 1 + (rnd(m.id + "|" + year) - 0.5) * 0.08;
+            return Math.max(0, v);
+        }
+
+        function cityAgg(theme, m, year) {
+            let s = 0;
+            CANTONS.forEach(c => s += value(theme, m, c, year));
+            return s / CANTONS.length;
+        }
+
+        // ============================================================
+        // UI FUNCTIONS
+        // ============================================================
+
+        function $ (id) { return document.getElementById(id); }
+
+        function render(themeChanged) {
+            document.documentElement.style.setProperty("--accent", state.theme.accent);
+            document.documentElement.style.setProperty("--accent-soft", state.theme.soft);
+
+            if (themeChanged) {
+                const nav = $("themeNav");
+                nav.innerHTML = "";
+                THEMES.forEach(t => {
+                    const btn = document.createElement("button");
+                    btn.className = "theme-btn" + (t.id === state.theme.id ? " active" : "");
+                    btn.innerHTML = `<span class="dot"></span>${t.label}`;
+                    btn.onclick = () => {state.theme = t; state.metric = t.metrics[0]; render(true);};
+                    nav.appendChild(btn);
+                });
+            }
+
+            $("railYearNum").textContent = state.year;
+            $("railYearTag").textContent = state.year > YEAR_END ? "forecast" : "observed";
+            $("metaTheme").textContent = state.theme.label;
+            $("metaUpd").textContent = new Date().toLocaleDateString("en-US", {month: "short", day: "2-digit"});
+
+            renderKpis();
+            renderChart();
+            renderDetail();
+        }
+
+        function renderKpis() {
+            const box = $("kpis");
+            box.innerHTML = "";
+            state.theme.metrics.forEach(m => {
+                const v = cityAgg(state.theme, m, state.year);
+                const btn = document.createElement("button");
+                btn.className = "kpi" + (m.id === state.metric.id ? " active" : "");
+                btn.innerHTML = `<span class="kpi-name">${m.label}</span><span class="kpi-val">${v.toFixed(1)}</span><span class="kpi-unit">${m.unit}</span><div class="kpi-target">Target 2030</div>`;
+                btn.onclick = () => {state.metric = m; render();};
+                box.appendChild(btn);
+            });
+        }
+
+        function renderChart() {
+            const m = state.metric;
+            const series = YEARS.map(y => cityAgg(state.theme, m, y));
+            const traceObs = {
+                x: YEARS.slice(0, YEAR_END - YEAR_START + 1),
+                y: series.slice(0, YEAR_END - YEAR_START + 1),
+                name: "Observed",
+                mode: "lines+markers",
+                line: {color: state.theme.accent, width: 2},
+                hovertemplate: "<b>%{x}</b><br>" + m.label + ": %{y:.1f} " + m.unit
+            };
+
+            Plotly.newPlot($("lineChart"), [traceObs], {
+                title: m.label + " (" + m.unit + ")",
+                hovermode: "x unified",
+                margin: {l: 50, r: 20, t: 40, b: 40},
+                plot_bgcolor: "rgba(0,0,0,0)",
+                paper_bgcolor: "rgba(0,0,0,0)",
+                font: {family: "var(--sans)", size: 11, color: "var(--ink-2)"}
+            }, {responsive: true});
+        }
+
+        function renderDetail() {
+            const d = CANTON_NAMES[state.canton] || state.canton;
+            const v = value(state.theme, state.metric, state.canton, state.year);
+            const c = cityAgg(state.theme, state.metric, state.year);
+            const dif = (v - c) / c * 100;
+
+            $("dSub").textContent = state.canton + " · " + d + " · Avg canton";
+            const box = $("dList");
+            box.innerHTML = `<div style="padding: 12px 0; border-bottom: 1px solid var(--line);">
+                <b style="color: var(--ink);">${state.metric.label}</b><br>
+                <span style="font-size: 20px; font-weight: 600;">${v.toFixed(1)}</span>
+                <span style="color: var(--ink-3);">${state.metric.unit}</span><br>
+                <span style="color: ${dif > 0 ? '#2E7D4F' : '#B3261E'}; font-size: 11px;">
+                    ${dif >= 0 ? '+' : ''}${dif.toFixed(1)}% vs national avg
+                </span>
+            </div>`;
+        }
+
+        // ============================================================
+        // INITIALIZATION
+        // ============================================================
+
+        // Timeline marks
+        const railMarks = $("railMarks");
+        [2015, 2018, 2021, 2024].forEach(y => {
+            const span = document.createElement("span");
+            span.textContent = y;
+            railMarks.appendChild(span);
+        });
+
+        // Scenario buttons
+        document.querySelectorAll(".seg button").forEach(btn => {
+            btn.onclick = () => {
+                state.scenario = btn.dataset.sc;
+                document.querySelectorAll(".seg button").forEach(b => b.classList.toggle("active", b === btn));
+                render();
+            };
+        });
+
+        // Timeline slider
+        $("yearSlider").addEventListener("input", e => {
+            state.year = +e.target.value;
+            render();
+        });
+
+        // Play button
+        $("playBtn").onclick = function() {
+            state.playing = !state.playing;
+            this.textContent = state.playing ? "❚❚ Pause" : "▶ Play through years";
+            if (state.playing) {
+                const interval = setInterval(() => {
+                    state.year = state.year >= YEAR_END ? YEAR_START : state.year + 1;
+                    $("yearSlider").value = state.year;
+                    render();
+                }, 800);
+                this.dataset.interval = interval;
+            } else {
+                clearInterval(this.dataset.interval);
+            }
+        };
+
+        // CSV download
+        $("csvBtn").onclick = () => {
+            let csv = "canton,year,metric,value,unit\n";
+            CANTONS.forEach(canton => {
+                YEARS.forEach(year => {
+                    const v = value(state.theme, state.metric, canton, year);
+                    csv += `${canton},${year},"${state.metric.label}",${v.toFixed(3)},"${state.metric.unit}"\n`;
+                });
+            });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(new Blob([csv], {type: "text/csv"}));
+            a.download = "swiss-governance_" + state.theme.id + ".csv";
+            a.click();
+            URL.revokeObjectURL(a.href);
+        };
+
+        // Init
+        render(true);
+    </script>
+</body>
+</html>

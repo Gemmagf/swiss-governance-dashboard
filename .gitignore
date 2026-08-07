@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.egg-info/
+dist/
+build/
+.streamlit/
+data/raw/*.csv
+data/raw/*.json
+.env
+*.log
