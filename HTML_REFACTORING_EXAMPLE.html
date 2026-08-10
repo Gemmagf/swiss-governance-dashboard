@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML Refactoring Examples - Translation Integration</title>
+<style>
+  body { font-family: monospace; margin: 20px; background: #f5f5f5; }
+  .example { background: white; padding: 20px; margin: 20px 0; border-left: 4px solid #DC0018; }
+  .before { color: #c25e00; }
+  .after { color: #1c7a46; }
+  h3 { margin-top: 0; }
+  pre { overflow-x: auto; background: #f9f9f9; padding: 10px; }
+</style>
+</head>
+<body>
+
+<h1>HTML Translation Integration Examples</h1>
+<p>Copy-paste these refactored sections into your dashboard_real.html</p>
+
+<!-- ===== EXAMPLE 1: HEADER ===== -->
+<div class="example">
+<h3>Example 1: Header Section</h3>
+<p><strong>File location:</strong> lines 231-253</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;div class="hdr"&gt;
+  &lt;svg class="cross" viewBox="0 0 32 32" aria-hidden="true"&gt;...&lt;/svg&gt;
+  &lt;h1&gt;Datencockpit Schweiz
+    &lt;small&gt;Cockpit de dades de la Confederació · prototip interdepartamental&lt;/small&gt;
+  &lt;/h1&gt;
+  &lt;div class="crumb" id="crumb"&gt;&lt;/div&gt;
+  &lt;div class="grow"&gt;&lt;/div&gt;
+  &lt;div class="hdr-meta"&gt;
+    &lt;div&gt;Àmbit&lt;b id="mDom"&gt;—&lt;/b&gt;&lt;/div&gt;
+    &lt;div&gt;Població&lt;b id="mPop"&gt;—&lt;/b&gt;&lt;/div&gt;
+    &lt;div&gt;Superfície&lt;b id="mArea"&gt;—&lt;/b&gt;&lt;/div&gt;
+    &lt;div&gt;Models&lt;b id="mModels"&gt;7 actius&lt;/b&gt;&lt;/div&gt;
+    &lt;div class="lang-sel"&gt;
+      &lt;select id="langSelect" onchange="changeLanguage(this.value)"&gt;
+        &lt;option value="de" selected&gt;🇩🇪 Deutsch&lt;/option&gt;
+        &lt;option value="ca"&gt;🇨🇭 Català&lt;/option&gt;
+        &lt;option value="en"&gt;🇬🇧 English&lt;/option&gt;
+        &lt;option value="fr"&gt;🇫🇷 Français&lt;/option&gt;
+        &lt;option value="it"&gt;🇮🇹 Italiano&lt;/option&gt;
+        &lt;option value="rm"&gt;🗣️ Rumantsch&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;div class="hdr"&gt;
+  &lt;svg class="cross" viewBox="0 0 32 32" aria-hidden="true"&gt;...&lt;/svg&gt;
+  &lt;h1 data-i18n="hdr.title"&gt;Datencockpit Schweiz&lt;/h1&gt;
+  &lt;h1 style="display:none"&gt;
+    &lt;small data-i18n="hdr.subtitle"&gt;Cockpit de dades de la Confederació · prototip interdepartamental&lt;/small&gt;
+  &lt;/h1&gt;
+  &lt;div class="crumb" id="crumb"&gt;&lt;/div&gt;
+  &lt;div class="grow"&gt;&lt;/div&gt;
+  &lt;div class="hdr-meta"&gt;
+    &lt;div&gt;
+      &lt;span data-i18n="meta.domain"&gt;&lt;/span&gt;
+      &lt;b id="mDom"&gt;—&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;span data-i18n="meta.population"&gt;&lt;/span&gt;
+      &lt;b id="mPop"&gt;—&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;span data-i18n="meta.area"&gt;&lt;/span&gt;
+      &lt;b id="mArea"&gt;—&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;span data-i18n="meta.models"&gt;&lt;/span&gt;
+      &lt;b id="mModels" data-i18n="meta.models_active" data-i18n-vars='{"n": "7"}'&gt;7 actius&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div class="lang-sel"&gt;
+      &lt;select id="langSelect" onchange="changeLanguage(this.value)"&gt;
+        &lt;option value="de" data-i18n="lang.german" selected&gt;🇩🇪 Deutsch&lt;/option&gt;
+        &lt;option value="ca" data-i18n="lang.catalan"&gt;🇨🇭 Català&lt;/option&gt;
+        &lt;option value="en" data-i18n="lang.english"&gt;🇬🇧 English&lt;/option&gt;
+        &lt;option value="fr" data-i18n="lang.french"&gt;🇫🇷 Français&lt;/option&gt;
+        &lt;option value="it" data-i18n="lang.italian"&gt;🇮🇹 Italiano&lt;/option&gt;
+        &lt;option value="rm" data-i18n="lang.romansh"&gt;🗣️ Rumantsch&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Also update page title in JS: --&gt;
+&lt;script&gt;
+  window.addEventListener("languageChanged", () => {
+    document.title = t("hdr.page_title");
+  });
+&lt;/script&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 2: CONTROL BAR ===== -->
+<div class="example">
+<h3>Example 2: Control Bar (Year & Scenario)</h3>
+<p><strong>File location:</strong> lines 256-272</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;div class="bar"&gt;
+  &lt;span class="lbl"&gt;Any&lt;/span&gt;
+  &lt;div class="yearbox"&gt;
+    &lt;div class="yearval"&gt;
+      &lt;span id="yTag"&gt;observat&lt;/span&gt;
+      &lt;span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none"&gt;2026&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Any de referència"&gt;
+  &lt;/div&gt;
+  &lt;span class="lbl"&gt;Escenari&lt;/span&gt;
+  &lt;div class="seg" id="scen"&gt;
+    &lt;button data-s="opt"&gt;Acord&lt;/button&gt;
+    &lt;button data-s="base" aria-pressed="true"&gt;Tendencial&lt;/button&gt;
+    &lt;button data-s="str"&gt;Estrès&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button class="btn" id="play" aria-pressed="false"&gt;▶ Anima&lt;/button&gt;
+  &lt;button class="btn" id="reset"&gt;Vista nacional&lt;/button&gt;
+  &lt;button class="btn" id="csv"&gt;CSV&lt;/button&gt;
+  &lt;button class="btn" id="tRail" style="display:none"&gt;Panells&lt;/button&gt;
+&lt;/div&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;div class="bar"&gt;
+  &lt;span class="lbl" data-i18n="ctrl.year"&gt;Any&lt;/span&gt;
+  &lt;div class="yearbox"&gt;
+    &lt;div class="yearval"&gt;
+      &lt;span id="yTag" data-i18n="ctrl.year_status_observed"&gt;observat&lt;/span&gt;
+      &lt;span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none"&gt;2026&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;input id="year" type="range" min="2015" max="2040" step="1" value="2026"
+           data-i18n-attr="aria-label" data-i18n-attr-key="a11y.year_slider"&gt;
+  &lt;/div&gt;
+  &lt;span class="lbl" data-i18n="ctrl.scenario"&gt;Escenari&lt;/span&gt;
+  &lt;div class="seg" id="scen"&gt;
+    &lt;button data-s="opt" data-i18n="ctrl.scenario_agreement"&gt;Acord&lt;/button&gt;
+    &lt;button data-s="base" aria-pressed="true" data-i18n="ctrl.scenario_baseline"&gt;Tendencial&lt;/button&gt;
+    &lt;button data-s="str" data-i18n="ctrl.scenario_stress"&gt;Estrès&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button class="btn" id="play" aria-pressed="false" data-i18n="btn.animate"&gt;▶ Anima&lt;/button&gt;
+  &lt;button class="btn" id="reset" data-i18n="btn.national_view"&gt;Vista nacional&lt;/button&gt;
+  &lt;button class="btn" id="csv" data-i18n="btn.csv"&gt;CSV&lt;/button&gt;
+  &lt;button class="btn" id="tRail" style="display:none" data-i18n="btn.panels"&gt;Panells&lt;/button&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 3: MAP TOOLS ===== -->
+<div class="example">
+<h3>Example 3: Map Tools (Zoom Buttons)</h3>
+<p><strong>File location:</strong> lines 281-285</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;div class="maptools"&gt;
+  &lt;button id="zin" title="Amplia"&gt;＋&lt;/button&gt;
+  &lt;button id="zout" title="Redueix"&gt;－&lt;/button&gt;
+  &lt;button id="zfit" title="Tot Suïssa"&gt;⤢&lt;/button&gt;
+&lt;/div&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;div class="maptools"&gt;
+  &lt;button id="zin" data-i18n-attr="title" data-i18n-attr-key="btn.zoom_in"&gt;＋&lt;/button&gt;
+  &lt;button id="zout" data-i18n-attr="title" data-i18n-attr-key="btn.zoom_out"&gt;－&lt;/button&gt;
+  &lt;button id="zfit" data-i18n-attr="title" data-i18n-attr-key="btn.zoom_fit"&gt;⤢&lt;/button&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 4: BOTTOM STRIP ===== -->
+<div class="example">
+<h3>Example 4: Bottom Strip (Ranking & Drivers)</h3>
+<p><strong>File location:</strong> lines 292-303</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;div class="strip"&gt;
+  &lt;div&gt;
+    &lt;h4 class="sub"&gt;Rànquing cantonal &lt;span id="rankUnit" style="text-transform:none;letter-spacing:0"&gt;&lt;/span&gt;&lt;/h4&gt;
+    &lt;div class="rows" id="rank"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h4 class="sub"&gt;Contribució als canvis previstos · atribució del model&lt;/h4&gt;
+    &lt;div class="drv" id="drivers"&gt;&lt;/div&gt;
+    &lt;h4 class="sub" style="margin-top:11px"&gt;Comprovació retrospectiva&lt;/h4&gt;
+    &lt;div id="backtest"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;div class="strip"&gt;
+  &lt;div&gt;
+    &lt;h4 class="sub" data-i18n="section.ranking"&gt;
+      Rànquing cantonal
+      &lt;span id="rankUnit" style="text-transform:none;letter-spacing:0"&gt;&lt;/span&gt;
+    &lt;/h4&gt;
+    &lt;div class="rows" id="rank"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h4 class="sub" data-i18n="section.contribution"&gt;Contribució als canvis previstos · atribució del model&lt;/h4&gt;
+    &lt;div class="drv" id="drivers"&gt;&lt;/div&gt;
+    &lt;h4 class="sub" style="margin-top:11px" data-i18n="section.backtest"&gt;Comprovació retrospectiva&lt;/h4&gt;
+    &lt;div id="backtest"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 5: SIDEBAR PANELS ===== -->
+<div class="example">
+<h3>Example 5: Sidebar Panel Headers</h3>
+<p><strong>File location:</strong> lines 315-340</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;section class="p" id="pFan"&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Evolució i previsió&lt;/h2&gt;
+    &lt;span class="ai"&gt;Conjunt probabilístic&lt;/span&gt;
+    &lt;button class="exp" data-x="pFan" title="Amplia"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  &lt;div class="c"&gt;...&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="p" id="pSim"&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Simulador de mesures&lt;/h2&gt;
+    &lt;span class="ai"&gt;Contrafactual&lt;/span&gt;
+    &lt;button class="exp" data-x="pSim" title="Amplia"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  &lt;div class="c"&gt;
+    &lt;p class="note"&gt;Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.&lt;/p&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="p" id="pBrief"&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Nota de situació&lt;/h2&gt;
+    &lt;span class="ai"&gt;Generada&lt;/span&gt;
+    &lt;button class="exp" data-x="pBrief" title="Amplia"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;
+
+&lt;section class="p" id="pAlerts"&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Senyals d'alerta&lt;/h2&gt;
+    &lt;span class="ai"&gt;Detecció d'anomalies&lt;/span&gt;
+    &lt;button class="exp" data-x="pAlerts" title="Amplia"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;
+
+&lt;section class="p" id="pModel"&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Fitxa del model i dades&lt;/h2&gt;
+    &lt;button class="exp" data-x="pModel" title="Amplia"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;section class="p" id="pFan"&gt;
+  &lt;header&gt;
+    &lt;h2 data-i18n="panel.evolution"&gt;Evolució i previsió&lt;/h2&gt;
+    &lt;span class="ai" data-i18n="panel.evolution_ai"&gt;Conjunt probabilístic&lt;/span&gt;
+    &lt;button class="exp" data-x="pFan" data-i18n-attr="title" data-i18n-attr-key="btn.expand"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  &lt;div class="c"&gt;...&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="p" id="pSim"&gt;
+  &lt;header&gt;
+    &lt;h2 data-i18n="panel.simulator"&gt;Simulador de mesures&lt;/h2&gt;
+    &lt;span class="ai" data-i18n="panel.simulator_ai"&gt;Contrafactual&lt;/span&gt;
+    &lt;button class="exp" data-x="pSim" data-i18n-attr="title" data-i18n-attr-key="btn.expand"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  &lt;div class="c"&gt;
+    &lt;p class="note" data-i18n="help.simulator"&gt;Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.&lt;/p&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="p" id="pBrief"&gt;
+  &lt;header&gt;
+    &lt;h2 data-i18n="panel.status_note"&gt;Nota de situació&lt;/h2&gt;
+    &lt;span class="ai" data-i18n="panel.status_note_ai"&gt;Generada&lt;/span&gt;
+    &lt;button class="exp" data-x="pBrief" data-i18n-attr="title" data-i18n-attr-key="btn.expand"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;
+
+&lt;section class="p" id="pAlerts"&gt;
+  &lt;header&gt;
+    &lt;h2 data-i18n="panel.alerts"&gt;Senyals d'alerta&lt;/h2&gt;
+    &lt;span class="ai" data-i18n="panel.alerts_ai"&gt;Detecció d'anomalies&lt;/span&gt;
+    &lt;button class="exp" data-x="pAlerts" data-i18n-attr="title" data-i18n-attr-key="btn.expand"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;
+
+&lt;section class="p" id="pModel"&gt;
+  &lt;header&gt;
+    &lt;h2 data-i18n="panel.model_card"&gt;Fitxa del model i dades&lt;/h2&gt;
+    &lt;button class="exp" data-x="pModel" data-i18n-attr="title" data-i18n-attr-key="btn.expand"&gt;⤢&lt;/button&gt;
+  &lt;/header&gt;
+  ...
+&lt;/section&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 6: CANTON IDENTITY ===== -->
+<div class="example">
+<h3>Example 6: Canton Identity Card</h3>
+<p><strong>File location:</strong> lines 307-313</p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>&lt;section class="p" id="pIdent"&gt;
+  &lt;div class="ktbar" id="ktbar"&gt;...&lt;/div&gt;
+  &lt;div class="ktcard"&gt;
+    &lt;svg class="shield" id="ktShield" viewBox="0 0 26 30" aria-hidden="true"&gt;&lt;/svg&gt;
+    &lt;div&gt;
+      &lt;h3 id="ktName"&gt;Confederació Suïssa&lt;/h3&gt;
+      &lt;p id="ktMeta"&gt;26 cantons · 4 llengües oficials&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>&lt;section class="p" id="pIdent"&gt;
+  &lt;div class="ktbar" id="ktbar"&gt;...&lt;/div&gt;
+  &lt;div class="ktcard"&gt;
+    &lt;svg class="shield" id="ktShield" viewBox="0 0 26 30" aria-hidden="true"&gt;&lt;/svg&gt;
+    &lt;div&gt;
+      &lt;h3 id="ktName" data-i18n="canton.switzerland"&gt;Confederació Suïssa&lt;/h3&gt;
+      &lt;p id="ktMeta" data-i18n="canton.stats"&gt;26 cantons · 4 llengües oficials&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+</div>
+
+<!-- ===== EXAMPLE 7: DYNAMIC JS ===== -->
+<div class="example">
+<h3>Example 7: Dynamic Content in JavaScript</h3>
+<p><strong>How to replace hardcoded strings in your main script</strong></p>
+
+<h4 class="before">BEFORE:</h4>
+<pre>// Chart labels
+const chartTitle = "Rànquing cantonal";
+const scenarioLabel = "Tendencial";
+const yAxisLabel = m.unit;
+
+// Messages
+const accuracyMsg = "Fiabilitat del model: " + mape + "%";
+const costMsg = "Cost anual estimat: " + cost + " mio";
+
+// Status text
+const statusYear = year &gt; YOBS ? "previsió" : "observat";
+const statusText = "Dada " + statusYear;</pre>
+
+<h4 class="after">AFTER:</h4>
+<pre>// Chart labels
+const chartTitle = t("section.ranking");
+const scenarioLabel = t("ctrl.scenario_baseline");
+const yAxisLabel = m.unit;
+
+// Messages
+const accuracyMsg = t("model.accuracy_short", { pct: mape.toFixed(1) });
+const costMsg = t("chart.annual_cost") + ": " + cost + " mio";
+
+// Status text
+const statusKey = year &gt; YOBS ? "ctrl.year_status_forecast" : "ctrl.year_status_observed";
+const statusText = t(statusKey);
+
+// Handle language changes for charts
+window.addEventListener("languageChanged", () => {
+  updateChartLabels();
+  refreshSimulatorUI();
+  redrawAlerts();
+});</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,524 @@
+{
+  "metadata": {
+    "name": "Swiss Governance Dashboard - Translation Dictionary",
+    "version": "1.0.0",
+    "languages": ["de", "ca", "en", "fr", "it", "rm"],
+    "languageNames": {
+      "de": "Deutsch",
+      "ca": "Català",
+      "en": "English",
+      "fr": "Français",
+      "it": "Italiano",
+      "rm": "Rumantsch"
+    },
+    "default": "de",
+    "totalKeys": 85,
+    "lastUpdated": "2026-08-10"
+  },
+  "translations": {
+    "hdr.title": {
+      "de": "Datencockpit Schweiz",
+      "ca": "Cockpit de dades de Suïssa",
+      "en": "Swiss Data Cockpit",
+      "fr": "Cockpit de données suisse",
+      "it": "Cruscotto dati svizzero",
+      "rm": "Cockpit da datas svizras"
+    },
+    "hdr.subtitle": {
+      "de": "Cockpit de dades de la Confederació · prototip interdepartamental",
+      "ca": "Cockpit de dades de la Confederació · prototip interdepartamental",
+      "en": "Confederation Data Cockpit · interdepartmental prototype",
+      "fr": "Cockpit de données de la Confédération · prototype interministériel",
+      "it": "Cruscotto dati della Confederazione · prototipo interdepartimentale",
+      "rm": "Cockpit da datas da la Confederaziun · prototip interdepartamental"
+    },
+    "hdr.page_title": {
+      "de": "Schweizerisches Datencockpit · Cockpit de dades de la Confederació",
+      "ca": "Cockpit de dades de la Confederació · Cockpit de dades suïssa",
+      "en": "Swiss Data Cockpit · Confederation Data Cockpit",
+      "fr": "Cockpit de données suisse · Cockpit de données de la Confédération",
+      "it": "Cruscotto dati svizzero · Cruscotto dati della Confederazione",
+      "rm": "Cockpit da datas svizras · Cockpit da datas da la Confederaziun"
+    },
+    "meta.domain": {
+      "de": "Àmbit",
+      "ca": "Àmbit",
+      "en": "Domain",
+      "fr": "Domaine",
+      "it": "Ambito",
+      "rm": "Ambit"
+    },
+    "meta.population": {
+      "de": "Bevölkerung",
+      "ca": "Població",
+      "en": "Population",
+      "fr": "Population",
+      "it": "Popolazione",
+      "rm": "Populaziun"
+    },
+    "meta.area": {
+      "de": "Fläche",
+      "ca": "Superfície",
+      "en": "Area",
+      "fr": "Superficie",
+      "it": "Superficie",
+      "rm": "Superficcha"
+    },
+    "meta.models": {
+      "de": "Modelle",
+      "ca": "Models",
+      "en": "Models",
+      "fr": "Modèles",
+      "it": "Modelli",
+      "rm": "Models"
+    },
+    "meta.models_active": {
+      "de": "{n} aktiv",
+      "ca": "{n} actius",
+      "en": "{n} active",
+      "fr": "{n} actifs",
+      "it": "{n} attivi",
+      "rm": "{n} actius"
+    },
+    "lang.german": {
+      "de": "🇩🇪 Deutsch",
+      "ca": "🇩🇪 Alemany",
+      "en": "🇩🇪 German",
+      "fr": "🇩🇪 Allemand",
+      "it": "🇩🇪 Tedesco",
+      "rm": "🇩🇪 Tudestg"
+    },
+    "lang.catalan": {
+      "de": "🇨🇭 Katalanisch",
+      "ca": "🇨🇭 Català",
+      "en": "🇨🇭 Catalan",
+      "fr": "🇨🇭 Catalan",
+      "it": "🇨🇭 Catalano",
+      "rm": "🇨🇭 Catalan"
+    },
+    "lang.english": {
+      "de": "🇬🇧 Englisch",
+      "ca": "🇬🇧 Anglès",
+      "en": "🇬🇧 English",
+      "fr": "🇬🇧 Anglais",
+      "it": "🇬🇧 Inglese",
+      "rm": "🇬🇧 Englais"
+    },
+    "lang.french": {
+      "de": "🇫🇷 Französisch",
+      "ca": "🇫🇷 Francès",
+      "en": "🇫🇷 French",
+      "fr": "🇫🇷 Français",
+      "it": "🇫🇷 Francese",
+      "rm": "🇫🇷 Franzos"
+    },
+    "lang.italian": {
+      "de": "🇮🇹 Italienisch",
+      "ca": "🇮🇹 Italià",
+      "en": "🇮🇹 Italian",
+      "fr": "🇮🇹 Italien",
+      "it": "🇮🇹 Italiano",
+      "rm": "🇮🇹 Talian"
+    },
+    "lang.romansh": {
+      "de": "🗣️ Rätoromanisch",
+      "ca": "🗣️ Romanx",
+      "en": "🗣️ Romansh",
+      "fr": "🗣️ Romanche",
+      "it": "🗣️ Romancio",
+      "rm": "🗣️ Rumantsch"
+    },
+    "ctrl.year": {
+      "de": "Jahr",
+      "ca": "Any",
+      "en": "Year",
+      "fr": "Année",
+      "it": "Anno",
+      "rm": "Onn"
+    },
+    "ctrl.year_status_observed": {
+      "de": "beobachtet",
+      "ca": "observat",
+      "en": "observed",
+      "fr": "observé",
+      "it": "osservato",
+      "rm": "observà"
+    },
+    "ctrl.year_status_forecast": {
+      "de": "Prognose",
+      "ca": "previsió",
+      "en": "forecast",
+      "fr": "prévision",
+      "it": "previsione",
+      "rm": "previsiun"
+    },
+    "ctrl.scenario": {
+      "de": "Szenario",
+      "ca": "Escenari",
+      "en": "Scenario",
+      "fr": "Scénario",
+      "it": "Scenario",
+      "rm": "Scenario"
+    },
+    "ctrl.scenario_agreement": {
+      "de": "Abkommen",
+      "ca": "Acord",
+      "en": "Agreement",
+      "fr": "Accord",
+      "it": "Accordo",
+      "rm": "Accord"
+    },
+    "ctrl.scenario_baseline": {
+      "de": "Tendenzielle",
+      "ca": "Tendencial",
+      "en": "Baseline",
+      "fr": "Tendanciel",
+      "it": "Tendenziale",
+      "rm": "Tendenzial"
+    },
+    "ctrl.scenario_stress": {
+      "de": "Stress",
+      "ca": "Estrès",
+      "en": "Stress",
+      "fr": "Stress",
+      "it": "Stress",
+      "rm": "Stress"
+    },
+    "btn.animate": {
+      "de": "▶ Animieren",
+      "ca": "▶ Anima",
+      "en": "▶ Animate",
+      "fr": "▶ Animer",
+      "it": "▶ Anima",
+      "rm": "▶ Animar"
+    },
+    "btn.national_view": {
+      "de": "Nationalansicht",
+      "ca": "Vista nacional",
+      "en": "National View",
+      "fr": "Vue nationale",
+      "it": "Vista nazionale",
+      "rm": "Glista naziunala"
+    },
+    "btn.csv": {
+      "de": "CSV",
+      "ca": "CSV",
+      "en": "CSV",
+      "fr": "CSV",
+      "it": "CSV",
+      "rm": "CSV"
+    },
+    "btn.panels": {
+      "de": "Fenster",
+      "ca": "Panells",
+      "en": "Panels",
+      "fr": "Panneaux",
+      "it": "Pannelli",
+      "rm": "Panellas"
+    },
+    "btn.zoom_in": {
+      "de": "Vergrößern",
+      "ca": "Amplia",
+      "en": "Zoom in",
+      "fr": "Agrandir",
+      "it": "Ingrandisci",
+      "rm": "Grandina"
+    },
+    "btn.zoom_out": {
+      "de": "Verkleinern",
+      "ca": "Redueix",
+      "en": "Zoom out",
+      "fr": "Réduire",
+      "it": "Riduci",
+      "rm": "Reducescha"
+    },
+    "btn.zoom_fit": {
+      "de": "Ganz Schweiz",
+      "ca": "Tot Suïssa",
+      "en": "All Switzerland",
+      "fr": "Toute la Suisse",
+      "it": "Tutta la Svizzera",
+      "rm": "Tutta Svizra"
+    },
+    "btn.expand": {
+      "de": "Vergrößern",
+      "ca": "Amplia",
+      "en": "Expand",
+      "fr": "Agrandir",
+      "it": "Espandi",
+      "rm": "Grandina"
+    },
+    "section.ranking": {
+      "de": "Kantonsranking",
+      "ca": "Rànquing cantonal",
+      "en": "Canton Ranking",
+      "fr": "Classement des cantons",
+      "it": "Ranking cantoni",
+      "rm": "Classifiziun chantunala"
+    },
+    "section.contribution": {
+      "de": "Beitrag zu Prognoseänderungen · Modellzuordnung",
+      "ca": "Contribució als canvis previstos · atribució del model",
+      "en": "Contribution to Forecast Changes · Model Attribution",
+      "fr": "Contribution aux changements prévus · attribution du modèle",
+      "it": "Contributo ai cambiamenti previsti · attribuzione del modello",
+      "rm": "Contribuziun a las midadas previstas · atribuziun dal model"
+    },
+    "section.backtest": {
+      "de": "Rückwärts Überprüfung",
+      "ca": "Comprovació retrospectiva",
+      "en": "Backtest",
+      "fr": "Vérification rétrospective",
+      "it": "Verifica retrospettiva",
+      "rm": "Controllas retrospectiva"
+    },
+    "panel.evolution": {
+      "de": "Entwicklung und Prognose",
+      "ca": "Evolució i previsió",
+      "en": "Evolution and Forecast",
+      "fr": "Évolution et prévision",
+      "it": "Evoluzione e previsione",
+      "rm": "Evoluziun e previsiun"
+    },
+    "panel.evolution_ai": {
+      "de": "Probabilistische Ensemble",
+      "ca": "Conjunt probabilístic",
+      "en": "Probabilistic Ensemble",
+      "fr": "Ensemble probabiliste",
+      "it": "Insieme probabilistico",
+      "rm": "Cumparsa probabilistica"
+    },
+    "panel.simulator": {
+      "de": "Maßnahmensimulator",
+      "ca": "Simulador de mesures",
+      "en": "Measure Simulator",
+      "fr": "Simulateur de mesures",
+      "it": "Simulatore misure",
+      "rm": "Simulatur da midadas"
+    },
+    "panel.simulator_ai": {
+      "de": "Kontrafaktisch",
+      "ca": "Contrafactual",
+      "en": "Counterfactual",
+      "fr": "Contrefactuel",
+      "it": "Controffattuale",
+      "rm": "Counterfactual"
+    },
+    "panel.status_note": {
+      "de": "Lagebericht",
+      "ca": "Nota de situació",
+      "en": "Status Note",
+      "fr": "Note de situation",
+      "it": "Nota di situazione",
+      "rm": "Nota da situaziun"
+    },
+    "panel.status_note_ai": {
+      "de": "Generiert",
+      "ca": "Generada",
+      "en": "Generated",
+      "fr": "Générée",
+      "it": "Generata",
+      "rm": "Generada"
+    },
+    "panel.alerts": {
+      "de": "Warnmeldungen",
+      "ca": "Senyals d'alerta",
+      "en": "Alert Signals",
+      "fr": "Signaux d'alerte",
+      "it": "Segnali di alerta",
+      "rm": "Signals d'alerta"
+    },
+    "panel.alerts_ai": {
+      "de": "Anomalieerkennung",
+      "ca": "Detecció d'anomalies",
+      "en": "Anomaly Detection",
+      "fr": "Détection d'anomalies",
+      "it": "Rilevamento anomalie",
+      "rm": "Detectiun d'anomalias"
+    },
+    "panel.model_card": {
+      "de": "Modell- und Datenblatt",
+      "ca": "Fitxa del model i dades",
+      "en": "Model & Data Card",
+      "fr": "Fiche modèle et données",
+      "it": "Scheda modello e dati",
+      "rm": "Charta dal model e datas"
+    },
+    "canton.switzerland": {
+      "de": "Schweizerische Eidgenossenschaft",
+      "ca": "Confederació Suïssa",
+      "en": "Swiss Confederation",
+      "fr": "Confédération suisse",
+      "it": "Confederazione Svizzera",
+      "rm": "Confederaziun Svizra"
+    },
+    "canton.stats": {
+      "de": "26 Kantone · 4 Amtssprachen",
+      "ca": "26 cantons · 4 llengües oficials",
+      "en": "26 cantons · 4 official languages",
+      "fr": "26 cantons · 4 langues officielles",
+      "it": "26 cantoni · 4 lingue ufficiali",
+      "rm": "26 chantuns · 4 linguas officials"
+    },
+    "help.simulator": {
+      "de": "Verschieben Sie die Hebel, um zu sehen, wie sich die Flugbahn bis 2035 ändert. Die Auswirkungen sind geschätzte Elastizitäten mit Konfidenzintervallen, keine Garantien.",
+      "ca": "Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.",
+      "en": "Move the levers to see how the trajectory changes to 2035. Effects are estimated elasticities with confidence intervals, not guarantees.",
+      "fr": "Déplacez les leviers pour voir comment la trajectoire change jusqu'en 2035. Les effets sont des élasticités estimées avec intervalles de confiance, pas des garanties.",
+      "it": "Muovi le leve per vedere come cambia la traiettoria fino al 2035. Gli effetti sono elasticità stimate con intervalli di confidenza, non garanzie.",
+      "rm": "Mova las palancas per vair co la trajetoria sa midada sin al 2035. Ils effects èn elasticitads estimadas cun interval da confidenza, no garantias."
+    },
+    "chart.model_drift": {
+      "de": "Modell Drift",
+      "ca": "Deriva del model",
+      "en": "Model Drift",
+      "fr": "Dérive du modèle",
+      "it": "Deriva del modello",
+      "rm": "Deriva dal model"
+    },
+    "chart.annual_cost": {
+      "de": "Geschätzter Jahresaufwand",
+      "ca": "Cost anual estimat",
+      "en": "Estimated Annual Cost",
+      "fr": "Coût annuel estimé",
+      "it": "Costo annuale stimato",
+      "rm": "Cost annual estimà"
+    },
+    "chart.cost_per_point": {
+      "de": "Kosten pro Punkt",
+      "ca": "Cost per punt",
+      "en": "Cost per Point",
+      "fr": "Coût par point",
+      "it": "Costo per punto",
+      "rm": "Cost per punct"
+    },
+    "chart.last_retrain": {
+      "de": "Letztes Retraining",
+      "ca": "Darrer reentrenament",
+      "en": "Last Retrain",
+      "fr": "Dernier réentraînement",
+      "it": "Ultimo riaddestramento",
+      "rm": "Ultima retrenada"
+    },
+    "chart.reliable_horizon": {
+      "de": "Zuverlässiger Horizont",
+      "ca": "Horitzó fiable",
+      "en": "Reliable Horizon",
+      "fr": "Horizon fiable",
+      "it": "Orizzonte affidabile",
+      "rm": "Horizont fidavel"
+    },
+    "chart.retroactive_error": {
+      "de": "Rückwärts Fehler",
+      "ca": "Error retrospectiu",
+      "en": "Retroactive Error",
+      "fr": "Erreur rétrospective",
+      "it": "Errore retroattivo",
+      "rm": "Eir retrospectiva"
+    },
+    "chart.forecast_effect": {
+      "de": "Effekt vs Basis",
+      "ca": "Efecte vs base",
+      "en": "Effect vs Base",
+      "fr": "Effet vs base",
+      "it": "Effetto vs base",
+      "rm": "Effect vs basa"
+    },
+    "stat.p10_p90": {
+      "de": "Bereich P10–P90",
+      "ca": "Interval P10–P90",
+      "en": "Range P10–P90",
+      "fr": "Intervalle P10–P90",
+      "it": "Intervallo P10–P90",
+      "rm": "Interval P10–P90"
+    },
+    "stat.p25_p75": {
+      "de": "Bereich P25–P75",
+      "ca": "Interval P25–P75",
+      "en": "Range P25–P75",
+      "fr": "Intervalle P25–P75",
+      "it": "Intervallo P25–P75",
+      "rm": "Interval P25–P75"
+    },
+    "stat.predicted_ex_ante": {
+      "de": "Ex-ante vorhergesagt",
+      "ca": "Predit ex-ante",
+      "en": "Predicted ex-ante",
+      "fr": "Prédit ex-ante",
+      "it": "Predetto ex-ante",
+      "rm": "Predì ex-ante"
+    },
+    "stat.realized": {
+      "de": "Realisiert",
+      "ca": "Realitzat",
+      "en": "Realized",
+      "fr": "Réalisé",
+      "it": "Realizzato",
+      "rm": "Realisà"
+    },
+    "stat.value_2035": {
+      "de": "Wert 2035",
+      "ca": "Valor 2035",
+      "en": "Value 2035",
+      "fr": "Valeur 2035",
+      "it": "Valore 2035",
+      "rm": "Valur 2035"
+    },
+    "stat.target": {
+      "de": "Ziel",
+      "ca": "objectiu",
+      "en": "Target",
+      "fr": "Cible",
+      "it": "Obiettivo",
+      "rm": "Ubiectif"
+    },
+    "stat.observed": {
+      "de": "Beobachtet",
+      "ca": "observat",
+      "en": "Observed",
+      "fr": "Observé",
+      "it": "Osservato",
+      "rm": "Observà"
+    },
+    "stat.forecast": {
+      "de": "Prognose",
+      "ca": "previsió",
+      "en": "Forecast",
+      "fr": "Prévision",
+      "it": "Previsione",
+      "rm": "Previsiun"
+    },
+    "model.accuracy_msg": {
+      "de": "Modellzuverlässigkeit in den letzten sechs Jahren: durchschnittlicher Fehler {pct}%. Aktuelle Zahlen sind vorläufig.",
+      "ca": "Fiabilitat del model en els darrers sis anys: error mitjà del {pct}%. Les xifres recents són provisionals.",
+      "en": "Model reliability in the past six years: average error {pct}%. Recent figures are provisional.",
+      "fr": "Fiabilité du modèle au cours des six dernières années: erreur moyenne {pct}%. Les chiffres récents sont provisoires.",
+      "it": "Affidabilità del modello negli ultimi sei anni: errore medio {pct}%. I dati recenti sono provvisori.",
+      "rm": "Fidavaivladad dal model en ils ultims sis onns: eir media {pct}%. Las cifras recents èn provisoricas."
+    },
+    "model.accuracy_short": {
+      "de": "MAPE {pct}%",
+      "ca": "MAPE {pct}%",
+      "en": "MAPE {pct}%",
+      "fr": "MAPE {pct}%",
+      "it": "MAPE {pct}%",
+      "rm": "MAPE {pct}%"
+    },
+    "a11y.year_slider": {
+      "de": "Jahr Schieberegler",
+      "ca": "Selector d'any",
+      "en": "Year range slider",
+      "fr": "Curseur d'années",
+      "it": "Slider dell'anno",
+      "rm": "Selector d'onn"
+    },
+    "a11y.canton_map": {
+      "de": "Kantonkarte",
+      "ca": "Mapa dels cantons",
+      "en": "Canton map",
+      "fr": "Carte des cantons",
+      "it": "Mappa dei cantoni",
+      "rm": "Mapa dals chantuns"
+    }
+  }
+}
