@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="de" id="htmlRoot">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,6 +45,11 @@ button{font-family:inherit;color:inherit}
 .hdr-meta{display:flex;gap:20px;font-family:var(--mono);font-size:10px;color:var(--ink-3);text-align:right}
 .hdr-meta b{display:block;font-size:12px;color:var(--ink);font-weight:600}
 .redrule{height:3px;background:var(--red)}
+
+/* ---- language selector ---- */
+.lang-sel{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px}
+.lang-sel select{background:#fff;border:1px solid var(--line-2);padding:4px 8px;cursor:pointer;font-family:var(--mono);font-size:10px;color:var(--ink)}
+.lang-sel select:hover{border-color:var(--ink)}
 
 /* ---- controlbar ---- */
 .bar{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:8px 18px;flex-wrap:wrap}
@@ -234,6 +239,16 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       <div>Població<b id="mPop">—</b></div>
       <div>Superfície<b id="mArea">—</b></div>
       <div>Models<b id="mModels">7 actius</b></div>
+      <div class="lang-sel">
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="de" selected>🇩🇪 Deutsch</option>
+          <option value="ca">🇨🇭 Català</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="rm">🗣️ Rumantsch</option>
+        </select>
+      </div>
     </div>
   </div>
   <div class="redrule"></div>
@@ -942,6 +957,44 @@ VB=fit([0,0,1000,MAPH],.04);
 draw(true);
 requestAnimationFrame(refit);
 new ResizeObserver(()=>refit()).observe($("mapbox"));
+
+/* ---- language selector functionality ---- */
+const LANG_LABELS = {
+  de: {
+    any: 'Jahr', escenari: 'Szenario', models: 'Modelle aktiv',
+    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche'
+  },
+  ca: {
+    any: 'Any', escenari: 'Escenari', models: 'models actius',
+    domini: 'Àmbit', poblacio: 'Població', superficie: 'Superfície'
+  },
+  en: {
+    any: 'Year', escenari: 'Scenario', models: 'active models',
+    domini: 'Domain', poblacio: 'Population', superficie: 'Area'
+  },
+  fr: {
+    any: 'Année', escenari: 'Scénario', models: 'modèles actifs',
+    domini: 'Domaine', poblacio: 'Population', superficie: 'Superficie'
+  },
+  it: {
+    any: 'Anno', escenari: 'Scenario', models: 'modelli attivi',
+    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Superficie'
+  },
+  rm: {
+    any: 'Onn', escenari: 'Scenario', models: 'models actifs',
+    domini: 'Domeni', poblacio: 'Populaziun', superficie: 'Superficie'
+  }
+};
+
+function changeLanguage(lang) {
+  document.getElementById('htmlRoot').lang = lang;
+  localStorage.setItem('dashboardLang', lang);
+  document.getElementById('langSelect').value = lang;
+}
+
+// Load saved language preference
+const savedLang = localStorage.getItem('dashboardLang') || 'de';
+changeLanguage(savedLang);
 </script>
 </body>
 </html>
