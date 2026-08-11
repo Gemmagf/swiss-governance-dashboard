@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de" id="htmlRoot">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test: Translation System</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    .test-item { margin: 5px 0; }
+    .result { color: green; }
+    .error { color: red; }
+    select { padding: 5px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Translation System Test</h1>
+
+  <div class="section">
+    <h2>Language Selector</h2>
+    <select id="langSelect" onchange="handleLanguageChange()">
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="ca">🇨🇭 Català</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="rm">🗣️ Rumantsch</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <h2>Translation Tests</h2>
+    <div id="tests"></div>
+  </div>
+
+  <div class="section">
+    <h2>Console Output</h2>
+    <pre id="console" style="background: #f0f0f0; padding: 10px; overflow-y: auto; max-height: 300px;"></pre>
+  </div>
+
+  <!-- Load translation system -->
+  <script src="translation_system.js"></script>
+  <script>
+    let logs = [];
+
+    // Redirect console.log to page
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog(...args);
+      logs.push(args.join(' '));
+      updateConsole();
+    };
+
+    function updateConsole() {
+      document.getElementById('console').textContent = logs.join('\n');
+      document.getElementById('console').scrollTop = document.getElementById('console').scrollHeight;
+    }
+
+    function handleLanguageChange() {
+      const lang = document.getElementById('langSelect').value;
+      console.log(`Changing language to: ${lang}`);
+      changeLanguage(lang);
+      document.getElementById('htmlRoot').lang = lang;
+      runTests();
+    }
+
+    function runTests() {
+      const testKeys = [
+        'meta.domain',
+        'meta.population',
+        'meta.area',
+        'meta.models',
+        'ctrl.year',
+        'ctrl.scenario_baseline',
+        'ctrl.scenario_agreement',
+        'btn.animate',
+        'btn.national_view',
+        'sidebar.territory',
+        'sidebar.indicators'
+      ];
+
+      const testsDiv = document.getElementById('tests');
+      testsDiv.innerHTML = '';
+
+      testKeys.forEach(key => {
+        const translation = t(key);
+        const isSuccess = translation && translation !== key;
+        const resultClass = isSuccess ? 'result' : 'error';
+        const status = isSuccess ? '✅' : '❌';
+
+        const item = document.createElement('div');
+        item.className = 'test-item';
+        item.innerHTML = `${status} <strong>${key}</strong>: <span class="${resultClass}">${translation}</span>`;
+        testsDiv.appendChild(item);
+      });
+
+      console.log(`✅ Tests completed for ${document.getElementById('langSelect').value}`);
+    }
+
+    // Initialize
+    console.log('📌 Translation System Test Initialized');
+    console.log('Available languages: de, ca, en, fr, it, rm');
+
+    // Wait for translation system to load
+    setTimeout(() => {
+      if (typeof t === 'function') {
+        console.log('✅ Translation system loaded successfully');
+        initLanguage();
+        runTests();
+      } else {
+        console.error('❌ Translation system failed to load');
+      }
+    }, 500);
+  </script>
+</body>
+</html>
