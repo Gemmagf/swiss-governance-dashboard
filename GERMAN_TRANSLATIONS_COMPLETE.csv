@@ -1,0 +1,196 @@
+Domain,Category,Metric,Catalan,German
+Educació,Domain Label,educacio,Educació,Bildung
+Educació,Metric Label,ratio,Ràtio alumnat per docent,Schüler-Lehrer-Verhältnis
+Educació,Metric Unit,ratio,alumnes,Schüler
+Educació,Metric Label,despesa,Despesa pública per alumne,Öffentliche Ausgaben pro Schüler
+Educació,Metric Unit,despesa,CHF/any,CHF/Jahr
+Educació,Metric Label,titulacio,Titulació de secundària II als 25 anys,Sekundärschulabschluss II im Alter von 25 Jahren
+Educació,Metric Unit,titulacio,%,%
+Educació,Metric Label,dual,Alumnat en formació professional dual,Auszubildende in dualer beruflicher Ausbildung
+Educació,Metric Unit,dual,%,%
+Educació,Metric Label,digital,Centres amb infraestructura digital completa,Schulen mit vollständiger digitaler Infrastruktur
+Educació,Metric Unit,digital,%,%
+Educació,Data Source,ratio,BFS Estadística escolar,BFS · Schulstatistik
+Educació,Data Source,despesa,BFS Contes de l'educació,BFS · Bildungskonten
+Educació,Data Source,titulacio,BFS Enquesta de força de treball,BFS · Erwerbstätigkeitserhebung
+Educació,Data Source,dual,BFS Registre d'aprenents,BFS · Lehrstellenregister
+Educació,Data Source,digital,opendata.swiss,opendata.swiss
+Educació,Policy Lever,ratio_1,Augment de salari docent,Erhöhung der Lehrergehälter
+Educació,Policy Lever,ratio_2,Programa de formació contínua de docents,Lehrer-Weiterbildungsprogramm
+Educació,Policy Lever,ratio_3,Inversió en aules escolars,Investitionen in Klassenzimmer
+Educació,Policy Lever,ratio_4,Campanyes de reclutament de docents,Lehrerwerbungskampagnen
+Educació,Policy Lever,digital_1,Inversió en TIC escolars,Investitionen in Schul-IKT
+Educació,Policy Lever,digital_2,Qualificació de docents en tecnologia digital,Lehrerschulung in digitaler Technologie
+Educació,Policy Lever,digital_3,Subvencions per a dispositius informàtics,Zuschüsse für digitale Geräte
+Educació,Policy Lever,digital_4,Infraestructura d'emmagatzematge en núvol,Cloud-Infrastruktur für Schulen
+Educació,Driver,ratio_1,Pressupost d'educació,Bildungsbudget
+Educació,Driver,ratio_2,Disponibilitat de docents,Verfügbarkeit von Lehrern
+Educació,Driver,ratio_3,Matrícula estudiantil,Schülerzahl/Anmeldungen
+Educació,Driver,ratio_4,Retenció de docents,Lehrerbindung
+Educació,Driver,digital_1,Pressupost d'informàtica,IKT-Budget
+Educació,Driver,digital_2,Formació de docents en tecnologia,Lehrerfortbildung in Technologie
+Educació,Driver,digital_3,Disponibilitat d'internet,Internetverfügbarkeit
+Educació,Driver,digital_4,Disponibilitat de dispositius,Verfügbarkeit von Geräten
+Mobilitat,Domain Label,mobilitat,Mobilitat,Mobilität
+Mobilitat,Metric Label,tp,Viatges en transport públic,Fahrten mit öffentlichen Verkehrsmitteln
+Mobilitat,Metric Unit,tp,viatges/hab·any,Fahrten/Einwohner·Jahr
+Mobilitat,Metric Label,retencio,Hores de retenció a la xarxa,Stauzeit im Netz
+Mobilitat,Metric Unit,retencio,h/1000 hab,h/1000 Einw.
+Mobilitat,Metric Label,bici,Quota modal de bicicleta,Fahrradverkehrsanteil
+Mobilitat,Metric Unit,bici,%,%
+Mobilitat,Metric Label,electric,Vehicles elèctrics al parc,Elektrofahrzeuge in der Flotte
+Mobilitat,Metric Unit,electric,%,%
+Mobilitat,Metric Label,puntualitat,Puntualitat ferroviària,Pünktlichkeit des Bahnverkehrs
+Mobilitat,Metric Unit,puntualitat,%,%
+Mobilitat,Data Source,tp,BFS Microcens mobilitat,BFS · Mobilitätsmikrozensus
+Mobilitat,Data Source,retencio,ASTRA Comptadors automàtics,ASTRA · Automatische Zähler
+Mobilitat,Data Source,bici,BFS Microcens mobilitat,BFS · Mobilitätsmikrozensus
+Mobilitat,Data Source,electric,MOFIS Registre de vehicles,MOFIS · Fahrzeugregister
+Mobilitat,Data Source,puntualitat,SBB Dades d'explotació,SBB · Betriebsdaten
+Mobilitat,Policy Lever,tp_1,Augment de freqüència del transport públic,Erhöhung der Verkehrsfrequenz
+Mobilitat,Policy Lever,tp_2,Reducció de tarifes de transport públic,Fahrpreissenkung
+Mobilitat,Policy Lever,tp_3,Ampliació de la xarxa de transport,Netzausbau
+Mobilitat,Policy Lever,tp_4,Augment del preu del cotxe privat,Erhöhung der Pkw-Kosten
+Mobilitat,Policy Lever,bici_1,Ampliació de carril bici,Radwegeausbau
+Mobilitat,Policy Lever,bici_2,Subvenció de sistemes de bicicleta compartida,Bike-Sharing-Subvention
+Mobilitat,Policy Lever,bici_3,Millora d'aparcaments de bicicleta,Verbesserung der Fahrradparkplätze
+Mobilitat,Policy Lever,bici_4,Subvenció per a bicicletes elèctriques,E-Bike-Subvention
+Mobilitat,Driver,tp_1,Freqüència del transport públic,Verkehrsfrequenz
+Mobilitat,Driver,tp_2,Cost del transport públic,Fahrkartenpreis
+Mobilitat,Driver,tp_3,Cobertura de la xarxa de transport,Netzabdeckung
+Mobilitat,Driver,tp_4,Cost del cotxe privat,Pkw-Kosten
+Mobilitat,Driver,tp_5,Congestió de tràfic,Verkehrsstau
+Mobilitat,Driver,bici_1,Infraestructura per a bicicletes,Fahrradinfrastruktur
+Mobilitat,Driver,bici_2,Topografia del territori,Gelände-Topographie
+Mobilitat,Driver,bici_3,Condicions meteorològiques,Wetterbedingungen
+Mobilitat,Driver,bici_4,Distància al lloc de treball,Entfernung zur Arbeit
+Mobilitat,Driver,bici_5,Cost del cotxe privat,Pkw-Kosten
+Energia i clima,Domain Label,energia,Energia i clima,Energie und Klima
+Energia i clima,Metric Label,co2,Emissions de gasos amb efecte d'hivernacle,Treibhausgasemissionen
+Energia i clima,Metric Unit,co2,t CO₂eq/hab,t CO₂eq/Einw.
+Energia i clima,Metric Label,renov,Quota renovable del consum final,Anteil erneuerbarer Energien
+Energia i clima,Metric Unit,renov,%,%
+Energia i clima,Metric Label,solar,Potència fotovoltaica instal·lada,Installierte Photovoltaik-Leistung
+Energia i clima,Metric Unit,solar,W/hab,W/Einw.
+Energia i clima,Metric Label,consum,Consum final d'energia,Energieverbrauch insgesamt
+Energia i clima,Metric Unit,consum,MWh/hab,MWh/Einw.
+Energia i clima,Metric Label,hivern,Cobertura del dèficit hivernal,Deckung des Winterdefizits
+Energia i clima,Metric Unit,hivern,%,%
+Energia i clima,Data Source,co2,BAFU Inventari nacional,BAFU · Nationaler Inventarbericht
+Energia i clima,Data Source,renov,SFOE Estadística energètica,SFOE · Energiestatistik
+Energia i clima,Data Source,solar,Pronovo Registre,Pronovo · Register
+Energia i clima,Data Source,consum,SFOE Estadística energètica,SFOE · Energiestatistik
+Energia i clima,Data Source,hivern,Swissgrid Balanç,Swissgrid · Bilanz
+Energia i clima,Policy Lever,co2_1,Impost al carboni,CO₂-Steuer
+Energia i clima,Policy Lever,co2_2,Subvenció a la generació solar,Solarenergie-Subvention
+Energia i clima,Policy Lever,co2_3,Retrofitting de bombes de calor,Wärmepumpen-Sanierung
+Energia i clima,Policy Lever,co2_4,Incentius per als cotxes elèctrics,Förderung von Elektrofahrzeugen
+Energia i clima,Policy Lever,co2_5,Comercialització de drets d'emissió industrial,Industrielles Emissionshandelssystem
+Energia i clima,Policy Lever,renov_1,Objectius de generació solar,Solarziele
+Energia i clima,Policy Lever,renov_2,Ampliació de l'energia eòlica,Windenergie-Ausbau
+Energia i clima,Policy Lever,renov_3,Modernització de centrals hidroelèctriques,Modernisierung von Wasserkraftwerken
+Energia i clima,Policy Lever,renov_4,Modernització de la xarxa elèctrica,Modernisierung des Stromnetzes
+Energia i clima,Driver,co2_1,Consum d'energia,Energieverbrauch
+Energia i clima,Driver,co2_2,Combustible de calefacció,Heizstoffmix
+Energia i clima,Driver,co2_3,Combustible de transport,Verkehrsstoffmix
+Energia i clima,Driver,co2_4,Producció industrial,Industrielle Produktion
+Energia i clima,Driver,renov_1,Capacitat hidroelèctrica,Wasserkraftkapazität
+Energia i clima,Driver,renov_2,Capacitat solar,Solarkapazität
+Energia i clima,Driver,renov_3,Capacitat eòlica,Windkapazität
+Energia i clima,Driver,renov_4,Retirada de combustibles fòssils,Abschaltung fossiler Kapazitäten
+Salut i serveis públics,Domain Label,serveis,Salut i serveis públics,Gesundheit und öffentliche Dienste
+Salut i serveis públics,Metric Label,metges,Metges de família per 10k habitants,Hausärzte pro 10.000 Einwohner
+Salut i serveis públics,Metric Unit,metges,metges,Ärzte
+Salut i serveis públics,Metric Label,espera,Temps d'espera a urgències,Wartezeit in der Notaufnahme
+Salut i serveis públics,Metric Unit,espera,minuts,Minuten
+Salut i serveis públics,Metric Label,cost,Despesa sanitària per habitant,Gesundheitsausgaben pro Einwohner
+Salut i serveis públics,Metric Unit,cost,CHF/any,CHF/Jahr
+Salut i serveis públics,Metric Label,domicili,Cobertura d'atenció domiciliària,Abdeckung der Heimbetreuung
+Salut i serveis públics,Metric Unit,domicili,% de la demanda,% der Nachfrage
+Salut i serveis públics,Metric Label,dossier,Historial clínic electrònic actiu,Aktive elektronische Patientenakte
+Salut i serveis públics,Metric Unit,dossier,% de la població,% der Bevölkerung
+Salut i serveis públics,Data Source,metges,FMH Estadística profesional,FMH · Berufsstatistik
+Salut i serveis públics,Data Source,espera,OFSP Estadística hospitalària,OFSP · Spitalstatistik
+Salut i serveis públics,Data Source,cost,OFSP Contes de salut,OFSP · Gesundheitskonten
+Salut i serveis públics,Data Source,domicili,OFSP Enquesta de serveis,OFSP · Dienstleistungsumfrage
+Salut i serveis públics,Data Source,dossier,eHealth Suïssa,eHealth Schweiz
+Salut i serveis públics,Policy Lever,metges_1,Augment de salari dels metges,Erhöhung der Arztgehälter
+Salut i serveis públics,Policy Lever,metges_2,Millora de condicions de treball,Verbesserung der Arbeitsbedingungen
+Salut i serveis públics,Policy Lever,metges_3,Incentiu per a metges rurals,Landarzt-Anreiz
+Salut i serveis públics,Policy Lever,metges_4,Subvenció de formació mèdica,Zuschuss zur medizinischen Ausbildung
+Salut i serveis públics,Policy Lever,espera_1,Contratació de personal sanitari,Personalrekrutierung
+Salut i serveis públics,Policy Lever,espera_2,Millora dels sistemes de triatge,Verbesserung des Triage-Systems
+Salut i serveis públics,Policy Lever,espera_3,Ampliació de capacitat de UCI,Erweiterung der Intensivbettkapazität
+Salut i serveis públics,Policy Lever,espera_4,Fortaleciment de l'atenció primària,Stärkung der Primärversorgung
+Salut i serveis públics,Driver,metges_1,Disponibilitat de metges,Ärztliche Versorgung
+Salut i serveis públics,Driver,metges_2,Nivell salarial,Gehaltsniveau
+Salut i serveis públics,Driver,metges_3,Condicions de treball,Arbeitsbedingungen
+Salut i serveis públics,Driver,metges_4,Formació mèdica,Medizinische Ausbildung
+Salut i serveis públics,Driver,espera_1,Volum d'emergències,Notfallvolumen
+Salut i serveis públics,Driver,espera_2,Nivell de personal,Personalbestand
+Salut i serveis públics,Driver,espera_3,Capacitat de UCI,Intensivbettkapazität
+Salut i serveis públics,Driver,espera_4,Eficiència del triatge,Effizienz des Triage-Systems
+Territori i habitatge,Domain Label,territori,Territori i habitatge,Territorium und Wohnen
+Territori i habitatge,Metric Label,vacants,Taxa d'habitatges buits,Leerstandsquote
+Territori i habitatge,Metric Unit,vacants,%,%
+Territori i habitatge,Metric Label,lloguer,Lloguer mitjà ofert,Durchschnittliche angebotene Miete
+Territori i habitatge,Metric Unit,lloguer,CHF/m²·any,CHF/m²·Jahr
+Territori i habitatge,Metric Label,sol,Consum de sòl per habitant,Bodenverbrauch pro Kopf
+Territori i habitatge,Metric Unit,sol,m²,m²
+Territori i habitatge,Metric Label,densificacio,Habitatge nou en sòl ja urbanitzat,Neubau auf bereits besiedeltem Gelände
+Territori i habitatge,Metric Unit,densificacio,%,%
+Territori i habitatge,Metric Label,agricola,Superfície agrícola útil,Landwirtschaftsfläche
+Territori i habitatge,Metric Unit,agricola,% del territori,% des Territoriums
+Territori i habitatge,Data Source,vacants,BFS Estadística d'habitatges,BFS · Wohnungsstatistik
+Territori i habitatge,Data Source,lloguer,Indústria immobiliària,Immobilienbranche
+Territori i habitatge,Data Source,sol,Arealstatistik swisstopo,Arealstatistik swisstopo
+Territori i habitatge,Data Source,densificacio,BFS Estadística de construcció,BFS · Baustatistik
+Territori i habitatge,Data Source,agricola,Arealstatistik swisstopo,Arealstatistik swisstopo
+Territori i habitatge,Policy Lever,lloguer_1,Construcció de noves vivendes,Neuwohnungsbau
+Territori i habitatge,Policy Lever,lloguer_2,Control del lloguer,Mietpreiskontrolle
+Territori i habitatge,Policy Lever,lloguer_3,Subvenció de vivendes assequibles,Subvention für bezahlbaren Wohnraum
+Territori i habitatge,Policy Lever,lloguer_4,Política de tipus d'interès,Zinspolitik
+Territori i habitatge,Policy Lever,vacants_1,Impost als habitatges buits,Leerstandssteuer
+Territori i habitatge,Policy Lever,vacants_2,Incentiu pels propietaris,Anreiz für Hauseigentümer
+Territori i habitatge,Policy Lever,vacants_3,Control del lloguer,Mietpreiskontrolle
+Territori i habitatge,Policy Lever,vacants_4,Impost a l'especulació immobiliària,Grundspekulations- oder Liegenschaftssteuer
+Territori i habitatge,Driver,lloguer_1,Disponibilitat de vivendes,Wohnungsangebot
+Territori i habitatge,Driver,lloguer_2,Demanda de vivendes,Wohnungsnachfrage
+Territori i habitatge,Driver,lloguer_3,Atractiva de la ubicació,Standertattraktivität
+Territori i habitatge,Driver,lloguer_4,Nivell de renda,Einkommensniveau
+Territori i habitatge,Driver,lloguer_5,Tipus d'interès,Zinssätze
+Territori i habitatge,Driver,vacants_1,Parc de vivendes,Wohnungsbestand
+Territori i habitatge,Driver,vacants_2,Taxa de rotació,Rotationsquote
+Territori i habitatge,Driver,vacants_3,Quota de propietat d'inversió,Investorenquote
+Territori i habitatge,Driver,vacants_4,Especulació immobiliària,Immobilienspekulation
+Common,UI Element,common,Indicador,Indikator
+Common,UI Element,common,Unitat,Einheit
+Common,UI Element,common,Font,Quelle
+Common,UI Element,common,Palanca,Hebel
+Common,UI Element,common,Factor,Faktor
+Common,UI Element,common,Causa,Ursache
+Common,UI Element,common,Efecte,Wirkung
+Common,UI Element,common,Tendència,Trend
+Common,UI Element,common,Predicció,Prognose
+Common,UI Element,common,Simulació,Simulation
+Common,UI Element,common,Model,Modell
+Common,UI Element,common,Explicació,Erklärung
+Common,UI Element,common,Anomalia,Anomalie
+Common,UI Element,common,Alerta,Warnung/Benachrichtigung
+Common,UI Element,common,Cantonals,Kantonal
+Common,UI Element,common,Nacional,National
+Common,UI Element,common,Any,Jahr
+Common,UI Element,common,Anys,Jahre
+Common,UI Element,common,Observat,Beobachtet
+Common,UI Element,common,Previsió,Prognose/Vorhersage
+Common,UI Element,common,Escenari,Szenario
+Common,UI Element,common,Baix,Niedrig
+Common,UI Element,common,Basal,Grundszenario
+Common,UI Element,common,Alt,Hoch
+Common,UI Element,common,Millor,Besser
+Common,UI Element,common,Pitjor,Schlechter
+Common,UI Element,common,Més és millor,Mehr ist besser
+Common,UI Element,common,Menys és millor,Weniger ist besser
+Common,Section Heading,common,RÀNQUING CANTONAL,KANTONALES RANKING
+Common,Section Heading,common,CONTRIBUCIÓ ALS CANVIS PREVISTOS · ATRIBUCIÓ DEL MODEL,BEITRAG ZU PROGNOSEÄNDERUNGEN · MODELLZUORDNUNG
+Common,Section Heading,common,COMPROVACIÓ RETROSPECTIVA,RÜCKWÄRTS ÜBERPRÜFUNG

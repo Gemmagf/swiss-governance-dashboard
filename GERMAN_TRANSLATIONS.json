@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "name": "German Translations - Domains 3-7",
+    "version": "1.0.0",
+    "generated": "2026-08-11",
+    "coverage": "Education, Mobility, Energy & Climate, Health & Public Services, Territory & Housing",
+    "scope": "All metrics, units, sources, drivers, and policy levers",
+    "format": "Catalan → German translations"
+  },
+  "translations": {
+    "domain_labels": {
+      "educacio": "Bildung",
+      "mobilitat": "Mobilität",
+      "energia": "Energie und Klima",
+      "serveis": "Gesundheit und öffentliche Dienste",
+      "territori": "Territorium und Wohnen"
+    },
+    "educacio": {
+      "label": "Bildung",
+      "metrics": {
+        "ratio": {
+          "label": "Schüler-Lehrer-Verhältnis",
+          "unit": "Schüler"
+        },
+        "despesa": {
+          "label": "Öffentliche Ausgaben pro Schüler",
+          "unit": "CHF/Jahr"
+        },
+        "titulacio": {
+          "label": "Sekundärschulabschluss II im Alter von 25 Jahren",
+          "unit": "%"
+        },
+        "dual": {
+          "label": "Auszubildende in dualer beruflicher Ausbildung",
+          "unit": "%"
+        },
+        "digital": {
+          "label": "Schulen mit vollständiger digitaler Infrastruktur",
+          "unit": "%"
+        }
+      },
+      "sources": {
+        "ratio": "BFS · Schulstatistik",
+        "despesa": "BFS · Bildungskonten",
+        "titulacio": "BFS · Erwerbstätigkeitserhebung",
+        "dual": "BFS · Lehrstellenregister",
+        "digital": "opendata.swiss"
+      },
+      "levers": {
+        "ratio_levers": [
+          "Erhöhung der Lehrergehälter",
+          "Lehrer-Weiterbildungsprogramm",
+          "Investitionen in Klassenzimmer",
+          "Lehrerwerbungskampagnen"
+        ],
+        "digital_levers": [
+          "Investitionen in Schul-IKT",
+          "Lehrerschulung in digitaler Technologie",
+          "Zuschüsse für digitale Geräte",
+          "Cloud-Infrastruktur für Schulen"
+        ]
+      },
+      "drivers": {
+        "ratio_drivers": [
+          "Bildungsbudget",
+          "Verfügbarkeit von Lehrern",
+          "Schülerzahl/Anmeldungen",
+          "Lehrerbindung"
+        ],
+        "digital_drivers": [
+          "IKT-Budget",
+          "Lehrerfortbildung in Technologie",
+          "Internetverfügbarkeit",
+          "Verfügbarkeit von Geräten"
+        ]
+      }
+    },
+    "mobilitat": {
+      "label": "Mobilität",
+      "metrics": {
+        "tp": {
+          "label": "Fahrten mit öffentlichen Verkehrsmitteln",
+          "unit": "Fahrten/Einwohner·Jahr"
+        },
+        "retencio": {
+          "label": "Stauzeit im Netz",
+          "unit": "h/1000 Einw."
+        },
+        "bici": {
+          "label": "Fahrradverkehrsanteil",
+          "unit": "%"
+        },
+        "electric": {
+          "label": "Elektrofahrzeuge in der Flotte",
+          "unit": "%"
+        },
+        "puntualitat": {
+          "label": "Pünktlichkeit des Bahnverkehrs",
+          "unit": "%"
+        }
+      },
+      "sources": {
+        "tp": "BFS · Mobilitätsmikrozensus",
+        "retencio": "ASTRA · Automatische Zähler",
+        "bici": "BFS · Mobilitätsmikrozensus",
+        "electric": "MOFIS · Fahrzeugregister",
+        "puntualitat": "SBB · Betriebsdaten"
+      },
+      "levers": {
+        "tp_levers": [
+          "Erhöhung der Verkehrsfrequenz",
+          "Fahrpreissenkung",
+          "Netzausbau",
+          "Erhöhung der Pkw-Kosten"
+        ],
+        "bici_levers": [
+          "Radwegeausbau",
+          "Bike-Sharing-Subvention",
+          "Verbesserung der Fahrradparkplätze",
+          "E-Bike-Subvention"
+        ]
+      },
+      "drivers": {
+        "tp_drivers": [
+          "Verkehrsfrequenz",
+          "Fahrkartenpreis",
+          "Netzabdeckung",
+          "Pkw-Kosten",
+          "Verkehrsstau"
+        ],
+        "bici_drivers": [
+          "Fahrradinfrastruktur",
+          "Gelände-Topographie",
+          "Wetterbedingungen",
+          "Entfernung zur Arbeit",
+          "Pkw-Kosten"
+        ]
+      }
+    },
+    "energia": {
+      "label": "Energie und Klima",
+      "metrics": {
+        "co2": {
+          "label": "Treibhausgasemissionen",
+          "unit": "t CO₂eq/Einw."
+        },
+        "renov": {
+          "label": "Anteil erneuerbarer Energien",
+          "unit": "%"
+        },
+        "solar": {
+          "label": "Installierte Photovoltaik-Leistung",
+          "unit": "W/Einw."
+        },
+        "consum": {
+          "label": "Energieverbrauch insgesamt",
+          "unit": "MWh/Einw."
+        },
+        "hivern": {
+          "label": "Deckung des Winterdefizits",
+          "unit": "%"
+        }
+      },
+      "sources": {
+        "co2": "BAFU · Nationaler Inventarbericht",
+        "renov": "SFOE · Energiestatistik",
+        "solar": "Pronovo · Register",
+        "consum": "SFOE · Energiestatistik",
+        "hivern": "Swissgrid · Bilanz"
+      },
+      "levers": {
+        "co2_levers": [
+          "CO₂-Steuer",
+          "Solarenergie-Subvention",
+          "Wärmepumpen-Sanierung",
+          "Förderung von Elektrofahrzeugen",
+          "Industrielles Emissionshandelssystem"
+        ],
+        "renov_levers": [
+          "Solarziele",
+          "Windenergie-Ausbau",
+          "Modernisierung von Wasserkraftwerken",
+          "Modernisierung des Stromnetzes"
+        ]
+      },
+      "drivers": {
+        "co2_drivers": [
+          "Energieverbrauch",
+          "Heizstoffmix",
+          "Verkehrsstoffmix",
+          "Industrielle Produktion"
+        ],
+        "renov_drivers": [
+          "Wasserkraftkapazität",
+          "Solarkapazität",
+          "Windkapazität",
+          "Abschaltung fossiler Kapazitäten"
+        ]
+      }
+    },
+    "serveis": {
+      "label": "Gesundheit und öffentliche Dienste",
+      "metrics": {
+        "metges": {
+          "label": "Hausärzte pro 10.000 Einwohner",
+          "unit": "Ärzte"
+        },
+        "espera": {
+          "label": "Wartezeit in der Notaufnahme",
+          "unit": "Minuten"
+        },
+        "cost": {
+          "label": "Gesundheitsausgaben pro Einwohner",
+          "unit": "CHF/Jahr"
+        },
+        "domicili": {
+          "label": "Abdeckung der Heimbetreuung",
+          "unit": "% der Nachfrage"
+        },
+        "dossier": {
+          "label": "Aktive elektronische Patientenakte",
+          "unit": "% der Bevölkerung"
+        }
+      },
+      "sources": {
+        "metges": "FMH · Berufsstatistik",
+        "espera": "OFSP · Spitalstatistik",
+        "cost": "OFSP · Gesundheitskonten",
+        "domicili": "OFSP · Dienstleistungsumfrage",
+        "dossier": "eHealth Schweiz"
+      },
+      "levers": {
+        "metges_levers": [
+          "Erhöhung der Arztgehälter",
+          "Verbesserung der Arbeitsbedingungen",
+          "Landarzt-Anreiz",
+          "Zuschuss zur medizinischen Ausbildung"
+        ],
+        "espera_levers": [
+          "Personalrekrutierung",
+          "Verbesserung des Triage-Systems",
+          "Erweiterung der Intensivbettkapazität",
+          "Stärkung der Primärversorgung"
+        ]
+      },
+      "drivers": {
+        "metges_drivers": [
+          "Ärztliche Versorgung",
+          "Gehaltsniveau",
+          "Arbeitsbedingungen",
+          "Medizinische Ausbildung"
+        ],
+        "espera_drivers": [
+          "Notfallvolumen",
+          "Personalbestand",
+          "Intensivbettkapazität",
+          "Effizienz des Triage-Systems"
+        ]
+      }
+    },
+    "territori": {
+      "label": "Territorium und Wohnen",
+      "metrics": {
+        "vacants": {
+          "label": "Leerstandsquote",
+          "unit": "%"
+        },
+        "lloguer": {
+          "label": "Durchschnittliche angebotene Miete",
+          "unit": "CHF/m²·Jahr"
+        },
+        "sol": {
+          "label": "Bodenverbrauch pro Kopf",
+          "unit": "m²"
+        },
+        "densificacio": {
+          "label": "Neubau auf bereits besiedeltem Gelände",
+          "unit": "%"
+        },
+        "agricola": {
+          "label": "Landwirtschaftsfläche",
+          "unit": "% des Territoriums"
+        }
+      },
+      "sources": {
+        "vacants": "BFS · Wohnungsstatistik",
+        "lloguer": "Immobilienbranche",
+        "sol": "Arealstatistik swisstopo",
+        "densificacio": "BFS · Baustatistik",
+        "agricola": "Arealstatistik swisstopo"
+      },
+      "levers": {
+        "lloguer_levers": [
+          "Neuwohnungsbau",
+          "Mietpreiskontrolle",
+          "Subvention für bezahlbaren Wohnraum",
+          "Zinspolitik"
+        ],
+        "vacants_levers": [
+          "Leerstandssteuer",
+          "Anreiz für Hauseigentümer",
+          "Mietpreiskontrolle",
+          "Grundspekulations- oder Liegenschaftssteuer"
+        ]
+      },
+      "drivers": {
+        "lloguer_drivers": [
+          "Wohnungsangebot",
+          "Wohnungsnachfrage",
+          "Standertattraktivität",
+          "Einkommensniveau",
+          "Zinssätze"
+        ],
+        "vacants_drivers": [
+          "Wohnungsbestand",
+          "Rotationsquote",
+          "Investorenquote",
+          "Immobilienspekulation"
+        ]
+      }
+    },
+    "common_ui": {
+      "indicator": "Indikator",
+      "unit": "Einheit",
+      "source": "Quelle",
+      "lever": "Hebel",
+      "policy_lever": "Politikhebel",
+      "driver": "Faktor",
+      "direct_cause": "Direkter Faktor",
+      "effect": "Wirkung",
+      "trend": "Trend",
+      "forecast": "Prognose",
+      "simulation": "Simulation",
+      "model": "Modell",
+      "explanation": "Erklärung",
+      "anomaly": "Anomalie",
+      "alert": "Warnung",
+      "alerts": "Warnungen",
+      "canton": "Kanton",
+      "cantonal": "Kantonal",
+      "national": "National",
+      "year": "Jahr",
+      "years": "Jahre",
+      "observed": "Beobachtet",
+      "forecast_status": "Prognose",
+      "scenario": "Szenario",
+      "low": "Niedrig",
+      "baseline": "Grundszenario",
+      "high": "Hoch",
+      "better": "Besser",
+      "worse": "Schlechter",
+      "more_is_better": "Mehr ist besser",
+      "less_is_better": "Weniger ist besser",
+      "ranking": "Ranking",
+      "contribution": "Beitrag",
+      "backtest": "Rückwärts Überprüfung"
+    },
+    "section_headings": {
+      "canton_ranking": "KANTONALES RANKING",
+      "forecast_contribution": "BEITRAG ZU PROGNOSEÄNDERUNGEN · MODELLZUORDNUNG",
+      "backtest": "RÜCKWÄRTS ÜBERPRÜFUNG",
+      "evolution": "Entwicklung und Prognose",
+      "simulator": "Maßnahmensimulator",
+      "status_note": "Lagebericht",
+      "alerts": "Warnmeldungen",
+      "model_card": "Modell- und Datenblatt"
+    },
+    "metadata": {
+      "cockpit": "Datencockpit der Confederazione",
+      "interdepartmental": "Interdepartementaler Prototyp",
+      "real_data": "Echte Daten",
+      "phase": "Phase",
+      "last_updated": "Zuletzt aktualisiert",
+      "data_coverage": "Abdeckung der Daten",
+      "cantons_total": "26 Kantone",
+      "official_languages": "4 Amtssprachen",
+      "active_indicators": "Aktive Indikatoren",
+      "observed_periods": "Beobachtungszeiträume",
+      "forecast_periods": "Prognosezeiträume"
+    }
+  }
+}
