@@ -379,11 +379,11 @@ const POPCH=CANTONS.reduce((a,c)=>a+c.pop,0), AREACH=CANTONS.reduce((a,c)=>a+c.a
 const DOMAINS=[
 {id:"bosc",label:"Wald und Biodiversität",acc:"#2F6B3A",
  metrics:[
-  {id:"superficie",label:"Superfície forestal",unit:"% del territori",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
-  {id:"vitalitat",label:"Vitalitat de la capçada",unit:"índex /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
-  {id:"estres",label:"Massa amb estrès hídric",unit:"% de la superfície",base:6.1,trend:.058,noise:.13,better:"low",dec:1,target:5},
-  {id:"escolitids",label:"Danys per escolítids",unit:"1000 m³/any",base:172,trend:.075,noise:.20,better:"low",dec:0},
-  {id:"regeneracio",label:"Regeneració amb espècies adaptades",unit:"%",base:22,trend:.055,noise:.06,better:"high",dec:1,target:60}],
+  {id:"superficie",label:"Waldfläche",unit:"% des Territoriums",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
+  {id:"vitalitat",label:"Vitalität der Baumkrone",unit:"Index /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
+  {id:"estres",label:"Bestand unter Wasserstress",unit:"% der Fläche",base:6.1,trend:.058,noise:.13,better:"low",dec:1,target:5},
+  {id:"escolitids",label:"Schäden durch Borkenkäfer",unit:"1000 m³/Jahr",base:172,trend:.075,noise:.20,better:"low",dec:0},
+  {id:"regeneracio",label:"Verjüngung mit angepassten Arten",unit:"%",base:22,trend:.055,noise:.06,better:"high",dec:1,target:60}],
  comp:{title:"Composició del bosc",items:[["Coníferes",52],["Frondoses",34],["Mixt jove",14]]},
  levers:[
   {id:"clarejar",label:"Programa de conversió d'espècies",unit:"1000 ha/any",max:40,cost:2.1,eff:.30,
@@ -1157,13 +1157,15 @@ setTimeout(() => {
     console.warn('⚠️ Language dropdown (langSelect) not found');
   }
 
-  // Initialize with saved language or German
-  const savedLang = localStorage.getItem('dashboardLang') || 'de';
-  document.getElementById('htmlRoot').lang = savedLang;
+  // FORCE German as default - always start with 'de'
+  const forceLang = 'de'; // Always German on initial load
+  document.getElementById('htmlRoot').lang = forceLang;
   if (langSelect) {
-    langSelect.value = savedLang;
+    langSelect.value = forceLang;
   }
-  console.log(`📌 Initial language: ${savedLang}`);
+  localStorage.setItem('dashboardLang', forceLang);
+  console.log(`📌 Initial language: ${forceLang} (FORCED German)`);
+  console.log(`💾 Saved to localStorage: ${forceLang}`);
 
   // Initial translation
   updateDashboardTexts();
