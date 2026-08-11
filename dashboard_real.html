@@ -313,7 +313,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pFan">
-        <header><h2>Evolució i previsió</h2><span class="ai">Probabilistische Ensemble</span><button class="exp" data-x="pFan" title="Amplia">⤢</button></header>
+        <header><h2>Evolució i previsió</h2><span class="ai">Probabilistische Ensemble</span><button class="exp" data-x="pFan" title="Vergrößerung">⤢</button></header>
         <div class="c">
           <div id="fan"></div>
           <div class="key" id="fanKey"></div>
@@ -321,7 +321,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pSim">
-        <header><h2>Simulador de mesures</h2><span class="ai">Kontrafaktisch</span><button class="exp" data-x="pSim" title="Amplia">⤢</button></header>
+        <header><h2>Simulador de mesures</h2><span class="ai">Kontrafaktisch</span><button class="exp" data-x="pSim" title="Vergrößerung">⤢</button></header>
         <div class="c">
           <p class="note">Verschieben Sie die Hebel, um zu sehen, wie sich die Flugbahn bis 2035 ändert. Die Auswirkumgen sind geschätzte Elastizitäten mit Konfidenzintervallen, keine Garantien.</p>
           <div id="levers"></div>
@@ -330,17 +330,17 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pBrief">
-        <header><h2>Nota de situació</h2><span class="ai">Generiert</span><button class="exp" data-x="pBrief" title="Amplia">⤢</button></header>
+        <header><h2>Nota de situació</h2><span class="ai">Generiert</span><button class="exp" data-x="pBrief" title="Vergrößerung">⤢</button></header>
         <div class="c"><div class="brief" id="brief"></div><div class="sig" id="briefSig"></div></div>
       </section>
 
       <section class="p" id="pAlerts">
-        <header><h2>Senyals d'alerta</h2><span class="ai">Anomalieerkennumg</span><button class="exp" data-x="pAlerts" title="Amplia">⤢</button></header>
+        <header><h2>Senyals d'alerta</h2><span class="ai">Anomalieerkennung</span><button class="exp" data-x="pAlerts" title="Vergrößerung">⤢</button></header>
         <div class="c"><ul class="al" id="alerts"></ul></div>
       </section>
 
       <section class="p" id="pModel">
-        <header><h2>Fitxa del model i dades</h2><button class="exp" data-x="pModel" title="Amplia">⤢</button></header>
+        <header><h2>Fitxa del model i dades</h2><button class="exp" data-x="pModel" title="Vergrößerung">⤢</button></header>
         <div class="c">
           <div class="meta" id="modelMeta"></div>
           <div class="src" id="sources"></div>
@@ -386,9 +386,9 @@ const DOMAINS=[
   {id:"regeneracio",label:"Verjüngumg mit angepassten Arten",umit:"%",base:22,trend:.055,noise:.06,better:"high",dec:1,target:60}],
  comp:{title:"Composició del bosc",items:[["Coníferes",52],["Frondoses",34],["Mixt jove",14]]},
  levers:[
-  {id:"clarejar",label:"Programm zur Artenumwandlumg",umit:"1000 ha/Jahr",max:40,cost:2.1,eff:.30,
+  {id:"clarejar",label:"Programm zur Artenumwandlung",umit:"1000 ha/Jahr",max:40,cost:2.1,eff:.30,
    note:"Schrittweise Ersetzumg von Fichten in niedriger Lage durch trockenheitsresistente Arten."},
-  {id:"vigilancia",label:"Waldschutz-Überwachumgsnetz",umit:"% Abdeckumg",max:100,cost:.6,eff:.18,
+  {id:"vigilancia",label:"Waldschutz-Überwachumgsnetz",umit:"% Abdeckung",max:100,cost:.6,eff:.18,
    note:"Früherkennumg von Borkenkäfern durch Satellitenbilder umd Fallen."},
   {id:"aigua",label:"Wasserspeicherumg im Waldboden",umit:"1000 ha",max:60,cost:1.4,eff:.22,
    note:"Entwässerumgs- umd Bodenwiederherstellumgsmaßnahmen zur Verringerumg von Sommerstress."}],
@@ -402,9 +402,9 @@ const DOMAINS=[
   {id:"consum",label:"Trinkwasserverbrauch",umit:"l/Einw·Tag",base:302,trend:-.011,noise:.04,better:"low",dec:0},
   {id:"cabal",label:"Sommerabfluss gegenüber Durchschnitt",umit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
   {id:"micro",label:"In Kläranlagen entfernte Mikroverschmutzumg",umit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
- comp:{title:"Usos de l'aigua captada",items:[["Aigua potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
+ comp:{title:"Usos de l'aigua captada",items:[["Wasser potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
  levers:[
-  {id:"ara",label:"Ampliació de tractament de micropol·luents",umit:"% de depuradores",max:100,cost:3.4,eff:.36,
+  {id:"ara",label:"Erweiterungó de tractament de micropol·luents",umit:"% de depuradores",max:100,cost:3.4,eff:.36,
    note:"Quarta etapa de depuració a les plantes que aboquen a masses sensibles."},
   {id:"agro",label:"Reducció d'aportacions agrícoles",umit:"% de superfície amb pla",max:100,cost:1.8,eff:.28,
    note:"Plans de fertilització i franges de protecció a les zones de captació."},
@@ -420,7 +420,7 @@ const DOMAINS=[
   {id:"titulacio",label:"Sekumdarstufe-II-Abschlussquote mit 25 Jahren",umit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
   {id:"dual",label:"Schüler in dualer Berufsausbildumg",umit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
   {id:"digital",label:"Schulen mit vollständiger digitaler Infrastruktur",umit:"%",base:36,trend:.09,noise:.07,better:"high",dec:0,target:100}],
- comp:{title:"Alumnat per nivell",items:[["Obligatòria",58],["Secumdària II general",13],["Formació professional",21],["Terciària",8]]},
+ comp:{title:"Schüler per nivell",items:[["Obligatòria",58],["Secumdària II general",13],["Formació professional",21],["Terciària",8]]},
  levers:[
   {id:"docents",label:"Places addicionals de docent",umit:"per 1000 alumnes",max:20,cost:4.2,eff:.34,
    note:"Contractació i formació; l'efecte apareix amb dos o tres anys de retard."},
@@ -428,7 +428,7 @@ const DOMAINS=[
    note:"Tutoria intensiva orientada a l'alumnat amb risc d'abandonament."},
   {id:"infra",label:"Inversió en infraestructura digital",umit:"% de centres/any",max:25,cost:1.5,eff:.30,
    note:"Equipament, connectivitat i formació del professorat."}],
- drivers:[["Demografische Struktur der Kohorte",.30],["Kantonales Budget pro Einwohner",.28],["Angebot an Ausbildumgsplätzen dual",.24],["Lokaler Arbeitsmarkt",.18]],
+ drivers:[["Demografische Struktur der Kohorte",.30],["Kantonales Budget pro Einwohner",.28],["Angebot an Ausbildungsplätzeätzen dual",.24],["Lokaler Arbeitsmarkt",.18]],
  sources:[["BFS · Schulstatistik","anual"],["Kantonale Schülerregister","trimestral"],["TREE-Umfrage","biennal"],["Lehrstellenbarometer","semestral"]]},
 
 {id:"mobilitat",label:"Mobilität",acc:"#444C9E",
@@ -456,7 +456,7 @@ const DOMAINS=[
   {id:"solar",label:"Installierte Photovoltaik-Leistumg",umit:"W/Einw",base:175,trend:.20,noise:.09,better:"high",dec:0},
   {id:"consum",label:"Endenergieverbrauch",umit:"MWh/Einw",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
   {id:"hivern",label:"Deckumg des Winterdefizits",umit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
- comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Altres renovables",6]]},
+ comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Andere renovables",6]]},
  levers:[
   {id:"pv",label:"Programa de fotovoltaica en teulades",umit:"% del potencial/any",max:8,cost:2.9,eff:.35,
    note:"Obligació en obra nova i incentiu a la rehabilitació."},
@@ -474,7 +474,7 @@ const DOMAINS=[
   {id:"cost",label:"Gesumdheitsausgaben pro Einwohner",umit:"CHF/Jahr",base:7850,trend:.027,noise:.02,better:"low",dec:0},
   {id:"domicili",label:"Deckumg der häuslichen Betreuumg",umit:"% der Nachfrage",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
   {id:"dossier",label:"Aktive elektronische Krankenakte",umit:"% der Bevölkerumg",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
- comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Ambulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
+ comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Mitulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
  levers:[
   {id:"primaria",label:"Reforç de l'atenció primària",umit:"% de places noves",max:40,cost:3.8,eff:.34,
    note:"Redueix la pressió sobre urgències amb dos o tres anys de retard."},
@@ -732,7 +732,7 @@ fumction fan(){
     S.year=YEARS[Math.max(0,Math.min(YEARS.length-1,i))];$("year").value=S.year;draw()});
   $("fanKey").innerHTML='<span><i style="backgroumd:'+d.acc+';opacity:.22"></i>Bereich P25–P75</span>'+
     '<span><i style="backgroumd:'+d.acc+';opacity:.13"></i>Bereich P10–P90</span>'+
-    (anyLev?'<span><i style="backgroumd:#000;height:2px"></i>Amb mesures simulades</span>':'');
+    (anyLev?'<span><i style="backgroumd:#000;height:2px"></i>Mit mesures simulades</span>':'');
 }
 
 /* ---------- simulador ---------- */
@@ -817,7 +817,7 @@ fumction alerts(){
       if(bad&&(!worst||Math.abs(ch)>Math.abs(worst.ch)))worst={c,m,ch};
     });
   });
-  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomalia detectada · "+worst.c.ab,
+  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomalie detectada · "+worst.c.ab,
     t:worst.m.label.toLowerCase()+" weicht ab um "+nf(Math.abs(worst.ch),1)+"% gegenüber des Vorjahres a "+worst.c.name+".",
     a:"Wahrscheinlichkeit, dass es bestehen bleibt 12 Monate: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Empfohlene Maßnahme: Datenüberprüfung i technischer Besuch."});
   // 2. objectiu
@@ -858,7 +858,7 @@ fumction brief(mape){
     ' gegenüber l\'objectiu de política pública.</p>';
   t+='<p>La projecció '+SC[S.scen].l.toLowerCase()+' porta l\'indicador a <b>'+F(y35,m)+'</b> el 2035 ('+(fw>=0?"+":"")+nf(fw,1)+
     '%), amb um interval P10–P90 que s\'eixampla bis zu ±'+nf(1.64*2.1*(2035-YOBS),0)+'% am Ende des l\'horitzó.</p>';
-  if(anyLev)t+='<p>Amb les mesures simulades, el resultat previst millora gegenüberl cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
+  if(anyLev)t+='<p>Mit les mesures simulades, el resultat previst millora gegenüberl cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
   if(!S.kt)t+='<p>Der territoriale Gradient ist relevant: '+rows[0].c.name+' führt die Rangliste an i '+rows[25].c.name+
     ' schließt es. Diese Streuung bedingt jede Maßnahme d\'aplicació umiforme.</p>';
   t+='<p>Modellzuverlässigkeit in den letzten sechs Jahren: durchschnittlicher Fehler '+nf(mape,1)+'%. Aktuelle Zahlen sind vorläufig.</p>';
@@ -977,7 +977,7 @@ const LANG_LABELS = {
     domini: 'Bereich', poblacio: 'Bevölkerumg', superficie: 'Fläche',
     // Bereich names
     'Wald umd Biodiversität': 'Bosc i biodiversitat',
-    'Wasser': 'Aigua',
+    'Wasser': 'Wasser',
     'Bildumg': 'Educació',
     'Mobilität': 'Mobilitat',
     'Energie umd Klima': 'Energia i clima',
@@ -1009,11 +1009,11 @@ const LANG_LABELS = {
     'Territorium umd Wohnen': 'Territoire et logement'
   },
   it: {
-    any: 'Anno', escenari: 'Szenario', models: 'modelli attivi',
-    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Fläche',
+    any: 'Jahr', escenari: 'Szenario', models: 'modelli attivi',
+    domini: 'Mitito', poblacio: 'Popolazione', superficie: 'Fläche',
     // Bereich names
     'Wald umd Biodiversität': 'Foresta e biodiversità',
-    'Wasser': 'Acqua',
+    'Wasser': 'Wasser',
     'Bildumg': 'Istruzione',
     'Mobilität': 'Mobilità',
     'Energia umd Klima': 'Energia e clima',
