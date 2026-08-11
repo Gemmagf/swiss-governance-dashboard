@@ -962,27 +962,75 @@ new ResizeObserver(()=>refit()).observe($("mapbox"));
 const LANG_LABELS = {
   de: {
     any: 'Jahr', escenari: 'Szenario', models: 'Modelle aktiv',
-    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche'
+    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche',
+    // Domain names
+    'Wald und Biodiversität': 'Wald und Biodiversität',
+    'Wasser': 'Wasser',
+    'Bildung': 'Bildung',
+    'Mobilität': 'Mobilität',
+    'Energie und Klima': 'Energie und Klima',
+    'Gesundheit und öffentliche Dienste': 'Gesundheit und öffentliche Dienste',
+    'Territorium und Wohnen': 'Territorium und Wohnen'
   },
   ca: {
     any: 'Any', escenari: 'Escenari', models: 'models actius',
-    domini: 'Àmbit', poblacio: 'Població', superficie: 'Superfície'
+    domini: 'Àmbit', poblacio: 'Població', superficie: 'Superfície',
+    // Domain names
+    'Wald und Biodiversität': 'Bosc i biodiversitat',
+    'Wasser': 'Aigua',
+    'Bildung': 'Educació',
+    'Mobilität': 'Mobilitat',
+    'Energie und Klima': 'Energia i clima',
+    'Gesundheit und öffentliche Dienste': 'Salut i serveis públics',
+    'Territorium und Wohnen': 'Territori i habitatge'
   },
   en: {
     any: 'Year', escenari: 'Scenario', models: 'active models',
-    domini: 'Domain', poblacio: 'Population', superficie: 'Area'
+    domini: 'Domain', poblacio: 'Population', superficie: 'Area',
+    // Domain names
+    'Wald und Biodiversität': 'Forest and Biodiversity',
+    'Wasser': 'Water',
+    'Bildung': 'Education',
+    'Mobilität': 'Mobility',
+    'Energie und Klima': 'Energy and Climate',
+    'Gesundheit und öffentliche Dienste': 'Health and Public Services',
+    'Territorium und Wohnen': 'Territory and Housing'
   },
   fr: {
     any: 'Année', escenari: 'Scénario', models: 'modèles actifs',
-    domini: 'Domaine', poblacio: 'Population', superficie: 'Superficie'
+    domini: 'Domaine', poblacio: 'Population', superficie: 'Superficie',
+    // Domain names
+    'Wald und Biodiversität': 'Forêt et biodiversité',
+    'Wasser': 'Eau',
+    'Bildung': 'Éducation',
+    'Mobilität': 'Mobilité',
+    'Energie und Klima': 'Énergie et climat',
+    'Gesundheit und öffentliche Dienste': 'Santé et services publics',
+    'Territorium und Wohnen': 'Territoire et logement'
   },
   it: {
     any: 'Anno', escenari: 'Scenario', models: 'modelli attivi',
-    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Superficie'
+    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Superficie',
+    // Domain names
+    'Wald und Biodiversität': 'Foresta e biodiversità',
+    'Wasser': 'Acqua',
+    'Bildung': 'Istruzione',
+    'Mobilität': 'Mobilità',
+    'Energia und Klima': 'Energia e clima',
+    'Gesundheit und öffentliche Dienste': 'Salute e servizi pubblici',
+    'Territorium und Wohnen': 'Territorio e abitazione'
   },
   rm: {
     any: 'Onn', escenari: 'Scenario', models: 'models actifs',
-    domini: 'Domeni', poblacio: 'Populaziun', superficie: 'Superficie'
+    domini: 'Domeni', poblacio: 'Populaziun', superficie: 'Superficie',
+    // Domain names
+    'Wald und Biodiversität': 'Frest e biodiversitad',
+    'Wasser': 'Aua',
+    'Bildung': 'Educaziun',
+    'Mobilität': 'Mobilitad',
+    'Energia und Klima': 'Energia e clima',
+    'Gesundheit und öffentliche Dienste': 'Salüd e servetschas publicas',
+    'Territorium und Wohnen': 'Territori e abitaziun'
   }
 };
 
@@ -1011,6 +1059,32 @@ setTimeout(() => {
     console.log('✅ Translation system initialized');
   }
 
+  // Translate domain and indicator names
+  function translateDomainLabels(currentLang) {
+    if (!LANG_LABELS[currentLang]) {
+      console.warn(`⚠️ Language ${currentLang} not found in LANG_LABELS`);
+      return;
+    }
+
+    const translations = LANG_LABELS[currentLang];
+    console.log(`🏷️ Translating domain labels to ${currentLang}`);
+
+    // Translate all text nodes containing German domain names
+    document.querySelectorAll('body *').forEach(el => {
+      if (el.childNodes.length === 1 && el.childNodes[0].nodeType === Node.TEXT_NODE) {
+        const text = el.textContent.trim();
+        // Check if this text is a domain name that needs translation
+        if (translations[text]) {
+          const translated = translations[text];
+          if (translated !== text) {
+            el.textContent = translated;
+            console.log(`  ✓ "${text}" → "${translated}"`);
+          }
+        }
+      }
+    });
+  }
+
   // Robust translation function that handles data-i18n attributes
   function updateDashboardTexts() {
     if (typeof t !== 'function') {
@@ -1018,7 +1092,8 @@ setTimeout(() => {
       return;
     }
 
-    console.log(`📝 Translating dashboard to: ${document.getElementById('htmlRoot')?.lang || 'de'}`);
+    const currentLang = document.getElementById('htmlRoot')?.lang || 'de';
+    console.log(`📝 Translating dashboard to: ${currentLang}`);
 
     // 1. Translate all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1040,7 +1115,10 @@ setTimeout(() => {
       }
     });
 
-    // 2. Trigger auto-translation for remaining text nodes
+    // 2. Translate domain and indicator names
+    translateDomainLabels(currentLang);
+
+    // 3. Trigger auto-translation for remaining text nodes
     if (typeof autoTranslateDashboard === 'function') {
       autoTranslateDashboard();
     }
