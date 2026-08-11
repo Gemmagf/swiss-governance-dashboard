@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Swiss Governance Dashboard - Translation Dictionary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "languages": ["de", "ca", "en", "fr", "it", "rm"],
     "languageNames": {
       "de": "Deutsch",
@@ -12,8 +12,8 @@
       "rm": "Rumantsch"
     },
     "default": "de",
-    "totalKeys": 85,
-    "lastUpdated": "2026-08-10"
+    "totalKeys": 93,
+    "lastUpdated": "2026-08-11"
   },
   "translations": {
     "hdr.title": {
@@ -519,6 +519,62 @@
       "fr": "Carte des cantons",
       "it": "Mappa dei cantoni",
       "rm": "Mapa dals chantuns"
+    },
+    "btn.map_view": {
+      "de": "Karte",
+      "ca": "Mapa",
+      "en": "Map",
+      "fr": "Carte",
+      "it": "Mappa",
+      "rm": "Mapa"
+    },
+    "btn.table_view": {
+      "de": "Tabelle",
+      "ca": "Taula",
+      "en": "Table",
+      "fr": "Tableau",
+      "it": "Tabella",
+      "rm": "Tabla"
+    },
+    "btn.details_view": {
+      "de": "Details",
+      "ca": "Detalls",
+      "en": "Details",
+      "fr": "Détails",
+      "it": "Dettagli",
+      "rm": "Detalts"
+    },
+    "btn.canton_view": {
+      "de": "Kantonansicht",
+      "ca": "Vista cantonal",
+      "en": "Canton View",
+      "fr": "Vue cantonale",
+      "it": "Vista cantonale",
+      "rm": "Vista chantunala"
+    },
+    "sidebar.territory": {
+      "de": "Territorium",
+      "ca": "Territori",
+      "en": "Territory",
+      "fr": "Territoire",
+      "it": "Territorio",
+      "rm": "Territori"
+    },
+    "sidebar.indicators": {
+      "de": "Indikatoren",
+      "ca": "Indicadors",
+      "en": "Indicators",
+      "fr": "Indicateurs",
+      "it": "Indicatori",
+      "rm": "Indicaturs"
+    },
+    "sidebar.timeseries": {
+      "de": "Zeitreihe",
+      "ca": "Sèrie temporal",
+      "en": "Time Series",
+      "fr": "Série temporelle",
+      "it": "Serie temporale",
+      "rm": "Seria temporala"
     }
   }
 }

@@ -999,6 +999,7 @@ changeLanguage(savedLang);
 
 <!-- ===== TRANSLATION SYSTEM ===== -->
 <script src="translation_system.js"></script>
+<script src="auto_translate.js"></script>
 <script>
 // Initialize translation system with German as default
 initLanguage();
@@ -1011,8 +1012,8 @@ document.getElementById('langSelect').addEventListener('change', (e) => {
   // Dispatch custom event so dashboard can react to language change
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
 
-  // Update header texts with translations
-  updateDashboardTexts();
+  // Trigger auto-translation of dashboard
+  autoTranslateDashboard();
 
   // Redraw any charts if needed
   if (typeof draw === 'function') draw(true);
@@ -1020,17 +1021,8 @@ document.getElementById('langSelect').addEventListener('change', (e) => {
 
 // Function to update dashboard texts when language changes
 function updateDashboardTexts() {
-  // Update header labels
-  const headerLabels = {
-    'mDom-label': t('labels.domain'),
-    'mPop-label': t('labels.population'),
-    'mArea-label': t('labels.area'),
-    'mModels-label': t('labels.models')
-  };
-
-  // This would require marking elements with data-i18n attributes
-  // For now, the dropdown selector provides basic language switching
-  // and stores the preference for next visit
+  // Trigger auto-translation
+  autoTranslateDashboard();
 }
 </script>
 </body>
