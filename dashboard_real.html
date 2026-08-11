@@ -377,7 +377,7 @@ const POPCH=CANTONS.reduce((a,c)=>a+c.pop,0), AREACH=CANTONS.reduce((a,c)=>a+c.a
 
 /* ---------- àmbits, indicadors, palanques, fonts ---------- */
 const DOMAINS=[
-{id:"bosc",label:"Bosc i biodiversitat",acc:"#2F6B3A",
+{id:"bosc",label:"Wald und Biodiversität",acc:"#2F6B3A",
  metrics:[
   {id:"superficie",label:"Superfície forestal",unit:"% del territori",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
   {id:"vitalitat",label:"Vitalitat de la capçada",unit:"índex /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
@@ -395,7 +395,7 @@ const DOMAINS=[
  drivers:[["Dèficit de precipitació estival",.34],["Temperatura mitjana de juliol",.27],["Edat i estructura de la massa",.22],["Intensitat de gestió",.17]],
  sources:[["Inventari Forestal Nacional (LFI)","anual"],["Sentinel-2 · NDVI","5 dies"],["MeteoSwiss · IDAWEB","diari"],["WSL · monitoratge de sanitat","mensual"]]},
 
-{id:"aigua",label:"Aigua",acc:"#0A6C9E",
+{id:"aigua",label:"Wasser",acc:"#0A6C9E",
  metrics:[
   {id:"qualitat",label:"Qualitat ecològica dels rius",unit:"índex /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
   {id:"nitrats",label:"Nitrats a l'aigua subterrània",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
@@ -413,7 +413,7 @@ const DOMAINS=[
  drivers:[["Càrrega agrícola de la conca",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
  sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","mensual"],["Estacions hidromètriques FOEN","horari"],["Cadastre d'abocaments","anual"]]},
 
-{id:"educacio",label:"Educació",acc:"#B26B00",
+{id:"educacio",label:"Bildung",acc:"#B26B00",
  metrics:[
   {id:"ratio",label:"Ràtio alumnat per docent",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
   {id:"despesa",label:"Despesa pública per alumne",unit:"CHF/any",base:20600,trend:.016,noise:.03,better:"high",dec:0},
@@ -431,7 +431,7 @@ const DOMAINS=[
  drivers:[["Estructura demogràfica de la cohort",.30],["Pressupost cantonal per habitant",.28],["Oferta de places de formació dual",.24],["Mercat laboral local",.18]],
  sources:[["BFS · estadística escolar","anual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre de places d'aprenentatge","semestral"]]},
 
-{id:"mobilitat",label:"Mobilitat",acc:"#444C9E",
+{id:"mobilitat",label:"Mobilität",acc:"#444C9E",
  metrics:[
   {id:"tp",label:"Viatges en transport públic",unit:"viatges/hab·any",base:232,trend:.014,noise:.05,better:"high",dec:0},
   {id:"retencio",label:"Hores de retenció a la xarxa",unit:"h/1000 hab",base:40,trend:.036,noise:.09,better:"low",dec:1},
@@ -449,7 +449,7 @@ const DOMAINS=[
  drivers:[["Densitat i mixtura d'usos",.29],["Oferta de transport públic",.28],["Cost relatiu del vehicle privat",.24],["Topografia i clima",.19]],
  sources:[["Microcens mobilitat","5 anys"],["Comptadors automàtics ASTRA","horari"],["SBB · dades d'explotació","diari"],["Registre de vehicles MOFIS","mensual"]]},
 
-{id:"energia",label:"Energia i clima",acc:"#0F7A5A",
+{id:"energia",label:"Energie und Klima",acc:"#0F7A5A",
  metrics:[
   {id:"co2",label:"Emissions de gasos amb efecte d'hivernacle",unit:"t CO₂eq/hab",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
   {id:"renov",label:"Quota renovable del consum final",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
@@ -467,7 +467,7 @@ const DOMAINS=[
  drivers:[["Estructura del parc d'edificis",.31],["Preus de l'energia",.26],["Ritme d'electrificació del transport",.23],["Graus-dia de calefacció",.20]],
  sources:[["Inventari nacional de GEH","anual"],["Estadística energètica SFOE","anual"],["Pronovo · registre d'instal·lacions","mensual"],["Swissgrid · balanç de xarxa","15 min"]]},
 
-{id:"serveis",label:"Salut i serveis públics",acc:"#6D4C8C",
+{id:"serveis",label:"Gesundheit und öffentliche Dienste",acc:"#6D4C8C",
  metrics:[
   {id:"metges",label:"Metges de família per 10 000 habitants",unit:"metges",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
   {id:"espera",label:"Temps d'espera a urgències",unit:"minuts",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
@@ -485,7 +485,7 @@ const DOMAINS=[
  drivers:[["Envelliment de la població",.33],["Densitat de l'oferta",.26],["Estructura tarifària",.23],["Nivell socioeconòmic",.18]],
  sources:[["OFSP · estadística hospitalària","anual"],["Registres d'assegurances","mensual"],["Estadística de professionals FMH","anual"],["Sistema de vigilància Sentinella","setmanal"]]},
 
-{id:"territori",label:"Territori i habitatge",acc:"#7A6A2E",
+{id:"territori",label:"Territorium und Wohnen",acc:"#7A6A2E",
  metrics:[
   {id:"vacants",label:"Taxa d'habitatges buits",unit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
   {id:"lloguer",label:"Lloguer mitjà ofert",unit:"CHF/m²·any",base:193,trend:.02,noise:.03,better:"low",dec:0},

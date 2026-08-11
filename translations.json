@@ -12,7 +12,7 @@
       "rm": "Rumantsch"
     },
     "default": "de",
-    "totalKeys": 93,
+    "totalKeys": 113,
     "lastUpdated": "2026-08-11"
   },
   "translations": {
@@ -575,6 +575,126 @@
       "fr": "Série temporelle",
       "it": "Serie temporale",
       "rm": "Seria temporala"
+    },
+    "header.domains": {
+      "de": "ÄMBITE",
+      "ca": "ÀMBITS",
+      "en": "DOMAINS",
+      "fr": "DOMAINES",
+      "it": "AMBITI",
+      "rm": "AMBITS"
+    },
+    "header.indicators": {
+      "de": "INDIKATOREN",
+      "ca": "INDICADORS",
+      "en": "INDICATORS",
+      "fr": "INDICATEURS",
+      "it": "INDICATORI",
+      "rm": "INDICATURS"
+    },
+    "section.canton_ranking": {
+      "de": "KANTONALES RANKING",
+      "ca": "RÀNQUING CANTONAL",
+      "en": "CANTON RANKING",
+      "fr": "CLASSEMENT DES CANTONS",
+      "it": "RANKING CANTONI",
+      "rm": "CLASSIFIZIUN CHANTUNALA"
+    },
+    "section.forecast_changes": {
+      "de": "BEITRAG ZU PROGNOSEÄNDERUNGEN · MODELLZUORDNUNG",
+      "ca": "CONTRIBUCIÓ ALS CANVIS PREVISTOS · ATRIBUCIÓ DEL MODEL",
+      "en": "CONTRIBUTION TO FORECAST CHANGES · MODEL ATTRIBUTION",
+      "fr": "CONTRIBUTION AUX CHANGEMENTS PRÉVUS · ATTRIBUTION DU MODÈLE",
+      "it": "CONTRIBUTO AI CAMBIAMENTI PREVISTI · ATTRIBUZIONE DEL MODELLO",
+      "rm": "CONTRIBUZIUN A LAS MIDADAS PREVISTAS · ATRIBUZIUN DAL MODEL"
+    },
+    "section.backtest": {
+      "de": "RÜCKWÄRTS ÜBERPRÜFUNG",
+      "ca": "COMPROVACIÓ RETROSPECTIVA",
+      "en": "BACKTEST",
+      "fr": "VÉRIFICATION RÉTROSPECTIVE",
+      "it": "VERIFICA RETROSPETTIVA",
+      "rm": "CONTROLLAS RETROSPECTIVA"
+    },
+    "domain.forest": {
+      "de": "Wald und Biodiversität",
+      "ca": "Bosc i biodiversitat",
+      "en": "Forest and Biodiversity",
+      "fr": "Forêt et biodiversité",
+      "it": "Foresta e biodiversità",
+      "rm": "Frest e biodiversitad"
+    },
+    "domain.water": {
+      "de": "Wasser",
+      "ca": "Aigua",
+      "en": "Water",
+      "fr": "Eau",
+      "it": "Acqua",
+      "rm": "Aua"
+    },
+    "domain.education": {
+      "de": "Bildung",
+      "ca": "Educació",
+      "en": "Education",
+      "fr": "Éducation",
+      "it": "Istruzione",
+      "rm": "Educaziun"
+    },
+    "domain.mobility": {
+      "de": "Mobilität",
+      "ca": "Mobilitat",
+      "en": "Mobility",
+      "fr": "Mobilité",
+      "it": "Mobilità",
+      "rm": "Mobilitad"
+    },
+    "domain.energy": {
+      "de": "Energie und Klima",
+      "ca": "Energia i clima",
+      "en": "Energy and Climate",
+      "fr": "Énergie et climat",
+      "it": "Energia e clima",
+      "rm": "Energia e clima"
+    },
+    "domain.health": {
+      "de": "Gesundheit und öffentliche Dienste",
+      "ca": "Salut i serveis públics",
+      "en": "Health and Public Services",
+      "fr": "Santé et services publics",
+      "it": "Salute e servizi pubblici",
+      "rm": "Salüd e servetschas publicas"
+    },
+    "domain.territory": {
+      "de": "Territorium und Wohnen",
+      "ca": "Territori i habitatge",
+      "en": "Territory and Housing",
+      "fr": "Territoire et logement",
+      "it": "Territorio e abitazione",
+      "rm": "Territori e abitaziun"
+    },
+    "stat.more_better": {
+      "de": "mehr ist besser",
+      "ca": "més és millor",
+      "en": "more is better",
+      "fr": "plus c'est mieux",
+      "it": "più è meglio",
+      "rm": "max es meglier"
+    },
+    "stat.realized": {
+      "de": "Realisiert",
+      "ca": "Realitzat",
+      "en": "Realized",
+      "fr": "Réalisé",
+      "it": "Realizzato",
+      "rm": "Realisà"
+    },
+    "stat.predicted": {
+      "de": "Vorhersage ex-ante",
+      "ca": "Predit ex-ante",
+      "en": "Predicted ex-ante",
+      "fr": "Prédit ex-ante",
+      "it": "Predetto ex-ante",
+      "rm": "Predì ex-ante"
     }
   }
 }
