@@ -397,11 +397,11 @@ const DOMAINS=[
 
 {id:"aigua",label:"Wasser",acc:"#0A6C9E",
  metrics:[
-  {id:"qualitat",label:"Qualitat ecològica dels rius",unit:"índex /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
-  {id:"nitrats",label:"Nitrats a l'aigua subterrània",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
-  {id:"consum",label:"Consum d'aigua potable",unit:"l/hab·dia",base:302,trend:-.011,noise:.04,better:"low",dec:0},
-  {id:"cabal",label:"Cabal estival respecte de la mitjana",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
-  {id:"micro",label:"Micropol·luents eliminats a les depuradores",unit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
+  {id:"qualitat",label:"Ökologische Gewässerqualität",unit:"Index /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
+  {id:"nitrats",label:"Nitrate im Grundwasser",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
+  {id:"consum",label:"Trinkwasserverbrauch",unit:"l/Einw·Tag",base:302,trend:-.011,noise:.04,better:"low",dec:0},
+  {id:"cabal",label:"Sommerabfluss gegenüber Durchschnitt",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
+  {id:"micro",label:"In Kläranlagen entfernte Mikroverschmutzung",unit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
  comp:{title:"Usos de l'aigua captada",items:[["Aigua potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
  levers:[
   {id:"ara",label:"Ampliació de tractament de micropol·luents",unit:"% de depuradores",max:100,cost:3.4,eff:.36,
@@ -415,11 +415,11 @@ const DOMAINS=[
 
 {id:"educacio",label:"Bildung",acc:"#B26B00",
  metrics:[
-  {id:"ratio",label:"Ràtio alumnat per docent",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
-  {id:"despesa",label:"Despesa pública per alumne",unit:"CHF/any",base:20600,trend:.016,noise:.03,better:"high",dec:0},
-  {id:"titulacio",label:"Titulació de secundària II als 25 anys",unit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
-  {id:"dual",label:"Alumnat en formació professional dual",unit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
-  {id:"digital",label:"Centres amb infraestructura digital completa",unit:"%",base:36,trend:.09,noise:.07,better:"high",dec:0,target:100}],
+  {id:"ratio",label:"Schüler-Lehrer-Verhältnis",unit:"Schüler",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
+  {id:"despesa",label:"Öffentliche Ausgaben pro Schüler",unit:"CHF/Jahr",base:20600,trend:.016,noise:.03,better:"high",dec:0},
+  {id:"titulacio",label:"Sekundarstufe-II-Abschlussquote mit 25 Jahren",unit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
+  {id:"dual",label:"Schüler in dualer Berufsausbildung",unit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
+  {id:"digital",label:"Schulen mit vollständiger digitaler Infrastruktur",unit:"%",base:36,trend:.09,noise:.07,better:"high",dec:0,target:100}],
  comp:{title:"Alumnat per nivell",items:[["Obligatòria",58],["Secundària II general",13],["Formació professional",21],["Terciària",8]]},
  levers:[
   {id:"docents",label:"Places addicionals de docent",unit:"per 1000 alumnes",max:20,cost:4.2,eff:.34,
@@ -433,11 +433,11 @@ const DOMAINS=[
 
 {id:"mobilitat",label:"Mobilität",acc:"#444C9E",
  metrics:[
-  {id:"tp",label:"Viatges en transport públic",unit:"viatges/hab·any",base:232,trend:.014,noise:.05,better:"high",dec:0},
-  {id:"retencio",label:"Hores de retenció a la xarxa",unit:"h/1000 hab",base:40,trend:.036,noise:.09,better:"low",dec:1},
-  {id:"bici",label:"Quota modal de bicicleta",unit:"%",base:7.1,trend:.042,noise:.07,better:"high",dec:1,target:15},
-  {id:"electric",label:"Vehicles elèctrics al parc",unit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
-  {id:"puntualitat",label:"Puntualitat ferroviària",unit:"%",base:89.2,trend:.0022,noise:.01,better:"high",dec:1,target:93}],
+  {id:"tp",label:"Fahrten mit öffentlichen Verkehrsmitteln",unit:"Fahrten/Einw·Jahr",base:232,trend:.014,noise:.05,better:"high",dec:0},
+  {id:"retencio",label:"Stauzeiten im Netzwerk",unit:"h/1000 Einw",base:40,trend:.036,noise:.09,better:"low",dec:1},
+  {id:"bici",label:"Fahrradverkehrsanteil",unit:"%",base:7.1,trend:.042,noise:.07,better:"high",dec:1,target:15},
+  {id:"electric",label:"Elektrofahrzeuge im Bestand",unit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
+  {id:"puntualitat",label:"Bahnpünktlichkeit",unit:"%",base:89.2,trend:.0022,noise:.01,better:"high",dec:1,target:93}],
  comp:{title:"Repartiment modal (passatgers·km)",items:[["Vehicle privat",64],["Ferrocarril",21],["Bus i tram",8],["Bici i a peu",7]]},
  levers:[
   {id:"frequencia",label:"Increment de freqüència ferroviària",unit:"% de trens",max:30,cost:5.1,eff:.32,
@@ -451,11 +451,11 @@ const DOMAINS=[
 
 {id:"energia",label:"Energie und Klima",acc:"#0F7A5A",
  metrics:[
-  {id:"co2",label:"Emissions de gasos amb efecte d'hivernacle",unit:"t CO₂eq/hab",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
-  {id:"renov",label:"Quota renovable del consum final",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
-  {id:"solar",label:"Potència fotovoltaica instal·lada",unit:"W/hab",base:175,trend:.20,noise:.09,better:"high",dec:0},
-  {id:"consum",label:"Consum final d'energia",unit:"MWh/hab",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
-  {id:"hivern",label:"Cobertura del dèficit hivernal",unit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
+  {id:"co2",label:"Emissionen von Treibhausgasen",unit:"t CO₂äq/Einw",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
+  {id:"renov",label:"Anteil erneuerbarer Energien am Endenergieverbrauch",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
+  {id:"solar",label:"Installierte Photovoltaik-Leistung",unit:"W/Einw",base:175,trend:.20,noise:.09,better:"high",dec:0},
+  {id:"consum",label:"Endenergieverbrauch",unit:"MWh/Einw",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
+  {id:"hivern",label:"Deckung des Winterdefizits",unit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
  comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Altres renovables",6]]},
  levers:[
   {id:"pv",label:"Programa de fotovoltaica en teulades",unit:"% del potencial/any",max:8,cost:2.9,eff:.35,
@@ -469,11 +469,11 @@ const DOMAINS=[
 
 {id:"serveis",label:"Gesundheit und öffentliche Dienste",acc:"#6D4C8C",
  metrics:[
-  {id:"metges",label:"Metges de família per 10 000 habitants",unit:"metges",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
-  {id:"espera",label:"Temps d'espera a urgències",unit:"minuts",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
-  {id:"cost",label:"Despesa sanitària per habitant",unit:"CHF/any",base:7850,trend:.027,noise:.02,better:"low",dec:0},
-  {id:"domicili",label:"Cobertura d'atenció domiciliària",unit:"% de la demanda",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
-  {id:"dossier",label:"Historial clínic electrònic actiu",unit:"% de la població",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
+  {id:"metges",label:"Hausärzte pro 10 000 Einwohner",unit:"Ärzte",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
+  {id:"espera",label:"Wartezeit in der Notfallaufnahme",unit:"Minuten",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
+  {id:"cost",label:"Gesundheitsausgaben pro Einwohner",unit:"CHF/Jahr",base:7850,trend:.027,noise:.02,better:"low",dec:0},
+  {id:"domicili",label:"Deckung der häuslichen Betreuung",unit:"% der Nachfrage",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
+  {id:"dossier",label:"Aktive elektronische Krankenakte",unit:"% der Bevölkerung",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
  comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Ambulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
  levers:[
   {id:"primaria",label:"Reforç de l'atenció primària",unit:"% de places noves",max:40,cost:3.8,eff:.34,
@@ -487,11 +487,11 @@ const DOMAINS=[
 
 {id:"territori",label:"Territorium und Wohnen",acc:"#7A6A2E",
  metrics:[
-  {id:"vacants",label:"Taxa d'habitatges buits",unit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
-  {id:"lloguer",label:"Lloguer mitjà ofert",unit:"CHF/m²·any",base:193,trend:.02,noise:.03,better:"low",dec:0},
-  {id:"sol",label:"Consum de sòl per habitant",unit:"m²",base:406,trend:-.0025,noise:.02,better:"low",dec:0,target:380},
-  {id:"densificacio",label:"Habitatge nou en sòl ja urbanitzat",unit:"%",base:66,trend:.013,noise:.04,better:"high",dec:1,target:90},
-  {id:"agricola",label:"Superfície agrícola útil",unit:"% del territori",base:35.2,trend:-.0026,noise:.02,better:"high",dec:1}],
+  {id:"vacants",label:"Quote der leerstehenden Wohnungen",unit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
+  {id:"lloguer",label:"Durchschnittliche angebotene Miete",unit:"CHF/m²·Jahr",base:193,trend:.02,noise:.03,better:"low",dec:0},
+  {id:"sol",label:"Bodenverbrauch pro Einwohner",unit:"m²",base:406,trend:-.0025,noise:.02,better:"low",dec:0,target:380},
+  {id:"densificacio",label:"Neubau auf bereits überbautem Boden",unit:"%",base:66,trend:.013,noise:.04,better:"high",dec:1,target:90},
+  {id:"agricola",label:"Landwirtschaftliche Nutzfläche",unit:"% des Territoriums",base:35.2,trend:-.0026,noise:.02,better:"high",dec:1}],
  comp:{title:"Ocupació del sòl",items:[["Bosc",31],["Agrícola",35],["Urbanitzat",8],["Improductiu",26]]},
  levers:[
   {id:"densifica",label:"Increment d'edificabilitat en àrees ben servides",unit:"% de zones",max:100,cost:.9,eff:.33,
