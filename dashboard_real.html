@@ -235,10 +235,10 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
     <div class="crumb" id="crumb"></div>
     <div class="grow"></div>
     <div class="hdr-meta">
-      <div>Àmbit<b id="mDom">—</b></div>
-      <div>Població<b id="mPop">—</b></div>
-      <div>Superfície<b id="mArea">—</b></div>
-      <div>Models<b id="mModels">7 actius</b></div>
+      <div data-i18n="meta.domain">Àmbit<b id="mDom">—</b></div>
+      <div data-i18n="meta.population">Bevölkerung<b id="mPop">—</b></div>
+      <div data-i18n="meta.area">Fläche<b id="mArea">—</b></div>
+      <div data-i18n="meta.models">Modelle<b id="mModels">7 aktiv</b></div>
       <div class="lang-sel">
         <select id="langSelect" onchange="changeLanguage(this.value)">
           <option value="de" selected>🇩🇪 Deutsch</option>
@@ -254,21 +254,21 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
   <div class="redrule"></div>
 
   <div class="bar">
-    <span class="lbl">Any</span>
+    <span class="lbl" data-i18n="ctrl.year">Jahr</span>
     <div class="yearbox">
-      <div class="yearval"><span id="yTag">observat</span><span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none">2026</span></div>
-      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Any de referència">
+      <div class="yearval"><span id="yTag" data-i18n="ctrl.year_status_observed">beobachtet</span><span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none">2026</span></div>
+      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Jahr-Schieberegler">
     </div>
-    <span class="lbl">Escenari</span>
+    <span class="lbl" data-i18n="ctrl.scenario">Szenario</span>
     <div class="seg" id="scen">
-      <button data-s="opt">Acord</button>
-      <button data-s="base" aria-pressed="true">Tendencial</button>
-      <button data-s="str">Estrès</button>
+      <button data-s="opt" data-i18n="ctrl.scenario_agreement">Abkommen</button>
+      <button data-s="base" aria-pressed="true" data-i18n="ctrl.scenario_baseline">Tendenzielle</button>
+      <button data-s="str" data-i18n="ctrl.scenario_stress">Stress</button>
     </div>
-    <button class="btn" id="play" aria-pressed="false">▶ Anima</button>
-    <button class="btn" id="reset">Vista nacional</button>
+    <button class="btn" id="play" aria-pressed="false" data-i18n="btn.animate">▶ Animieren</button>
+    <button class="btn" id="reset" data-i18n="btn.national_view">Nationalansicht</button>
     <button class="btn" id="csv">CSV</button>
-    <button class="btn" id="tRail" style="display:none">Panells</button>
+    <button class="btn" id="tRail" style="display:none" data-i18n="btn.panels">Fenster</button>
   </div>
 
   <div class="body">
@@ -279,9 +279,9 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       <div class="mapbox" id="mapbox">
         <div class="mapnote" id="mapnote"></div>
         <div class="maptools">
-          <button id="zin" title="Amplia">＋</button>
-          <button id="zout" title="Redueix">－</button>
-          <button id="zfit" title="Tot Suïssa">⤢</button>
+          <button id="zin" title="Vergrößern" data-i18n="btn.zoom_in">＋</button>
+          <button id="zout" title="Verkleinern" data-i18n="btn.zoom_out">－</button>
+          <button id="zfit" title="Ganz Schweiz" data-i18n="btn.zoom_fit">⤢</button>
         </div>
         <div class="mapui">
           <div id="legTitle" style="color:var(--ink)">—</div>
