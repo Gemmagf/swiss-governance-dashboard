@@ -989,41 +989,99 @@ const LANG_LABELS = {
 function changeLanguage(lang) {
   document.getElementById('htmlRoot').lang = lang;
   localStorage.setItem('dashboardLang', lang);
-  document.getElementById('langSelect').value = lang;
+  if (document.getElementById('langSelect')) {
+    document.getElementById('langSelect').value = lang;
+  }
+  // Update dashboard with new language
+  updateDashboardTexts();
 }
-
-// Load saved language preference
-const savedLang = localStorage.getItem('dashboardLang') || 'de';
-changeLanguage(savedLang);
 </script>
 
 <!-- ===== TRANSLATION SYSTEM ===== -->
 <script src="translation_system.js"></script>
 <script src="auto_translate.js"></script>
 <script>
-// Initialize translation system with German as default
-initLanguage();
+// Wait for translation system to load
+setTimeout(() => {
+  // Initialize translation system with German as default
+  if (typeof initLanguage === 'function') {
+    initLanguage();
+  }
 
-// When language changes via dropdown, update the UI
-document.getElementById('langSelect').addEventListener('change', (e) => {
-  const newLang = e.target.value;
-  changeLanguage(newLang);
+  // Function to update dashboard texts when language changes
+  function updateDashboardTexts() {
+    if (typeof t !== 'function') return; // Translation system not loaded yet
 
-  // Dispatch custom event so dashboard can react to language change
-  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
+    // Update common labels
+    const translationMap = {
+      'Gebiet': 'meta.domain',
+      'Bevölkerung': 'meta.population',
+      'Fläche': 'meta.area',
+      'Modelle': 'meta.models',
+      'Jahr': 'ctrl.year',
+      'beobachtet': 'ctrl.year_status_observed',
+      'Prognose': 'ctrl.year_status_forecast'
+    };
 
-  // Trigger auto-translation of dashboard
-  autoTranslateDashboard();
+    // Find all text nodes and translate them
+    document.querySelectorAll('body *').forEach(el => {
+      if (el.children.length === 0) { // Only leaf elements
+        const text = el.textContent.trim();
+        if (text && translationMap[text]) {
+          const translated = t(translationMap[text]);
+          if (translated && translated !== text) {
+            el.textContent = translated;
+          }
+        }
+      }
+    });
 
-  // Redraw any charts if needed
-  if (typeof draw === 'function') draw(true);
-});
+    // Trigger auto-translation as well
+    if (typeof autoTranslateDashboard === 'function') {
+      autoTranslateDashboard();
+    }
+  }
 
-// Function to update dashboard texts when language changes
-function updateDashboardTexts() {
-  // Trigger auto-translation
-  autoTranslateDashboard();
-}
+  // Set up event listener for language dropdown
+  const langSelect = document.getElementById('langSelect');
+  if (langSelect) {
+    langSelect.addEventListener('change', (e) => {
+      const newLang = e.target.value;
+
+      // Update HTML lang attribute and localStorage
+      document.getElementById('htmlRoot').lang = newLang;
+      localStorage.setItem('dashboardLang', newLang);
+      langSelect.value = newLang;
+
+      // Call translation system's changeLanguage if it exists
+      if (typeof changeLanguage === 'function') {
+        // Don't call it here to avoid recursion
+      }
+
+      // Update all texts
+      updateDashboardTexts();
+
+      // Dispatch custom event
+      window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
+
+      // Redraw charts if needed
+      if (typeof draw === 'function') {
+        draw(true);
+      }
+    });
+  }
+
+  // Initialize with saved language or German
+  const savedLang = localStorage.getItem('dashboardLang') || 'de';
+  document.getElementById('htmlRoot').lang = savedLang;
+  if (langSelect) {
+    langSelect.value = savedLang;
+  }
+
+  // Initial translation
+  updateDashboardTexts();
+
+}, 500); // Wait for all scripts to load
 </script>
 </body>
 </html>
