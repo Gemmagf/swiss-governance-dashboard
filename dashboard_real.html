@@ -231,14 +231,14 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
   <div class="hdr">
     <svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#DC0018"/>
       <rect x="13" y="6.4" width="6" height="19.2" fill="#fff"/><rect x="6.4" y="13" width="19.2" height="6" fill="#fff"/></svg>
-    <h1>Datencockpit Schweiz<small>Cockpit de dades de la Confederació · prototip interdepartamental</small></h1>
+    <h1>Datencockpit Schweiz<small>Datencockpit der Konföderation · interdepartementales Prototyp</small></h1>
     <div class="crumb" id="crumb"></div>
     <div class="grow"></div>
     <div class="hdr-meta">
-      <div data-i18n="meta.domain">Àmbit<b id="mDom">—</b></div>
+      <div data-i18n="meta.domain">Bereich<b id="mDom">—</b></div>
       <div data-i18n="meta.population">Bevölkerung<b id="mPop">—</b></div>
-      <div data-i18n="meta.area">Fläche<b id="mArea">—</b></div>
-      <div data-i18n="meta.models">Modelle<b id="mModels">7 aktiv</b></div>
+      <div data-i18n="meta.area">Fläche<b id="mFläche">—</b></div>
+      <div data-i18n="meta.models">Modelle<b id="mModelle">7 aktiv</b></div>
       <div class="lang-sel">
         <select id="langSelect" onchange="changeLanguage(this.value)">
           <option value="de" selected>🇩🇪 Deutsch</option>
@@ -308,12 +308,12 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
         <div class="ktbar" id="ktbar"><i style="background:var(--red)"></i><i style="background:#fff"></i></div>
         <div class="ktcard">
           <svg class="shield" id="ktShield" viewBox="0 0 26 30" aria-hidden="true"></svg>
-          <div><h3 id="ktName">Confederació Suïssa</h3><p id="ktMeta">26 cantons · 4 llengües oficials</p></div>
+          <div><h3 id="ktName">Confederació Schweiz</h3><p id="ktMeta">26 Kantone · 4 Amtssprachen</p></div>
         </div>
       </section>
 
       <section class="p" id="pFan">
-        <header><h2>Evolució i previsió</h2><span class="ai">Conjunt probabilístic</span><button class="exp" data-x="pFan" title="Amplia">⤢</button></header>
+        <header><h2>Evolució i previsió</h2><span class="ai">Probabilistische Ensemble</span><button class="exp" data-x="pFan" title="Amplia">⤢</button></header>
         <div class="c">
           <div id="fan"></div>
           <div class="key" id="fanKey"></div>
@@ -321,21 +321,21 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pSim">
-        <header><h2>Simulador de mesures</h2><span class="ai">Contrafactual</span><button class="exp" data-x="pSim" title="Amplia">⤢</button></header>
+        <header><h2>Simulador de mesures</h2><span class="ai">Kontrafaktisch</span><button class="exp" data-x="pSim" title="Amplia">⤢</button></header>
         <div class="c">
-          <p class="note">Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.</p>
+          <p class="note">Verschieben Sie die Hebel, um zu sehen, wie sich die Flugbahn bis 2035 ändert. Die Auswirkungen sind geschätzte Elastizitäten mit Konfidenzintervallen, keine Garantien.</p>
           <div id="levers"></div>
           <div class="simout" id="simout"></div>
         </div>
       </section>
 
       <section class="p" id="pBrief">
-        <header><h2>Nota de situació</h2><span class="ai">Generada</span><button class="exp" data-x="pBrief" title="Amplia">⤢</button></header>
+        <header><h2>Nota de situació</h2><span class="ai">Generiert</span><button class="exp" data-x="pBrief" title="Amplia">⤢</button></header>
         <div class="c"><div class="brief" id="brief"></div><div class="sig" id="briefSig"></div></div>
       </section>
 
       <section class="p" id="pAlerts">
-        <header><h2>Senyals d'alerta</h2><span class="ai">Detecció d'anomalies</span><button class="exp" data-x="pAlerts" title="Amplia">⤢</button></header>
+        <header><h2>Senyals d'alerta</h2><span class="ai">Anomalieerkennung</span><button class="exp" data-x="pAlerts" title="Amplia">⤢</button></header>
         <div class="c"><ul class="al" id="alerts"></ul></div>
       </section>
 
@@ -501,7 +501,7 @@ const DOMAINS=[
   {id:"tramits",label:"Reducció de terminis d'autorització",unit:"% més ràpid",max:60,cost:.7,eff:.21,
    note:"Digitalització dels expedients i resolució de recursos."}],
  drivers:[["Demografisches Wachstum",.32],["Tempo Neubau",.27],["Planungsrestriktionen",.23],["Hypothekarzinssatz",.18]],
- sources:[["Arealstatistik · swisstopo","3 anys"],["Statistik leerstehender Wohnungen","anual"],["Gebäuderegister GWR","mensual"],["Mietpreisindex","trimestral"]]}
+ sources:[["Flächelstatistik · swisstopo","3 anys"],["Statistik leerstehender Wohnungen","anual"],["Gebäuderegister GWR","mensual"],["Mietpreisindex","trimestral"]]}
 ];
 
 /* ---------- motor determinista ---------- */
@@ -509,7 +509,7 @@ const Y0=2015,YOBS=2025,YN=2040;
 const YEARS=[];for(let y=Y0;y<=YN;y++)YEARS.push(y);
 function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rnd(s){let t=hash(s)+0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}
-const SC={opt:{f:1.5,l:"Acord"},base:{f:1,l:"Tendencial"},str:{f:-.5,l:"Estrès"}};
+const SC={opt:{f:1.5,l:"Abkommen"},base:{f:1,l:"Tendenzielle"},str:{f:-.5,l:"Estrès"}};
 
 let S={dom:DOMAINS[0],met:DOMAINS[0].metrics[0],year:2026,kt:null,scen:"base",lev:{},play:null};
 
@@ -562,7 +562,7 @@ const HID=()=>tip.style.opacity=0;
 
 /* ---------- barra lateral ---------- */
 function sidebar(){
-  const s=$("side");s.innerHTML="<h3>Àmbits</h3>";
+  const s=$("side");s.innerHTML="<h3>Bereichs</h3>";
   DOMAINS.forEach(d=>{
     const b=document.createElement("button");b.className="dom";
     b.setAttribute("aria-pressed",String(d.id===S.dom.id));
@@ -724,14 +724,14 @@ function fan(){
   svg.addEventListener("mousemove",e=>{
     const r=svg.getBoundingClientRect();let i=Math.round(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
     i=Math.max(0,Math.min(YEARS.length-1,i));const x=q[i];
-    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · previsió":" · observat")+'</span>'+
+    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · previsió":" · beobachtet")+'</span>'+
       F(sim[i],m)+" "+m.unit+(x?'<br>P10–P90: '+F(x.p10,m)+" – "+F(x.p90,m):""))});
   svg.addEventListener("mouseleave",HID);
   svg.addEventListener("click",e=>{const r=svg.getBoundingClientRect();
     let i=Math.round(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
     S.year=YEARS[Math.max(0,Math.min(YEARS.length-1,i))];$("year").value=S.year;draw()});
-  $("fanKey").innerHTML='<span><i style="background:'+d.acc+';opacity:.22"></i>Interval P25–P75</span>'+
-    '<span><i style="background:'+d.acc+';opacity:.13"></i>Interval P10–P90</span>'+
+  $("fanKey").innerHTML='<span><i style="background:'+d.acc+';opacity:.22"></i>Bereich P25–P75</span>'+
+    '<span><i style="background:'+d.acc+';opacity:.13"></i>Bereich P10–P90</span>'+
     (anyLev?'<span><i style="background:#000;height:2px"></i>Amb mesures simulades</span>':'');
 }
 
@@ -847,7 +847,7 @@ function alerts(){
 
 /* ---------- nota de situació ---------- */
 function brief(mape){
-  const m=S.met,d=S.dom,sc=S.kt?CANTONS.find(c=>c.ab===S.kt).name:"el conjunt de Suïssa";
+  const m=S.met,d=S.dom,sc=S.kt?CANTONS.find(c=>c.ab===S.kt).name:"el conjunt de Schweiz";
   const now=agg(d,m,S.year,S.scen,true,S.kt), y15=agg(d,m,Y0,S.scen,true,S.kt), y35=agg(d,m,2035,S.scen,true,S.kt);
   const ch=(now-y15)/y15*100, fw=(y35-now)/now*100;
   const good=(m.better==="low"?ch<0:ch>0);
@@ -861,10 +861,10 @@ function brief(mape){
   if(anyLev)t+='<p>Amb les mesures simulades, el resultat previst millora respecte del cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
   if(!S.kt)t+='<p>El gradient territorial és rellevant: '+rows[0].c.name+' encapçala el rànquing i '+rows[25].c.name+
     ' el tanca. Aquesta dispersió condiciona qualsevol mesura d\'aplicació uniforme.</p>';
-  t+='<p>Fiabilitat del model en els darrers sis anys: error mitjà del '+nf(mape,1)+'%. Les xifres recents són provisionals.</p>';
+  t+='<p>Modellzuverlässigkeit in den letzten sechs Jahren: durchschnittlicher Fehler '+nf(mape,1)+'%. Aktuelle Zahlen sind vorläufig.</p>';
   $("brief").innerHTML=t;
-  $("briefSig").textContent="Generada automàticament el "+new Date().toLocaleDateString("ca-ES")+
-    " · model "+d.id+"-v4 · pendent de revisió per l'oficina responsable · no és una posició oficial";
+  $("briefSig").textContent="Generiert automàticament el "+new Date().toLocaleDateString("ca-ES")+
+    " · model "+d.id+"-v4 · Überprüfung durch zuständiges Büro ausstehend · keine offizielle Position";
 }
 
 /* ---------- fitxa del model ---------- */
@@ -885,12 +885,12 @@ function modelcard(mape){
 function ident(){
   if(!S.kt){
     $("ktbar").innerHTML='<i style="background:var(--red)"></i><i style="background:#fff"></i>';
-    $("ktName").textContent="Confederació Suïssa";
-    $("ktMeta").textContent="26 cantons · 4 llengües oficials";
+    $("ktName").textContent="Confederació Schweiz";
+    $("ktMeta").textContent="26 Kantone · 4 Amtssprachen";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="#DC0018"/><rect x="10.5" y="7" width="5" height="16" fill="#fff"/><rect x="5" y="12.5" width="16" height="5" fill="#fff"/>';
     $("mPop").textContent=nf(POPCH/1e6,2)+" mio";
-    $("mArea").textContent=nf(AREACH,0)+" km²";
-    $("crumb").innerHTML='<b>Suïssa</b>';
+    $("mFläche").textContent=nf(AREACH,0)+" km²";
+    $("crumb").innerHTML='<b>Schweiz</b>';
   }else{
     const c=CANTONS.find(x=>x.ab===S.kt);
     $("ktbar").innerHTML='<i style="background:'+c.col[0]+'"></i><i style="background:'+c.col[1]+'"></i>';
@@ -898,8 +898,8 @@ function ident(){
     $("ktMeta").textContent=c.cap+" · "+c.lang+" · "+nf(c.pop,0)+" hab";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="'+c.col[0]+'"/><rect y="15" width="26" height="15" fill="'+c.col[1]+'"/>';
     $("mPop").textContent=nf(c.pop/1000,0)+" mil";
-    $("mArea").textContent=nf(c.area,0)+" km²";
-    $("crumb").innerHTML='<button id="crCH">Suïssa</button> › <b>'+c.name+'</b>';
+    $("mFläche").textContent=nf(c.area,0)+" km²";
+    $("crumb").innerHTML='<button id="crCH">Schweiz</button> › <b>'+c.name+'</b>';
     $("crCH").onclick=()=>select(S.kt);
   }
 }
@@ -909,7 +909,7 @@ function draw(domChanged){
   document.documentElement.style.setProperty("--acc",S.dom.acc);
   $("mDom").textContent=S.dom.label;
   $("yNum").textContent=S.year;
-  $("yTag").textContent=S.year>YOBS?"previsió · "+SC[S.scen].l.toLowerCase():"observat";
+  $("yTag").textContent=S.year>YOBS?"Prognose · "+SC[S.scen].l.toLowerCase():"beobachtet";
   sidebar();ident();kpis();map();fan();levers();rank();alerts();
   const mape=drivers();brief(mape);modelcard(mape);
 }
@@ -918,8 +918,8 @@ $("year").oninput=e=>{S.year=+e.target.value;draw()};
 document.querySelectorAll("#scen button").forEach(b=>b.onclick=()=>{
   S.scen=b.dataset.s;document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()});
 $("play").onclick=function(){
-  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Anima";return}
-  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Atura";
+  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Animieren";return}
+  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Pause";
   S.play=setInterval(()=>{S.year=S.year>=YN?Y0:S.year+1;$("year").value=S.year;draw()},560)};
 $("reset").onclick=()=>{if(S.kt)select(S.kt);else{goto(fit([0,0,1000,MAPH],.04))}};
 $("zfit").onclick=()=>{S.kt=null;goto(fit([0,0,1000,MAPH],.04),map);draw()};
@@ -963,7 +963,7 @@ const LANG_LABELS = {
   de: {
     any: 'Jahr', escenari: 'Szenario', models: 'Modelle aktiv',
     domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche',
-    // Domain names
+    // Bereich names
     'Wald und Biodiversität': 'Wald und Biodiversität',
     'Wasser': 'Wasser',
     'Bildung': 'Bildung',
@@ -973,9 +973,9 @@ const LANG_LABELS = {
     'Territorium und Wohnen': 'Territorium und Wohnen'
   },
   ca: {
-    any: 'Any', escenari: 'Escenari', models: 'models actius',
-    domini: 'Àmbit', poblacio: 'Població', superficie: 'Superfície',
-    // Domain names
+    any: 'Jahr', escenari: 'Szenario', models: 'models actius',
+    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche',
+    // Bereich names
     'Wald und Biodiversität': 'Bosc i biodiversitat',
     'Wasser': 'Aigua',
     'Bildung': 'Educació',
@@ -985,9 +985,9 @@ const LANG_LABELS = {
     'Territorium und Wohnen': 'Territori i habitatge'
   },
   en: {
-    any: 'Year', escenari: 'Scenario', models: 'active models',
-    domini: 'Domain', poblacio: 'Population', superficie: 'Area',
-    // Domain names
+    any: 'Jahr', escenari: 'Szenario', models: 'active models',
+    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche',
+    // Bereich names
     'Wald und Biodiversität': 'Forest and Biodiversity',
     'Wasser': 'Water',
     'Bildung': 'Education',
@@ -998,8 +998,8 @@ const LANG_LABELS = {
   },
   fr: {
     any: 'Année', escenari: 'Scénario', models: 'modèles actifs',
-    domini: 'Domaine', poblacio: 'Population', superficie: 'Superficie',
-    // Domain names
+    domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche',
+    // Bereich names
     'Wald und Biodiversität': 'Forêt et biodiversité',
     'Wasser': 'Eau',
     'Bildung': 'Éducation',
@@ -1009,9 +1009,9 @@ const LANG_LABELS = {
     'Territorium und Wohnen': 'Territoire et logement'
   },
   it: {
-    any: 'Anno', escenari: 'Scenario', models: 'modelli attivi',
-    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Superficie',
-    // Domain names
+    any: 'Anno', escenari: 'Szenario', models: 'modelli attivi',
+    domini: 'Ambito', poblacio: 'Popolazione', superficie: 'Fläche',
+    // Bereich names
     'Wald und Biodiversität': 'Foresta e biodiversità',
     'Wasser': 'Acqua',
     'Bildung': 'Istruzione',
@@ -1021,9 +1021,9 @@ const LANG_LABELS = {
     'Territorium und Wohnen': 'Territorio e abitazione'
   },
   rm: {
-    any: 'Onn', escenari: 'Scenario', models: 'models actifs',
-    domini: 'Domeni', poblacio: 'Populaziun', superficie: 'Superficie',
-    // Domain names
+    any: 'Onn', escenari: 'Szenario', models: 'models actifs',
+    domini: 'Domeni', poblacio: 'Populaziun', superficie: 'Fläche',
+    // Bereich names
     'Wald und Biodiversität': 'Frest e biodiversitad',
     'Wasser': 'Aua',
     'Bildung': 'Educaziun',
@@ -1060,7 +1060,7 @@ setTimeout(() => {
   }
 
   // Translate domain and indicator names
-  function translateDomainLabels(currentLang) {
+  function translateBereichLabels(currentLang) {
     if (!LANG_LABELS[currentLang]) {
       console.warn(`⚠️ Language ${currentLang} not found in LANG_LABELS`);
       return;
@@ -1116,7 +1116,7 @@ setTimeout(() => {
     });
 
     // 2. Translate domain and indicator names
-    translateDomainLabels(currentLang);
+    translateBereichLabels(currentLang);
 
     // 3. Trigger auto-translation for remaining text nodes
     if (typeof autoTranslateDashboard === 'function') {
