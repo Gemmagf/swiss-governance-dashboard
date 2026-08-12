@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de" id="htmlRoot">
+<html lang="ca">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Schweizerisches Datencockpit · Cockpit de dades de la Confederació</title>
 <style>
 :root{
-  --red:#DC0018;          /* vermell CD Bumd */
+  --red:#DC0018;          /* vermell CD Bund */
   --ink:#000000;
   --ink-2:#4C4C4C;
   --ink-3:#8C8C8C;
@@ -25,7 +25,7 @@
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{
-  backgroumd:var(--bg);color:var(--ink);font-family:var(--sans);font-size:13px;line-height:1.45;
+  background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:13px;line-height:1.45;
   -webkit-font-smoothing:antialiased;overflow:hidden;
 }
 button{font-family:inherit;color:inherit}
@@ -34,68 +34,63 @@ button{font-family:inherit;color:inherit}
 .app{height:100dvh;display:grid;grid-template-rows:auto auto 1fr;overflow:hidden}
 
 /* ---- header ---- */
-.hdr{backgroumd:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:9px 18px}
+.hdr{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:9px 18px}
 .cross{width:26px;height:26px;flex:none}
 .hdr h1{font-size:13px;font-weight:700;margin:0;letter-spacing:.02em}
 .hdr h1 small{display:block;font-weight:400;font-size:10.5px;color:var(--ink-2);letter-spacing:.01em}
 .crumb{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-left:6px}
-.crumb button{backgroumd:none;border:0;padding:0;cursor:pointer;text-decoration:umderline;font-family:var(--mono);font-size:11px}
+.crumb button{background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;font-family:var(--mono);font-size:11px}
 .crumb b{color:var(--ink)}
 .hdr .grow{flex:1}
 .hdr-meta{display:flex;gap:20px;font-family:var(--mono);font-size:10px;color:var(--ink-3);text-align:right}
 .hdr-meta b{display:block;font-size:12px;color:var(--ink);font-weight:600}
-.redrule{height:3px;backgroumd:var(--red)}
-
-/* ---- language selector ---- */
-.lang-sel{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px}
-.lang-sel select{backgroumd:#fff;border:1px solid var(--line-2);padding:4px 8px;cursor:pointer;font-family:var(--mono);font-size:10px;color:var(--ink)}
-.lang-sel select:hover{border-color:var(--ink)}
+.redrule{height:3px;background:var(--red)}
 
 /* ---- controlbar ---- */
-.bar{backgroumd:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:8px 18px;flex-wrap:wrap}
+.bar{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:8px 18px;flex-wrap:wrap}
 .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
 .seg{display:flex;border:1px solid var(--line-2)}
-.seg button{backgroumd:#fff;border:0;border-right:1px solid var(--line);padding:5px 11px;cursor:pointer;
+.seg button{background:#fff;border:0;border-right:1px solid var(--line);padding:5px 11px;cursor:pointer;
   font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--ink-2)}
 .seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{backgroumd:var(--ink);color:#fff}
-.btn{backgroumd:#fff;border:1px solid var(--line-2);padding:5px 11px;cursor:pointer;
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.btn{background:#fff;border:1px solid var(--line-2);padding:5px 11px;cursor:pointer;
   font-family:var(--mono);font-size:10.5px;letter-spacing:.04em}
 .btn:hover{border-color:var(--ink)}
-.btn[aria-pressed="true"]{backgroumd:var(--ink);color:#fff;border-color:var(--ink)}
+.btn[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .yearbox{display:flex;align-items:center;gap:10px;min-width:290px;flex:1;max-width:520px}
 .yearval{font-family:var(--mono);font-size:17px;font-weight:600;min-width:104px}
 .yearval span{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:block;line-height:1.2}
-input[type=range]{-webkit-appearance:none;appearance:none;backgroumd:none;flex:1;height:20px;cursor:pointer;margin:0}
-input[type=range]::-webkit-slider-rumnable-track{height:2px;backgroumd:var(--ink)}
-input[type=range]::-moz-range-track{height:2px;backgroumd:var(--ink)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:3px;height:18px;backgroumd:var(--red);margin-top:-8px;border:0}
-input[type=range]::-moz-range-thumb{width:3px;height:18px;backgroumd:var(--red);border:0;border-radius:0}
+input[type=range]{-webkit-appearance:none;appearance:none;background:none;flex:1;height:20px;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:var(--ink)}
+input[type=range]::-moz-range-track{height:2px;background:var(--ink)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:3px;height:18px;background:var(--red);margin-top:-8px;border:0}
+input[type=range]::-moz-range-thumb{width:3px;height:18px;background:var(--red);border:0;border-radius:0}
 
 /* ---- body grid ---- */
 .body{display:grid;grid-template-columns:198px minmax(0,1fr) 372px;min-height:0;overflow:hidden}
-.side{backgroumd:#fff;border-right:1px solid var(--line);overflow-y:auto;padding:12px 0}
+.side{background:#fff;border-right:1px solid var(--line);overflow-y:auto;padding:12px 0}
 .side h3{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
   margin:0 0 6px;padding:0 14px}
-.dom{display:flex;align-items:center;gap:9px;width:100%;backgroumd:none;border:0;border-left:3px solid transparent;
+.dom{display:flex;align-items:center;gap:9px;width:100%;background:none;border:0;border-left:3px solid transparent;
   padding:8px 14px;cursor:pointer;text-align:left;font-size:12.5px;color:var(--ink-2)}
-.dom:hover{backgroumd:#F7F7F7;color:var(--ink)}
-.dom[aria-pressed="true"]{backgroumd:#F2F2F2;color:var(--ink);font-weight:700}
+.dom:hover{background:#F7F7F7;color:var(--ink)}
+.dom[aria-pressed="true"]{background:#F2F2F2;color:var(--ink);font-weight:700}
 .dom i{width:9px;height:9px;flex:none;display:block}
 .side hr{border:0;border-top:1px solid var(--line);margin:14px 0}
-.ind{display:block;width:100%;backgroumd:none;border:0;padding:6px 14px 6px 26px;cursor:pointer;text-align:left;
+.ind{display:block;width:100%;background:none;border:0;padding:6px 14px 6px 26px;cursor:pointer;text-align:left;
   font-size:11.5px;color:var(--ink-2);position:relative}
 .ind:hover{color:var(--ink)}
 .ind[aria-pressed="true"]{color:var(--ink);font-weight:700}
 .ind[aria-pressed="true"]::before{content:"▸";position:absolute;left:14px;color:var(--acc)}
 
 .center{min-width:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}
-.rail{overflow-y:auto;border-left:1px solid var(--line);backgroumd:var(--bg);padding:10px;display:flex;flex-direction:column;gap:10px}
+.rail{overflow-y:auto;border-left:1px solid var(--line);background:var(--bg);padding:10px;display:flex;flex-direction:column;gap:10px}
 
 /* ---- kpi strip ---- */
-.kstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;backgroumd:var(--line);border-bottom:1px solid var(--line)}
-.k{backgroumd:#fff;padding:8px 12px 7px;cursor:pointer;border:0;border-top:3px solid transparent;text-align:left}
-.k[aria-pressed="true"]{border-top-color:var(--acc);backgroumd:#FAFAFA}
+.kstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.k{background:#fff;padding:8px 12px 7px;cursor:pointer;border:0;border-top:3px solid transparent;text-align:left}
+.k[aria-pressed="true"]{border-top-color:var(--acc);background:#FAFAFA}
 .k .kn{font-size:10.5px;color:var(--ink-2);display:block;min-height:26px;line-height:1.25}
 .k .kv{font-family:var(--mono);font-size:18px;font-weight:600;display:block;margin-top:3px}
 .k .ku{font-size:9.5px;color:var(--ink-3);margin-left:4px;font-weight:400}
@@ -103,7 +98,7 @@ input[type=range]::-moz-range-thumb{width:3px;height:18px;backgroumd:var(--red);
 .up{color:var(--ok)}.down{color:var(--red)}.flat{color:var(--ink-3)}
 
 /* ---- map ---- */
-.mapbox{position:relative;backgroumd:#fff;min-height:0;overflow:hidden}
+.mapbox{position:relative;background:#fff;min-height:0;overflow:hidden}
 .mapbox svg{width:100%;height:100%;display:block}
 .ct{cursor:pointer}
 .ct path{stroke:#fff;stroke-width:.8;vector-effect:non-scaling-stroke;transition:fill .3s}
@@ -112,25 +107,25 @@ input[type=range]::-moz-range-thumb{width:3px;height:18px;backgroumd:var(--red);
 .ct.dim{opacity:.22}
 .ctlabel{font-family:var(--mono);font-size:9px;pointer-events:none;letter-spacing:.02em}
 .sensor{pointer-events:all;cursor:crosshair}
-.mapui{position:absolute;left:12px;bottom:12px;backgroumd:rgba(255,255,255,.94);border:1px solid var(--line);padding:8px 10px;font-family:var(--mono);font-size:9.5px}
+.mapui{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.94);border:1px solid var(--line);padding:8px 10px;font-family:var(--mono);font-size:9.5px}
 .ramp{width:170px;height:8px;border:1px solid var(--line-2);margin:5px 0 3px}
 .ramprow{display:flex;justify-content:space-between;color:var(--ink-2)}
 .maptools{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;gap:5px}
-.maptools button{width:30px;height:30px;backgroumd:rgba(255,255,255,.94);border:1px solid var(--line-2);cursor:pointer;font-size:14px;line-height:1}
+.maptools button{width:30px;height:30px;background:rgba(255,255,255,.94);border:1px solid var(--line-2);cursor:pointer;font-size:14px;line-height:1}
 .mapnote{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
-  backgroumd:rgba(255,255,255,.9);padding:4px 7px;border:1px solid var(--line);max-width:290px}
+  background:rgba(255,255,255,.9);padding:4px 7px;border:1px solid var(--line);max-width:290px}
 
 /* ---- bottom strip ---- */
-.strip{border-top:1px solid var(--line);backgroumd:#fff;display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  backgroumd:var(--line);height:196px}
-.strip>div{backgroumd:#fff;padding:9px 13px;overflow:auto;min-width:0}
+.strip{border-top:1px solid var(--line);background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--line);height:196px}
+.strip>div{background:#fff;padding:9px 13px;overflow:auto;min-width:0}
 
 /* ---- panels ---- */
-.p{backgroumd:var(--panel);border:1px solid var(--line)}
+.p{background:var(--panel);border:1px solid var(--line)}
 .p header{display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid var(--line)}
 .p header h2{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0;flex:1}
 .p header .ai{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;border:1px solid var(--acc);color:var(--acc);padding:1px 5px}
-.exp{backgroumd:none;border:0;cursor:pointer;color:var(--ink-3);font-size:13px;line-height:1;padding:2px 3px}
+.exp{background:none;border:0;cursor:pointer;color:var(--ink-3);font-size:13px;line-height:1;padding:2px 3px}
 .exp:hover{color:var(--ink)}
 .p .c{padding:11px}
 .p.expanded{position:fixed;inset:22px;z-index:60;box-shadow:0 20px 60px rgba(0,0,0,.28);overflow:auto;border-color:var(--line-2)}
@@ -138,7 +133,7 @@ input[type=range]::-moz-range-thumb{width:3px;height:18px;backgroumd:var(--red);
 .p.expanded .brief{max-width:74ch;font-size:14px}
 .p.expanded svg.chart{max-width:820px}
 .p.expanded .lev,.p.expanded .simout,.p.expanded .al,.p.expanded .note{max-width:820px}
-.scrim{position:fixed;inset:0;backgroumd:rgba(0,0,0,.35);z-index:55;display:none}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55;display:none}
 .scrim.on{display:block}
 
 h4.sub{font-size:10px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
@@ -156,8 +151,8 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 .lev-h{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;margin-bottom:1px}
 .lev-h b{font-family:var(--mono);font-weight:600;font-size:11px}
 .lev small{display:block;color:var(--ink-3);font-size:10px;line-height:1.35;margin-bottom:3px}
-.simout{display:grid;grid-template-columns:1fr 1fr;gap:1px;backgroumd:var(--line);border:1px solid var(--line);margin-top:9px}
-.simout div{backgroumd:#fff;padding:7px 9px}
+.simout{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:9px}
+.simout div{background:#fff;padding:7px 9px}
 .simout span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .simout b{font-family:var(--mono);font-size:15px;font-weight:600}
 
@@ -165,16 +160,16 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 .rows{display:flex;flex-direction:column}
 .row{display:grid;grid-template-columns:34px 1fr 62px;gap:8px;align-items:center;padding:2px 0;cursor:pointer}
 .row .ab{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
-.row .tr{backgroumd:#F2F2F2;height:13px;position:relative}
-.row .br{height:13px;backgroumd:var(--acc);transition:width .3s}
+.row .tr{background:#F2F2F2;height:13px;position:relative}
+.row .br{height:13px;background:var(--acc);transition:width .3s}
 .row .nm{position:absolute;left:6px;top:0;line-height:13px;font-size:10px;color:var(--ink-2);white-space:nowrap}
 .row .vl{font-family:var(--mono);font-size:10.5px;text-align:right}
 .row.sel .nm{color:var(--ink);font-weight:700}
 
 .drv{display:flex;flex-direction:column;gap:6px}
 .drv div{display:grid;grid-template-columns:1fr 92px 44px;gap:8px;align-items:center;font-size:11px}
-.drv .b{height:9px;backgroumd:#EDEDED;position:relative}
-.drv .b i{display:block;height:9px;backgroumd:var(--acc)}
+.drv .b{height:9px;background:#EDEDED;position:relative}
+.drv .b i{display:block;height:9px;background:var(--acc)}
 .drv .w{font-family:var(--mono);font-size:10px;text-align:right;color:var(--ink-2)}
 
 .al{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
@@ -185,8 +180,8 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 .al .m{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1px}
 .al .act{display:block;margin-top:3px;color:var(--ink-2);font-size:10.5px}
 
-.meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;backgroumd:var(--line);border:1px solid var(--line)}
-.meta div{backgroumd:#fff;padding:6px 8px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.meta div{background:#fff;padding:6px 8px}
 .meta span{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 .meta b{font-family:var(--mono);font-size:12px;font-weight:600}
 .src{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
@@ -194,7 +189,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 .src span i{color:var(--ok);font-style:normal}
 .brief{font-size:12px;line-height:1.55}
 .brief p{margin:0 0 7px}
-.brief b{backgroumd:#F4F4F4;padding:0 2px}
+.brief b{background:#F4F4F4;padding:0 2px}
 .sig{font-family:var(--mono);font-size:9px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:6px;margin-top:4px}
 
 /* ---- canton identity ---- */
@@ -205,7 +200,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 .ktcard h3{margin:0;font-size:14px;font-weight:700}
 .ktcard p{margin:0;font-size:10.5px;color:var(--ink-2);font-family:var(--mono)}
 
-#tip{position:fixed;z-index:80;pointer-events:none;backgroumd:#000;color:#fff;padding:7px 9px;
+#tip{position:fixed;z-index:80;pointer-events:none;background:#000;color:#fff;padding:7px 9px;
   font-family:var(--mono);font-size:10.5px;line-height:1.5;opacity:0;transition:opacity .1s;max-width:250px}
 #tip b{color:#fff}
 #tip .n{font-family:var(--sans);font-size:11px;font-weight:700;display:block;margin-bottom:2px}
@@ -231,44 +226,34 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
   <div class="hdr">
     <svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#DC0018"/>
       <rect x="13" y="6.4" width="6" height="19.2" fill="#fff"/><rect x="6.4" y="13" width="19.2" height="6" fill="#fff"/></svg>
-    <h1>Datencockpit Schweiz<small>Datencockpit der Konföderation · interdepartementales Prototyp</small></h1>
+    <h1>Datencockpit Schweiz<small>Cockpit de dades de la Confederació · prototip interdepartamental</small></h1>
     <div class="crumb" id="crumb"></div>
     <div class="grow"></div>
     <div class="hdr-meta">
-      <div data-i18n="meta.domain">Bereich<b id="mDom">—</b></div>
-      <div data-i18n="meta.population">Bevölkerumg<b id="mPop">—</b></div>
-      <div data-i18n="meta.area">Fläche<b id="mFläche">—</b></div>
-      <div data-i18n="meta.models">Modelle<b id="mModelle">7 aktiv</b></div>
-      <div class="lang-sel">
-        <select id="langSelect" onchange="changeLanguage(this.value)">
-          <option value="de" selected>🇩🇪 Deutsch</option>
-          <option value="ca">🇨🇭 Català</option>
-          <option value="en">🇬🇧 English</option>
-          <option value="fr">🇫🇷 Français</option>
-          <option value="it">🇮🇹 Italiano</option>
-          <option value="rm">🗣️ Rumantsch</option>
-        </select>
-      </div>
+      <div>Àmbit<b id="mDom">—</b></div>
+      <div>Població<b id="mPop">—</b></div>
+      <div>Superfície<b id="mArea">—</b></div>
+      <div>Models<b id="mModels">7 actius</b></div>
     </div>
   </div>
   <div class="redrule"></div>
 
   <div class="bar">
-    <span class="lbl" data-i18n="ctrl.year">Jahr</span>
+    <span class="lbl">Any</span>
     <div class="yearbox">
-      <div class="yearval"><span id="yTag" data-i18n="ctrl.year_status_observed">beobachtet</span><span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none">2026</span></div>
-      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Jahr-Schieberegler">
+      <div class="yearval"><span id="yTag">observat</span><span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none">2026</span></div>
+      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Any de referència">
     </div>
-    <span class="lbl" data-i18n="ctrl.scenario">Szenario</span>
+    <span class="lbl">Escenari</span>
     <div class="seg" id="scen">
-      <button data-s="opt" data-i18n="ctrl.scenario_agreement">Abkommen</button>
-      <button data-s="base" aria-pressed="true" data-i18n="ctrl.scenario_baseline">Tendenzielle</button>
-      <button data-s="str" data-i18n="ctrl.scenario_stress">Stress</button>
+      <button data-s="opt">Acord</button>
+      <button data-s="base" aria-pressed="true">Tendencial</button>
+      <button data-s="str">Estrès</button>
     </div>
-    <button class="btn" id="play" aria-pressed="false" data-i18n="btn.animate">▶ Animieren</button>
-    <button class="btn" id="reset" data-i18n="btn.national_view">Nationalansicht</button>
+    <button class="btn" id="play" aria-pressed="false">▶ Anima</button>
+    <button class="btn" id="reset">Vista nacional</button>
     <button class="btn" id="csv">CSV</button>
-    <button class="btn" id="tRail" style="display:none" data-i18n="btn.panels">Fenster</button>
+    <button class="btn" id="tRail" style="display:none">Panells</button>
   </div>
 
   <div class="body">
@@ -279,9 +264,9 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       <div class="mapbox" id="mapbox">
         <div class="mapnote" id="mapnote"></div>
         <div class="maptools">
-          <button id="zin" title="Vergrößern" data-i18n="btn.zoom_in">＋</button>
-          <button id="zout" title="Verkleinern" data-i18n="btn.zoom_out">－</button>
-          <button id="zfit" title="Ganz Schweiz" data-i18n="btn.zoom_fit">⤢</button>
+          <button id="zin" title="Amplia">＋</button>
+          <button id="zout" title="Redueix">－</button>
+          <button id="zfit" title="Tot Suïssa">⤢</button>
         </div>
         <div class="mapui">
           <div id="legTitle" style="color:var(--ink)">—</div>
@@ -305,15 +290,15 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
 
     <aside class="rail" id="rail">
       <section class="p" id="pIdent">
-        <div class="ktbar" id="ktbar"><i style="backgroumd:var(--red)"></i><i style="backgroumd:#fff"></i></div>
+        <div class="ktbar" id="ktbar"><i style="background:var(--red)"></i><i style="background:#fff"></i></div>
         <div class="ktcard">
           <svg class="shield" id="ktShield" viewBox="0 0 26 30" aria-hidden="true"></svg>
-          <div><h3 id="ktName">Schweizer Eidgenossenschaft</h3><p id="ktMeta">26 Kantone · 4 Amtssprachen</p></div>
+          <div><h3 id="ktName">Confederació Suïssa</h3><p id="ktMeta">26 cantons · 4 llengües oficials</p></div>
         </div>
       </section>
 
       <section class="p" id="pFan">
-        <header><h2>Evolució i previsió</h2><span class="ai">Probabilistische Ensemble</span><button class="exp" data-x="pFan" title="Vergrößerung">⤢</button></header>
+        <header><h2>Evolució i previsió</h2><span class="ai">Conjunt probabilístic</span><button class="exp" data-x="pFan" title="Amplia">⤢</button></header>
         <div class="c">
           <div id="fan"></div>
           <div class="key" id="fanKey"></div>
@@ -321,26 +306,26 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pSim">
-        <header><h2>Simulador de mesures</h2><span class="ai">Kontrafaktisch</span><button class="exp" data-x="pSim" title="Vergrößerung">⤢</button></header>
+        <header><h2>Simulador de mesures</h2><span class="ai">Contrafactual</span><button class="exp" data-x="pSim" title="Amplia">⤢</button></header>
         <div class="c">
-          <p class="note">Verschieben Sie die Hebel, um zu sehen, wie sich die Flugbahn bis 2035 ändert. Die Auswirkumgen sind geschätzte Elastizitäten mit Konfidenzintervallen, keine Garantien.</p>
+          <p class="note">Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.</p>
           <div id="levers"></div>
           <div class="simout" id="simout"></div>
         </div>
       </section>
 
       <section class="p" id="pBrief">
-        <header><h2>Nota de situació</h2><span class="ai">Generiert</span><button class="exp" data-x="pBrief" title="Vergrößerung">⤢</button></header>
+        <header><h2>Nota de situació</h2><span class="ai">Generada</span><button class="exp" data-x="pBrief" title="Amplia">⤢</button></header>
         <div class="c"><div class="brief" id="brief"></div><div class="sig" id="briefSig"></div></div>
       </section>
 
       <section class="p" id="pAlerts">
-        <header><h2>Senyals d'alerta</h2><span class="ai">Anomalieerkennung</span><button class="exp" data-x="pAlerts" title="Vergrößerung">⤢</button></header>
+        <header><h2>Senyals d'alerta</h2><span class="ai">Detecció d'anomalies</span><button class="exp" data-x="pAlerts" title="Amplia">⤢</button></header>
         <div class="c"><ul class="al" id="alerts"></ul></div>
       </section>
 
       <section class="p" id="pModel">
-        <header><h2>Fitxa del model i dades</h2><button class="exp" data-x="pModel" title="Vergrößerung">⤢</button></header>
+        <header><h2>Fitxa del model i dades</h2><button class="exp" data-x="pModel" title="Amplia">⤢</button></header>
         <div class="c">
           <div class="meta" id="modelMeta"></div>
           <div class="src" id="sources"></div>
@@ -377,143 +362,143 @@ const POPCH=CANTONS.reduce((a,c)=>a+c.pop,0), AREACH=CANTONS.reduce((a,c)=>a+c.a
 
 /* ---------- àmbits, indicadors, palanques, fonts ---------- */
 const DOMAINS=[
-{id:"bosc",label:"Wald umd Biodiversität",acc:"#2F6B3A",
+{id:"bosc",label:"Bosc i biodiversitat",acc:"#2F6B3A",
  metrics:[
-  {id:"superficie",label:"Waldfläche",umit:"% des Territoriums",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
-  {id:"vitalitat",label:"Vitalität der Baumkrone",umit:"Index /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
-  {id:"estres",label:"Bestand umter Wasserstress",umit:"% der Fläche",base:6.1,trend:.058,noise:.13,better:"low",dec:1,target:5},
-  {id:"escolitids",label:"Schäden durch Borkenkäfer",umit:"1000 m³/Jahr",base:172,trend:.075,noise:.20,better:"low",dec:0},
-  {id:"regeneracio",label:"Verjüngumg mit angepassten Arten",umit:"%",base:22,trend:.055,noise:.06,better:"high",dec:1,target:60}],
+  {id:"superficie",label:"Superfície forestal",unit:"% del territori",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
+  {id:"vitalitat",label:"Vitalitat de la capçada",unit:"índex /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
+  {id:"estres",label:"Massa amb estrès hídric",unit:"% de la superfície",base:6.1,trend:.058,noise:.13,better:"low",dec:1,target:5},
+  {id:"escolitids",label:"Danys per escolítids",unit:"1000 m³/any",base:172,trend:.075,noise:.20,better:"low",dec:0},
+  {id:"regeneracio",label:"Regeneració amb espècies adaptades",unit:"%",base:22,trend:.055,noise:.06,better:"high",dec:1,target:60}],
  comp:{title:"Composició del bosc",items:[["Coníferes",52],["Frondoses",34],["Mixt jove",14]]},
  levers:[
-  {id:"clarejar",label:"Programm zur Artenumwandlung",umit:"1000 ha/Jahr",max:40,cost:2.1,eff:.30,
-   note:"Schrittweise Ersetzumg von Fichten in niedriger Lage durch trockenheitsresistente Arten."},
-  {id:"vigilancia",label:"Waldschutz-Überwachumgsnetz",umit:"% Abdeckung",max:100,cost:.6,eff:.18,
-   note:"Früherkennumg von Borkenkäfern durch Satellitenbilder umd Fallen."},
-  {id:"aigua",label:"Wasserspeicherumg im Waldboden",umit:"1000 ha",max:60,cost:1.4,eff:.22,
-   note:"Entwässerumgs- umd Bodenwiederherstellumgsmaßnahmen zur Verringerumg von Sommerstress."}],
- drivers:[["Sommerdefizit bei Niederschlag",.34],["Durchschnittliche Julitemperatur",.27],["Alter umd Struktur des Bestands",.22],["Managementintensität",.17]],
- sources:[["Landesforstinventar (LFI)","anual"],["Sentinel-2 · NDVI","5 dies"],["MeteoSwiss · IDAWEB","diari"],["WSL · Waldgesumdheitsüberwachumg","mensual"]]},
+  {id:"clarejar",label:"Programa de conversió d'espècies",unit:"1000 ha/any",max:40,cost:2.1,eff:.30,
+   note:"Substitució progressiva de piceers de baixa altitud per espècies resistents a la sequera."},
+  {id:"vigilancia",label:"Xarxa de vigilància fitosanitària",unit:"% de cobertura",max:100,cost:.6,eff:.18,
+   note:"Detecció precoç d'escolítids amb imatge satel·litària i trampes connectades."},
+  {id:"aigua",label:"Retenció hídrica al sòl forestal",unit:"1000 ha",max:60,cost:1.4,eff:.22,
+   note:"Obres de retenció i restauració de sòls per reduir l'estrès estival."}],
+ drivers:[["Dèficit de precipitació estival",.34],["Temperatura mitjana de juliol",.27],["Edat i estructura de la massa",.22],["Intensitat de gestió",.17]],
+ sources:[["Inventari Forestal Nacional (LFI)","anual"],["Sentinel-2 · NDVI","5 dies"],["MeteoSwiss · IDAWEB","diari"],["WSL · monitoratge de sanitat","mensual"]]},
 
-{id:"aigua",label:"Wasser",acc:"#0A6C9E",
+{id:"aigua",label:"Aigua",acc:"#0A6C9E",
  metrics:[
-  {id:"qualitat",label:"Ökologische Gewässerqualität",umit:"Index /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
-  {id:"nitrats",label:"Nitrate im Grumdwasser",umit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
-  {id:"consum",label:"Trinkwasserverbrauch",umit:"l/Einw·Tag",base:302,trend:-.011,noise:.04,better:"low",dec:0},
-  {id:"cabal",label:"Sommerabfluss gegenüber Durchschnitt",umit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
-  {id:"micro",label:"In Kläranlagen entfernte Mikroverschmutzumg",umit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
- comp:{title:"Usos de l'aigua captada",items:[["Wasser potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
+  {id:"qualitat",label:"Qualitat ecològica dels rius",unit:"índex /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
+  {id:"nitrats",label:"Nitrats a l'aigua subterrània",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
+  {id:"consum",label:"Consum d'aigua potable",unit:"l/hab·dia",base:302,trend:-.011,noise:.04,better:"low",dec:0},
+  {id:"cabal",label:"Cabal estival respecte de la mitjana",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
+  {id:"micro",label:"Micropol·luents eliminats a les depuradores",unit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
+ comp:{title:"Usos de l'aigua captada",items:[["Aigua potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
  levers:[
-  {id:"ara",label:"Erweiterungó de tractament de micropol·luents",umit:"% de depuradores",max:100,cost:3.4,eff:.36,
+  {id:"ara",label:"Ampliació de tractament de micropol·luents",unit:"% de depuradores",max:100,cost:3.4,eff:.36,
    note:"Quarta etapa de depuració a les plantes que aboquen a masses sensibles."},
-  {id:"agro",label:"Reducció d'aportacions agrícoles",umit:"% de superfície amb pla",max:100,cost:1.8,eff:.28,
+  {id:"agro",label:"Reducció d'aportacions agrícoles",unit:"% de superfície amb pla",max:100,cost:1.8,eff:.28,
    note:"Plans de fertilització i franges de protecció a les zones de captació."},
-  {id:"xarxa",label:"Renovació de xarxa de distribució",umit:"% anual",max:3,cost:2.6,eff:.20,
+  {id:"xarxa",label:"Renovació de xarxa de distribució",unit:"% anual",max:3,cost:2.6,eff:.20,
    note:"Reducció de pèrdues i millora de la resiliència en episodis de sequera."}],
- drivers:[["Landwirtschaftliche Belastumg des Einzugsgebiets",.31],["Abfluss umd Verdünnumg",.29],["Behandlumgsgrad in Kläranlagen",.25],["Urbane Dichte",.15]],
- sources:[["NAQUA · Grumdwasser","trimestral"],["NADUF · Flussnetz","mensual"],["Hydometrische Stationen BAFU","horari"],["Einleitumgskataster","anual"]]},
+ drivers:[["Càrrega agrícola de la conca",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
+ sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","mensual"],["Estacions hidromètriques FOEN","horari"],["Cadastre d'abocaments","anual"]]},
 
-{id:"educacio",label:"Bildumg",acc:"#B26B00",
+{id:"educacio",label:"Educació",acc:"#B26B00",
  metrics:[
-  {id:"ratio",label:"Schüler-Lehrer-Verhältnis",umit:"Schüler",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
-  {id:"despesa",label:"Öffentliche Ausgaben pro Schüler",umit:"CHF/Jahr",base:20600,trend:.016,noise:.03,better:"high",dec:0},
-  {id:"titulacio",label:"Sekumdarstufe-II-Abschlussquote mit 25 Jahren",umit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
-  {id:"dual",label:"Schüler in dualer Berufsausbildumg",umit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
-  {id:"digital",label:"Schulen mit vollständiger digitaler Infrastruktur",umit:"%",base:36,trend:.09,noise:.07,better:"high",dec:0,target:100}],
- comp:{title:"Schüler per nivell",items:[["Obligatòria",58],["Secumdària II general",13],["Formació professional",21],["Terciària",8]]},
+  {id:"ratio",label:"Ràtio alumnat per docent",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
+  {id:"despesa",label:"Despesa pública per alumne",unit:"CHF/any",base:20600,trend:.016,noise:.03,better:"high",dec:0},
+  {id:"titulacio",label:"Titulació de secundària II als 25 anys",unit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
+  {id:"dual",label:"Alumnat en formació professional dual",unit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
+  {id:"digital",label:"Centres amb infraestructura digital completa",unit:"%",base:36,trend:.09,noise:.07,better:"high",dec:0,target:100}],
+ comp:{title:"Alumnat per nivell",items:[["Obligatòria",58],["Secundària II general",13],["Formació professional",21],["Terciària",8]]},
  levers:[
-  {id:"docents",label:"Places addicionals de docent",umit:"per 1000 alumnes",max:20,cost:4.2,eff:.34,
+  {id:"docents",label:"Places addicionals de docent",unit:"per 1000 alumnes",max:20,cost:4.2,eff:.34,
    note:"Contractació i formació; l'efecte apareix amb dos o tres anys de retard."},
-  {id:"suport",label:"Suport escolar individualitzat",umit:"% de centres",max:100,cost:2.0,eff:.26,
+  {id:"suport",label:"Suport escolar individualitzat",unit:"% de centres",max:100,cost:2.0,eff:.26,
    note:"Tutoria intensiva orientada a l'alumnat amb risc d'abandonament."},
-  {id:"infra",label:"Inversió en infraestructura digital",umit:"% de centres/any",max:25,cost:1.5,eff:.30,
+  {id:"infra",label:"Inversió en infraestructura digital",unit:"% de centres/any",max:25,cost:1.5,eff:.30,
    note:"Equipament, connectivitat i formació del professorat."}],
- drivers:[["Demografische Struktur der Kohorte",.30],["Kantonales Budget pro Einwohner",.28],["Angebot an Ausbildungsplätzeätzen dual",.24],["Lokaler Arbeitsmarkt",.18]],
- sources:[["BFS · Schulstatistik","anual"],["Kantonale Schülerregister","trimestral"],["TREE-Umfrage","biennal"],["Lehrstellenbarometer","semestral"]]},
+ drivers:[["Estructura demogràfica de la cohort",.30],["Pressupost cantonal per habitant",.28],["Oferta de places de formació dual",.24],["Mercat laboral local",.18]],
+ sources:[["BFS · estadística escolar","anual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre de places d'aprenentatge","semestral"]]},
 
-{id:"mobilitat",label:"Mobilität",acc:"#444C9E",
+{id:"mobilitat",label:"Mobilitat",acc:"#444C9E",
  metrics:[
-  {id:"tp",label:"Fahrten mit öffentlichen Verkehrsmitteln",umit:"Fahrten/Einw·Jahr",base:232,trend:.014,noise:.05,better:"high",dec:0},
-  {id:"retencio",label:"Stauzeiten im Netzwerk",umit:"h/1000 Einw",base:40,trend:.036,noise:.09,better:"low",dec:1},
-  {id:"bici",label:"Fahrradverkehrsanteil",umit:"%",base:7.1,trend:.042,noise:.07,better:"high",dec:1,target:15},
-  {id:"electric",label:"Elektrofahrzeuge im Bestand",umit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
-  {id:"pumtualitat",label:"Bahnpünktlichkeit",umit:"%",base:89.2,trend:.0022,noise:.01,better:"high",dec:1,target:93}],
+  {id:"tp",label:"Viatges en transport públic",unit:"viatges/hab·any",base:232,trend:.014,noise:.05,better:"high",dec:0},
+  {id:"retencio",label:"Hores de retenció a la xarxa",unit:"h/1000 hab",base:40,trend:.036,noise:.09,better:"low",dec:1},
+  {id:"bici",label:"Quota modal de bicicleta",unit:"%",base:7.1,trend:.042,noise:.07,better:"high",dec:1,target:15},
+  {id:"electric",label:"Vehicles elèctrics al parc",unit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
+  {id:"puntualitat",label:"Puntualitat ferroviària",unit:"%",base:89.2,trend:.0022,noise:.01,better:"high",dec:1,target:93}],
  comp:{title:"Repartiment modal (passatgers·km)",items:[["Vehicle privat",64],["Ferrocarril",21],["Bus i tram",8],["Bici i a peu",7]]},
  levers:[
-  {id:"frequencia",label:"Increment de freqüència ferroviària",umit:"% de trens",max:30,cost:5.1,eff:.32,
-   note:"Més oferta a les hores pumta als eixos amb més saturació."},
-  {id:"carrils",label:"Xarxa ciclista segregada",umit:"km/any",max:400,cost:1.1,eff:.29,
+  {id:"frequencia",label:"Increment de freqüència ferroviària",unit:"% de trens",max:30,cost:5.1,eff:.32,
+   note:"Més oferta a les hores punta als eixos amb més saturació."},
+  {id:"carrils",label:"Xarxa ciclista segregada",unit:"km/any",max:400,cost:1.1,eff:.29,
    note:"Infraestructura contínua, no trams aïllats: l'efecte és no lineal amb la connectivitat."},
-  {id:"tarifa",label:"Tarifació de l'ús de la carretera",umit:"intensitat",max:100,cost:-1.8,eff:.38,
+  {id:"tarifa",label:"Tarifació de l'ús de la carretera",unit:"intensitat",max:100,cost:-1.8,eff:.38,
    note:"Genera ingressos nets. Requereix base legal i té efectes distributius desiguals."}],
- drivers:[["Dichte umd Nutzumgsmischumg",.29],["Angebot öffentlicher Verkehr",.28],["Relative Kosten Privatfahrzeug",.24],["Topografie umd Klima",.19]],
- sources:[["Mikrozensus Mobilität","5 anys"],["Automatische Zähler ASTRA","horari"],["SBB · Betriebsdaten","diari"],["Fahrzeugregister MOFIS","mensual"]]},
+ drivers:[["Densitat i mixtura d'usos",.29],["Oferta de transport públic",.28],["Cost relatiu del vehicle privat",.24],["Topografia i clima",.19]],
+ sources:[["Microcens mobilitat","5 anys"],["Comptadors automàtics ASTRA","horari"],["SBB · dades d'explotació","diari"],["Registre de vehicles MOFIS","mensual"]]},
 
-{id:"energia",label:"Energie umd Klima",acc:"#0F7A5A",
+{id:"energia",label:"Energia i clima",acc:"#0F7A5A",
  metrics:[
-  {id:"co2",label:"Emissionen von Treibhausgasen",umit:"t CO₂äq/Einw",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
-  {id:"renov",label:"Anteil erneuerbarer Energien am Endenergieverbrauch",umit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
-  {id:"solar",label:"Installierte Photovoltaik-Leistumg",umit:"W/Einw",base:175,trend:.20,noise:.09,better:"high",dec:0},
-  {id:"consum",label:"Endenergieverbrauch",umit:"MWh/Einw",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
-  {id:"hivern",label:"Deckumg des Winterdefizits",umit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
- comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Andere renovables",6]]},
+  {id:"co2",label:"Emissions de gasos amb efecte d'hivernacle",unit:"t CO₂eq/hab",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
+  {id:"renov",label:"Quota renovable del consum final",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
+  {id:"solar",label:"Potència fotovoltaica instal·lada",unit:"W/hab",base:175,trend:.20,noise:.09,better:"high",dec:0},
+  {id:"consum",label:"Consum final d'energia",unit:"MWh/hab",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
+  {id:"hivern",label:"Cobertura del dèficit hivernal",unit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
+ comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Altres renovables",6]]},
  levers:[
-  {id:"pv",label:"Programa de fotovoltaica en teulades",umit:"% del potencial/any",max:8,cost:2.9,eff:.35,
+  {id:"pv",label:"Programa de fotovoltaica en teulades",unit:"% del potencial/any",max:8,cost:2.9,eff:.35,
    note:"Obligació en obra nova i incentiu a la rehabilitació."},
-  {id:"rehab",label:"Ritme de rehabilitació energètica d'edificis",umit:"% del parc/any",max:3,cost:4.6,eff:.33,
+  {id:"rehab",label:"Ritme de rehabilitació energètica d'edificis",unit:"% del parc/any",max:3,cost:4.6,eff:.33,
    note:"És la palanca més cara i la de més recorregut a llarg termini."},
-  {id:"calor",label:"Substitució de calefaccions fòssils",umit:"1000 umitats/any",max:120,cost:3.2,eff:.31,
+  {id:"calor",label:"Substitució de calefaccions fòssils",unit:"1000 unitats/any",max:120,cost:3.2,eff:.31,
    note:"Bombes de calor i xarxes de calor; limitada per la mà d'obra disponible."}],
- drivers:[["Struktur des Gebäudebestands",.31],["Energiepreise",.26],["Elektrifizierumgstempo Verkehr",.23],["Heizgradtage",.20]],
- sources:[["Nationales Treibhausgasregister","anual"],["Energiestatistik SFOE","anual"],["Pronovo · Anlagenregister","mensual"],["Swissgrid · Netzbilanz","15 min"]]},
+ drivers:[["Estructura del parc d'edificis",.31],["Preus de l'energia",.26],["Ritme d'electrificació del transport",.23],["Graus-dia de calefacció",.20]],
+ sources:[["Inventari nacional de GEH","anual"],["Estadística energètica SFOE","anual"],["Pronovo · registre d'instal·lacions","mensual"],["Swissgrid · balanç de xarxa","15 min"]]},
 
-{id:"serveis",label:"Gesumdheit umd öffentliche Dienste",acc:"#6D4C8C",
+{id:"serveis",label:"Salut i serveis públics",acc:"#6D4C8C",
  metrics:[
-  {id:"metges",label:"Hausärzte pro 10 000 Einwohner",umit:"Ärzte",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
-  {id:"espera",label:"Wartezeit in der Notfallaufnahme",umit:"Minuten",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
-  {id:"cost",label:"Gesumdheitsausgaben pro Einwohner",umit:"CHF/Jahr",base:7850,trend:.027,noise:.02,better:"low",dec:0},
-  {id:"domicili",label:"Deckumg der häuslichen Betreuumg",umit:"% der Nachfrage",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
-  {id:"dossier",label:"Aktive elektronische Krankenakte",umit:"% der Bevölkerumg",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
- comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Mitulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
+  {id:"metges",label:"Metges de família per 10 000 habitants",unit:"metges",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
+  {id:"espera",label:"Temps d'espera a urgències",unit:"minuts",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
+  {id:"cost",label:"Despesa sanitària per habitant",unit:"CHF/any",base:7850,trend:.027,noise:.02,better:"low",dec:0},
+  {id:"domicili",label:"Cobertura d'atenció domiciliària",unit:"% de la demanda",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
+  {id:"dossier",label:"Historial clínic electrònic actiu",unit:"% de la població",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
+ comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Ambulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
  levers:[
-  {id:"primaria",label:"Reforç de l'atenció primària",umit:"% de places noves",max:40,cost:3.8,eff:.34,
+  {id:"primaria",label:"Reforç de l'atenció primària",unit:"% de places noves",max:40,cost:3.8,eff:.34,
    note:"Redueix la pressió sobre urgències amb dos o tres anys de retard."},
-  {id:"telemed",label:"Triatge i seguiment a distància",umit:"% de casos",max:60,cost:1.2,eff:.27,
+  {id:"telemed",label:"Triatge i seguiment a distància",unit:"% de casos",max:60,cost:1.2,eff:.27,
    note:"Bona relació cost-efecte en seguiment crònic; cal supervisió clínica."},
-  {id:"coord",label:"Coordinació entre nivells assistencials",umit:"% de regions",max:100,cost:1.6,eff:.24,
+  {id:"coord",label:"Coordinació entre nivells assistencials",unit:"% de regions",max:100,cost:1.6,eff:.24,
    note:"Xarxes integrades i historial compartit entre cantons."}],
- drivers:[["Bevölkerumgsalterumg",.33],["Angebotsdichte",.26],["Tarifstruktur",.23],["Sozioökonomischer Status",.18]],
- sources:[["BAG · Spitalstatistik","anual"],["Versicherumgsregister","mensual"],["Fachpersonenstatistik FMH","anual"],["Sentinella-Überwachumgssystem","setmanal"]]},
+ drivers:[["Envelliment de la població",.33],["Densitat de l'oferta",.26],["Estructura tarifària",.23],["Nivell socioeconòmic",.18]],
+ sources:[["OFSP · estadística hospitalària","anual"],["Registres d'assegurances","mensual"],["Estadística de professionals FMH","anual"],["Sistema de vigilància Sentinella","setmanal"]]},
 
-{id:"territori",label:"Territorium umd Wohnen",acc:"#7A6A2E",
+{id:"territori",label:"Territori i habitatge",acc:"#7A6A2E",
  metrics:[
-  {id:"vacants",label:"Quote der leerstehenden Wohnumgen",umit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
-  {id:"lloguer",label:"Durchschnittliche angebotene Miete",umit:"CHF/m²·Jahr",base:193,trend:.02,noise:.03,better:"low",dec:0},
-  {id:"sol",label:"Bodenverbrauch pro Einwohner",umit:"m²",base:406,trend:-.0025,noise:.02,better:"low",dec:0,target:380},
-  {id:"densificacio",label:"Neubau auf bereits überbautem Boden",umit:"%",base:66,trend:.013,noise:.04,better:"high",dec:1,target:90},
-  {id:"agricola",label:"Landwirtschaftliche Nutzfläche",umit:"% des Territoriums",base:35.2,trend:-.0026,noise:.02,better:"high",dec:1}],
+  {id:"vacants",label:"Taxa d'habitatges buits",unit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
+  {id:"lloguer",label:"Lloguer mitjà ofert",unit:"CHF/m²·any",base:193,trend:.02,noise:.03,better:"low",dec:0},
+  {id:"sol",label:"Consum de sòl per habitant",unit:"m²",base:406,trend:-.0025,noise:.02,better:"low",dec:0,target:380},
+  {id:"densificacio",label:"Habitatge nou en sòl ja urbanitzat",unit:"%",base:66,trend:.013,noise:.04,better:"high",dec:1,target:90},
+  {id:"agricola",label:"Superfície agrícola útil",unit:"% del territori",base:35.2,trend:-.0026,noise:.02,better:"high",dec:1}],
  comp:{title:"Ocupació del sòl",items:[["Bosc",31],["Agrícola",35],["Urbanitzat",8],["Improductiu",26]]},
  levers:[
-  {id:"densifica",label:"Increment d'edificabilitat en àrees ben servides",umit:"% de zones",max:100,cost:.9,eff:.33,
-   note:"Requereix revisió de plans d'ordenació cantonals i comumals."},
-  {id:"cooperatiu",label:"Foment d'habitatge d'utilitat pública",umit:"% de l'obra nova",max:40,cost:3.6,eff:.29,
-   note:"Fons rotatori i dret de tanteig per als mumicipis."},
-  {id:"tramits",label:"Reducció de terminis d'autorització",umit:"% més ràpid",max:60,cost:.7,eff:.21,
+  {id:"densifica",label:"Increment d'edificabilitat en àrees ben servides",unit:"% de zones",max:100,cost:.9,eff:.33,
+   note:"Requereix revisió de plans d'ordenació cantonals i comunals."},
+  {id:"cooperatiu",label:"Foment d'habitatge d'utilitat pública",unit:"% de l'obra nova",max:40,cost:3.6,eff:.29,
+   note:"Fons rotatori i dret de tanteig per als municipis."},
+  {id:"tramits",label:"Reducció de terminis d'autorització",unit:"% més ràpid",max:60,cost:.7,eff:.21,
    note:"Digitalització dels expedients i resolució de recursos."}],
- drivers:[["Demografisches Wachstum",.32],["Tempo Neubau",.27],["Planumgsrestriktionen",.23],["Hypothekarzinssatz",.18]],
- sources:[["Flächelstatistik · swisstopo","3 anys"],["Statistik leerstehender Wohnumgen","anual"],["Gebäuderegister GWR","mensual"],["Mietpreisindex","trimestral"]]}
+ drivers:[["Creixement demogràfic",.32],["Ritme d'obra nova",.27],["Restriccions d'ordenació",.23],["Tipus d'interès hipotecari",.18]],
+ sources:[["Arealstatistik · swisstopo","3 anys"],["Estadística d'habitatges buits","anual"],["Registre d'edificis GWR","mensual"],["Índex de lloguers","trimestral"]]}
 ];
 
 /* ---------- motor determinista ---------- */
 const Y0=2015,YOBS=2025,YN=2040;
 const YEARS=[];for(let y=Y0;y<=YN;y++)YEARS.push(y);
-fumction hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
-fumction rnd(s){let t=hash(s)+0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}
-const SC={opt:{f:1.5,l:"Abkommen"},base:{f:1,l:"Tendenzielle"},str:{f:-.5,l:"Estrès"}};
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function rnd(s){let t=hash(s)+0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}
+const SC={opt:{f:1.5,l:"Acord"},base:{f:1,l:"Tendencial"},str:{f:-.5,l:"Estrès"}};
 
 let S={dom:DOMAINS[0],met:DOMAINS[0].metrics[0],year:2026,kt:null,scen:"base",lev:{},play:null};
 
-fumction leverGain(m){ // efecte agregat de les palanques sobre l'indicador seleccionat
+function leverGain(m){ // efecte agregat de les palanques sobre l'indicador seleccionat
   let g=0,cost=0;
   S.dom.levers.forEach(l=>{
     const u=(S.lev[l.id]||0)/l.max;
@@ -522,7 +507,7 @@ fumction leverGain(m){ // efecte agregat de les palanques sobre l'indicador sele
   });
   return {g,cost};
 }
-fumction ctyValue(m,y,scen,withLev){
+function ctyValue(m,y,scen,withLev){
   const t=Math.min(y,YOBS)-Y0;
   let v=m.base*Math.pow(1+m.trend,t);
   v*=1+(rnd(m.id+"~"+Math.min(y,YOBS))-.5)*m.noise;
@@ -534,16 +519,16 @@ fumction ctyValue(m,y,scen,withLev){
   }
   return v;
 }
-fumction ktF(d,m,ab){return .78+rnd(d+"|"+m+"|"+ab)*.46}
-fumction val(dom,m,ab,y,scen,withLev){
+function ktF(d,m,ab){return .78+rnd(d+"|"+m+"|"+ab)*.46}
+function val(dom,m,ab,y,scen,withLev){
   const j=1+(rnd(m.id+"|"+ab+"|"+Math.min(y,YOBS))-.5)*m.noise*.6;
   return ctyValue(m,y,scen,withLev)*ktF(dom.id,m.id,ab)*j;
 }
-fumction agg(dom,m,y,scen,withLev,ab){
+function agg(dom,m,y,scen,withLev,ab){
   if(ab)return val(dom,m,ab,y,scen,withLev);
   let s=0;CANTONS.forEach(c=>s+=val(dom,m,c.ab,y,scen,withLev)*c.pop);return s/POPCH;
 }
-fumction quantiles(m,y,scen,withLev,ab){
+function quantiles(m,y,scen,withLev,ab){
   if(y<=YOBS)return null;
   const v=agg(S.dom,m,y,scen,withLev,ab),k=.021*(y-YOBS);
   return {p10:v*(1-1.64*k),p25:v*(1-.67*k),p75:v*(1+.67*k),p90:v*(1+1.64*k),m:v};
@@ -554,19 +539,19 @@ const $=i=>document.getElementById(i);
 
 /* ---------- tooltip ---------- */
 const tip=$("tip");
-fumction TIP(e,h){tip.innerHTML=h;tip.style.opacity=1;MV(e)}
-fumction MV(e){const r=tip.getBoumdingClientRect();let x=e.clientX+13,y=e.clientY+13;
+function TIP(e,h){tip.innerHTML=h;tip.style.opacity=1;MV(e)}
+function MV(e){const r=tip.getBoundingClientRect();let x=e.clientX+13,y=e.clientY+13;
   if(x+r.width>innerWidth-6)x=e.clientX-r.width-13;if(y+r.height>innerHeight-6)y=e.clientY-r.height-13;
   tip.style.left=x+"px";tip.style.top=y+"px"}
 const HID=()=>tip.style.opacity=0;
 
 /* ---------- barra lateral ---------- */
-fumction sidebar(){
-  const s=$("side");s.innerHTML="<h3>Bereichs</h3>";
+function sidebar(){
+  const s=$("side");s.innerHTML="<h3>Àmbits</h3>";
   DOMAINS.forEach(d=>{
     const b=document.createElement("button");b.className="dom";
     b.setAttribute("aria-pressed",String(d.id===S.dom.id));
-    b.innerHTML='<i style="backgroumd:'+d.acc+'"></i>'+d.label;
+    b.innerHTML='<i style="background:'+d.acc+'"></i>'+d.label;
     b.onclick=()=>{S.dom=d;S.met=d.metrics[0];S.lev={};draw(true)};
     s.appendChild(b);
   });
@@ -580,7 +565,7 @@ fumction sidebar(){
 }
 
 /* ---------- KPI ---------- */
-fumction kpis(){
+function kpis(){
   const box=$("kstrip");box.innerHTML="";
   S.dom.metrics.forEach(m=>{
     const v=agg(S.dom,m,S.year,S.scen,true,S.kt), p=agg(S.dom,m,Math.max(Y0,S.year-1),S.scen,true,S.kt);
@@ -588,7 +573,7 @@ fumction kpis(){
     const cl=Math.abs(d)<.25?"flat":(good?"up":"down");
     const b=document.createElement("button");b.className="k";
     b.setAttribute("aria-pressed",String(m.id===S.met.id));
-    b.innerHTML='<span class="kn">'+m.label+'</span><span class="kv">'+F(v,m)+'<span class="ku">'+m.umit+'</span></span>'+
+    b.innerHTML='<span class="kn">'+m.label+'</span><span class="kv">'+F(v,m)+'<span class="ku">'+m.unit+'</span></span>'+
       '<span class="kd '+cl+'">'+(d>=0?"▲ +":"▼ ")+nf(d,1)+"% ("+(S.year-1)+")</span>";
     b.onclick=()=>{S.met=m;draw()};box.appendChild(b);
   });
@@ -597,26 +582,26 @@ fumction kpis(){
 /* ---------- mapa ---------- */
 let VB={x:0,y:0,w:1000,h:MAPH}, anim=null;
 const _hc=document.createElement("canvas");_hc.width=1024;_hc.height=700;const hit=_hc.getContext("2d");
-fumction mix(hex,t){const a=[242,242,242],b=[1,3,5].map(i=>parseInt(hex.substr(i,2),16));
-  const k=.10+t*.90;return "rgb("+a.map((c,i)=>Math.roumd(c+(b[i]-c)*k)).join(",")+")"}
-fumction fit(bb,pad){
+function mix(hex,t){const a=[242,242,242],b=[1,3,5].map(i=>parseInt(hex.substr(i,2),16));
+  const k=.10+t*.90;return "rgb("+a.map((c,i)=>Math.round(c+(b[i]-c)*k)).join(",")+")"}
+function fit(bb,pad){
   const box=$("mapbox"),ar=box.clientWidth/Math.max(1,box.clientHeight);
   let w=(bb[2]-bb[0])*(1+pad), h=(bb[3]-bb[1])*(1+pad);
   const cx=(bb[0]+bb[2])/2, cy=(bb[1]+bb[3])/2;
   if(w/h<ar)w=h*ar;else h=w/ar;
   return {x:cx-w/2,y:cy-h/2,w,h};
 }
-fumction goto(t,cb){
+function goto(t,cb){
   const red=matchMedia("(prefers-reduced-motion:reduce)").matches;
   if(red){VB=t;applyVB();if(cb)cb();return}
   const s={...VB},t0=performance.now(),D=520;
   cancelAnimationFrame(anim);
-  (fumction step(now){const k=Math.min(1,(now-t0)/D),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+  (function step(now){const k=Math.min(1,(now-t0)/D),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
     VB={x:s.x+(t.x-s.x)*e,y:s.y+(t.y-s.y)*e,w:s.w+(t.w-s.w)*e,h:s.h+(t.h-s.h)*e};
     applyVB();if(k<1)anim=requestAnimationFrame(step);else if(cb)cb()})(t0);
 }
-fumction applyVB(){const svg=$("mapbox").querySelector("svg");if(svg)svg.setAttribute("viewBox",[VB.x,VB.y,VB.w,VB.h].join(" "))}
-fumction sensors(c,m){
+function applyVB(){const svg=$("mapbox").querySelector("svg");if(svg)svg.setAttribute("viewBox",[VB.x,VB.y,VB.w,VB.h].join(" "))}
+function sensors(c,m){
   const p=new Path2D(c.d);const out=[];
   let tries=0,i=0;
   while(out.length<16&&tries<400){
@@ -627,7 +612,7 @@ fumction sensors(c,m){
   }
   return out;
 }
-fumction map(){
+function map(){
   const m=S.met,d=S.dom,box=$("mapbox");
   const vals={};CANTONS.forEach(c=>vals[c.ab]=val(d,m,c.ab,S.year,S.scen,true));
   const arr=Object.values(vals),mn=Math.min(...arr),mx=Math.max(...arr),r=(mx-mn)||1;
@@ -661,7 +646,7 @@ fumction map(){
   box.insertAdjacentHTML("afterbegin",s);
   box.querySelectorAll(".ct").forEach(g=>{
     const c=CANTONS.find(x=>x.ab===g.dataset.ab);
-    const html='<span class="n">'+c.name+' ('+c.ab+')</span>'+m.label+': <b>'+F(vals[c.ab],m)+" "+m.umit+'</b><br>'+
+    const html='<span class="n">'+c.name+' ('+c.ab+')</span>'+m.label+': <b>'+F(vals[c.ab],m)+" "+m.unit+'</b><br>'+
       nf(c.pop,0)+' hab · '+nf(c.area,0)+' km²<br>Capital: '+c.cap+' · '+c.lang;
     g.addEventListener("mousemove",e=>TIP(e,html));
     g.addEventListener("mouseleave",HID);
@@ -670,24 +655,24 @@ fumction map(){
   });
   box.querySelectorAll(".sensor").forEach(el=>{
     el.addEventListener("mousemove",e=>TIP(e,'<span class="n">Estació '+S.kt+"-"+String(1+ +el.dataset.s).padStart(3,"0")+'</span>'+
-      m.label+': <b>'+nf(+el.dataset.v,m.dec)+" "+m.umit+'</b><br>Darrera lectura fa '+el.dataset.h+' h'));
+      m.label+': <b>'+nf(+el.dataset.v,m.dec)+" "+m.unit+'</b><br>Darrera lectura fa '+el.dataset.h+' h'));
     el.addEventListener("mouseleave",HID);
   });
-  $("ramp").style.backgroumd="linear-gradient(90deg,"+mix(d.acc,0)+","+mix(d.acc,1)+")";
-  $("legTitle").textContent=m.label+" · "+m.umit;
+  $("ramp").style.background="linear-gradient(90deg,"+mix(d.acc,0)+","+mix(d.acc,1)+")";
+  $("legTitle").textContent=m.label+" · "+m.unit;
   $("legMin").textContent=F(mn,m);$("legMax").textContent=F(mx,m);
   $("mapnote").textContent=S.kt
     ? "Vista cantonal. Els cercles són estacions de mesura de la xarxa; el vermell marca lectures fora de rang."
-    : "Klicken Sie auf einen Kanton zum Vergrößern. Vereinfachte offizielle swisstopo-Geometrie.";
+    : "Fes clic a un cantó per ampliar-lo. Geometria oficial swisstopo simplificada.";
 }
-fumction select(ab){
+function select(ab){
   if(S.kt===ab){S.kt=null;goto(fit([0,0,1000,MAPH],.04),map)}
   else{S.kt=ab;const c=CANTONS.find(x=>x.ab===ab);goto(fit(c.bb,.22),map)}
   draw();
 }
 
 /* ---------- gràfic de ventall ---------- */
-fumction fan(){
+function fan(){
   const m=S.met,d=S.dom,W=340,H=190,P={t:10,r:10,b:20,l:42};
   const base=YEARS.map(y=>agg(d,m,y,S.scen,false,S.kt));
   const sim =YEARS.map(y=>agg(d,m,y,S.scen,true, S.kt));
@@ -703,7 +688,7 @@ fumction fan(){
     s+='<line class="gl" x1="'+P.l+'" y1="'+y.toFixed(1)+'" x2="'+(W-P.r)+'" y2="'+y.toFixed(1)+'"/>'+
        '<text class="axis" x="'+(P.l-6)+'" y="'+(y+3).toFixed(1)+'" text-anchor="end">'+F(v,m)+'</text>'}
   const bandPath=(a,b)=>{const up=[],dn=[];
-    for(let i=io;i<YEARS.length;i++){const x=q[i]||{[a]:base[i],[b]:base[i]};up.push(X(i)+","+Y(x[b]));dn.umshift(X(i)+","+Y(x[a]))}
+    for(let i=io;i<YEARS.length;i++){const x=q[i]||{[a]:base[i],[b]:base[i]};up.push(X(i)+","+Y(x[b]));dn.unshift(X(i)+","+Y(x[a]))}
     return up.concat(dn).join(" ")};
   s+='<polygon points="'+bandPath("p10","p90")+'" fill="'+d.acc+'" opacity=".13"/>';
   s+='<polygon points="'+bandPath("p25","p75")+'" fill="'+d.acc+'" opacity=".22"/>';
@@ -722,26 +707,26 @@ fumction fan(){
   $("fan").innerHTML=s;
   const svg=$("fan").querySelector("svg");
   svg.addEventListener("mousemove",e=>{
-    const r=svg.getBoumdingClientRect();let i=Math.roumd(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
+    const r=svg.getBoundingClientRect();let i=Math.round(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
     i=Math.max(0,Math.min(YEARS.length-1,i));const x=q[i];
-    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · previsió":" · beobachtet")+'</span>'+
-      F(sim[i],m)+" "+m.umit+(x?'<br>P10–P90: '+F(x.p10,m)+" – "+F(x.p90,m):""))});
+    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · previsió":" · observat")+'</span>'+
+      F(sim[i],m)+" "+m.unit+(x?'<br>P10–P90: '+F(x.p10,m)+" – "+F(x.p90,m):""))});
   svg.addEventListener("mouseleave",HID);
-  svg.addEventListener("click",e=>{const r=svg.getBoumdingClientRect();
-    let i=Math.roumd(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
+  svg.addEventListener("click",e=>{const r=svg.getBoundingClientRect();
+    let i=Math.round(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
     S.year=YEARS[Math.max(0,Math.min(YEARS.length-1,i))];$("year").value=S.year;draw()});
-  $("fanKey").innerHTML='<span><i style="backgroumd:'+d.acc+';opacity:.22"></i>Bereich P25–P75</span>'+
-    '<span><i style="backgroumd:'+d.acc+';opacity:.13"></i>Bereich P10–P90</span>'+
-    (anyLev?'<span><i style="backgroumd:#000;height:2px"></i>Mit mesures simulades</span>':'');
+  $("fanKey").innerHTML='<span><i style="background:'+d.acc+';opacity:.22"></i>Interval P25–P75</span>'+
+    '<span><i style="background:'+d.acc+';opacity:.13"></i>Interval P10–P90</span>'+
+    (anyLev?'<span><i style="background:#000;height:2px"></i>Amb mesures simulades</span>':'');
 }
 
 /* ---------- simulador ---------- */
-fumction levers(){
+function levers(){
   const box=$("levers");box.innerHTML="";
   S.dom.levers.forEach(l=>{
     if(S.lev[l.id]==null)S.lev[l.id]=0;
     const w=document.createElement("div");w.className="lev";
-    w.innerHTML='<div class="lev-h"><label for="lv_'+l.id+'">'+l.label+'</label><b>'+nf(S.lev[l.id],l.max<=8?1:0)+' '+l.umit+'</b></div>'+
+    w.innerHTML='<div class="lev-h"><label for="lv_'+l.id+'">'+l.label+'</label><b>'+nf(S.lev[l.id],l.max<=8?1:0)+' '+l.unit+'</b></div>'+
       '<small>'+l.note+'</small>';
     const r=document.createElement("input");
     r.type="range";r.id="lv_"+l.id;r.min=0;r.max=l.max;r.step=l.max/50;r.value=S.lev[l.id];r.style.width="100%";
@@ -757,32 +742,32 @@ fumction levers(){
     '<div><span>Valor 2035</span><b>'+F(s35,m)+'</b></div>'+
     '<div><span>Efecte vs base</span><b style="color:'+(Math.abs(dif)<.05?"var(--ink-3)":(good?"var(--ok)":"var(--red)"))+'">'+(dif>=0?"+":"")+nf(dif,1)+'%</b></div>'+
     '<div><span>Cost anual estimat</span><b>'+nf(cost,1)+' mio</b></div>'+
-    '<div><span>Cost per pumt</span><b>'+perPoint+'</b></div>';
+    '<div><span>Cost per punt</span><b>'+perPoint+'</b></div>';
 }
 
 /* ---------- rànquing ---------- */
-fumction rank(){
+function rank(){
   const m=S.met,d=S.dom;
   const rows=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,S.scen,true)})).sort((a,b)=>b.v-a.v);
   const mx=rows[0].v;const box=$("rank");box.innerHTML="";
   rows.forEach(r=>{
     const e=document.createElement("div");e.className="row"+(S.kt===r.c.ab?" sel":"");
     e.innerHTML='<span class="ab">'+r.c.ab+'</span><span class="tr"><span class="br" style="width:'+(r.v/mx*100).toFixed(1)+
-      '%;backgroumd:'+d.acc+';opacity:'+(S.kt===r.c.ab?1:.6)+'"></span><span class="nm">'+r.c.name+'</span></span>'+
+      '%;background:'+d.acc+';opacity:'+(S.kt===r.c.ab?1:.6)+'"></span><span class="nm">'+r.c.name+'</span></span>'+
       '<span class="vl">'+F(r.v,m)+'</span>';
     e.onclick=()=>select(r.c.ab);box.appendChild(e);
   });
-  $("rankUnit").textContent="· "+m.label+" ("+m.umit+"), "+S.year+(m.better==="low"?" · menys és millor":" · mehr ist besser");
+  $("rankUnit").textContent="· "+m.label+" ("+m.unit+"), "+S.year+(m.better==="low"?" · menys és millor":" · més és millor");
 }
 
 /* ---------- atribució i backtest ---------- */
-fumction drivers(){
+function drivers(){
   const box=$("drivers");box.innerHTML="";
   const dr=S.dom.drivers.map(([n,w])=>({n,w:w*(.75+rnd(S.met.id+n)*.5)}));
   const tot=dr.reduce((a,x)=>a+x.w,0);
   dr.sort((a,b)=>b.w-a.w).forEach(x=>{
     const e=document.createElement("div");
-    e.innerHTML='<span>'+x.n+'</span><span class="b"><i style="width:'+(x.w/tot*100).toFixed(0)+'%;backgroumd:'+S.dom.acc+'"></i></span>'+
+    e.innerHTML='<span>'+x.n+'</span><span class="b"><i style="width:'+(x.w/tot*100).toFixed(0)+'%;background:'+S.dom.acc+'"></i></span>'+
       '<span class="w">'+nf(x.w/tot*100,0)+'%</span>';
     box.appendChild(e);
   });
@@ -798,16 +783,16 @@ fumction drivers(){
   ys.forEach((y,i)=>s+='<text class="axis" x="'+X(i)+'" y="'+(H-2)+'" text-anchor="middle">'+y+'</text>');
   s+='</svg>';
   const mape=real.reduce((a,v,i)=>a+Math.abs(v-pred[i])/v,0)/real.length*100;
-  $("backtest").innerHTML=s+'<div class="key"><span><i style="backgroumd:#000;height:2px"></i>Realisiert</span>'+
-    '<span><i style="backgroumd:'+S.dom.acc+';height:2px"></i>Vorhersage ex-ante</span><span>MAPE '+nf(mape,1)+'%</span></div>';
+  $("backtest").innerHTML=s+'<div class="key"><span><i style="background:#000;height:2px"></i>Realitzat</span>'+
+    '<span><i style="background:'+S.dom.acc+';height:2px"></i>Predit ex-ante</span><span>MAPE '+nf(mape,1)+'%</span></div>';
   return mape;
 }
 
 /* ---------- alertes ---------- */
-fumction alerts(){
+function alerts(){
   const d=S.dom,ul=$("alerts");ul.innerHTML="";
   const items=[];
-  // 1. anomalia: cantó amb la desviació més gran gegenüber la tendència pròpia
+  // 1. anomalia: cantó amb la desviació més gran respecte de la tendència pròpia
   const scope=S.kt?CANTONS.filter(c=>c.ab===S.kt):CANTONS;
   let worst=null;
   scope.forEach(c=>{
@@ -817,58 +802,58 @@ fumction alerts(){
       if(bad&&(!worst||Math.abs(ch)>Math.abs(worst.ch)))worst={c,m,ch};
     });
   });
-  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomalie detectada · "+worst.c.ab,
-    t:worst.m.label.toLowerCase()+" weicht ab um "+nf(Math.abs(worst.ch),1)+"% gegenüber des Vorjahres a "+worst.c.name+".",
-    a:"Wahrscheinlichkeit, dass es bestehen bleibt 12 Monate: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Empfohlene Maßnahme: Datenüberprüfung i technischer Besuch."});
+  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomalia detectada · "+worst.c.ab,
+    t:worst.m.label.toLowerCase()+" es desvia un "+nf(Math.abs(worst.ch),1)+"% respecte de l'any anterior a "+worst.c.name+".",
+    a:"Probabilitat que persisteixi 12 mesos: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Acció suggerida: verificació de dades i visita tècnica."});
   // 2. objectiu
   const m=S.met;
   if(m.target!=null){
     const v35=agg(d,m,2035,S.scen,true,S.kt), met=(m.better==="low"?v35<=m.target:v35>=m.target);
     items.push({cls:met?"o":"w",k:"Compliment de l'objectiu 2035",
-      t:met?"la trajectòria simulada assoleix l'objectiu de "+F(m.target,m)+" "+m.umit+".":
-            "amb les mesures actuals el 2035 falta um "+nf(Math.abs((v35-m.target)/m.target*100),0)+"% per arribar a l'objectiu.",
+      t:met?"la trajectòria simulada assoleix l'objectiu de "+F(m.target,m)+" "+m.unit+".":
+            "amb les mesures actuals el 2035 falta un "+nf(Math.abs((v35-m.target)/m.target*100),0)+"% per arribar a l'objectiu.",
       a:met?"Mantenir el nivell d'inversió i revisar l'objectiu a l'alça.":"Cal reforçar les palanques o revisar el calendari."});
   }
   // 3. divergència territorial
   const rows=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,S.scen,true)})).sort((a,b)=>b.v-a.v);
   const sp=(rows[0].v-rows[25].v)/rows[25].v*100;
   items.push({cls:sp>50?"w":"",k:"Divergència entre cantons",
-    t:rows[0].c.name+" i "+rows[25].c.name+" unterscheiden sich um "+nf(sp,0)+"% en "+m.label.toLowerCase()+".",
-    a:"Überprüfen Sie, ob der Unterschied beruht auf strukturelle Faktoren o a Ungleichheit bei der Anwendung."});
+    t:rows[0].c.name+" i "+rows[25].c.name+" difereixen un "+nf(sp,0)+"% en "+m.label.toLowerCase()+".",
+    a:"Revisar si la diferència respon a factors estructurals o a desigualtat d'aplicació."});
   // 4. qualitat de dades
   const late=CANTONS[Math.floor(rnd(d.id+S.year+"late")*26)];
   items.push({cls:"",k:"Qualitat de les dades",
-    t:"la sèrie de "+late.name+" kommt mit "+(1+Math.floor(rnd(d.id+"lag")*4))+" Monate de retard; die Werte des letzten Zeitraums sind geschätzt.",
-    a:"Die Unsicherheit d'aquest cantó està inflada im Modell."});
+    t:"la sèrie de "+late.name+" arriba amb "+(1+Math.floor(rnd(d.id+"lag")*4))+" mesos de retard; els valors del període recent són estimats.",
+    a:"La incertesa d'aquest cantó està inflada al model."});
   items.forEach(i=>{const li=document.createElement("li");li.className=i.cls;
     li.innerHTML='<span class="m">'+i.k+'</span>'+i.t.charAt(0).toUpperCase()+i.t.slice(1)+'<span class="act">'+i.a+'</span>';
     ul.appendChild(li)});
 }
 
 /* ---------- nota de situació ---------- */
-fumction brief(mape){
-  const m=S.met,d=S.dom,sc=S.kt?CANTONS.find(c=>c.ab===S.kt).name:"el conjumt de Schweiz";
+function brief(mape){
+  const m=S.met,d=S.dom,sc=S.kt?CANTONS.find(c=>c.ab===S.kt).name:"el conjunt de Suïssa";
   const now=agg(d,m,S.year,S.scen,true,S.kt), y15=agg(d,m,Y0,S.scen,true,S.kt), y35=agg(d,m,2035,S.scen,true,S.kt);
   const ch=(now-y15)/y15*100, fw=(y35-now)/now*100;
   const good=(m.better==="low"?ch<0:ch>0);
   const rows=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,S.scen,true)})).sort((a,b)=>b.v-a.v);
   const anyLev=Object.values(S.lev).some(v=>v>0);
-  let t='<p>A '+sc+', <b>'+m.label.toLowerCase()+'</b> liegt bei <b>'+F(now,m)+' '+m.umit+'</b> el '+S.year+
-    ', um '+nf(Math.abs(ch),1)+'% '+(ch>=0?"per sobre":"per sota")+' del 2015. La direcció és '+(good?"favorable":"desfavorable")+
-    ' gegenüber l\'objectiu de política pública.</p>';
+  let t='<p>A '+sc+', <b>'+m.label.toLowerCase()+'</b> se situa en <b>'+F(now,m)+' '+m.unit+'</b> el '+S.year+
+    ', un '+nf(Math.abs(ch),1)+'% '+(ch>=0?"per sobre":"per sota")+' del 2015. La direcció és '+(good?"favorable":"desfavorable")+
+    ' respecte de l\'objectiu de política pública.</p>';
   t+='<p>La projecció '+SC[S.scen].l.toLowerCase()+' porta l\'indicador a <b>'+F(y35,m)+'</b> el 2035 ('+(fw>=0?"+":"")+nf(fw,1)+
-    '%), amb um interval P10–P90 que s\'eixampla bis zu ±'+nf(1.64*2.1*(2035-YOBS),0)+'% am Ende des l\'horitzó.</p>';
-  if(anyLev)t+='<p>Mit les mesures simulades, el resultat previst millora gegenüberl cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
-  if(!S.kt)t+='<p>Der territoriale Gradient ist relevant: '+rows[0].c.name+' führt die Rangliste an i '+rows[25].c.name+
-    ' schließt es. Diese Streuung bedingt jede Maßnahme d\'aplicació umiforme.</p>';
-  t+='<p>Modellzuverlässigkeit in den letzten sechs Jahren: durchschnittlicher Fehler '+nf(mape,1)+'%. Aktuelle Zahlen sind vorläufig.</p>';
+    '%), amb un interval P10–P90 que s\'eixampla fins a ±'+nf(1.64*2.1*(2035-YOBS),0)+'% al final de l\'horitzó.</p>';
+  if(anyLev)t+='<p>Amb les mesures simulades, el resultat previst millora respecte del cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
+  if(!S.kt)t+='<p>El gradient territorial és rellevant: '+rows[0].c.name+' encapçala el rànquing i '+rows[25].c.name+
+    ' el tanca. Aquesta dispersió condiciona qualsevol mesura d\'aplicació uniforme.</p>';
+  t+='<p>Fiabilitat del model en els darrers sis anys: error mitjà del '+nf(mape,1)+'%. Les xifres recents són provisionals.</p>';
   $("brief").innerHTML=t;
-  $("briefSig").textContent="Generiert automàticament el "+new Date().toLocaleDateString("ca-ES")+
-    " · model "+d.id+"-v4 · Überprüfumg durch zuständiges Büro ausstehend · keine offizielle Position";
+  $("briefSig").textContent="Generada automàticament el "+new Date().toLocaleDateString("ca-ES")+
+    " · model "+d.id+"-v4 · pendent de revisió per l'oficina responsable · no és una posició oficial";
 }
 
 /* ---------- fitxa del model ---------- */
-fumction modelcard(mape){
+function modelcard(mape){
   const d=S.dom,m=S.met;
   const drift=rnd(m.id+"drift"), dr=drift>.8?"detectada":"estable";
   $("modelMeta").innerHTML=
@@ -877,39 +862,39 @@ fumction modelcard(mape){
     '<div><span>Deriva del model</span><b style="color:'+(dr==="estable"?"var(--ok)":"var(--warn)")+'">'+dr+'</b></div>'+
     '<div><span>Darrer reentrenament</span><b>'+(1+Math.floor(rnd(m.id+"r")*11))+'/2026</b></div>';
   $("sources").innerHTML=d.sources.map(([n,f])=>'<span><i>●</i> '+n+' · '+f+'</span>').join("");
-  $("govNote").innerHTML="Föderiertes Lernen: die Kantone behalten die Rohdaten in ihren Systemen i teilen nur Modellparameter. "+
-    "Jede Prognose trägt Herkunftsspur i erfordert menschliche Validierung bevor er eintritt um expedient.";
+  $("govNote").innerHTML="Aprenentatge federat: els cantons mantenen les dades brutes als seus sistemes i només comparteixen paràmetres del model. "+
+    "Cada previsió porta traça d'origen i requereix validació humana abans d'entrar en un expedient.";
 }
 
 /* ---------- identitat cantonal ---------- */
-fumction ident(){
+function ident(){
   if(!S.kt){
-    $("ktbar").innerHTML='<i style="backgroumd:var(--red)"></i><i style="backgroumd:#fff"></i>';
-    $("ktName").textContent="Schweizer Eidgenossenschaft";
-    $("ktMeta").textContent="26 Kantone · 4 Amtssprachen";
+    $("ktbar").innerHTML='<i style="background:var(--red)"></i><i style="background:#fff"></i>';
+    $("ktName").textContent="Confederació Suïssa";
+    $("ktMeta").textContent="26 cantons · 4 llengües oficials";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="#DC0018"/><rect x="10.5" y="7" width="5" height="16" fill="#fff"/><rect x="5" y="12.5" width="16" height="5" fill="#fff"/>';
     $("mPop").textContent=nf(POPCH/1e6,2)+" mio";
-    $("mFläche").textContent=nf(AREACH,0)+" km²";
-    $("crumb").innerHTML='<b>Schweiz</b>';
+    $("mArea").textContent=nf(AREACH,0)+" km²";
+    $("crumb").innerHTML='<b>Suïssa</b>';
   }else{
     const c=CANTONS.find(x=>x.ab===S.kt);
-    $("ktbar").innerHTML='<i style="backgroumd:'+c.col[0]+'"></i><i style="backgroumd:'+c.col[1]+'"></i>';
+    $("ktbar").innerHTML='<i style="background:'+c.col[0]+'"></i><i style="background:'+c.col[1]+'"></i>';
     $("ktName").textContent=c.name;
     $("ktMeta").textContent=c.cap+" · "+c.lang+" · "+nf(c.pop,0)+" hab";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="'+c.col[0]+'"/><rect y="15" width="26" height="15" fill="'+c.col[1]+'"/>';
     $("mPop").textContent=nf(c.pop/1000,0)+" mil";
-    $("mFläche").textContent=nf(c.area,0)+" km²";
-    $("crumb").innerHTML='<button id="crCH">Schweiz</button> › <b>'+c.name+'</b>';
+    $("mArea").textContent=nf(c.area,0)+" km²";
+    $("crumb").innerHTML='<button id="crCH">Suïssa</button> › <b>'+c.name+'</b>';
     $("crCH").onclick=()=>select(S.kt);
   }
 }
 
 /* ---------- orquestració ---------- */
-fumction draw(domChanged){
+function draw(domChanged){
   document.documentElement.style.setProperty("--acc",S.dom.acc);
   $("mDom").textContent=S.dom.label;
   $("yNum").textContent=S.year;
-  $("yTag").textContent=S.year>YOBS?"Prognose · "+SC[S.scen].l.toLowerCase():"beobachtet";
+  $("yTag").textContent=S.year>YOBS?"previsió · "+SC[S.scen].l.toLowerCase():"observat";
   sidebar();ident();kpis();map();fan();levers();rank();alerts();
   const mape=drivers();brief(mape);modelcard(mape);
 }
@@ -917,18 +902,18 @@ fumction draw(domChanged){
 $("year").oninput=e=>{S.year=+e.target.value;draw()};
 document.querySelectorAll("#scen button").forEach(b=>b.onclick=()=>{
   S.scen=b.dataset.s;document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()});
-$("play").onclick=fumction(){
-  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Animieren";return}
-  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Pause";
+$("play").onclick=function(){
+  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Anima";return}
+  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Atura";
   S.play=setInterval(()=>{S.year=S.year>=YN?Y0:S.year+1;$("year").value=S.year;draw()},560)};
 $("reset").onclick=()=>{if(S.kt)select(S.kt);else{goto(fit([0,0,1000,MAPH],.04))}};
 $("zfit").onclick=()=>{S.kt=null;goto(fit([0,0,1000,MAPH],.04),map);draw()};
 $("zin").onclick=()=>{const cx=VB.x+VB.w/2,cy=VB.y+VB.h/2;goto({x:cx-VB.w/2.6,y:cy-VB.h/2.6,w:VB.w/1.3,h:VB.h/1.3},map)};
 $("zout").onclick=()=>{const cx=VB.x+VB.w/2,cy=VB.y+VB.h/2;goto({x:cx-VB.w*.65,y:cy-VB.h*.65,w:VB.w*1.3,h:VB.h*1.3},map)};
 $("csv").onclick=()=>{
-  const d=S.dom,m=S.met;let csv="any;canto;nom;poblacio;km2;indicador;umitat;valor;escenari;amb_mesures\n";
+  const d=S.dom,m=S.met;let csv="any;canto;nom;poblacio;km2;indicador;unitat;valor;escenari;amb_mesures\n";
   YEARS.forEach(y=>CANTONS.forEach(c=>{
-    csv+=[y,c.ab,'"'+c.name+'"',c.pop,c.area,'"'+m.label+'"','"'+m.umit+'"',
+    csv+=[y,c.ab,'"'+c.name+'"',c.pop,c.area,'"'+m.label+'"','"'+m.unit+'"',
       val(d,m,c.ab,y,S.scen,true).toFixed(3),SC[S.scen].l,Object.values(S.lev).some(v=>v>0)?"si":"no"].join(";")+"\n"}));
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
   a.download="ch_"+d.id+"_"+m.id+".csv";a.click();URL.revokeObjectURL(a.href)};
@@ -941,7 +926,7 @@ document.querySelectorAll(".exp").forEach(b=>b.onclick=()=>{
   if(on)draw();
 });
 scrim.onclick=()=>closeAll();
-fumction closeAll(){document.querySelectorAll(".p.expanded").forEach(p=>p.classList.remove("expanded"));
+function closeAll(){document.querySelectorAll(".p.expanded").forEach(p=>p.classList.remove("expanded"));
   document.querySelectorAll(".exp").forEach(b=>b.textContent="⤢");scrim.classList.remove("on");draw()}
 addEventListener("keydown",e=>{
   if(e.key==="Escape")closeAll();
@@ -952,228 +937,11 @@ addEventListener("keydown",e=>{
 
 addEventListener("scroll",HID,true);
 if(innerWidth<=1240){$("tRail").style.display="";$("tRail").onclick=()=>document.body.classList.toggle("showrail")}
-fumction refit(){VB=S.kt?fit(CANTONS.find(c=>c.ab===S.kt).bb,.22):fit([0,0,1000,MAPH],.04);map()}
+function refit(){VB=S.kt?fit(CANTONS.find(c=>c.ab===S.kt).bb,.22):fit([0,0,1000,MAPH],.04);map()}
 VB=fit([0,0,1000,MAPH],.04);
 draw(true);
 requestAnimationFrame(refit);
 new ResizeObserver(()=>refit()).observe($("mapbox"));
-
-/* ---- language selector fumctionality ---- */
-const LANG_LABELS = {
-  de: {
-    any: 'Jahr', escenari: 'Szenario', models: 'Modelle aktiv',
-    domini: 'Bereich', poblacio: 'Bevölkerumg', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Wald umd Biodiversität',
-    'Wasser': 'Wasser',
-    'Bildumg': 'Bildumg',
-    'Mobilität': 'Mobilität',
-    'Energie umd Klima': 'Energie umd Klima',
-    'Gesumdheit umd öffentliche Dienste': 'Gesumdheit umd öffentliche Dienste',
-    'Territorium umd Wohnen': 'Territorium umd Wohnen'
-  },
-  ca: {
-    any: 'Jahr', escenari: 'Szenario', models: 'models actius',
-    domini: 'Bereich', poblacio: 'Bevölkerumg', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Bosc i biodiversitat',
-    'Wasser': 'Wasser',
-    'Bildumg': 'Educació',
-    'Mobilität': 'Mobilitat',
-    'Energie umd Klima': 'Energia i clima',
-    'Gesumdheit umd öffentliche Dienste': 'Salut i serveis públics',
-    'Territorium umd Wohnen': 'Territori i habitatge'
-  },
-  en: {
-    any: 'Jahr', escenari: 'Szenario', models: 'active models',
-    domini: 'Bereich', poblacio: 'Bevölkerumg', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Forest and Biodiversity',
-    'Wasser': 'Water',
-    'Bildumg': 'Education',
-    'Mobilität': 'Mobility',
-    'Energie umd Klima': 'Energy and Climate',
-    'Gesumdheit umd öffentliche Dienste': 'Health and Public Services',
-    'Territorium umd Wohnen': 'Territory and Housing'
-  },
-  fr: {
-    any: 'Année', escenari: 'Scénario', models: 'modèles actifs',
-    domini: 'Bereich', poblacio: 'Bevölkerumg', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Forêt et biodiversité',
-    'Wasser': 'Eau',
-    'Bildumg': 'Éducation',
-    'Mobilität': 'Mobilité',
-    'Energie umd Klima': 'Énergie et climat',
-    'Gesumdheit umd öffentliche Dienste': 'Santé et services publics',
-    'Territorium umd Wohnen': 'Territoire et logement'
-  },
-  it: {
-    any: 'Jahr', escenari: 'Szenario', models: 'modelli attivi',
-    domini: 'Mitito', poblacio: 'Popolazione', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Foresta e biodiversità',
-    'Wasser': 'Wasser',
-    'Bildumg': 'Istruzione',
-    'Mobilität': 'Mobilità',
-    'Energia umd Klima': 'Energia e clima',
-    'Gesumdheit umd öffentliche Dienste': 'Salute e servizi pubblici',
-    'Territorium umd Wohnen': 'Territorio e abitazione'
-  },
-  rm: {
-    any: 'Onn', escenari: 'Szenario', models: 'models actifs',
-    domini: 'Domeni', poblacio: 'Populazium', superficie: 'Fläche',
-    // Bereich names
-    'Wald umd Biodiversität': 'Frest e biodiversitad',
-    'Wasser': 'Aua',
-    'Bildumg': 'Educazium',
-    'Mobilität': 'Mobilitad',
-    'Energia umd Klima': 'Energia e clima',
-    'Gesumdheit umd öffentliche Dienste': 'Salüd e servetschas publicas',
-    'Territorium umd Wohnen': 'Territori e abitazium'
-  }
-};
-
-fumction changeLanguage(lang) {
-  document.getElementById('htmlRoot').lang = lang;
-  localStorage.setItem('dashboardLang', lang);
-  if (document.getElementById('langSelect')) {
-    document.getElementById('langSelect').value = lang;
-  }
-  // Update dashboard with new language
-  updateDashboardTexts();
-}
-</script>
-
-<!-- ===== EMERGENCY FIX: FORCE GERMAN + FIX SELECTOR ===== -->
-<script src="fix_emergency.js"></script>
-
-<!-- ===== TRANSLATION SYSTEM ===== -->
-<script src="translation_system.js"></script>
-<script src="auto_translate.js"></script>
-<script>
-// Wait for translation system to load
-setTimeout(() => {
-  console.log('🔄 Initializing translation system...');
-
-  // Initialize translation system with German as default
-  if (typeof initLanguage === 'fumction') {
-    initLanguage();
-    console.log('✅ Translation system initialized');
-  }
-
-  // Translate domain and indicator names
-  fumction translateBereichLabels(currentLang) {
-    if (!LANG_LABELS[currentLang]) {
-      console.warn(`⚠️ Language ${currentLang} not foumd in LANG_LABELS`);
-      return;
-    }
-
-    const translations = LANG_LABELS[currentLang];
-    console.log(`🏷️ Translating domain labels to ${currentLang}`);
-
-    // Translate all text nodes containing German domain names
-    document.querySelectorAll('body *').forEach(el => {
-      if (el.childNodes.length === 1 && el.childNodes[0].nodeType === Node.TEXT_NODE) {
-        const text = el.textContent.trim();
-        // Check if this text is a domain name that needs translation
-        if (translations[text]) {
-          const translated = translations[text];
-          if (translated !== text) {
-            el.textContent = translated;
-            console.log(`  ✓ "${text}" → "${translated}"`);
-          }
-        }
-      }
-    });
-  }
-
-  // Robust translation fumction that handles data-i18n attributes
-  fumction updateDashboardTexts() {
-    if (typeof t !== 'fumction') {
-      console.warn('⚠️ Translation fumction t() not available yet');
-      return;
-    }
-
-    const currentLang = document.getElementById('htmlRoot')?.lang || 'de';
-    console.log(`📝 Translating dashboard to: ${currentLang}`);
-
-    // 1. Translate all elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      try {
-        const translated = t(key);
-        if (translated) {
-          // Only replace text content, preserve child elements
-          const firstText = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-          if (firstText) {
-            firstText.textContent = translated;
-          } else if (el.childNodes.length === 0) {
-            el.textContent = translated;
-          }
-          console.log(`  ✓ ${key}: ${translated}`);
-        }
-      } catch (e) {
-        console.warn(`  ✗ Failed to translate ${key}: ${e.message}`);
-      }
-    });
-
-    // 2. Translate domain and indicator names
-    translateBereichLabels(currentLang);
-
-    // 3. Trigger auto-translation for remaining text nodes
-    if (typeof autoTranslateDashboard === 'fumction') {
-      autoTranslateDashboard();
-    }
-
-    console.log('✅ Dashboard translation complete');
-  }
-
-  // Set up event listener for language dropdown
-  const langSelect = document.getElementById('langSelect');
-  if (langSelect) {
-    langSelect.addEventListener('change', (e) => {
-      const newLang = e.target.value;
-      console.log(`🌍 Language changed to: ${newLang}`);
-
-      // Update HTML lang attribute and localStorage
-      document.getElementById('htmlRoot').lang = newLang;
-      localStorage.setItem('dashboardLang', newLang);
-      langSelect.value = newLang;
-
-      // Update all texts
-      updateDashboardTexts();
-
-      // Dispatch custom event
-      window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
-
-      // Redraw charts if needed
-      if (typeof draw === 'fumction') {
-        console.log('🎨 Redrawing charts...');
-        draw(true);
-      }
-    });
-
-    // Make dropdown accessible
-    console.log('✅ Language dropdown initialized');
-  } else {
-    console.warn('⚠️ Language dropdown (langSelect) not foumd');
-  }
-
-  // FORCE German as default - always start with 'de'
-  const forceLang = 'de'; // Always German on initial load
-  document.getElementById('htmlRoot').lang = forceLang;
-  if (langSelect) {
-    langSelect.value = forceLang;
-  }
-  localStorage.setItem('dashboardLang', forceLang);
-  console.log(`📌 Initial language: ${forceLang} (FORCED German)`);
-  console.log(`💾 Saved to localStorage: ${forceLang}`);
-
-  // Initial translation
-  updateDashboardTexts();
-
-}, 500); // Wait for all scripts to load
 </script>
 </body>
 </html>
