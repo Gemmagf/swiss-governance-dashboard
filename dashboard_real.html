@@ -16,7 +16,7 @@
   --panel:#FFFFFF;
   --ok:#1C7A46;
   --warn:#C25E00;
-  --acc:#2F6B3A;          /* accent d'àmbit, dinàmic */
+  --acc:#2F6B3A;          /* accent d'domain, dynamic */
   --kt-1:#DC0018;         /* colors del cantó, dinàmics */
   --kt-2:#FFFFFF;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
@@ -243,7 +243,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
         <select id="langSelect" onchange="changeLanguage(this.value)" disabled style="opacity: 0.5;">
           <option value="en" selected>English</option>
           <option value="de">Deutsch</option>
-          <option value="ca">Català</option>
+          <option value="en">Català</option>
           <option value="fr">Français</option>
           <option value="it">Italiano</option>
           <option value="rm">Rumantsch</option>
@@ -375,7 +375,7 @@ GE:["Genève","fr",["#FFD400","#D8232A"]], JU:["Delémont","fr",["#D8232A","#FFF
 CANTONS.forEach(c=>{const m=KT[c.ab];c.cap=m[0];c.lang=m[1];c.col=m[2]});
 const POPCH=CANTONS.reduce((a,c)=>a+c.pop,0), AREACH=CANTONS.reduce((a,c)=>a+c.area,0);
 
-/* ---------- àmbits, indicadors, palanques, fonts ---------- */
+/* ---------- domains, indicators, levers, sources ---------- */
 const DOMAINS=[
 {id:"bosc",label:"Forest & Biodiversity",acc:"#2F6B3A",
  metrics:[
@@ -410,12 +410,12 @@ const DOMAINS=[
    note:"Plans de fertilització i franges de protecció a les zones de captació."},
   {id:"xarxa",label:"Renovació de xarxa de distribució",unit:"% annual",max:3,cost:2.6,eff:.20,
    note:"Reducció de pèrdues i millora de la resiliència en episodis de sequera."}],
- drivers:[["Càrrega agrícola de la conca",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
- sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","monthly"],["Estacions hidromètriques FOEN","horari"],["Cadastre d'abocaments","annual"]]},
+ drivers:[["Càrrega agrícola of the watershed",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
+ sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","monthly"],["Estacions hidromètriques FOEN","schedule"],["Cadastre d'abocaments","annual"]]},
 
 {id:"educacio",label:"Education",acc:"#B26B00",
  metrics:[
-  {id:"ratio",label:"Ràtio alumnat per docent",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
+  {id:"ratio",label:"Ràtio alumnat per teacher",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
   {id:"despesa",label:"Despesa pública per alumne",unit:"CHF/any",base:20600,trend:.016,noise:.03,better:"high",dec:0},
   {id:"titulacio",label:"Titulació de secundària II als 25 years",unit:"%",base:90.4,trend:.0022,noise:.01,better:"high",dec:1,target:95},
   {id:"dual",label:"Alumnat en formació professional dual",unit:"%",base:63,trend:-.005,noise:.03,better:"high",dec:1},
@@ -428,15 +428,15 @@ const DOMAINS=[
    note:"Tutoria intensiva orientada a l'alumnat amb risc d'abandonament."},
   {id:"infra",label:"Inversió en infraestructura digital",unit:"% de centres/any",max:25,cost:1.5,eff:.30,
    note:"Equipament, connectivitat i formació del professorat."}],
- drivers:[["Estructura demogràfica de la cohort",.30],["Pressupost cantonal per inhabitantsitant",.28],["Oferta de places de formació dual",.24],["Mercat laboral local",.18]],
- sources:[["BFS · estadística escolar","annual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre de places d'aprenentatge","semestral"]]},
+ drivers:[["Estructura demogràfica de la cohort",.30],["Pressupost cantonal per inhabitantsitant",.28],["Oferta of places de formació dual",.24],["Mercat laboral local",.18]],
+ sources:[["BFS · estadística escolar","annual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre of places d'aprenentatge","semestral"]]},
 
 {id:"mobilitat",label:"Mobility",acc:"#444C9E",
  metrics:[
   {id:"tp",label:"Viatges en transport públic",unit:"viatges/inhabitants·any",base:232,trend:.014,noise:.05,better:"high",dec:0},
   {id:"retencio",label:"Hores de retenció a la xarxa",unit:"h/1000 inhabitants",base:40,trend:.036,noise:.09,better:"low",dec:1},
   {id:"bici",label:"Quota modal de bicicleta",unit:"%",base:7.1,trend:.042,noise:.07,better:"high",dec:1,target:15},
-  {id:"electric",label:"Vehicles elèctrics al parc",unit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
+  {id:"electric",label:"Vehicles elèctrics in the park",unit:"%",base:.6,trend:.40,noise:.10,better:"high",dec:1,target:50},
   {id:"puntualitat",label:"Puntualitat ferroviària",unit:"%",base:89.2,trend:.0022,noise:.01,better:"high",dec:1,target:93}],
  comp:{title:"Repartiment modal (passatgers·km)",items:[["Vehicle privat",64],["Ferrocarril",21],["Bus i tram",8],["Bici i a peu",7]]},
  levers:[
@@ -447,22 +447,22 @@ const DOMAINS=[
   {id:"tarifa",label:"Tarifació de l'ús de la carretera",unit:"intensitat",max:100,cost:-1.8,eff:.38,
    note:"Genera ingressos nets. Requereix base legal i té efectes distributius desiguals."}],
  drivers:[["Densitat i mixtura d'usos",.29],["Oferta de transport públic",.28],["Cost relatiu del vehicle privat",.24],["Topografia i clima",.19]],
- sources:[["Microcens mobilitat","5 years"],["Comptadors automàtics ASTRA","horari"],["SBB · dades d'explotació","daily"],["Registre de vehicles MOFIS","monthly"]]},
+ sources:[["Microcens mobilitat","5 years"],["Comptadors automàtics ASTRA","schedule"],["SBB · operations data","daily"],["Registre of vehicles MOFIS","monthly"]]},
 
 {id:"energia",label:"Energy & Climate",acc:"#0F7A5A",
  metrics:[
   {id:"co2",label:"Emissions de gasos amb efecte d'hivernacle",unit:"t CO₂eq/inhabitants",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
   {id:"renov",label:"Quota renovable del consum final",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
-  {id:"solar",label:"Potència fotovoltaica instal·lada",unit:"W/inhabitants",base:175,trend:.20,noise:.09,better:"high",dec:0},
+  {id:"solar",label:"Potència fotovoltaica installed",unit:"W/inhabitants",base:175,trend:.20,noise:.09,better:"high",dec:0},
   {id:"consum",label:"Consum final d'energia",unit:"MWh/inhabitants",base:25.8,trend:-.015,noise:.03,better:"low",dec:1,target:18},
-  {id:"hivern",label:"Cobertura del dèficit hivernal",unit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
+  {id:"hivern",label:"Cobertura del dèficit winter",unit:"%",base:71,trend:.009,noise:.04,better:"high",dec:1,target:100}],
  comp:{title:"Mix de producció elèctrica",items:[["Hidroelèctrica",56],["Nuclear",29],["Fotovoltaica",9],["Altres renovables",6]]},
  levers:[
   {id:"pv",label:"Programa de fotovoltaica en teulades",unit:"% del potencial/any",max:8,cost:2.9,eff:.35,
    note:"Obligació en obra nova i incentiu a la reinhabitantsilitació."},
   {id:"reinhabitants",label:"Ritme de reinhabitantsilitació energètica d'edificis",unit:"% del parc/any",max:3,cost:4.6,eff:.33,
    note:"És la palanca més cara i la de més recorregut a llarg termini."},
-  {id:"calor",label:"Substitució de calefaccions fòssils",unit:"1000 unitats/any",max:120,cost:3.2,eff:.31,
+  {id:"calor",label:"Replacement de calefaccions fòssils",unit:"1000 unitats/any",max:120,cost:3.2,eff:.31,
    note:"Bombes de calor i xarxes de calor; limitada per la mà d'obra disponible."}],
  drivers:[["Estructura del parc d'edificis",.31],["Preus de l'energia",.26],["Ritme d'electrificació del transport",.23],["Graus-dia de calefacció",.20]],
  sources:[["Inventari nacional de GEH","annual"],["Estadística energètica SFOE","annual"],["Pronovo · registre d'instal·lacions","monthly"],["Swissgrid · balanç de xarxa","15 min"]]},
@@ -470,13 +470,13 @@ const DOMAINS=[
 {id:"serveis",label:"Health & Public Services",acc:"#6D4C8C",
  metrics:[
   {id:"metges",label:"Metges de família per 10 000 inhabitantsitants",unit:"metges",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
-  {id:"espera",label:"Temps d'espera a urgències",unit:"minuts",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
+  {id:"espera",label:"Temps d'espera a urgències",unit:"minutes",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
   {id:"cost",label:"Despesa sanitària per inhabitantsitant",unit:"CHF/any",base:7850,trend:.027,noise:.02,better:"low",dec:0},
   {id:"domicili",label:"Cobertura d'atenció domiciliària",unit:"% de la demanda",base:60,trend:.013,noise:.04,better:"high",dec:1,target:85},
   {id:"dossier",label:"Historial clínic electrònic actiu",unit:"% de la població",base:3.5,trend:.34,noise:.12,better:"high",dec:1,target:80}],
  comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Ambulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
  levers:[
-  {id:"primaria",label:"Reforç de l'atenció primària",unit:"% de places noves",max:40,cost:3.8,eff:.34,
+  {id:"primaria",label:"Reforç of care primària",unit:"% of places noves",max:40,cost:3.8,eff:.34,
    note:"Zoom out la pressió sobre urgències amb dos o tres years de retard."},
   {id:"telemed",label:"Triatge i seguiment a distància",unit:"% de casos",max:60,cost:1.2,eff:.27,
    note:"Bona relació cost-efecte en seguiment crònic; cal supervisió clínica."},
@@ -494,7 +494,7 @@ const DOMAINS=[
   {id:"agricola",label:"Area agrícola útil",unit:"% of territory",base:35.2,trend:-.0026,noise:.02,better:"high",dec:1}],
  comp:{title:"Ocupació del sòl",items:[["Bosc",31],["Agrícola",35],["Urbanitzat",8],["Improductiu",26]]},
  levers:[
-  {id:"densifica",label:"Increment d'edificabilitat en àrees ben servides",unit:"% de zones",max:100,cost:.9,eff:.33,
+  {id:"densifica",label:"Increment d'edificabilitat en àrees ben servides",unit:"% of zones",max:100,cost:.9,eff:.33,
    note:"Requereix revisió de plans d'ordenació cantonals i comunals."},
   {id:"cooperatiu",label:"Foment d'inhabitantsitatge d'utilitat pública",unit:"% de l'obra nova",max:40,cost:3.6,eff:.29,
    note:"Fons rotatori i dret de tanteig per als municipis."},
@@ -838,7 +838,7 @@ function alerts(){
   // 4. qualitat de dades
   const late=CANTONS[Math.floor(rnd(d.id+S.year+"late")*26)];
   items.push({cls:"",k:"Data quality",
-    t:"la sèrie de "+late.name+" arriba amb "+(1+Math.floor(rnd(d.id+"lag")*4))+" months de retard; values for the recent period are estimated.",
+    t:"la sèrie de "+late.name+" arriba amb "+(1+Math.floor(rnd(d.id+"lag")*4))+" months late; values for the recent period are estimated.",
     a:"The uncertainty for this canton is inflated in the model."});
   items.forEach(i=>{const li=document.createElement("li");li.className=i.cls;
     li.innerHTML='<span class="m">'+i.k+'</span>'+i.t.charAt(0).toUpperCase()+i.t.slice(1)+'<span class="act">'+i.a+'</span>';
@@ -992,8 +992,8 @@ function changeLanguage(lang) {
   document.getElementById('langSelect').value = lang;
 }
 
-// Load saved language preference
-const savedLang = localStorage.getItem('dashboardLang') || 'de';
+// Load saved language preference (default: English)
+const savedLang = localStorage.getItem('dashboardLang') || 'en';
 changeLanguage(savedLang);
 </script>
 
