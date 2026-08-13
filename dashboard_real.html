@@ -999,52 +999,122 @@ changeLanguage(savedLang);
 
 <!-- ===== TRANSLATION SYSTEM (WORKING) ===== -->
 <script>
-// Simple translation dictionary - ONLY for critical texts
+// Translation dictionary - CRITICAL UI TEXTS
 const TRANSLATIONS = {
   'en': {
+    // Labels
     'any': 'Year',
     'escenari': 'Scenario',
+    'ambits': 'Domains',
+    'indicadors': 'Indicators',
+    // Scenarios
     'acord': 'Agreement',
     'tendencial': 'Baseline',
     'estres': 'Stress',
+    // Buttons
     'animate': '▶ Animate',
-    'national_view': 'National View'
+    'national_view': 'National View',
+    'csv': 'CSV',
+    'panells': 'Panels',
+    // Panels
+    'evolucio': 'Forecast & Evolution',
+    'simulator': 'Policy Simulator',
+    'situacio': 'Situation Report',
+    'senyals': 'Alert Signals',
+    'model_card': 'Model & Data Card',
+    // Badges
+    'probabilistic': 'Probabilistic ensemble',
+    'contrafactual': 'Counterfactual',
+    'generada': 'AI Generated',
+    'anomalies': 'Anomaly detection'
   },
   'fr': {
     'any': 'Année',
     'escenari': 'Scénario',
+    'ambits': 'Domaines',
+    'indicadors': 'Indicateurs',
     'acord': 'Accord',
     'tendencial': 'Tendanciel',
     'estres': 'Stress',
     'animate': '▶ Animer',
-    'national_view': 'Vue nationale'
+    'national_view': 'Vue nationale',
+    'csv': 'CSV',
+    'panells': 'Panneaux',
+    'evolucio': 'Prévision et évolution',
+    'simulator': 'Simulateur de politique',
+    'situacio': 'Rapport de situation',
+    'senyals': 'Signaux d\'alerte',
+    'model_card': 'Fiche modèle et données',
+    'probabilistic': 'Ensemble probabiliste',
+    'contrafactual': 'Contrefactuel',
+    'generada': 'Généré par IA',
+    'anomalies': 'Détection d\'anomalies'
   },
   'de': {
     'any': 'Jahr',
     'escenari': 'Szenario',
+    'ambits': 'Bereiche',
+    'indicadors': 'Indikatoren',
     'acord': 'Vereinbarung',
     'tendencial': 'Szenario',
     'estres': 'Stress',
     'animate': '▶ Animieren',
-    'national_view': 'Nationale Ansicht'
+    'national_view': 'Nationale Ansicht',
+    'csv': 'CSV',
+    'panells': 'Panels',
+    'evolucio': 'Entwicklung und Prognose',
+    'simulator': 'Richtlinien-Simulator',
+    'situacio': 'Situationsbericht',
+    'senyals': 'Warnsignale',
+    'model_card': 'Modell- und Datenkarte',
+    'probabilistic': 'Probabilistisches Ensemble',
+    'contrafactual': 'Kontrafaktisch',
+    'generada': 'KI-generiert',
+    'anomalies': 'Anomalieerkennung'
   },
   'it': {
     'any': 'Anno',
     'escenari': 'Scenario',
+    'ambits': 'Domini',
+    'indicadors': 'Indicatori',
     'acord': 'Accordo',
     'tendencial': 'Tendenziale',
     'estres': 'Stress',
     'animate': '▶ Animare',
-    'national_view': 'Vista nazionale'
+    'national_view': 'Vista nazionale',
+    'csv': 'CSV',
+    'panells': 'Pannelli',
+    'evolucio': 'Previsione ed evoluzione',
+    'simulator': 'Simulatore politico',
+    'situacio': 'Rapporto situazionale',
+    'senyals': 'Segnali di alerta',
+    'model_card': 'Scheda modello e dati',
+    'probabilistic': 'Insieme probabilistico',
+    'contrafactual': 'Contraffattuale',
+    'generada': 'Generato da IA',
+    'anomalies': 'Rilevamento anomalie'
   },
   'ca': {
     'any': 'Any',
     'escenari': 'Escenari',
+    'ambits': 'Àmbits',
+    'indicadors': 'Indicadors',
     'acord': 'Acord',
     'tendencial': 'Tendencial',
     'estres': 'Estrès',
     'animate': '▶ Anima',
-    'national_view': 'Vista nacional'
+    'national_view': 'Vista nacional',
+    'csv': 'CSV',
+    'panells': 'Panells',
+    'evolucio': 'Evolució i previsió',
+    'simulator': 'Simulador de mesures',
+    'situacio': 'Nota de situació',
+    'senyals': 'Senyals d\'alerta',
+    'model_card': 'Fitxa del model i dades',
+    'probabilistic': 'Conjunt probabilístic',
+    'contrafactual': 'Contrafactual',
+    'generada': 'Generada',
+    'anomalies': 'Detecció d\'anomalies'
   }
 };
 
