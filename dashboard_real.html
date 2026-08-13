@@ -231,7 +231,7 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
   <div class="hdr">
     <svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#DC0018"/>
       <rect x="13" y="6.4" width="6" height="19.2" fill="#fff"/><rect x="6.4" y="13" width="19.2" height="6" fill="#fff"/></svg>
-    <h1>Swiss Data Cockpit<small>Confederation Data Cockpit · interdepartmental prototype</small></h1>
+    <h1>Datencockpit Schweiz<small>Cockpit de dades de la Confederació · prototip interdepartamental</small></h1>
     <div class="crumb" id="crumb"></div>
     <div class="grow"></div>
     <div class="hdr-meta">
@@ -254,21 +254,21 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
   <div class="redrule"></div>
 
   <div class="bar">
-    <span class="lbl">Year</span>
+    <span class="lbl">Any</span>
     <div class="yearbox">
       <div class="yearval"><span id="yTag">observat</span><span id="yNum" style="font-size:17px;color:var(--ink);letter-spacing:0;text-transform:none">2026</span></div>
-      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Year de referència">
+      <input id="year" type="range" min="2015" max="2040" step="1" value="2026" aria-label="Any de referència">
     </div>
     <span class="lbl">Escenari</span>
     <div class="seg" id="scen">
-      <button data-s="opt">Agreement</button>
-      <button data-s="base" aria-pressed="true">Baseline</button>
-      <button data-s="str">Stress</button>
+      <button data-s="opt">Acord</button>
+      <button data-s="base" aria-pressed="true">Tendencial</button>
+      <button data-s="str">Estrès</button>
     </div>
-    <button class="btn" id="play" aria-pressed="false">▶ Animatete</button>
-    <button class="btn" id="reset">National View</button>
+    <button class="btn" id="play" aria-pressed="false">▶ Anima</button>
+    <button class="btn" id="reset">Vista nacional</button>
     <button class="btn" id="csv">CSV</button>
-    <button class="btn" id="tRail" style="display:none">Panels</button>
+    <button class="btn" id="tRail" style="display:none">Panells</button>
   </div>
 
   <div class="body">
@@ -279,9 +279,9 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       <div class="mapbox" id="mapbox">
         <div class="mapnote" id="mapnote"></div>
         <div class="maptools">
-          <button id="zin" title="Zoom in">＋</button>
-          <button id="zout" title="Zoom out">－</button>
-          <button id="zfit" title="Fit all Switzerland">⤢</button>
+          <button id="zin" title="Amplia">＋</button>
+          <button id="zout" title="Redueix">－</button>
+          <button id="zfit" title="Tot Suïssa">⤢</button>
         </div>
         <div class="mapui">
           <div id="legTitle" style="color:var(--ink)">—</div>
@@ -308,12 +308,12 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
         <div class="ktbar" id="ktbar"><i style="background:var(--red)"></i><i style="background:#fff"></i></div>
         <div class="ktcard">
           <svg class="shield" id="ktShield" viewBox="0 0 26 30" aria-hidden="true"></svg>
-          <div><h3 id="ktName">Swiss Confederation</h3><p id="ktMeta">26 cantons · 4 official languages</p></div>
+          <div><h3 id="ktName">Confederació Suïssa</h3><p id="ktMeta">26 cantons · 4 llengües oficials</p></div>
         </div>
       </section>
 
       <section class="p" id="pFan">
-        <header><h2>Forecast & Evolution</h2><span class="ai">Probabilistic ensemble</span><button class="exp" data-x="pFan" title="Zoom in">⤢</button></header>
+        <header><h2>Evolució i previsió</h2><span class="ai">Conjunt probabilístic</span><button class="exp" data-x="pFan" title="Amplia">⤢</button></header>
         <div class="c">
           <div id="fan"></div>
           <div class="key" id="fanKey"></div>
@@ -321,26 +321,26 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
       </section>
 
       <section class="p" id="pSim">
-        <header><h2>Policy Simulator</h2><span class="ai">Counterfactual</span><button class="exp" data-x="pSim" title="Zoom in">⤢</button></header>
+        <header><h2>Simulador de mesures</h2><span class="ai">Contrafactual</span><button class="exp" data-x="pSim" title="Amplia">⤢</button></header>
         <div class="c">
-          <p class="note">Move the levers to see how the trajectory changes until 2035. Effects are estimated elasticities with confidence intervals, not guarantees.</p>
+          <p class="note">Mou les palanques per veure com canvia la trajectòria fins al 2035. Els efectes són elasticitats estimades amb interval de confiança, no garanties.</p>
           <div id="levers"></div>
           <div class="simout" id="simout"></div>
         </div>
       </section>
 
       <section class="p" id="pBrief">
-        <header><h2>Situation Report</h2><span class="ai">AI Generated</span><button class="exp" data-x="pBrief" title="Zoom in">⤢</button></header>
+        <header><h2>Nota de situació</h2><span class="ai">Generada</span><button class="exp" data-x="pBrief" title="Amplia">⤢</button></header>
         <div class="c"><div class="brief" id="brief"></div><div class="sig" id="briefSig"></div></div>
       </section>
 
       <section class="p" id="pAlerts">
-        <header><h2>Alert Signals</h2><span class="ai">Anomaly detection</span><button class="exp" data-x="pAlerts" title="Zoom in">⤢</button></header>
+        <header><h2>Senyals d'alerta</h2><span class="ai">Detecció d'anomalies</span><button class="exp" data-x="pAlerts" title="Amplia">⤢</button></header>
         <div class="c"><ul class="al" id="alerts"></ul></div>
       </section>
 
       <section class="p" id="pModel">
-        <header><h2>Model & Data Card</h2><button class="exp" data-x="pModel" title="Zoom in">⤢</button></header>
+        <header><h2>Fitxa del model i dades</h2><button class="exp" data-x="pModel" title="Amplia">⤢</button></header>
         <div class="c">
           <div class="meta" id="modelMeta"></div>
           <div class="src" id="sources"></div>
@@ -377,7 +377,7 @@ const POPCH=CANTONS.reduce((a,c)=>a+c.pop,0), AREACH=CANTONS.reduce((a,c)=>a+c.a
 
 /* ---------- àmbits, indicadors, palanques, fonts ---------- */
 const DOMAINS=[
-{id:"bosc",label:"Forest & Biodiversity",acc:"#2F6B3A",
+{id:"bosc",label:"Bosc i biodiversitat",acc:"#2F6B3A",
  metrics:[
   {id:"superficie",label:"Superfície forestal",unit:"% del territori",base:31.4,trend:.0022,noise:.02,better:"high",dec:1},
   {id:"vitalitat",label:"Vitalitat de la capçada",unit:"índex /100",base:74,trend:-.0045,noise:.04,better:"high",dec:1,target:78},
@@ -393,27 +393,27 @@ const DOMAINS=[
   {id:"aigua",label:"Retenció hídrica al sòl forestal",unit:"1000 ha",max:60,cost:1.4,eff:.22,
    note:"Obres de retenció i restauració de sòls per reduir l'estrès estival."}],
  drivers:[["Dèficit de precipitació estival",.34],["Temperatura mitjana de juliol",.27],["Edat i estructura de la massa",.22],["Intensitat de gestió",.17]],
- sources:[["Inventari Forestal Nacional (LFI)","annual"],["Sentinel-2 · NDVI","5 days"],["MeteoSwiss · IDAWEB","daily"],["WSL · monitoratge de sanitat","monthly"]]},
+ sources:[["Inventari Forestal Nacional (LFI)","anual"],["Sentinel-2 · NDVI","5 dies"],["MeteoSwiss · IDAWEB","diari"],["WSL · monitoratge de sanitat","mensual"]]},
 
-{id:"aigua",label:"Water",acc:"#0A6C9E",
+{id:"aigua",label:"Aigua",acc:"#0A6C9E",
  metrics:[
   {id:"qualitat",label:"Qualitat ecològica dels rius",unit:"índex /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
   {id:"nitrats",label:"Nitrats a l'aigua subterrània",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
   {id:"consum",label:"Consum d'aigua potable",unit:"l/hab·dia",base:302,trend:-.011,noise:.04,better:"low",dec:0},
   {id:"cabal",label:"Cabal estival respecte de la mitjana",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
   {id:"micro",label:"Micropol·luents eliminats a les depuradores",unit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
- comp:{title:"Usos de l'aigua captada",items:[["Water potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
+ comp:{title:"Usos de l'aigua captada",items:[["Aigua potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
  levers:[
-  {id:"ara",label:"Zoom inció de tractament de micropol·luents",unit:"% de depuradores",max:100,cost:3.4,eff:.36,
+  {id:"ara",label:"Ampliació de tractament de micropol·luents",unit:"% de depuradores",max:100,cost:3.4,eff:.36,
    note:"Quarta etapa de depuració a les plantes que aboquen a masses sensibles."},
   {id:"agro",label:"Reducció d'aportacions agrícoles",unit:"% de superfície amb pla",max:100,cost:1.8,eff:.28,
    note:"Plans de fertilització i franges de protecció a les zones de captació."},
-  {id:"xarxa",label:"Renovació de xarxa de distribució",unit:"% annual",max:3,cost:2.6,eff:.20,
+  {id:"xarxa",label:"Renovació de xarxa de distribució",unit:"% anual",max:3,cost:2.6,eff:.20,
    note:"Reducció de pèrdues i millora de la resiliència en episodis de sequera."}],
  drivers:[["Càrrega agrícola de la conca",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
- sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","monthly"],["Estacions hidromètriques FOEN","horari"],["Cadastre d'abocaments","annual"]]},
+ sources:[["NAQUA · aigües subterrànies","trimestral"],["NADUF · xarxa de rius","mensual"],["Estacions hidromètriques FOEN","horari"],["Cadastre d'abocaments","anual"]]},
 
-{id:"educacio",label:"Education",acc:"#B26B00",
+{id:"educacio",label:"Educació",acc:"#B26B00",
  metrics:[
   {id:"ratio",label:"Ràtio alumnat per docent",unit:"alumnes",base:14.9,trend:.005,noise:.03,better:"low",dec:1,target:14},
   {id:"despesa",label:"Despesa pública per alumne",unit:"CHF/any",base:20600,trend:.016,noise:.03,better:"high",dec:0},
@@ -429,9 +429,9 @@ const DOMAINS=[
   {id:"infra",label:"Inversió en infraestructura digital",unit:"% de centres/any",max:25,cost:1.5,eff:.30,
    note:"Equipament, connectivitat i formació del professorat."}],
  drivers:[["Estructura demogràfica de la cohort",.30],["Pressupost cantonal per habitant",.28],["Oferta de places de formació dual",.24],["Mercat laboral local",.18]],
- sources:[["BFS · estadística escolar","annual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre de places d'aprenentatge","semestral"]]},
+ sources:[["BFS · estadística escolar","anual"],["Registres cantonals d'alumnat","trimestral"],["Enquesta TREE","biennal"],["Baròmetre de places d'aprenentatge","semestral"]]},
 
-{id:"mobilitat",label:"Mobility",acc:"#444C9E",
+{id:"mobilitat",label:"Mobilitat",acc:"#444C9E",
  metrics:[
   {id:"tp",label:"Viatges en transport públic",unit:"viatges/hab·any",base:232,trend:.014,noise:.05,better:"high",dec:0},
   {id:"retencio",label:"Hores de retenció a la xarxa",unit:"h/1000 hab",base:40,trend:.036,noise:.09,better:"low",dec:1},
@@ -447,9 +447,9 @@ const DOMAINS=[
   {id:"tarifa",label:"Tarifació de l'ús de la carretera",unit:"intensitat",max:100,cost:-1.8,eff:.38,
    note:"Genera ingressos nets. Requereix base legal i té efectes distributius desiguals."}],
  drivers:[["Densitat i mixtura d'usos",.29],["Oferta de transport públic",.28],["Cost relatiu del vehicle privat",.24],["Topografia i clima",.19]],
- sources:[["Microcens mobilitat","5 anys"],["Comptadors automàtics ASTRA","horari"],["SBB · dades d'explotació","daily"],["Registre de vehicles MOFIS","monthly"]]},
+ sources:[["Microcens mobilitat","5 anys"],["Comptadors automàtics ASTRA","horari"],["SBB · dades d'explotació","diari"],["Registre de vehicles MOFIS","mensual"]]},
 
-{id:"energia",label:"Energy & Climate",acc:"#0F7A5A",
+{id:"energia",label:"Energia i clima",acc:"#0F7A5A",
  metrics:[
   {id:"co2",label:"Emissions de gasos amb efecte d'hivernacle",unit:"t CO₂eq/hab",base:5.4,trend:-.033,noise:.03,better:"low",dec:2,target:.9},
   {id:"renov",label:"Quota renovable del consum final",unit:"%",base:23,trend:.037,noise:.04,better:"high",dec:1,target:70},
@@ -465,9 +465,9 @@ const DOMAINS=[
   {id:"calor",label:"Substitució de calefaccions fòssils",unit:"1000 unitats/any",max:120,cost:3.2,eff:.31,
    note:"Bombes de calor i xarxes de calor; limitada per la mà d'obra disponible."}],
  drivers:[["Estructura del parc d'edificis",.31],["Preus de l'energia",.26],["Ritme d'electrificació del transport",.23],["Graus-dia de calefacció",.20]],
- sources:[["Inventari nacional de GEH","annual"],["Estadística energètica SFOE","annual"],["Pronovo · registre d'instal·lacions","monthly"],["Swissgrid · balanç de xarxa","15 min"]]},
+ sources:[["Inventari nacional de GEH","anual"],["Estadística energètica SFOE","anual"],["Pronovo · registre d'instal·lacions","mensual"],["Swissgrid · balanç de xarxa","15 min"]]},
 
-{id:"serveis",label:"Health & Public Services",acc:"#6D4C8C",
+{id:"serveis",label:"Salut i serveis públics",acc:"#6D4C8C",
  metrics:[
   {id:"metges",label:"Metges de família per 10 000 habitants",unit:"metges",base:8.3,trend:.004,noise:.04,better:"high",dec:1,target:10},
   {id:"espera",label:"Temps d'espera a urgències",unit:"minuts",base:41,trend:.019,noise:.07,better:"low",dec:0,target:30},
@@ -477,15 +477,15 @@ const DOMAINS=[
  comp:{title:"Distribució de la despesa sanitària",items:[["Hospitals",36],["Ambulatori",30],["Cures de llarga durada",20],["Farmàcia",14]]},
  levers:[
   {id:"primaria",label:"Reforç de l'atenció primària",unit:"% de places noves",max:40,cost:3.8,eff:.34,
-   note:"Zoom out la pressió sobre urgències amb dos o tres anys de retard."},
+   note:"Redueix la pressió sobre urgències amb dos o tres anys de retard."},
   {id:"telemed",label:"Triatge i seguiment a distància",unit:"% de casos",max:60,cost:1.2,eff:.27,
    note:"Bona relació cost-efecte en seguiment crònic; cal supervisió clínica."},
   {id:"coord",label:"Coordinació entre nivells assistencials",unit:"% de regions",max:100,cost:1.6,eff:.24,
    note:"Xarxes integrades i historial compartit entre cantons."}],
  drivers:[["Envelliment de la població",.33],["Densitat de l'oferta",.26],["Estructura tarifària",.23],["Nivell socioeconòmic",.18]],
- sources:[["OFSP · estadística hospitalària","annual"],["Registres d'assegurances","monthly"],["Estadística de professionals FMH","annual"],["Sistema de vigilància Sentinella","setmanal"]]},
+ sources:[["OFSP · estadística hospitalària","anual"],["Registres d'assegurances","mensual"],["Estadística de professionals FMH","anual"],["Sistema de vigilància Sentinella","setmanal"]]},
 
-{id:"territori",label:"Territory & Housing",acc:"#7A6A2E",
+{id:"territori",label:"Territori i habitatge",acc:"#7A6A2E",
  metrics:[
   {id:"vacants",label:"Taxa d'habitatges buits",unit:"%",base:1.18,trend:-.032,noise:.10,better:"high",dec:2,target:1.5},
   {id:"lloguer",label:"Lloguer mitjà ofert",unit:"CHF/m²·any",base:193,trend:.02,noise:.03,better:"low",dec:0},
@@ -501,7 +501,7 @@ const DOMAINS=[
   {id:"tramits",label:"Reducció de terminis d'autorització",unit:"% més ràpid",max:60,cost:.7,eff:.21,
    note:"Digitalització dels expedients i resolució de recursos."}],
  drivers:[["Creixement demogràfic",.32],["Ritme d'obra nova",.27],["Restriccions d'ordenació",.23],["Tipus d'interès hipotecari",.18]],
- sources:[["Arealstatistik · swisstopo","3 anys"],["Estadística d'habitatges buits","annual"],["Registre d'edificis GWR","monthly"],["Índex de lloguers","trimestral"]]}
+ sources:[["Arealstatistik · swisstopo","3 anys"],["Estadística d'habitatges buits","anual"],["Registre d'edificis GWR","mensual"],["Índex de lloguers","trimestral"]]}
 ];
 
 /* ---------- motor determinista ---------- */
@@ -509,7 +509,7 @@ const Y0=2015,YOBS=2025,YN=2040;
 const YEARS=[];for(let y=Y0;y<=YN;y++)YEARS.push(y);
 function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function rnd(s){let t=hash(s)+0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}
-const SC={opt:{f:1.5,l:"Agreement"},base:{f:1,l:"Baseline"},str:{f:-.5,l:"Stress"}};
+const SC={opt:{f:1.5,l:"Acord"},base:{f:1,l:"Tendencial"},str:{f:-.5,l:"Estrès"}};
 
 let S={dom:DOMAINS[0],met:DOMAINS[0].metrics[0],year:2026,kt:null,scen:"base",lev:{},play:null};
 
@@ -732,7 +732,7 @@ function fan(){
     S.year=YEARS[Math.max(0,Math.min(YEARS.length-1,i))];$("year").value=S.year;draw()});
   $("fanKey").innerHTML='<span><i style="background:'+d.acc+';opacity:.22"></i>Interval P25–P75</span>'+
     '<span><i style="background:'+d.acc+';opacity:.13"></i>Interval P10–P90</span>'+
-    (anyLev?'<span><i style="background:#000;height:2px"></i>With simulated measures</span>':'');
+    (anyLev?'<span><i style="background:#000;height:2px"></i>Amb mesures simulades</span>':'');
 }
 
 /* ---------- simulador ---------- */
@@ -756,7 +756,7 @@ function levers(){
   $("simout").innerHTML=
     '<div><span>Valor 2035</span><b>'+F(s35,m)+'</b></div>'+
     '<div><span>Efecte vs base</span><b style="color:'+(Math.abs(dif)<.05?"var(--ink-3)":(good?"var(--ok)":"var(--red)"))+'">'+(dif>=0?"+":"")+nf(dif,1)+'%</b></div>'+
-    '<div><span>Cost annual estimat</span><b>'+nf(cost,1)+' mio</b></div>'+
+    '<div><span>Cost anual estimat</span><b>'+nf(cost,1)+' mio</b></div>'+
     '<div><span>Cost per punt</span><b>'+perPoint+'</b></div>';
 }
 
@@ -772,7 +772,7 @@ function rank(){
       '<span class="vl">'+F(r.v,m)+'</span>';
     e.onclick=()=>select(r.c.ab);box.appendChild(e);
   });
-  $("rankUnit").textContent="· "+m.label+" ("+m.unit+"), "+S.year+(m.better==="low"?" · menys és millor":" · more is better");
+  $("rankUnit").textContent="· "+m.label+" ("+m.unit+"), "+S.year+(m.better==="low"?" · menys és millor":" · més és millor");
 }
 
 /* ---------- atribució i backtest ---------- */
@@ -817,9 +817,9 @@ function alerts(){
       if(bad&&(!worst||Math.abs(ch)>Math.abs(worst.ch)))worst={c,m,ch};
     });
   });
-  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomaly detected · "+worst.c.ab,
+  if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomalia detectada · "+worst.c.ab,
     t:worst.m.label.toLowerCase()+" es desvia un "+nf(Math.abs(worst.ch),1)+"% respecte de l'any anterior a "+worst.c.name+".",
-    a:"Probability of persistence 12 mesos: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Suggested action: verificació de dades i visita tècnica."});
+    a:"Probabilitat que persisteixi 12 mesos: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Acció suggerida: verificació de dades i visita tècnica."});
   // 2. objectiu
   const m=S.met;
   if(m.target!=null){
@@ -832,12 +832,12 @@ function alerts(){
   // 3. divergència territorial
   const rows=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,S.scen,true)})).sort((a,b)=>b.v-a.v);
   const sp=(rows[0].v-rows[25].v)/rows[25].v*100;
-  items.push({cls:sp>50?"w":"",k:"Divergence between cantons",
+  items.push({cls:sp>50?"w":"",k:"Divergència entre cantons",
     t:rows[0].c.name+" i "+rows[25].c.name+" difereixen un "+nf(sp,0)+"% en "+m.label.toLowerCase()+".",
-    a:"Check if la diferència respon a factors estructurals o a desigualtat d'aplicació."});
+    a:"Revisar si la diferència respon a factors estructurals o a desigualtat d'aplicació."});
   // 4. qualitat de dades
   const late=CANTONS[Math.floor(rnd(d.id+S.year+"late")*26)];
-  items.push({cls:"",k:"Data quality",
+  items.push({cls:"",k:"Qualitat de les dades",
     t:"la sèrie de "+late.name+" arriba amb "+(1+Math.floor(rnd(d.id+"lag")*4))+" mesos de retard; els valors del període recent són estimats.",
     a:"La incertesa d'aquest cantó està inflada al model."});
   items.forEach(i=>{const li=document.createElement("li");li.className=i.cls;
@@ -863,8 +863,8 @@ function brief(mape){
     ' el tanca. Aquesta dispersió condiciona qualsevol mesura d\'aplicació uniforme.</p>';
   t+='<p>Fiabilitat del model en els darrers sis anys: error mitjà del '+nf(mape,1)+'%. Les xifres recents són provisionals.</p>';
   $("brief").innerHTML=t;
-  $("briefSig").textContent="AI Generated automàticament el "+new Date().toLocaleDateString("ca-ES")+
-    " · model "+d.id+"-v4 · pending review per l'oficina responsable · not an official position";
+  $("briefSig").textContent="Generada automàticament el "+new Date().toLocaleDateString("ca-ES")+
+    " · model "+d.id+"-v4 · pendent de revisió per l'oficina responsable · no és una posició oficial";
 }
 
 /* ---------- fitxa del model ---------- */
@@ -877,16 +877,16 @@ function modelcard(mape){
     '<div><span>Deriva del model</span><b style="color:'+(dr==="estable"?"var(--ok)":"var(--warn)")+'">'+dr+'</b></div>'+
     '<div><span>Darrer reentrenament</span><b>'+(1+Math.floor(rnd(m.id+"r")*11))+'/2026</b></div>';
   $("sources").innerHTML=d.sources.map(([n,f])=>'<span><i>●</i> '+n+' · '+f+'</span>').join("");
-  $("govNote").innerHTML="Federated learning: cantons retain raw data in their systems i only share model parameters. "+
-    "Each forecast carries origin tracing i requires human validation abans d'entrar en un expedient.";
+  $("govNote").innerHTML="Aprenentatge federat: els cantons mantenen les dades brutes als seus sistemes i només comparteixen paràmetres del model. "+
+    "Cada previsió porta traça d'origen i requereix validació humana abans d'entrar en un expedient.";
 }
 
 /* ---------- identitat cantonal ---------- */
 function ident(){
   if(!S.kt){
     $("ktbar").innerHTML='<i style="background:var(--red)"></i><i style="background:#fff"></i>';
-    $("ktName").textContent="Swiss Confederation";
-    $("ktMeta").textContent="26 cantons · 4 official languages";
+    $("ktName").textContent="Confederació Suïssa";
+    $("ktMeta").textContent="26 cantons · 4 llengües oficials";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="#DC0018"/><rect x="10.5" y="7" width="5" height="16" fill="#fff"/><rect x="5" y="12.5" width="16" height="5" fill="#fff"/>';
     $("mPop").textContent=nf(POPCH/1e6,2)+" mio";
     $("mArea").textContent=nf(AREACH,0)+" km²";
@@ -918,7 +918,7 @@ $("year").oninput=e=>{S.year=+e.target.value;draw()};
 document.querySelectorAll("#scen button").forEach(b=>b.onclick=()=>{
   S.scen=b.dataset.s;document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()});
 $("play").onclick=function(){
-  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Animatete";return}
+  if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Anima";return}
   this.setAttribute("aria-pressed","true");this.textContent="❚❚ Atura";
   S.play=setInterval(()=>{S.year=S.year>=YN?Y0:S.year+1;$("year").value=S.year;draw()},560)};
 $("reset").onclick=()=>{if(S.kt)select(S.kt);else{goto(fit([0,0,1000,MAPH],.04))}};
@@ -965,7 +965,7 @@ const LANG_LABELS = {
     domini: 'Bereich', poblacio: 'Bevölkerung', superficie: 'Fläche'
   },
   ca: {
-    any: 'Year', escenari: 'Escenari', models: 'models actius',
+    any: 'Any', escenari: 'Escenari', models: 'models actius',
     domini: 'Àmbit', poblacio: 'Població', superficie: 'Superfície'
   },
   en: {
@@ -997,100 +997,41 @@ const savedLang = localStorage.getItem('dashboardLang') || 'de';
 changeLanguage(savedLang);
 </script>
 
-<!-- ===== TRANSLATION SYSTEM (WORKING) ===== -->
+<!-- ===== TRANSLATION SYSTEM ===== -->
+<script src="translation_system.js"></script>
 <script>
-// Simple translation dictionary - ONLY for critical texts
-const TRANSLATIONS = {
-  'en': {
-    'any': 'Year',
-    'escenari': 'Scenario',
-    'acord': 'Agreement',
-    'tendencial': 'Baseline',
-    'estres': 'Stress',
-    'animate': '▶ Animatete',
-    'national_view': 'National View'
-  },
-  'fr': {
-    'any': 'Année',
-    'escenari': 'Scénario',
-    'acord': 'Accord',
-    'tendencial': 'Tendanciel',
-    'estres': 'Stress',
-    'animate': '▶ Animer',
-    'national_view': 'Vue nationale'
-  },
-  'de': {
-    'any': 'Jahr',
-    'escenari': 'Szenario',
-    'acord': 'Vereinbarung',
-    'tendencial': 'Szenario',
-    'estres': 'Stress',
-    'animate': '▶ Animieren',
-    'national_view': 'Nationale Ansicht'
-  },
-  'it': {
-    'any': 'Anno',
-    'escenari': 'Scenario',
-    'acord': 'Accordo',
-    'tendencial': 'Tendenziale',
-    'estres': 'Stress',
-    'animate': '▶ Animatere',
-    'national_view': 'Vista nazionale'
-  },
-  'ca': {
-    'any': 'Year',
-    'escenari': 'Escenari',
-    'acord': 'Agreement',
-    'tendencial': 'Baseline',
-    'estres': 'Stress',
-    'animate': '▶ Animate',
-    'national_view': 'National View'
-  }
-};
+// Initialize translation system with German as default
+initLanguage();
 
-// Update changeLanguage function to actually translate
-function changeLanguage_new(lang) {
-  document.getElementById('htmlRoot').lang = lang;
-  localStorage.setItem('dashboardLang', lang);
-  document.getElementById('langSelect').value = lang;
-
-  // ACTUALLY translate the texts
-  if (TRANSLATIONS[lang]) {
-    // Update labels
-    const anyLabel = document.querySelector('label[for="yearSlider"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'ANY');
-    if (anyLabel) anyLabel.textContent = TRANSLATIONS[lang]['any'];
-
-    const scenarioLabel = document.querySelector('[data-label="escenari"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'SCENARIO');
-    if (scenarioLabel) scenarioLabel.textContent = TRANSLATIONS[lang]['escenari'];
-
-    // Update buttons
-    document.querySelectorAll('button[data-s]').forEach(btn => {
-      const scenario = btn.dataset.s;
-      if (scenario === 'opt') btn.textContent = TRANSLATIONS[lang]['acord'];
-      if (scenario === 'base') btn.textContent = TRANSLATIONS[lang]['tendencial'];
-      if (scenario === 'str') btn.textContent = TRANSLATIONS[lang]['estres'];
-    });
-
-    // Update action buttons
-    const playBtn = document.getElementById('play');
-    if (playBtn) playBtn.textContent = TRANSLATIONS[lang]['animate'];
-
-    const resetBtn = document.getElementById('reset');
-    if (resetBtn) resetBtn.textContent = TRANSLATIONS[lang]['national_view'];
-  }
-}
-
-// Replace old function
-changeLanguage = changeLanguage_new;
-
-// Add event listener for language selector
+// When language changes via dropdown, update the UI
 document.getElementById('langSelect').addEventListener('change', (e) => {
-  changeLanguage(e.target.value);
+  const newLang = e.target.value;
+  changeLanguage(newLang);
+
+  // Dispatch custom event so dashboard can react to language change
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
+
+  // Update header texts with translations
+  updateDashboardTexts();
+
+  // Redraw any charts if needed
+  if (typeof draw === 'function') draw(true);
 });
 
-// Load saved language
-const savedLang = localStorage.getItem('dashboardLang') || 'ca';
-changeLanguage(savedLang);
+// Function to update dashboard texts when language changes
+function updateDashboardTexts() {
+  // Update header labels
+  const headerLabels = {
+    'mDom-label': t('labels.domain'),
+    'mPop-label': t('labels.population'),
+    'mArea-label': t('labels.area'),
+    'mModels-label': t('labels.models')
+  };
+
+  // This would require marking elements with data-i18n attributes
+  // For now, the dropdown selector provides basic language switching
+  // and stores the preference for next visit
+}
 </script>
 </body>
 </html>
