@@ -1124,29 +1124,49 @@ function changeLanguage_new(lang) {
   localStorage.setItem('dashboardLang', lang);
   document.getElementById('langSelect').value = lang;
 
-  // ACTUALLY translate the texts
+  // ACTUALLY translate the texts that exist in static HTML
   if (TRANSLATIONS[lang]) {
-    // Update labels
-    const anyLabel = document.querySelector('label[for="yearSlider"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'ANY');
-    if (anyLabel) anyLabel.textContent = TRANSLATIONS[lang]['any'];
-
-    const scenarioLabel = document.querySelector('[data-label="escenari"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'ESCENARI');
-    if (scenarioLabel) scenarioLabel.textContent = TRANSLATIONS[lang]['escenari'];
-
-    // Update buttons
+    // Update scenario buttons (data-s attribute)
+    const btnMap = { 'opt': 'acord', 'base': 'tendencial', 'str': 'estres' };
     document.querySelectorAll('button[data-s]').forEach(btn => {
       const scenario = btn.dataset.s;
-      if (scenario === 'opt') btn.textContent = TRANSLATIONS[lang]['acord'];
-      if (scenario === 'base') btn.textContent = TRANSLATIONS[lang]['tendencial'];
-      if (scenario === 'str') btn.textContent = TRANSLATIONS[lang]['estres'];
+      const key = btnMap[scenario];
+      if (key && TRANSLATIONS[lang][key]) {
+        btn.textContent = TRANSLATIONS[lang][key];
+      }
     });
 
-    // Update action buttons
-    const playBtn = document.getElementById('play');
-    if (playBtn) playBtn.textContent = TRANSLATIONS[lang]['animate'];
+    // Update action buttons by ID
+    const actionBtns = {
+      'play': 'animate',
+      'reset': 'national_view',
+      'csv': 'csv'
+    };
 
-    const resetBtn = document.getElementById('reset');
-    if (resetBtn) resetBtn.textContent = TRANSLATIONS[lang]['national_view'];
+    Object.entries(actionBtns).forEach(([id, key]) => {
+      const btn = document.getElementById(id);
+      if (btn && TRANSLATIONS[lang][key]) {
+        btn.textContent = TRANSLATIONS[lang][key];
+      }
+    });
+
+    // Update panel titles (h2 inside headers)
+    const panelTitles = document.querySelectorAll('header h2');
+    const titleKeys = ['evolucio', 'simulator', 'situacio', 'senyals', 'model_card'];
+    panelTitles.forEach((h2, idx) => {
+      if (titleKeys[idx] && TRANSLATIONS[lang][titleKeys[idx]]) {
+        h2.textContent = TRANSLATIONS[lang][titleKeys[idx]];
+      }
+    });
+
+    // Update panel badges (span.ai)
+    const badges = document.querySelectorAll('header span.ai');
+    const badgeKeys = ['probabilistic', 'contrafactual', 'generada', 'anomalies'];
+    badges.forEach((span, idx) => {
+      if (badgeKeys[idx] && TRANSLATIONS[lang][badgeKeys[idx]]) {
+        span.textContent = TRANSLATIONS[lang][badgeKeys[idx]];
+      }
+    });
   }
 }
 
