@@ -997,41 +997,100 @@ const savedLang = localStorage.getItem('dashboardLang') || 'de';
 changeLanguage(savedLang);
 </script>
 
-<!-- ===== TRANSLATION SYSTEM ===== -->
-<script src="translation_system.js"></script>
+<!-- ===== TRANSLATION SYSTEM (WORKING) ===== -->
 <script>
-// Initialize translation system with German as default
-initLanguage();
+// Simple translation dictionary - ONLY for critical texts
+const TRANSLATIONS = {
+  'en': {
+    'any': 'Year',
+    'escenari': 'Scenario',
+    'acord': 'Agreement',
+    'tendencial': 'Baseline',
+    'estres': 'Stress',
+    'animate': '▶ Animate',
+    'national_view': 'National View'
+  },
+  'fr': {
+    'any': 'Année',
+    'escenari': 'Scénario',
+    'acord': 'Accord',
+    'tendencial': 'Tendanciel',
+    'estres': 'Stress',
+    'animate': '▶ Animer',
+    'national_view': 'Vue nationale'
+  },
+  'de': {
+    'any': 'Jahr',
+    'escenari': 'Szenario',
+    'acord': 'Vereinbarung',
+    'tendencial': 'Szenario',
+    'estres': 'Stress',
+    'animate': '▶ Animieren',
+    'national_view': 'Nationale Ansicht'
+  },
+  'it': {
+    'any': 'Anno',
+    'escenari': 'Scenario',
+    'acord': 'Accordo',
+    'tendencial': 'Tendenziale',
+    'estres': 'Stress',
+    'animate': '▶ Animare',
+    'national_view': 'Vista nazionale'
+  },
+  'ca': {
+    'any': 'Any',
+    'escenari': 'Escenari',
+    'acord': 'Acord',
+    'tendencial': 'Tendencial',
+    'estres': 'Estrès',
+    'animate': '▶ Anima',
+    'national_view': 'Vista nacional'
+  }
+};
 
-// When language changes via dropdown, update the UI
+// Update changeLanguage function to actually translate
+function changeLanguage_new(lang) {
+  document.getElementById('htmlRoot').lang = lang;
+  localStorage.setItem('dashboardLang', lang);
+  document.getElementById('langSelect').value = lang;
+
+  // ACTUALLY translate the texts
+  if (TRANSLATIONS[lang]) {
+    // Update labels
+    const anyLabel = document.querySelector('label[for="yearSlider"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'ANY');
+    if (anyLabel) anyLabel.textContent = TRANSLATIONS[lang]['any'];
+
+    const scenarioLabel = document.querySelector('[data-label="escenari"]') || Array.from(document.querySelectorAll('span')).find(s => s.textContent === 'ESCENARI');
+    if (scenarioLabel) scenarioLabel.textContent = TRANSLATIONS[lang]['escenari'];
+
+    // Update buttons
+    document.querySelectorAll('button[data-s]').forEach(btn => {
+      const scenario = btn.dataset.s;
+      if (scenario === 'opt') btn.textContent = TRANSLATIONS[lang]['acord'];
+      if (scenario === 'base') btn.textContent = TRANSLATIONS[lang]['tendencial'];
+      if (scenario === 'str') btn.textContent = TRANSLATIONS[lang]['estres'];
+    });
+
+    // Update action buttons
+    const playBtn = document.getElementById('play');
+    if (playBtn) playBtn.textContent = TRANSLATIONS[lang]['animate'];
+
+    const resetBtn = document.getElementById('reset');
+    if (resetBtn) resetBtn.textContent = TRANSLATIONS[lang]['national_view'];
+  }
+}
+
+// Replace old function
+changeLanguage = changeLanguage_new;
+
+// Add event listener for language selector
 document.getElementById('langSelect').addEventListener('change', (e) => {
-  const newLang = e.target.value;
-  changeLanguage(newLang);
-
-  // Dispatch custom event so dashboard can react to language change
-  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
-
-  // Update header texts with translations
-  updateDashboardTexts();
-
-  // Redraw any charts if needed
-  if (typeof draw === 'function') draw(true);
+  changeLanguage(e.target.value);
 });
 
-// Function to update dashboard texts when language changes
-function updateDashboardTexts() {
-  // Update header labels
-  const headerLabels = {
-    'mDom-label': t('labels.domain'),
-    'mPop-label': t('labels.population'),
-    'mArea-label': t('labels.area'),
-    'mModels-label': t('labels.models')
-  };
-
-  // This would require marking elements with data-i18n attributes
-  // For now, the dropdown selector provides basic language switching
-  // and stores the preference for next visit
-}
+// Load saved language
+const savedLang = localStorage.getItem('dashboardLang') || 'ca';
+changeLanguage(savedLang);
 </script>
 </body>
 </html>
