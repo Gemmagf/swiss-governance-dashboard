@@ -388,30 +388,30 @@ const DOMAINS=[
  levers:[
   {id:"clarejar",label:"Species conversion program",unit:"1000 ha/any",max:40,cost:2.1,eff:.30,
    note:"Progressive replacement of low-altitude spruce with drought-resistant species."},
-  {id:"vigilancia",label:"Phytosanitary surveillance network",unit:"% de cobertura",max:100,cost:.6,eff:.18,
+  {id:"vigilancia",label:"Phytosanitary surveillance network",unit:"% of coverage",max:100,cost:.6,eff:.18,
    note:"Early detection of bark beetles using satellite imagery and connected traps."},
   {id:"aigua",label:"Water retention in forest soil",unit:"1000 ha",max:60,cost:1.4,eff:.22,
    note:"Water retention and soil restoration works to reduce summer stress."}],
  drivers:[["Summer precipitation deficit",.34],["Average July temperature",.27],["Stand age and structure",.22],["Management intensity",.17]],
- sources:[["Inventari Forestal Nacional (LFI)","annual"],["Sentinel-2 · NDVI","5 days"],["MeteoSwiss · IDAWEB","daily"],["WSL · monitoratge de sanitat","monthly"]]},
+ sources:[["National Forest Inventory (LFI)","annual"],["Sentinel-2 · NDVI","5 days"],["MeteoSwiss · IDAWEB","daily"],["WSL · sanitation monitoring","monthly"]]},
 
 {id:"aigua",label:"Water",acc:"#0A6C9E",
  metrics:[
   {id:"qualitat",label:"Ecological quality of rivers",unit:"index /100",base:77,trend:.005,noise:.03,better:"high",dec:1,target:90},
   {id:"nitrats",label:"Nitrates in groundwater",unit:"mg/l",base:21.5,trend:-.012,noise:.05,better:"low",dec:1,target:25},
   {id:"consum",label:"Drinking water consumption",unit:"l/inhabitants·dia",base:302,trend:-.011,noise:.04,better:"low",dec:0},
-  {id:"cabal",label:"Cabal estival respecte de la mitjana",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
+  {id:"cabal",label:"Summer flow compared to average",unit:"%",base:83,trend:-.013,noise:.08,better:"high",dec:1,target:80},
   {id:"micro",label:"Micropollutants removed in treatment plants",unit:"%",base:26,trend:.10,noise:.06,better:"high",dec:1,target:80}],
  comp:{title:"Usos de l'aigua captada",items:[["Water potable",42],["Indústria",26],["Refrigeració",19],["Reg agrícola",13]]},
  levers:[
   {id:"ara",label:"Zoom inció de tractament de micropol·luents",unit:"% of treatment plants",max:100,cost:3.4,eff:.36,
    note:"Quarta etapa de depuració a les plantes que aboquen a masses sensibles."},
   {id:"agro",label:"Reducció d'aportacions agrícoles",unit:"% of area with plan",max:100,cost:1.8,eff:.28,
-   note:"Plans de fertilització i franges de protecció a les zones de captació."},
+   note:"Fertilization plans and protection strips in catchment areas."},
   {id:"xarxa",label:"Renovació de xarxa de distribució",unit:"% annual",max:3,cost:2.6,eff:.20,
-   note:"Reducció de pèrdues i millora de la resiliència en episodis de sequera."}],
- drivers:[["Càrrega agrícola of the watershed",.31],["Cabal i dilució",.29],["Grau de tractament a les EDAR",.25],["Densitat urbana",.15]],
- sources:[["NAQUA · aigües subterrànies","quarterly"],["NADUF · xarxa de rius","monthly"],["Estacions hidromètriques FOEN","schedule"],["Cadastre d'abocaments","annual"]]},
+   note:"Reduction of losses and improvement of resilience during drought episodes."}],
+ drivers:[["Agricultural load of the watershed",.31],["Flow and dilution",.29],["Treatment level in EDAR plants",.25],["Urban density",.15]],
+ sources:[["NAQUA · groundwater","quarterly"],["NADUF · river network","monthly"],["Hydrometric stations FOEN","schedule"],["Discharge registry","annual"]]},
 
 {id:"educacio",label:"Education",acc:"#B26B00",
  metrics:[
@@ -441,9 +441,9 @@ const DOMAINS=[
  comp:{title:"Repartiment modal (passatgers·km)",items:[["Vehicle privat",64],["Ferrocarril",21],["Bus i tram",8],["Bici i a peu",7]]},
  levers:[
   {id:"frequencia",label:"Increase in train frequency",unit:"% of trains",max:30,cost:5.1,eff:.32,
-   note:"Més oferta a les hores punta als eixos amb més saturació."},
+   note:"More supply at peak hours on the most saturated routes."},
   {id:"carrils",label:"Xarxa ciclista segregada",unit:"km/any",max:400,cost:1.1,eff:.29,
-   note:"Infraestructura contínua, no trams aïllats: l'efecte és no lineal amb la connectivitat."},
+   note:"Continuous infrastructure, not isolated sections: the effect is nonlinear with connectivity."},
   {id:"tarifa",label:"Road pricing",unit:"intensity",max:100,cost:-1.8,eff:.38,
    note:"Genera ingressos nets. Requereix base legal i té efectes distributius desiguals."}],
  drivers:[["Densitat i mixtura d'usos",.29],["Oferta de transport públic",.28],["Cost relatiu del vehicle privat",.24],["Topografia i clima",.19]],
@@ -461,11 +461,11 @@ const DOMAINS=[
   {id:"pv",label:"Programa de fotovoltaica en teulades",unit:"% del potencial/any",max:8,cost:2.9,eff:.35,
    note:"Obligació en obra nova i incentiu a la reinhabitantsilitació."},
   {id:"reinhabitants",label:"Building energy retrofit rate",unit:"% of fleet/year",max:3,cost:4.6,eff:.33,
-   note:"És la palanca més cara i la de més recorregut a llarg termini."},
+   note:"It is the most expensive lever and the one with the most long-term reach."},
   {id:"calor",label:"Replacement of fossil heating",unit:"1000 units/year",max:120,cost:3.2,eff:.31,
    note:"Bombes de calor i xarxes de calor; limitada per la mà d'obra disponible."}],
  drivers:[["Estructura del parc d'edificis",.31],["Preus de l'energia",.26],["Ritme d'electrificació del transport",.23],["Graus-dia de calefacció",.20]],
- sources:[["Inventari nacional de GEH","annual"],["Estadística energètica SFOE","annual"],["Pronovo · registre d'instal·lacions","monthly"],["Swissgrid · balanç de xarxa","15 min"]]},
+ sources:[["National renewable energy inventory","annual"],["Energy statistics SFOE","annual"],["Pronovo · installation registry","monthly"],["Swissgrid · grid balance","15 min"]]},
 
 {id:"serveis",label:"Health & Public Services",acc:"#6D4C8C",
  metrics:[
@@ -724,7 +724,7 @@ function fan(){
   svg.addEventListener("mousemove",e=>{
     const r=svg.getBoundingClientRect();let i=Math.round(((e.clientX-r.left)/r.width*W-P.l)/(W-P.l-P.r)*(YEARS.length-1));
     i=Math.max(0,Math.min(YEARS.length-1,i));const x=q[i];
-    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · previsió":" · observed")+'</span>'+
+    TIP(e,'<span class="n">'+YEARS[i]+(YEARS[i]>YOBS?" · forecast":" · observed")+'</span>'+
       F(sim[i],m)+" "+m.unit+(x?'<br>P10–P90: '+F(x.p10,m)+" – "+F(x.p90,m):""))});
   svg.addEventListener("mouseleave",HID);
   svg.addEventListener("click",e=>{const r=svg.getBoundingClientRect();
@@ -786,7 +786,7 @@ function drivers(){
       '<span class="w">'+nf(x.w/tot*100,0)+'%</span>';
     box.appendChild(e);
   });
-  // backtest: predit vs realitzat als darrers 6 years
+  // backtest: predicted vs actual in the last 6 years
   const m=S.met,W=330,H=58,ys=[];for(let y=YOBS-5;y<=YOBS;y++)ys.push(y);
   const real=ys.map(y=>agg(S.dom,m,y,"base",false,S.kt));
   const pred=real.map((v,i)=>v*(1+(rnd(m.id+"bt"+i)-.5)*.09));
@@ -807,7 +807,7 @@ function drivers(){
 function alerts(){
   const d=S.dom,ul=$("alerts");ul.innerHTML="";
   const items=[];
-  // 1. anomalia: cantó amb la desviació més gran respecte de la tendència pròpia
+  // 1. anomalia: canton with the largest deviation from its own trend
   const scope=S.kt?CANTONS.filter(c=>c.ab===S.kt):CANTONS;
   let worst=null;
   scope.forEach(c=>{
@@ -818,7 +818,7 @@ function alerts(){
     });
   });
   if(worst)items.push({cls:Math.abs(worst.ch)>6?"c":"w",k:"Anomaly detected · "+worst.c.ab,
-    t:worst.m.label.toLowerCase()+" es desvia un "+nf(Math.abs(worst.ch),1)+"% respecte de l'prior year a "+worst.c.name+".",
+    t:worst.m.label.toLowerCase()+" deviates by "+nf(Math.abs(worst.ch),1)+"% compared to prior year in "+worst.c.name+".",
     a:"Probability of persistence 12 months: "+nf(58+rnd(worst.c.ab+worst.m.id)*30,0)+"%. Suggested action: data verification and technical visit."});
   // 2. objectiu
   const m=S.met;
@@ -826,7 +826,7 @@ function alerts(){
     const v35=agg(d,m,2035,S.scen,true,S.kt), met=(m.better==="low"?v35<=m.target:v35>=m.target);
     items.push({cls:met?"o":"w",k:"Compliment de l'objectiu 2035",
       t:met?"la trajectòria simulada assoleix l'objectiu de "+F(m.target,m)+" "+m.unit+".":
-            "amb les mesures actuals el 2035 falta un "+nf(Math.abs((v35-m.target)/m.target*100),0)+"% per arribar a l'objectiu.",
+            "with current measures in 2035 is missing a "+nf(Math.abs((v35-m.target)/m.target*100),0)+"% to reach the target.",
       a:met?"Mantenir el nivell d'inversió i revisar l'objectiu a l'alça.":"Cal reforçar les palanques o revisar el calendari."});
   }
   // 3. divergència territorial
@@ -838,7 +838,7 @@ function alerts(){
   // 4. qualitat de dades
   const late=CANTONS[Math.floor(rnd(d.id+S.year+"late")*26)];
   items.push({cls:"",k:"Data quality",
-    t:"la sèrie de "+late.name+" arriba amb "+(1+Math.floor(rnd(d.id+"lag")*4))+" months late; values for the recent period are estimated.",
+    t:"the series of "+late.name+" arrives with "+(1+Math.floor(rnd(d.id+"lag")*4))+" months late; values for the recent period are estimated.",
     a:"The uncertainty for this canton is inflated in the model."});
   items.forEach(i=>{const li=document.createElement("li");li.className=i.cls;
     li.innerHTML='<span class="m">'+i.k+'</span>'+i.t.charAt(0).toUpperCase()+i.t.slice(1)+'<span class="act">'+i.a+'</span>';
@@ -854,16 +854,16 @@ function brief(mape){
   const rows=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,S.scen,true)})).sort((a,b)=>b.v-a.v);
   const anyLev=Object.values(S.lev).some(v=>v>0);
   let t='<p>A '+sc+', <b>'+m.label.toLowerCase()+'</b> se situa en <b>'+F(now,m)+' '+m.unit+'</b> el '+S.year+
-    ', un '+nf(Math.abs(ch),1)+'% '+(ch>=0?"per sobre":"per sota")+' del 2015. La direcció és '+(good?"favorable":"desfavorable")+
+    ', un '+nf(Math.abs(ch),1)+'% '+(ch>=0?"above":"below")+' of 2015. The trend is '+(good?"favorable":"unfavorable")+
     ' respecte de l\'objectiu de política pública.</p>';
   t+='<p>La projecció '+SC[S.scen].l.toLowerCase()+' porta l\'indicador a <b>'+F(y35,m)+'</b> el 2035 ('+(fw>=0?"+":"")+nf(fw,1)+
     '%), amb un interval P10–P90 que s\'eixampla fins a ±'+nf(1.64*2.1*(2035-YOBS),0)+'% al final de l\'horitzó.</p>';
-  if(anyLev)t+='<p>Amb les mesures simulades, el resultat previst millora respecte del cas base; el cost recau majoritàriament en el pressupost cantonal.</p>';
+  if(anyLev)t+='<p>With simulated measures, the forecasted result improves compared to the base case; costs fall mainly on the canton budget.</p>';
   if(!S.kt)t+='<p>El gradient territorial és rellevant: '+rows[0].c.name+' encapçala el rànquing i '+rows[25].c.name+
     ' el tanca. Aquesta dispersió condiciona qualsevol mesura d\'aplicació uniforme.</p>';
-  t+='<p>Fiabilitat del model en els darrers sis years: error mitjà del '+nf(mape,1)+'%. Les xifres recents són provisionals.</p>';
+  t+='<p>Model reliability in the last six years: average error of '+nf(mape,1)+'%. Recent figures are provisional.</p>';
   $("brief").innerHTML=t;
-  $("briefSig").textContent="Automatically generated el "+new Date().toLocaleDateString("ca-ES")+
+  $("briefSig").textContent="Automatically generated on "+new Date().toLocaleDateString("en-US")+
     " · model "+d.id+"-v4 · pending review per l'oficina responsable · not an official position";
 }
 
@@ -877,8 +877,8 @@ function modelcard(mape){
     '<div><span>Deriva del model</span><b style="color:'+(dr==="estable"?"var(--ok)":"var(--warn)")+'">'+dr+'</b></div>'+
     '<div><span>Darrer reentrenament</span><b>'+(1+Math.floor(rnd(m.id+"r")*11))+'/2026</b></div>';
   $("sources").innerHTML=d.sources.map(([n,f])=>'<span><i>●</i> '+n+' · '+f+'</span>').join("");
-  $("govNote").innerHTML="Federated learning: cantons retain raw data in their systems i only share model parameters. "+
-    "Each forecast carries origin tracing i requires human validation before entering a file.";
+  $("govNote").innerHTML="Federated learning: cantons retain raw data in their systems and only share model parameters. "+
+    "Each forecast carries origin tracing and requires human validation before entering a file.";
 }
 
 /* ---------- identitat cantonal ---------- */
@@ -897,7 +897,7 @@ function ident(){
     $("ktName").textContent=c.name;
     $("ktMeta").textContent=c.cap+" · "+c.lang+" · "+nf(c.pop,0)+" inhabitants";
     $("ktShield").innerHTML='<rect width="26" height="30" fill="'+c.col[0]+'"/><rect y="15" width="26" height="15" fill="'+c.col[1]+'"/>';
-    $("mPop").textContent=nf(c.pop/1000,0)+" mil";
+    $("mPop").textContent=nf(c.pop/1000,0)+" thousand";
     $("mArea").textContent=nf(c.area,0)+" km²";
     $("crumb").innerHTML='<button id="crCH">Switzerland</button> › <b>'+c.name+'</b>';
     $("crCH").onclick=()=>select(S.kt);
@@ -909,7 +909,7 @@ function draw(domChanged){
   document.documentElement.style.setProperty("--acc",S.dom.acc);
   $("mDom").textContent=S.dom.label;
   $("yNum").textContent=S.year;
-  $("yTag").textContent=S.year>YOBS?"previsió · "+SC[S.scen].l.toLowerCase():"observed";
+  $("yTag").textContent=S.year>YOBS?"forecast · "+SC[S.scen].l.toLowerCase():"observed";
   sidebar();ident();kpis();map();fan();levers();rank();alerts();
   const mape=drivers();brief(mape);modelcard(mape);
 }
@@ -919,7 +919,7 @@ document.querySelectorAll("#scen button").forEach(b=>b.onclick=()=>{
   S.scen=b.dataset.s;document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));draw()});
 $("play").onclick=function(){
   if(S.play){clearInterval(S.play);S.play=null;this.setAttribute("aria-pressed","false");this.textContent="▶ Animatete";return}
-  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Atura";
+  this.setAttribute("aria-pressed","true");this.textContent="❚❚ Pause";
   S.play=setInterval(()=>{S.year=S.year>=YN?Y0:S.year+1;$("year").value=S.year;draw()},560)};
 $("reset").onclick=()=>{if(S.kt)select(S.kt);else{goto(fit([0,0,1000,MAPH],.04))}};
 $("zfit").onclick=()=>{S.kt=null;goto(fit([0,0,1000,MAPH],.04),map);draw()};

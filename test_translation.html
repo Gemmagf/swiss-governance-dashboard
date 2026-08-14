@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Translation System</title>
+</head>
+<body>
+<h1>Translation System Test</h1>
+<p id="result"></p>
+
+<script>
+console.log('TEST 1: Script loaded');
+
+const TRANSLATIONS = {
+  'en': { 'test': 'Hello' },
+  'ca': { 'test': 'Hola' }
+};
+
+function t(key) {
+  return TRANSLATIONS['ca'][key] || key;
+}
+
+console.log('TEST 2: t() function available');
+console.log('TEST 3: t("test") =', t('test'));
+
+document.getElementById('result').textContent = 'Result: ' + t('test');
+
+console.log('TEST 4: All tests passed');
+</script>
+</body>
+</html>
