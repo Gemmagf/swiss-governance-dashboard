@@ -4,8 +4,23 @@
     {
       "name": "Swiss Governance Dashboard",
       "runtimeExecutable": "bash",
-      "runtimeArgs": ["-c", "cd /Users/gemmagardela/swiss-governance-dashboard && source .venv/bin/activate && streamlit run src/frontend/app.py --server.headless true"],
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/gemmagardela/swiss-governance-dashboard && source .venv/bin/activate && streamlit run src/frontend/app.py --server.headless true"
+      ],
       "port": 8502
+    },
+    {
+      "name": "Static dashboard",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "9000",
+        "--bind",
+        "127.0.0.1"
+      ],
+      "port": 9000
     }
   ]
 }
