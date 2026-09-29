@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from asset.config import BIOABFALL_CALENDAR, ELOG_KENNZAHLEN, KHKW
+from asset.config import BIOABFALL_CALENDAR, ELOG_KENNZAHLEN, EWZ_LOAD, KHKW, WERDHOELZLI
 
 KHKW_INT_COLUMNS = (
     "Kehrichtdurchsatz",
@@ -77,3 +77,42 @@ def load_elog_kennzahlen(pivot: bool = False) -> pd.DataFrame:
     wide = monthly.pivot_table(index="Datum", columns="Beschreibung", values="Wert", aggfunc="first")
     wide.index.name = "month"
     return wide.sort_index()
+
+
+def load_werdhoelzli() -> pd.DataFrame:
+    """Daily treated wastewater inflow at Klärwerk Werdhölzli (m³/day), 2020-01 onward.
+
+    One row per day, sorted DatetimeIndex named "date"; the value column is
+    `abwasser_m3_pro_d` (float, NaN where the source has no value).
+    """
+    if not WERDHOELZLI.path.exists():
+        raise FileNotFoundError(f"{WERDHOELZLI.path} missing — run `make asset-data` first")
+    df = pd.read_csv(WERDHOELZLI.path)
+    if {"datum", "abwasser_m3_pro_d"} - set(df.columns):
+        raise ValueError("erz_abwassermenge_klaerwerk_werdhoelzli schema changed")
+    df["datum"] = pd.to_datetime(df["datum"])
+    df = df.sort_values("datum").set_index("datum")
+    df.index.name = "date"
+    df["abwasser_m3_pro_d"] = df["abwasser_m3_pro_d"].astype(float)
+    return df[["abwasser_m3_pro_d"]]
+
+
+def load_ewz_load() -> pd.DataFrame:
+    """15-minute gross electricity delivered in the city of Zurich (kWh), all years concatenated.
+
+    Columns `bruttolastgang` (kWh per 15 min) and `status` (E = plausibilised,
+    F/W = provisional); sorted DatetimeIndex named "time".
+    """
+    frames = []
+    for source in EWZ_LOAD:
+        if not source.path.exists():
+            raise FileNotFoundError(f"{source.path} missing — run `make asset-data` first")
+        frames.append(pd.read_csv(source.path))
+    df = pd.concat(frames, ignore_index=True)
+    if {"zeitpunkt", "bruttolastgang", "status"} - set(df.columns):
+        raise ValueError("ewz_bruttolastgang schema changed")
+    df["zeitpunkt"] = pd.to_datetime(df["zeitpunkt"])
+    df = df.sort_values("zeitpunkt").drop_duplicates("zeitpunkt").set_index("zeitpunkt")
+    df.index.name = "time"
+    df["bruttolastgang"] = df["bruttolastgang"].astype(float)
+    return df[["bruttolastgang", "status"]]

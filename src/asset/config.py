@@ -58,7 +58,31 @@ ELOG_KENNZAHLEN = DataSource(
     retrieved="2026-07-17",
 )
 
-ALL_SOURCES = (KHKW, BIOABFALL_CALENDAR, ELOG_KENNZAHLEN)
+WERDHOELZLI = DataSource(
+    name="erz_abwassermenge_klaerwerk_werdhoelzli",
+    url=(
+        "https://data.stadt-zuerich.ch/dataset/erz_abwassermenge_klaerwerk_werdhoelzli/"
+        "download/erz_abwassermenge_klaerwerk_werdhoelzli.csv"
+    ),
+    filename="erz_abwassermenge_klaerwerk_werdhoelzli.csv",
+    retrieved="2026-09-29",
+)
+
+# ewz publishes one CSV per year (15-minute gross load of the city of Zurich, since 2019).
+EWZ_LOAD = tuple(
+    DataSource(
+        name=f"ewz_bruttolastgang_{year}",
+        url=(
+            "https://data.stadt-zuerich.ch/dataset/ewz_bruttolastgang_stadt_zuerich/"
+            f"download/{year}_ewz_bruttolastgang.csv"
+        ),
+        filename=f"{year}_ewz_bruttolastgang.csv",
+        retrieved="2026-09-29",
+    )
+    for year in range(2019, 2027)
+)
+
+ALL_SOURCES = (KHKW, BIOABFALL_CALENDAR, ELOG_KENNZAHLEN, WERDHOELZLI, *EWZ_LOAD)
 
 # Werdhölzli / Biogas Zürich AG postcode — used to filter the collection calendar
 # for the site-level view in Layer 3.
