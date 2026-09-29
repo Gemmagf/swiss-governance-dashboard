@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main, asset-drilldown]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install asset pipeline + dev tools
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install -e ".[asset,dev]"
+
+      - name: Lint (ruff, asset code only)
+        run: |
+          ruff check src/asset tests src/pipeline/export_asset.py src/pipeline/embed_asset.py src/pipeline/fetch_asset_data.py
+          ruff format --check src/asset tests src/pipeline/export_asset.py src/pipeline/embed_asset.py src/pipeline/fetch_asset_data.py
+
+      - name: Fetch City of Zurich open data
+        run: python src/pipeline/fetch_asset_data.py
+
+      - name: Test (pytest)
+        run: pytest -v --cov=src/asset --cov-report=term-missing
+
+      - name: Embedded asset block is in sync with the committed JSON
+        run: |
+          cp dashboard_real.html /tmp/check.html
+          python src/pipeline/embed_asset.py --html /tmp/check.html
+          cmp dashboard_real.html /tmp/check.html

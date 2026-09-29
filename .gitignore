@@ -10,3 +10,9 @@ data/raw/*.csv
 data/raw/*.json
 .env
 *.log
+
+# tooling caches
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
