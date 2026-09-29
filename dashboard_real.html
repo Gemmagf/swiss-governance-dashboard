@@ -321,11 +321,16 @@ body.asset .asview{display:block}
 /* ---- explain ---- */
 .explain-box{display:none}
 .explain-box.expanded{display:block}
-.explain-box .brief{max-width:86ch;font-size:13px}
-.explain-box .brief h4.sub{margin:14px 0 6px}
+.explain-box.expanded .brief,.explain-box.expanded .meta,.explain-box.expanded .al,.explain-box.expanded .note{max-width:none}
+.explain-box .brief{font-size:13px;line-height:1.6;column-count:2;column-gap:44px;column-fill:balance}
+.explain-box .brief>p{margin:0 0 10px;break-inside:avoid}
+.explain-box .al{margin-bottom:6px}
+.explain-box .al li{font-size:12.5px;break-inside:avoid;margin-bottom:8px}
+.explain-box .brief h4.sub{margin:16px 0 8px;column-span:all}
 .explain-box .brief h4.sub:first-child{margin-top:0}
-.explain-box .al li{font-size:12.5px}
-.explain-box .meta{max-width:86ch}
+.explain-box .meta{grid-template-columns:repeat(4,1fr);margin-bottom:12px;column-span:all}
+.explain-box .sig{margin-top:14px;column-span:all}
+@media (max-width:1100px){.explain-box .brief{column-count:1}.explain-box .meta{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
