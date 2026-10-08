@@ -331,6 +331,32 @@ body.asset .asview{display:block}
 .explain-box .meta{grid-template-columns:repeat(4,1fr);margin-bottom:12px;column-span:all}
 .explain-box .sig{margin-top:14px;column-span:all}
 @media (max-width:1100px){.explain-box .brief{column-count:1}.explain-box .meta{grid-template-columns:1fr 1fr}}
+
+/* ---- use cases ---- */
+body.cases .yearbox,body.cases .bar>.lbl,body.cases #scen,body.cases #play,body.cases .kstrip,body.cases .mapbox,body.cases .strip,body.cases #pFan,body.cases #pSim{display:none}
+body.cases .center{grid-template-rows:minmax(0,1fr)}
+.csview{display:none;overflow:auto;padding:12px 14px;background:var(--bg)}
+body.cases .csview{display:block}
+.cs-head{margin-bottom:10px}.cs-head h2{margin:0 0 4px;font-size:18px;font-weight:700}
+.cs-idx{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.cs-idx .btn{display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11.5px;letter-spacing:0}
+.cs-idx .btn b{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.cs-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:12px}
+.cs-steps div{background:#fff;padding:9px 11px;font-size:11.5px;line-height:1.45}
+.cs-steps b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+.case{background:#fff;border:1px solid var(--line);border-top:3px solid var(--acc);padding:12px 14px;margin-bottom:10px;display:grid;grid-template-columns:1.25fr 1fr;gap:6px 30px}
+.case>header{grid-column:1/-1}
+.case .cs-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.case h3{margin:2px 0 4px;font-size:17px;font-weight:700}
+.case .for{font-size:11.5px;color:var(--ink-2)}
+.case .q{grid-column:1/-1;font-size:14px;font-weight:700;line-height:1.45;margin:4px 0 2px;padding-left:10px;border-left:3px solid var(--acc)}
+.case h4.sub{margin:6px 0 3px}
+.case p{margin:0 0 6px;font-size:12px;line-height:1.55}
+.case ol{margin:0;padding-left:18px;font-size:11.5px;line-height:1.55}
+.case .act{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.case code{font-family:var(--mono);font-size:10px;color:var(--ink-2);background:#F4F4F4;padding:2px 6px;word-break:break-all}
+.dom.cs{margin-bottom:8px}
+@media (max-width:1100px){.case{grid-template-columns:1fr}.cs-steps{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -378,6 +404,7 @@ body.asset .asview{display:block}
 
     <div class="center">
       <div class="overview" id="overview"></div>
+      <div class="csview" id="cases"></div>
       <div class="kstrip" id="kstrip"></div>
       <div class="mapbox" id="mapbox">
         <div class="mapnote" id="mapnote"></div>
@@ -771,6 +798,8 @@ function sidebar(){
   o.setAttribute("aria-pressed",String(S.view==="overview"));
   o.innerHTML='<i style="background:var(--red)"></i>National scorecard';
   o.onclick=()=>{S.view="overview";draw(true)};s.appendChild(o);
+  const uc=document.createElement("button");uc.className="dom cs";uc.setAttribute("aria-pressed",String(S.view==="cases"));
+  uc.innerHTML='<i style="background:var(--ink)"></i>Use cases';uc.onclick=()=>{S.view="cases";draw(true)};s.appendChild(uc);
   const h3=document.createElement("h3");h3.textContent="Domains";s.appendChild(h3);
   DOMAINS.forEach(d=>{
     const b=document.createElement("button");b.className="dom";
@@ -1204,7 +1233,7 @@ function ident(){
     $("crCH").onclick=()=>select(S.kt);
   }
   $("mInd").textContent=NMET;
-  $("comp").innerHTML=S.view==="overview"
+  $("comp").innerHTML=S.view==="overview"||S.view==="cases"
     ? '<h4 class="sub">Coverage</h4><div class="key"><span>'+NMET+' indicators</span><span>'+DOMAINS.length+' domains</span><span>'+INSTITUTIONS.length+' institutions</span><span>observed '+Y0+'–'+YOBS+'</span></div>'
     : compBar(d)+'<p class="note" style="margin:7px 0 0"><b>Policy frame:</b> '+d.policy+'</p>';
   if(S.view==="domain"){Object.values(ASSETS).filter(A=>A.domain===d.id||A.canton===S.kt).forEach(A=>{
@@ -1564,20 +1593,137 @@ function explainAsset(){
   return h;
 }
 function openExplain(){
-  const box=$("explainBox"),ov=S.view==="overview",as=S.view==="asset";
-  const title=ov?"National scorecard":as?assetData().name:S.dom.label+(S.kt?" · "+CANTONS.find(c=>c.ab===S.kt).name:"");
+  const box=$("explainBox"),ov=S.view==="overview",as=S.view==="asset",cs=S.view==="cases";
+  const title=ov?"National scorecard":cs?"Use cases":as?assetData().name:S.dom.label+(S.kt?" · "+CANTONS.find(c=>c.ab===S.kt).name:"");
   box.querySelector("h2").textContent="Explain · "+title;
-  box.querySelector(".c").innerHTML='<div class="brief">'+explainCommon()+(ov?explainScorecard():as?explainAsset():explainDomain())+explainLimits()+
+  box.querySelector(".c").innerHTML='<div class="brief">'+explainCommon()+(ov?explainScorecard():cs?explainCases()+explainScorecard():as?explainAsset():explainDomain())+explainLimits()+
     '<div class="sig">Generated '+new Date().toLocaleDateString("de-CH")+' from the data currently on screen ('+(ov||as?'':SC[S.scen].l.toLowerCase()+' scenario · ')+'year '+S.year+') · every figure is computed, none is typed in · not an official position</div></div>';
   box.classList.add("expanded");scrim.classList.add("on");box.querySelector(".exp").textContent="✕";
 }
 
+/* ---------- use cases · questions the cockpit already answers ---------- */
+const D=id=>DOMAINS.find(x=>x.id===id), Mx=(d,id)=>d.metrics.find(m=>m.id===id);
+function withLev(d,lev,fn){const o={dom:S.dom,lev:S.lev};S.dom=d;S.lev=Object.assign({},lev||{});try{return fn()}finally{S.dom=o.dom;S.lev=o.lev}}
+function caseHash(st){const p=new URLSearchParams();
+  if(st.view==="scorecard")p.set("v","scorecard");else if(st.view==="asset"){p.set("v","asset");p.set("a",st.a);if(st.mo)p.set("mo",st.mo)}
+  else{p.set("d",st.d);p.set("m",st.m)}
+  if(st.view!=="asset"){p.set("y",st.y||S.year);if(st.s&&st.s!=="base")p.set("s",st.s);if(st.kt)p.set("c",st.kt);
+    const lv=Object.entries(st.lev||{}).filter(([k,v])=>v>0);if(lv.length)p.set("l",lv.map(([k,v])=>k+"-"+(+(+v).toFixed(2))).join("_"))}
+  return "#"+p.toString()}
+function applyState(st){
+  S.lev={};S.kt=st.kt||null;S.scen=st.s||"base";if(st.y)S.year=st.y;
+  if(st.view==="scorecard")S.view="overview";
+  else if(st.view==="asset"){S.view="asset";S.asset=st.a;S.month=st.mo||null}
+  else{S.view="domain";S.dom=D(st.d);S.met=Mx(S.dom,st.m)||S.dom.metrics[0];S.lev=Object.assign({},st.lev||{})}
+  $("year").value=S.year;document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.s===S.scen)));
+  VB=S.kt?fit(CANTONS.find(c=>c.ab===S.kt).bb,.22):fit([0,0,1000,MAPH],.04);draw();
+}
+const CASES=[
+ {id:"co2",tag:"Climate",title:"Are we on course for the CO₂ Act 2030 target?",
+  who:"Federal and cantonal climate offices; parliamentary committees preparing the next CO₂ Act revision.",
+  q:"«Will greenhouse-gas emissions reach −50 % vs 1990 by 2030 — and does the scenario change the answer?»",
+  state:{view:"domain",d:"energia",m:"co2",y:2030},
+  see:()=>{const d=D("energia"),m=Mx(d,"co2"),st=status(d,m,"base",null),so=status(d,m,"opt",null),ss=status(d,m,"str",null),v=agg(d,m,YOBS,"base",false);
+    return 'Greenhouse-gas emissions stood at <b>'+F(v,m)+' '+m.unit+'</b> in '+YOBS+' ('+m.src+'). The baseline trajectory reaches <b>'+F(st.v,m)+'</b> in 2030 against the statutory target of '+F(st.g.v,m)+' (CO₂ Act, −50 % vs 1990): <b>'+st.label+'</b>, gap '+nf(st.gap,0)+' %. Agreement scenario: '+F(so.v,m)+' (gap '+nf(so.gap,0)+' %); Stress: '+F(ss.v,m)+' (gap '+nf(ss.gap,0)+' %). The scenario alone does not close the gap. The fan chart draws the target line and the P10–P90 band; the map shows estimated per-capita levels by canton.'},
+  tools:"Domain view › Energy & Climate › Greenhouse gas emissions · year slider at 2030 · scenario buttons · fan chart · Explain",
+  limits:"Damped trend extrapolation, not an official projection; the per-capita target is a conversion of the −50 % total; cantonal values are estimates.",
+  steps:["Open Energy & Climate in the sidebar","Select Greenhouse gas emissions","Drag the year to 2030 (or press →)","Switch Agreement / Baseline / Stress and read the status chip"]},
+ {id:"energy",tag:"Energy",title:"Would a faster building retrofit meet the 2035 energy target?",
+  who:"SFOE, cantonal energy offices, building-programme managers.",
+  q:"«If the retrofit rate reaches 2 % of the stock per year and 80 000 fossil heating systems are replaced each year, how close does final energy consumption get to −43 % vs 2000 by 2035?»",
+  state:{view:"domain",d:"energia",m:"consum",y:2035,lev:{retrofit:2,calor:80}},
+  see:()=>{const d=D("energia"),m=Mx(d,"consum"),lev={retrofit:2,calor:80};const b=agg(d,m,2035,"base",false),s=withLev(d,lev,()=>agg(d,m,2035,"base",true)),st=withLev(d,lev,()=>status(d,m,"base",null)),c=withLev(d,lev,()=>leverGain(d,m).cost);
+    return 'Final energy consumption was <b>'+F(agg(d,m,YOBS,"base",false),m)+' '+m.unit+'</b> in '+YOBS+'. Baseline 2035: '+F(b,m)+'; with the two levers: <b>'+F(s,m)+'</b> ('+((s-b)/b*100).toFixed(1)+' %) at an estimated '+nf(c,1)+' mio CHF per year. Against the Energy Act target of '+F(st.g.v,m)+' the simulated path is <b>'+st.label+'</b> (gap '+nf(st.gap,0)+' %). The lever note says it: retrofit is the most expensive lever and the one with the longest reach.'},
+  tools:"Domain view › Energy & Climate › Final energy consumption · Policy simulator (levers are stored in the link) · Forecast & trajectory with the simulated line",
+  limits:"Lever effects are estimated elasticities with a two-to-three-year lag, not programme evaluations; costs fall mainly on cantonal budgets and are indicative.",
+  steps:["Open Energy & Climate › Final energy consumption","Set the year to 2035","Drag Building energy retrofit rate to 2 %/yr and Replacement of fossil heating to 80 000/yr","Read Value 2035, Effect vs baseline and Estimated annual cost"]},
+ {id:"edu",tag:"Education",title:"Will 95 % of 25-year-olds hold an upper-secondary qualification by 2030?",
+  who:"EDK, SBFI, cantonal education departments.",
+  q:"«Is the EDK/SBFI 95 % goal within reach, and which cantons are estimated to lag?»",
+  state:{view:"domain",d:"educacio",m:"titulacio",y:2030},
+  see:()=>{const d=D("educacio"),m=Mx(d,"titulacio"),st=status(d,m,"base",null),rk=CANTONS.map(c=>({c,v:val(d,m,c.ab,2030,"base",true)})).sort((a,b)=>b.v-a.v);
+    return 'The qualification rate at 25 was <b>'+F(agg(d,m,YOBS,"base",false),m)+' %</b> in '+YOBS+' ('+m.src+'); the baseline reaches <b>'+F(st.v,m)+' %</b> in 2030 against the 95 % goal: <b>'+st.label+'</b> (gap '+nf(st.gap,0)+' %). The estimated cantonal ranking for 2030 runs from '+rk[0].c.name+' ('+F(rk[0].v,m)+' %) to '+rk[25].c.name+' ('+F(rk[25].v,m)+' %) — a spread that any uniform measure has to live with.'},
+  tools:"Domain view › Education › Upper-secondary qualification by age 25 · cantonal ranking · map · Alert signals (objective item)",
+  limits:"Cantonal values are calibrated estimates, not BFS cantonal statistics; the goal is evaluated on a trend, not on cohort projections.",
+  steps:["Open Education › Upper-secondary qualification by age 25","Set the year to 2030","Read the status chip and the Alert signals","Scroll the cantonal ranking; click a canton to zoom"]},
+ {id:"water",tag:"Water",title:"Is the micropollutant upgrade programme on course?",
+  who:"FOEN water division, cantonal water offices, WWTP operators.",
+  q:"«Will the share of micropollutants removed reach 70 % by 2040 — and what if the fourth treatment stage is rolled out to 60 % of plants?»",
+  state:{view:"domain",d:"aigua",m:"micro",y:2040,lev:{ara:60}},
+  see:()=>{const d=D("aigua"),m=Mx(d,"micro"),st=status(d,m,"base",null),s2=withLev(d,{ara:60},()=>status(d,m,"base",null));
+    return 'Removal stood at <b>'+F(agg(d,m,YOBS,"base",false),m)+' %</b> in '+YOBS+' ('+m.src+'). Baseline 2040: <b>'+F(st.v,m)+' %</b> against the GSchG programme value of 70 % — <b>'+st.label+'</b> (gap '+nf(st.gap,0)+' %). With the treatment-upgrade lever at 60 % of plants the 2040 value becomes <b>'+F(s2.v,m)+' %</b> ('+s2.label+(s2.met?'':', gap '+nf(s2.gap,0)+' %')+'). The real counterpart at plant level is the Klärwerk Werdhölzli asset view.'},
+  tools:"Domain view › Water › Micropollutants removed at WWTPs · Policy simulator › Micropollutant treatment upgrade · Drill down › Klärwerk Werdhölzli",
+  limits:"The 70 % value is the programme's coverage objective read as a removal share; lever elasticity is an estimate.",
+  steps:["Open Water › Micropollutants removed at WWTPs","Set the year to 2040","Drag Micropollutant treatment upgrade to 60 %","Open the Klärwerk Werdhölzli drill-down for the real inflow series"]},
+ {id:"housing",tag:"Housing",title:"Where is the housing market tightest?",
+  who:"Federal Office for Housing, cantonal housing observatories, municipalities.",
+  q:"«Is the vacancy rate heading back to the 1.5 % balanced-market benchmark, and which cantons are estimated to be tightest?»",
+  state:{view:"domain",d:"territori",m:"vacants",y:2026},
+  see:()=>{const d=D("territori"),m=Mx(d,"vacants"),st=status(d,m,"base",null),rk=CANTONS.map(c=>({c,v:val(d,m,c.ab,S.year,"base",true)})).sort((a,b)=>a.v-b.v);
+    return 'The national vacancy rate was <b>'+F(agg(d,m,YOBS,"base",false),m)+' %</b> in '+YOBS+' ('+m.src+'); the baseline gives <b>'+F(st.v,m)+' %</b> in 2035 against the 1.5 % benchmark: <b>'+st.label+'</b>. The tightest estimated cantons in '+S.year+' are '+rk.slice(0,3).map(r=>r.c.name+' ('+F(r.v,m)+' %)').join(', ')+'; the loosest is '+rk[25].c.name+' ('+F(rk[25].v,m)+' %). Average asking rent and settlement area per inhabitant sit next to it in the KPI strip.'},
+  tools:"Domain view › Territory & Housing › Housing vacancy rate · cantonal ranking (less is tighter) · Policy simulator › Higher buildability, Support for non-profit housing",
+  limits:"1.5 % is a market convention, not a statutory target; cantonal values are estimates calibrated to the national rate.",
+  steps:["Open Territory & Housing › Housing vacancy rate","Read the KPI tile and the reference chip","Scroll the ranking from the lowest value","Try the buildability lever and compare 2035"]},
+ {id:"health",tag:"Health",title:"Can primary care take the pressure off emergency departments?",
+  who:"FOPH, cantonal health directorates, hospital planners.",
+  q:"«What happens to emergency-department waiting time by 2035 if 25 % of new posts go to primary care and 30 % of cases are triaged remotely?»",
+  state:{view:"domain",d:"serveis",m:"espera",y:2035,lev:{primaria:25,telemed:30}},
+  see:()=>{const d=D("serveis"),m=Mx(d,"espera"),lev={primaria:25,telemed:30},b=agg(d,m,2035,"base",false),s=withLev(d,lev,()=>agg(d,m,2035,"base",true)),st=withLev(d,lev,()=>status(d,m,"base",null)),c=withLev(d,lev,()=>leverGain(d,m).cost);
+    return 'Waiting time was <b>'+F(agg(d,m,YOBS,"base",false),m)+' minutes</b> in '+YOBS+' ('+m.src+') and drifts to '+F(b,m)+' by 2035 on the baseline. With the two levers it becomes <b>'+F(s,m)+' minutes</b> ('+((s-b)/b*100).toFixed(1)+' %) for about '+nf(c,1)+' mio CHF a year — '+st.label+' against the 30-minute planning reference (gap '+nf(st.gap,0)+' %). The lever note warns of a two-to-three-year lag.'},
+  tools:"Domain view › Health & Public Services › Emergency department waiting time · Policy simulator › Primary care reinforcement, Triage and remote monitoring",
+  limits:"30 minutes is a planning reference, not law; effects are elasticities, not trial results; cantonal values are estimates.",
+  steps:["Open Health & Public Services › Emergency department waiting time","Set the year to 2035","Drag Primary care reinforcement to 25 % and Triage and remote monitoring to 30 %","Compare the black simulated line with the dashed baseline"]},
+ {id:"stress",tag:"Scenarios",title:"What does a stress scenario do to the whole scorecard?",
+  who:"Federal Chancellery, departmental strategy units, anyone preparing a risk briefing.",
+  q:"«How many of the 35 indicators stay on track if growth rates turn against us — and how many would the Agreement scenario rescue?»",
+  state:{view:"scorecard",y:2026,s:"str"},
+  see:()=>{const per={};Object.keys(SC).forEach(k=>{per[k]={ok:0,risk:0,off:0};DOMAINS.forEach(d=>d.metrics.forEach(m=>{const st=status(d,m,k,null);if(st)per[k][st.cls]++}))});
+    return 'Baseline: <b>'+per.base.ok+' on track · '+per.base.risk+' at risk · '+per.base.off+' off track</b>. Stress: <b>'+per.str.ok+' · '+per.str.risk+' · '+per.str.off+'</b>. Agreement: <b>'+per.opt.ok+' · '+per.opt.risk+' · '+per.opt.off+'</b>. The spread between scenarios is small compared with the number of indicators off track in all three — the gaps are structural, which is the point the scorecard makes before any detail.'},
+  tools:"National scorecard · scenario buttons · Largest gaps to objective · Explain (status counts under each scenario)",
+  limits:"Scenarios scale the trend's growth rate by a fixed elasticity; they are not macro-economic scenarios.",
+  steps:["Open the National scorecard","Click Stress, then Agreement, then Baseline","Watch the on-track / at-risk / off-track counts","Open Explain for the comparison in one table"]},
+ {id:"asset",tag:"Asset",title:"What did the Hagenholz turbine outage cost?",
+  who:"ERZ and City of Zurich finance; anyone who doubts that monthly open data can explain a real event.",
+  q:"«Can eight monthly operating figures detect the Sep 2021 – Apr 2022 turbine outage, explain it and price it?»",
+  state:{view:"asset",a:"hagenholz",mo:"2021-11"},
+  see:()=>{const A=ASSETS.hagenholz,e=A.episodes[0];
+    return 'The T²/Q monitor flags <b>'+e.flagged_months+' of the '+e.months+' outage months</b> with electricity yield as the dominant contributor every month ('+A.spc.n_flagged+'/'+A.n_months+' months flagged overall; IsolationForest agrees on '+A.iforest.n_flagged_both+'). The decision layer prices the episode at <b>'+chfM(e.electricity_chf_lost)+'</b> of lost electricity value and <b>'+nf(e.electricity_tco2eq,0)+' tCO₂eq</b>, offset by '+chfM(Math.abs(e.heat_chf_offset))+' of extra heat revenue. Two more assets (Klärwerk Werdhölzli, ewz grid load) use the same navigation.'},
+  tools:"Asset drill-down › KVA Hagenholz · Process monitor · Contributions for the selected month · Decision layer · CSV",
+  limits:"Real operating data, but prices are sourced constants (ammonia is an assumption); the all-months total is not audited.",
+  steps:["Open Energy & Climate and click Drill down › KVA Hagenholz (or the Assets entry)","Click Nov 2021 in the process monitor","Read the contributions and the episode card","Export the CSV for the finance file"]}
+];
+function cases(){
+  const box=$("cases"),today=new Date().toLocaleDateString("de-CH");
+  let h='<div class="cs-head"><div><h2>Eight questions the cockpit already answers</h2><span class="ov-scope">Who asks, what they ask, what the cockpit shows and what it cannot say. Figures in the text are computed from the data in the cockpit on '+today+' and change when the data is updated; every case opens the exact view with one click.</span></div></div>';
+  h+='<div class="cs-idx">'+CASES.map((c,i)=>'<button class="btn" data-go="'+c.id+'"><b>'+(i+1)+'</b>'+c.title+'</button>').join("")+'</div>';
+  h+='<div class="cs-steps"><div><b>1 · Choose the question</b>A domain and an indicator in the sidebar, or a case below; the scope can be Switzerland or a canton.</div><div><b>2 · Read the answer</b>The KPI tile, the status chip against the objective and the situation report, always next to the official source.</div><div><b>3 · Go down a level</b>A click on a canton gives its estimated value and ranking; where real operating data exists, a drill-down opens the asset.</div><div><b>4 · Take it with you</b>Share view keeps the whole state in the link (scenario, year, levers); Print brief and CSV for the file; Explain for the committee.</div></div>';
+  h+=CASES.map((c,i)=>{const d=c.state.d?D(c.state.d):null,acc=d?d.acc:(c.state.view==="asset"?ASSET_ACC:"#DC0018");
+    return '<article class="case" id="case-'+c.id+'" style="--acc:'+acc+'"><header><div class="cs-k">Case '+(i+1)+' · '+c.tag+'</div><h3>'+c.title+'</h3><div class="for"><b>For:</b> '+c.who+'</div></header>'+
+      '<div class="q">'+c.q+'</div>'+
+      '<div><h4 class="sub">What you see</h4><p>'+c.see()+'</p><h4 class="sub">Views and tools</h4><p>'+c.tools+'</p></div>'+
+      '<div><h4 class="sub">Limits</h4><p>'+c.limits+'</p><h4 class="sub">Reproduce</h4><ol>'+c.steps.map(s=>'<li>'+s+'</li>').join("")+'</ol>'+
+      '<div class="act"><button class="btn" data-open="'+c.id+'">Open this view ›</button><code>'+caseHash(c.state)+'</code></div></div></article>'}).join("");
+  box.innerHTML=h;
+  box.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>$("case-"+b.dataset.go).scrollIntoView({behavior:"smooth",block:"start"}));
+  box.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>applyState(CASES.find(c=>c.id===b.dataset.open).state));
+}
+function railCases(){
+  $("brief").innerHTML='<p>This catalogue is the cockpit read as <b>questions</b>: each case names who asks, shows the answer with today\'s figures, and lists what the view cannot say. The eight cases cover the four levels — scorecard, domain, canton and asset — and the three tools that make an answer portable: the shareable link (which now stores lever settings), the printed brief and the Explain panel.</p><p>Every number in the cases is recomputed from the embedded data each time the page is drawn; none is typed in. When a case no longer holds — a target met, a gap closed — the text changes with the data.</p>';
+  $("briefSig").textContent="Generated "+new Date().toLocaleDateString("de-CH")+" · use-case catalogue · not an official position";
+  const ul=$("alerts");ul.innerHTML="";CASES.forEach((c,i)=>{const li=document.createElement("li");li.innerHTML='<span class="m">Case '+(i+1)+' · '+c.tag+'</span>'+c.title+'<span class="act"><button class="btn" data-open="'+c.id+'" style="padding:2px 7px">Open ›</button></span>';ul.appendChild(li)});
+  ul.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>applyState(CASES.find(c=>c.id===b.dataset.open).state));
+  $("modelMeta").innerHTML='<div><span>Cases</span><b>'+CASES.length+'</b></div><div><span>Levels covered</span><b>scorecard · domain · canton · asset</b></div><div><span>With lever presets</span><b>'+CASES.filter(c=>c.state.lev).length+'</b></div><div><span>Assets</span><b>'+Object.keys(ASSETS).length+' real</b></div>';
+  $("sources").innerHTML=INSTITUTIONS.map(s=>'<span><i>●</i> '+s+'</span>').join("");
+  $("govNote").innerHTML="Cases are questions, not recommendations. The answers inherit every limit of the views they open: official national series, exploratory forecasts, estimated cantonal values, real but unaudited asset figures. Not an official position.";
+}
+function explainCases(){return '<h4 class="sub">About this catalogue</h4><p>The use-case page follows a simple contract borrowed from map-based civic viewers: for each question it states who asks it, what the cockpit shows, which views and tools are involved, and what the data cannot say. The figures are recomputed on every draw; the links encode the full state, including lever presets.</p>'}
+
 /* ---------- orchestration ---------- */
 function draw(){
-  const ov=S.view==="overview",as=S.view==="asset";
-  document.body.classList.toggle("ov",ov);document.body.classList.toggle("asset",as);
-  document.documentElement.style.setProperty("--acc",ov?"#DC0018":as?ASSET_ACC:S.dom.acc);
-  $("mDom").textContent=ov?"National scorecard":as?"Asset · "+assetData().name:S.dom.label;
+  const ov=S.view==="overview",as=S.view==="asset",cs=S.view==="cases";
+  document.body.classList.toggle("ov",ov);document.body.classList.toggle("asset",as);document.body.classList.toggle("cases",cs);
+  document.documentElement.style.setProperty("--acc",ov||cs?"#DC0018":as?ASSET_ACC:S.dom.acc);
+  $("mDom").textContent=ov?"National scorecard":cs?"Use cases":as?"Asset · "+assetData().name:S.dom.label;
   $("yNum").textContent=S.year;
   $("yTag").textContent=S.year>YOBS?"forecast · "+SC[S.scen].l.toLowerCase():"observed";
   $("reset").textContent=as?"‹ Back to Zurich":"National View";
@@ -1585,6 +1731,7 @@ function draw(){
   metaLabels(as);
   sidebar();ident();
   if(ov)railOverview(overview());
+  else if(cs){cases();railCases()}
   else if(as){assetDefaults();assetKpis();assetCenter();assetRail()}
   else{kpis();map();fan();levers();rank();alerts();const mape=drivers();brief(mape);modelcard(mape)}
   syncHash();
@@ -1593,8 +1740,10 @@ function draw(){
 /* ---------- shareable state ---------- */
 function syncHash(){
   const p=new URLSearchParams();
+  if(S.view==="cases"){p.set("v","cases");history.replaceState(null,"","#"+p.toString());return}
   if(S.view==="asset"){p.set("v","asset");p.set("a",S.asset);p.set("mo",S.month);history.replaceState(null,"","#"+p.toString());return}
-  if(S.view==="overview")p.set("v","scorecard");else{p.set("d",S.dom.id);p.set("m",S.met.id)}
+  if(S.view==="overview")p.set("v","scorecard");else{p.set("d",S.dom.id);p.set("m",S.met.id);
+    const lv=Object.entries(S.lev).filter(([k,v])=>v>0);if(lv.length)p.set("l",lv.map(([k,v])=>k+"-"+(+(+v).toFixed(2))).join("_"))}
   p.set("y",S.year);if(S.scen!=="base")p.set("s",S.scen);if(S.kt)p.set("c",S.kt);
   history.replaceState(null,"","#"+p.toString());
 }
@@ -1603,13 +1752,15 @@ function loadHash(){
   const d=DOMAINS.find(x=>x.id===p.get("d"));
   if(d){S.view="domain";S.dom=d;S.met=d.metrics.find(m=>m.id===p.get("m"))||d.metrics[0]}
   else S.view="overview";
+  if(p.get("v")==="cases")S.view="cases";
+  S.lev={};if(d&&p.get("l"))p.get("l").split("_").forEach(x=>{const i=x.lastIndexOf("-"),k=x.slice(0,i),v=+x.slice(i+1);if(d.levers.some(L=>L.id===k)&&v>0)S.lev[k]=v});
   if(p.get("v")==="asset"&&ASSETS[p.get("a")||"hagenholz"]){S.view="asset";S.asset=p.get("a")||"hagenholz";S.month=p.get("mo")||S.month}
   const y=+p.get("y");if(y>=Y0&&y<=YN)S.year=y;$("year").value=S.year;
   S.scen=SC[p.get("s")]?p.get("s"):"base";
   document.querySelectorAll("#scen button").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.s===S.scen)));
   S.kt=CANTONS.some(c=>c.ab===p.get("c"))?p.get("c"):null;
 }
-addEventListener("hashchange",()=>{loadHash();S.lev={};VB=S.kt?fit(CANTONS.find(c=>c.ab===S.kt).bb,.22):fit([0,0,1000,MAPH],.04);draw()});
+addEventListener("hashchange",()=>{loadHash();VB=S.kt?fit(CANTONS.find(c=>c.ab===S.kt).bb,.22):fit([0,0,1000,MAPH],.04);draw()});
 function toast(t){const e=$("toast");e.textContent=t;e.classList.add("on");clearTimeout(toast._t);toast._t=setTimeout(()=>e.classList.remove("on"),1800)}
 
 /* ---------- controls ---------- */
