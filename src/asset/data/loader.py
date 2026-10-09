@@ -6,6 +6,8 @@ loaders run — see asset.config for the source registry.
 
 from __future__ import annotations
 
+import re
+
 import pandas as pd
 
 from asset.config import BIOABFALL_CALENDAR, ELOG_KENNZAHLEN, EWZ_LOAD, KHKW, WERDHOELZLI
@@ -53,9 +55,16 @@ def load_bioabfall_calendar() -> pd.DataFrame:
 
 
 def _parse_swiss_number(value: object) -> float:
-    """Handle the Swiss thousands separator, e.g. "92'056" -> 92056.0."""
+    """Handle the Swiss thousands separator, e.g. "92'056" -> 92056.0.
+
+    Non-numeric cells (the source uses placeholders such as "keine Zahlen
+    erhoben") become NaN instead of raising.
+    """
     if isinstance(value, str):
-        value = value.replace("'", "")
+        value = value.replace("'", "").replace(" ", "").strip()
+        if not re.fullmatch(r"-?\d+(?:[.,]\d+)?", value):
+            return float("nan")
+        value = value.replace(",", ".")
     return float(value)
 
 

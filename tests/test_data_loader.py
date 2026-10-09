@@ -47,7 +47,14 @@ def test_elog_kennzahlen_schema(elog_df):
         ("92'056", 92056.0),
         ("4828.7", 4828.7),
         (100, 100.0),
+        ("1'234,5", 1234.5),
     ],
 )
 def test_parse_swiss_number(raw, expected):
     assert _parse_swiss_number(raw) == expected
+
+
+def test_parse_swiss_number_placeholder_is_nan():
+    assert _parse_swiss_number("keine Zahlen erhoben") != _parse_swiss_number(
+        "keine Zahlen erhoben"
+    )  # NaN
